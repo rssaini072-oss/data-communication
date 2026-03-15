@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>डेटा संचार - RPSC RAS/PSI Revision</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --saffron: #FF6B1A;
+  --deep-saffron: #E85500;
+  --gold: #FFB800;
+  --green: #1E8C45;
+  --deep-green: #166135;
+  --navy: #0D2240;
+  --sky: #1A90D4;
+  --light-sky: #E8F4FD;
+  --cream: #FFF8F0;
+  --red: #D63031;
+  --purple: #6C3483;
+  --teal: #00897B;
+  --bg: #F5F0E8;
+  --card-bg: #FFFFFF;
+  --text: #1A1A2E;
+  --muted: #6B7280;
+  --border: #E0D5C8;
+  --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-hover: 0 8px 32px rgba(0,0,0,0.14);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255,107,26,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(30,140,69,0.06) 0%, transparent 50%);
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, var(--navy) 0%, #1A3A5C 100%);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.header-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+}
+.header-title span { color: var(--gold); }
+.header-badge {
+  background: var(--saffron);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* TABS */
+.tabs-container {
+  background: var(--navy);
+  padding: 0 16px;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 3px solid var(--saffron);
+}
+.tabs-container::-webkit-scrollbar { display: none; }
+.tab-btn {
+  padding: 12px 18px;
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -3px;
+  transition: all 0.2s;
+}
+.tab-btn:hover { color: var(--gold); }
+.tab-btn.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  background: rgba(255,184,0,0.1);
+}
+
+/* CONTENT */
+.tab-content { display: none; padding: 20px 16px; max-width: 1200px; margin: 0 auto; }
+.tab-content.active { display: block; }
+
+/* CARDS */
+.card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+  border-left: 5px solid var(--saffron);
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: var(--shadow-hover); }
+.card.green { border-left-color: var(--green); }
+.card.sky { border-left-color: var(--sky); }
+.card.gold { border-left-color: var(--gold); }
+.card.purple { border-left-color: var(--purple); }
+.card.teal { border-left-color: var(--teal); }
+.card.red { border-left-color: var(--red); }
+
+.card-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-icon {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.icon-orange { background: rgba(255,107,26,0.15); color: var(--saffron); }
+.icon-green { background: rgba(30,140,69,0.15); color: var(--green); }
+.icon-sky { background: rgba(26,144,212,0.15); color: var(--sky); }
+.icon-gold { background: rgba(255,184,0,0.15); color: #B8860B; }
+.icon-purple { background: rgba(108,52,131,0.15); color: var(--purple); }
+.icon-teal { background: rgba(0,137,123,0.15); color: var(--teal); }
+.icon-red { background: rgba(214,48,49,0.15); color: var(--red); }
+
+/* MNEMONIC BOX */
+.mnemonic {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8F0);
+  border: 2px dashed var(--gold);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 0.85rem;
+}
+.mnemonic-label {
+  font-weight: 700;
+  color: #B8860B;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.mnemonic-text { color: #5D4037; font-weight: 600; }
+
+/* 2-COLUMN GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+/* COMPARISON BOXES */
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.compare-box {
+  background: var(--light-sky);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  font-size: 0.82rem;
+}
+.compare-box.orange { background: #FFF3E0; }
+.compare-box.green { background: #E8F5E9; }
+.compare-box.red { background: #FFEBEE; }
+.compare-box h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; }
+
+/* TABLES */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 10px;
+}
+.data-table th {
+  background: var(--navy);
+  color: var(--gold);
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 700;
+}
+.data-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.data-table tr:nth-child(even) { background: #F9F6F2; }
+.data-table tr:hover { background: #FFF3E0; }
+
+/* TAGS */
+.tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin: 2px;
+}
+.tag-orange { background: rgba(255,107,26,0.15); color: var(--deep-saffron); }
+.tag-green { background: rgba(30,140,69,0.15); color: var(--deep-green); }
+.tag-sky { background: rgba(26,144,212,0.15); color: #0066A6; }
+.tag-red { background: rgba(214,48,49,0.15); color: var(--red); }
+.tag-gold { background: rgba(255,184,0,0.2); color: #7A5C00; }
+
+/* SECTION HEADER */
+.section-header {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  padding: 8px 0 4px;
+  margin: 10px 0 14px;
+  border-bottom: 3px solid var(--saffron);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* MCQ */
+.mcq-container { margin-bottom: 12px; }
+.mcq-score-bar {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.score-display {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+.score-info { font-size: 0.78rem; color: rgba(255,255,255,0.7); }
+
+.question-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--sky);
+}
+.question-card.rj-q { border-top-color: var(--saffron); }
+.question-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.q-number {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--navy);
+}
+.q-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.option-btn {
+  padding: 9px 12px;
+  background: #F5F5F5;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.82rem;
+  text-align: left;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+.option-btn:hover:not(:disabled) { background: var(--light-sky); border-color: var(--sky); }
+.option-btn.correct { background: #E8F5E9; border-color: var(--green); color: var(--deep-green); font-weight: 700; }
+.option-btn.wrong { background: #FFEBEE; border-color: var(--red); color: var(--red); font-weight: 700; }
+.option-btn.reveal { background: #E8F5E9; border-color: var(--green); }
+.option-btn:disabled { cursor: default; }
+
+.explanation {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #F0F7FF;
+  border-radius: 8px;
+  border-left: 4px solid var(--sky);
+  font-size: 0.8rem;
+  display: none;
+  line-height: 1.6;
+}
+.explanation.show { display: block; }
+
+.submit-all-btn {
+  background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-family: 'Baloo 2', cursive;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 15px rgba(255,107,26,0.4);
+}
+.submit-all-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,107,26,0.5); }
+
+/* RESULT POPUP */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.popup-overlay.show { display: flex; }
+.popup-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  animation: popIn 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.popup-emoji { font-size: 3.5rem; margin-bottom: 12px; }
+.popup-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.popup-score {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--saffron);
+  font-family: 'Baloo 2', cursive;
+}
+.popup-detail { color: var(--muted); font-size: 0.85rem; margin: 10px 0 20px; line-height: 1.6; }
+.popup-close {
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* LAST MINUTE CARDS */
+.lm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lm-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+  font-size: 0.82rem;
+}
+.lm-card h4 {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: 0.92rem;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid;
+}
+.lm-card.s1 { border-top: 4px solid var(--saffron); }
+.lm-card.s1 h4 { border-color: var(--saffron); color: var(--deep-saffron); }
+.lm-card.s2 { border-top: 4px solid var(--green); }
+.lm-card.s2 h4 { border-color: var(--green); color: var(--deep-green); }
+.lm-card.s3 { border-top: 4px solid var(--sky); }
+.lm-card.s3 h4 { border-color: var(--sky); color: #0066A6; }
+.lm-card.s4 { border-top: 4px solid var(--purple); }
+.lm-card.s4 h4 { border-color: var(--purple); color: var(--purple); }
+.lm-card.s5 { border-top: 4px solid var(--gold); }
+.lm-card.s5 h4 { border-color: var(--gold); color: #7A5C00; }
+.lm-card.s6 { border-top: 4px solid var(--teal); }
+.lm-card.s6 h4 { border-color: var(--teal); color: var(--teal); }
+.lm-card.s7 { border-top: 4px solid var(--red); }
+.lm-card.s7 h4 { border-color: var(--red); color: var(--red); }
+.lm-card.s8 { border-top: 4px solid #8E24AA; }
+.lm-card.s8 h4 { border-color: #8E24AA; color: #8E24AA; }
+
+.lm-item { padding: 3px 0; border-bottom: 1px dotted #E0E0E0; display: flex; gap: 6px; align-items: flex-start; }
+.lm-item:last-child { border-bottom: none; }
+.lm-item .dot { color: var(--saffron); font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+
+.super-mnemonic {
+  background: linear-gradient(135deg, var(--navy), #1A3A5C);
+  border-radius: 14px;
+  padding: 18px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.super-mnemonic h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.mnemo-item {
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  font-size: 0.83rem;
+  border-left: 3px solid var(--gold);
+}
+.mnemo-key { color: var(--gold); font-weight: 700; }
+
+/* LIST STYLES */
+ul.dot-list { list-style: none; padding-left: 4px; }
+ul.dot-list li {
+  padding: 3px 0 3px 16px;
+  position: relative;
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+ul.dot-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--saffron);
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8F0);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  border: 1px solid rgba(255,184,0,0.3);
+}
+.highlight-box strong { color: var(--deep-saffron); }
+
+/* INFO CHIPS */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chip {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* PROGRESS DOTS */
+.progress-dots { display: flex; gap: 4px; margin-bottom: 16px; flex-wrap: wrap; }
+.p-dot { width: 10px; height: 10px; border-radius: 50%; background: #E0E0E0; }
+.p-dot.answered { background: var(--green); }
+.p-dot.wrong-dot { background: var(--red); }
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .grid-2, .lm-grid { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .compare-row { grid-template-columns: 1fr; }
+  .options-grid { grid-template-columns: 1fr; }
+  .header-title { font-size: 1.1rem; }
+  .tab-btn { padding: 10px 12px; font-size: 0.78rem; }
+}
+@media (max-width: 400px) {
+  .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* SUMMARY TABLE SPECIFIC */
+.master-table-wrap { overflow-x: auto; }
+.master-table {
+  min-width: 700px;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  width: 100%;
+}
+.master-table th {
+  background: linear-gradient(135deg, var(--navy), #1A3A5C);
+  color: var(--gold);
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.master-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.master-table tr:nth-child(even) { background: #F9F6F2; }
+.master-table tr:hover { background: #FFF3E0; }
+
+.answered-count { font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-title">📡 <span>डेटा संचार</span> | Data Communication</div>
+  <div class="header-badge">RAS · PSI · RPSC</div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-container">
+  <button class="tab-btn active" onclick="showTab('revision')">📚 Revision</button>
+  <button class="tab-btn" onclick="showTab('summary')">📊 Summary Table</button>
+  <button class="tab-btn" onclick="showTab('rjpyq')">🏜️ RJ PYQ (30)</button>
+  <button class="tab-btn" onclick="showTab('statepyq')">🗺️ States PYQ (30)</button>
+  <button class="tab-btn" onclick="showTab('lastmin')">⚡ Last Minute</button>
+</div>
+
+<!-- ===================== TAB 1: REVISION ===================== -->
+<div id="revision" class="tab-content active">
+
+  <div class="section-header">📡 1. डेटा संचार के मूल तत्व</div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">
+        <div class="card-icon icon-orange">📶</div>
+        डेटा सिग्नल के प्रकार
+      </div>
+      <div class="compare-row">
+        <div class="compare-box orange">
+          <h4>🔢 Digital Signal</h4>
+          Binary (0 और 1) का प्रयोग<br>Electronic रूप में आदान-प्रदान
+        </div>
+        <div class="compare-box green">
+          <h4>📻 Analog Signal</h4>
+          Radio Wave के माध्यम से data पहुँचाते हैं<br>Continuous wave form
+        </div>
+      </div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Trick</div>
+        <div class="mnemonic-text">"<strong>D</strong>igital = <strong>D</strong>iscrete (0,1) | <strong>A</strong>nalog = <strong>A</strong>ir (Radio Wave)"</div>
+      </div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">
+        <div class="card-icon icon-green">🔗</div>
+        डेटा संचार के 5 घटक
+      </div>
+      <table class="data-table">
+        <tr><th>घटक</th><th>कार्य</th></tr>
+        <tr><td><strong>Sender</strong></td><td>डेटा भेजने वाला</td></tr>
+        <tr><td><strong>Receiver</strong></td><td>डेटा प्राप्त करने वाला</td></tr>
+        <tr><td><strong>Message</strong></td><td>भेजी जाने वाली सूचना</td></tr>
+        <tr><td><strong>Medium</strong></td><td>संचार माध्यम (Transmission Medium)</td></tr>
+        <tr><td><strong>Protocol</strong></td><td>नियम/Rules जो संचार को नियंत्रित करें</td></tr>
+      </table>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Trick</div>
+        <div class="mnemonic-text">"<strong>S</strong>anta <strong>R</strong>am <strong>M</strong>ake <strong>M</strong>ango <strong>P</strong>ie" → Sender, Receiver, Message, Medium, Protocol</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">🔄 2. डेटा संचार की विधियाँ (Methods)</div>
+
+  <div class="card sky">
+    <div class="card-title">
+      <div class="card-icon icon-sky">📡</div>
+      Simplex vs Duplex
+    </div>
+    <div class="compare-row">
+      <div class="compare-box orange">
+        <h4>📻 Simplex</h4>
+        एक दिशा में data flow<br>Sender ही data भेज सकता है<br>Receiver नहीं<br><strong>उदा:</strong> Radio, TV
+      </div>
+      <div class="compare-box">
+        <h4>📟 Half Duplex</h4>
+        Two Way / Alternative<br>दोनों दिशा में प्रवाह<br>एक समय में एक दिशा<br><strong>उदा:</strong> Walkie-Talkie
+      </div>
+      <div class="compare-box green">
+        <h4>📱 Full Duplex</h4>
+        दोनों दिशाओं में एक साथ data भेज सकते हैं<br><strong>उदा:</strong> Mobile Chat/Call
+      </div>
+    </div>
+    <div class="mnemonic">
+      <div class="mnemonic-label">🧠 Super Trick</div>
+      <div class="mnemonic-text">"<strong>S</strong>implex = <strong>S</strong>ingle way | <strong>H</strong>alf = <strong>H</strong>oarders share turn | <strong>F</strong>ull = <strong>F</strong>ree both ways" <br>📻 Radio → Simplex | 📟 Walkie-Talkie → Half Duplex | 📱 Phone Call → Full Duplex</div>
+    </div>
+  </div>
+
+  <div class="section-header">🌐 3. Device Communication के आधार पर प्रकार</div>
+
+  <div class="grid-2">
+    <div class="card gold">
+      <div class="card-title">
+        <div class="card-icon icon-gold">📨</div>
+        Unicast / Multicast / Broadcast
+      </div>
+      <table class="data-table">
+        <tr><th>प्रकार</th><th>संबंध</th><th>उदाहरण</th></tr>
+        <tr><td><span class="tag tag-orange">Unicast</span></td><td>One to One</td><td>Email भेजना</td></tr>
+        <tr><td><span class="tag tag-sky">Multicast</span></td><td>One to Many</td><td>Live Streaming</td></tr>
+        <tr><td><span class="tag tag-green">Broadcast</span></td><td>One to All</td><td>T.V., Radio</td></tr>
+      </table>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Trick</div>
+        <div class="mnemonic-text">"<strong>U</strong>ni = <strong>U</strong>nique 1 person | <strong>M</strong>ulti = <strong>M</strong>any | <strong>B</strong>road = <strong>B</strong>ig crowd (सभी)"</div>
+      </div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title">
+        <div class="card-icon icon-purple">💾</div>
+        Bit Transmit के आधार पर
+      </div>
+      <table class="data-table">
+        <tr><th>प्रकार</th><th>विशेषता</th><th>उदाहरण</th></tr>
+        <tr><td><strong>Serial Communication</strong></td><td>एक लाइन, लम्बी दूरी, Slow</td><td>Computer से Modem</td></tr>
+        <tr><td><strong>Parallel Communication</strong></td><td>अनेक बिट, Fast, कम दूरी</td><td>Computer से Printer</td></tr>
+      </table>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Trick</div>
+        <div class="mnemonic-text">"<strong>S</strong>erial = <strong>S</strong>low & <strong>S</strong>ingle line | <strong>P</strong>arallel = <strong>P</strong>ower & <strong>P</strong>rinter"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">🔌 4. संचार माध्यम (Communication Medium)</div>
+
+  <div class="grid-2">
+    <div class="card teal">
+      <div class="card-title">
+        <div class="card-icon icon-teal">🔌</div>
+        Guided Medium (निर्देशित माध्यम)
+      </div>
+      <ul class="dot-list">
+        <li>डेटा का संचार केबल के माध्यम से</li>
+        <li>उच्च गति, सुरक्षा, कम दूरी के लिए</li>
+      </ul>
+      <table class="data-table" style="margin-top:8px">
+        <tr><th>केबल</th><th>विशेषता</th></tr>
+        <tr><td><strong>Twisted Pair</strong></td><td>Ethernet cable, LAN में use, इसे Ethernet/Isolate cable कहते हैं</td></tr>
+        <tr><td><strong>Fiber Optic</strong></td><td>Plastic fiber, प्रकाश से data (Total Internal Reflection), हल्की व तीव्र गति</td></tr>
+        <tr><td><strong>Coaxial Cable</strong></td><td>उच्च आवृत्ति data, जमीन के नीचे, TV Network में use</td></tr>
+      </table>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Trick</div>
+        <div class="mnemonic-text">"<strong>T</strong>wisted → <strong>T</strong>elephone/LAN | <strong>F</strong>iber → <strong>F</strong>astest | <strong>C</strong>oaxial → <strong>C</strong>able TV"</div>
+      </div>
+    </div>
+
+    <div class="card red">
+      <div class="card-title">
+        <div class="card-icon icon-red">📡</div>
+        Unguided Medium (अनिर्देशित माध्यम)
+      </div>
+      <ul class="dot-list">
+        <li>Wireless Technology से data का स्थानान्तरण</li>
+      </ul>
+      <table class="data-table" style="margin-top:8px">
+        <tr><th>प्रकार</th><th>Frequency</th><th>उपयोग</th></tr>
+        <tr><td><strong>Radio Wave</strong></td><td>3kHz – 1GHz</td><td>लम्बी दूरी, AM/FM Radio</td></tr>
+        <tr><td><strong>Microwave</strong></td><td>1GHz – 300GHz</td><td>Television, Single direction</td></tr>
+        <tr><td><strong>Infrared</strong></td><td>300GHz – 400GHz</td><td>TV Remote, Wireless Mouse, LAN</td></tr>
+      </table>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Trick (Frequency याद करें)</div>
+        <div class="mnemonic-text">"<strong>R</strong>adio = <strong>R</strong>eal Low (3kHz) → <strong>M</strong>icro = <strong>M</strong>id (1-300GHz) → <strong>I</strong>nfra = <strong>I</strong>ntense High (300-400GHz)"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">🌐 5. Network Protocol</div>
+
+  <div class="card">
+    <div class="card-title">
+      <div class="card-icon icon-orange">📋</div>
+      प्रमुख Network Protocols
+    </div>
+    <table class="data-table">
+      <tr><th>Protocol</th><th>Full Form</th><th>कार्य</th></tr>
+      <tr><td><span class="tag tag-orange">TCP/IP</span></td><td>Transmission Control Protocol / Internet Protocol</td><td>Data को छोटे-छोटे Packets में transmit करना</td></tr>
+      <tr><td><span class="tag tag-sky">SMTP</span></td><td>Simple Mail Transfer Protocol</td><td>Port No. 25 पर Email भेजने में use</td></tr>
+      <tr><td><span class="tag tag-green">HTTP</span></td><td>HyperText Transfer Protocol</td><td>Client और Server के मध्य Connection बनाना</td></tr>
+      <tr><td><span class="tag tag-gold">FTP</span></td><td>File Transfer Protocol</td><td>Computer एवं Server के मध्य file transfer</td></tr>
+      <tr><td><span class="tag tag-red">GOPHER</span></td><td>—</td><td>Software Protocol</td></tr>
+      <tr><td><span class="tag tag-orange">TELNET</span></td><td>Telecommunication Network</td><td>एक computer को दूर बैठकर उस computer को संचालित करना</td></tr>
+    </table>
+    <div class="mnemonic">
+      <div class="mnemonic-label">🧠 Super Trick</div>
+      <div class="mnemonic-text">"<strong>T</strong>CP = <strong>T</strong>ukde करता | <strong>S</strong>MTP = <strong>S</strong>endMail | <strong>H</strong>TTP = <strong>H</strong>omepage | <strong>F</strong>TP = <strong>F</strong>ile | <strong>G</strong>OPHER = <strong>G</strong>oes (Software) | <strong>T</strong>ELNET = <strong>T</strong>elecontrol"</div>
+    </div>
+  </div>
+
+  <div class="section-header">🏢 6. भारतीय Data Service Providers</div>
+
+  <div class="grid-2">
+    <div class="card sky">
+      <div class="card-title">
+        <div class="card-icon icon-sky">🏛️</div>
+        सरकारी / प्रमुख Data Service Providers
+      </div>
+      <table class="data-table">
+        <tr><th>संस्था</th><th>Full Form</th><th>स्थापना</th><th>मुख्यालय</th></tr>
+        <tr><td><strong>VSNL</strong></td><td>Videsh Sanchar Nigam Ltd</td><td>1986</td><td>—</td></tr>
+        <tr><td colspan="4" style="font-size:0.78rem; color:#555">→ 1995: भारत में पहली बार Internet चला | 2002: Privatization → अब Tata Communication Ltd</td></tr>
+        <tr><td><strong>BSNL</strong></td><td>Bharat Sanchar Nigam Ltd</td><td>2000</td><td>New Delhi</td></tr>
+        <tr><td><strong>MTNL</strong></td><td>Mahanagar Telephone Nigam Ltd</td><td>1986</td><td>Delhi</td></tr>
+        <tr><td><strong>TRAI</strong></td><td>Telecom Regulatory Authority of India</td><td>1997</td><td>New Delhi</td></tr>
+      </table>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Trick (Year याद करें)</div>
+        <div class="mnemonic-text">"<strong>V</strong>SNL & <strong>M</strong>TNL = <strong>86</strong> (दोनों 1986) | <strong>B</strong>SNL = <strong>2000</strong> | <strong>TRAI</strong> = <strong>97</strong>"</div>
+      </div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">
+        <div class="card-icon icon-green">📱</div>
+        प्रमुख Telecom Companies & Mobile Brands
+      </div>
+      <table class="data-table">
+        <tr><th>Company</th><th>स्थापना/मुख्यालय</th></tr>
+        <tr><td>Airtel</td><td>1995, New Delhi</td></tr>
+        <tr><td>Vodafone-Idea (Vi)</td><td>2018</td></tr>
+        <tr><td>Reliance-Jio</td><td>2007</td></tr>
+        <tr><td>Nokia</td><td>Finland (फिनलैंड)</td></tr>
+        <tr><td>Motorola</td><td>Chicago, USA</td></tr>
+        <tr><td>Samsung</td><td>Seoul, South Korea</td></tr>
+        <tr><td>Apple</td><td>USA</td></tr>
+        <tr><td>BlackBerry</td><td>Canada (कनाडा)</td></tr>
+        <tr><td>Vivo, OPPO, One+, Lenovo</td><td>China (चीन)</td></tr>
+        <tr><td>Google</td><td>USA</td></tr>
+      </table>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Trick</div>
+        <div class="mnemonic-text">"<strong>N</strong>okia = <strong>N</strong>orth Europe (Finland) | <strong>S</strong>amsung = <strong>S</strong>eoul | <strong>A</strong>pple = <strong>A</strong>merica | <strong>B</strong>lack = <strong>B</strong>ritish Columbia (Canada)"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">🌍 7. Internet Connection Types (भारत में सर्विस प्रोवाइडर)</div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">
+        <div class="card-icon icon-orange">🔗</div>
+        Internet Connection के प्रकार
+      </div>
+      <table class="data-table">
+        <tr><th>Connection</th><th>विशेषता</th></tr>
+        <tr><td><strong>Dial Up</strong></td><td>Phoneline से जोड़ना, Switch line/Analog connection</td></tr>
+        <tr><td><strong>Leased Line</strong></td><td>Telephone line द्वारा ISP से पुड़ता है</td></tr>
+        <tr><td><strong>ISDN Line</strong></td><td>Dial Up का विकसित रूप, Modem की आवश्यकता नहीं</td></tr>
+        <tr><td><strong>DSL</strong></td><td>Digital Subscriber Line, Broadband connection, तेज Internet</td></tr>
+        <tr><td><strong>Broadband</strong></td><td>Broad Band Width का short name, cable द्वारा, Fast Internet</td></tr>
+      </table>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Speed Order Trick</div>
+        <div class="mnemonic-text">Dial Up &lt; ISDN &lt; Leased Line &lt; DSL &lt; Broadband (धीमे से तेज़ की ओर)</div>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">
+        <div class="card-icon icon-gold">📶</div>
+        Wireless Technology
+      </div>
+      <table class="data-table">
+        <tr><th>Technology</th><th>Full Form / विशेषता</th></tr>
+        <tr><td><strong>Bluetooth</strong></td><td>Short Range, 2.4-2.8 GHz, max 7 devices, PAN, Haartsen (1994)</td></tr>
+        <tr><td><strong>Wi-Fi</strong></td><td>Wireless Fidelity (1991), LAN, 2.4-5 GHz, 100m तक</td></tr>
+        <tr><td><strong>Li-Fi</strong></td><td>Light Fidelity, Harald Haas (2011), LED से भेजना, Photo diode से प्राप्त</td></tr>
+        <tr><td><strong>Wi-Max</strong></td><td>World Wide Interoperability for Microwave Access, 25-50km, MAN</td></tr>
+        <tr><td><strong>Hot-Spot</strong></td><td>Wireless Access Point Technology</td></tr>
+        <tr><td><strong>GSM</strong></td><td>Global System for Mobile, SIM card, Application Technology</td></tr>
+        <tr><td><strong>CDMA</strong></td><td>Code Division Multiple Access, Wireless Application Technology</td></tr>
+      </table>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Range Trick</div>
+        <div class="mnemonic-text">"<strong>B</strong>luetooth = <strong>B</strong>edroom (10m) | <strong>W</strong>i-Fi = <strong>W</strong>ing (100m) | <strong>W</strong>i-Max = <strong>W</strong>ide (50km)"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">📱 8. Mobile Generation (1G-5G)</div>
+
+  <div class="card purple">
+    <div class="card-title">
+      <div class="card-icon icon-purple">📱</div>
+      Mobile Network Generations
+    </div>
+    <table class="data-table">
+      <tr><th>Generation</th><th>Year</th><th>देश</th><th>विशेषता</th></tr>
+      <tr><td><span class="tag tag-orange">1G</span></td><td>1980</td><td>USA</td><td>पहली पीढ़ी</td></tr>
+      <tr><td><span class="tag tag-sky">2G</span></td><td>1990</td><td>Finland (फिनलैंड)</td><td>GSM, SMS शुरू</td></tr>
+      <tr><td><span class="tag tag-green">3G</span></td><td>2000</td><td>Japan (जापान)</td><td>Mobile Internet</td></tr>
+      <tr><td><span class="tag tag-gold">4G</span></td><td>2010</td><td>South Korea (दक्षिण कोरिया)</td><td>High Speed Data</td></tr>
+      <tr><td><span class="tag tag-red">5G</span></td><td>2020</td><td>South Korea (दक्षिण कोरिया)</td><td>Ultra High Speed</td></tr>
+    </table>
+    <div class="mnemonic">
+      <div class="mnemonic-label">🧠 Country Trick</div>
+      <div class="mnemonic-text">"<strong>U</strong>SA → <strong>F</strong>inland → <strong>J</strong>apan → <strong>K</strong>orea → <strong>K</strong>orea" = "<strong>U</strong>se <strong>F</strong>ast <strong>J</strong>et <strong>K</strong>ite <strong>K</strong>ite"</div>
+    </div>
+    <div class="highlight-box" style="margin-top:10px">
+      <strong>🏠 H.W.:</strong> Rajasthan में पहली बार 5G की शुरुआत कहाँ से की गई?
+    </div>
+  </div>
+
+  <div class="section-header">⚙️ 9. RPC और Computer Processing</div>
+
+  <div class="card teal">
+    <div class="card-title">
+      <div class="card-icon icon-teal">⚙️</div>
+      RPC - Remote Procedure Call
+    </div>
+    <div class="compare-row">
+      <div class="compare-box">
+        <h4>⬇️ Fetch</h4>
+        Instruction को Memory में लाना
+      </div>
+      <div class="compare-box orange">
+        <h4>🔓 Decode</h4>
+        अर्थ को समझना
+      </div>
+      <div class="compare-box green">
+        <h4>▶️ Execute</h4>
+        लागू करना
+      </div>
+    </div>
+    <div class="highlight-box" style="margin-top:10px">
+      <strong>Store:</strong> परिणाम को Register Memory में भण्डारण
+    </div>
+    <div class="mnemonic">
+      <div class="mnemonic-label">🧠 Trick</div>
+      <div class="mnemonic-text">"<strong>F</strong>etch <strong>D</strong>ecode <strong>E</strong>xecute <strong>S</strong>tore" = "<strong>F</strong>ir <strong>D</strong oor <strong>E</strong>k <strong>S</strong>tep"</div>
+    </div>
+  </div>
+
+</div>
+<!-- END REVISION TAB -->
+
+<!-- ===================== TAB 2: SUMMARY TABLE ===================== -->
+<div id="summary" class="tab-content">
+  <div class="section-header">📊 Master Summary Table - Data Communication</div>
+
+  <div class="master-table-wrap">
+    <table class="master-table">
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>प्रकार / Type</th>
+          <th>मुख्य विशेषता</th>
+          <th>उदाहरण</th>
+          <th>Exam Trick</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Data Signal</strong></td><td>Digital, Analog</td><td>Digital=Binary; Analog=Radio Wave</td><td>Computer=Digital; Radio=Analog</td><td>D→Discrete A→Air</td></tr>
+        <tr><td><strong>Simplex</strong></td><td>One-way</td><td>Only Sender sends</td><td>Radio, TV</td><td>S=Single direction</td></tr>
+        <tr><td><strong>Half Duplex</strong></td><td>Two-way (alternate)</td><td>One direction at a time</td><td>Walkie-Talkie</td><td>H=Half share</td></tr>
+        <tr><td><strong>Full Duplex</strong></td><td>Two-way (simultaneous)</td><td>Both can send/receive together</td><td>Mobile Call, Chat</td><td>F=Free both ways</td></tr>
+        <tr><td><strong>Unicast</strong></td><td>One to One</td><td>Single sender-receiver</td><td>Email</td><td>Uni=One</td></tr>
+        <tr><td><strong>Multicast</strong></td><td>One to Many</td><td>One sender, selected receivers</td><td>Live Streaming</td><td>Multi=Many</td></tr>
+        <tr><td><strong>Broadcast</strong></td><td>One to All</td><td>One sender, all receivers</td><td>TV, Radio</td><td>Broad=Big crowd</td></tr>
+        <tr><td><strong>Serial Comm.</strong></td><td>Bit-by-bit</td><td>Slow, Long distance</td><td>Modem connection</td><td>S=Single line Slow</td></tr>
+        <tr><td><strong>Parallel Comm.</strong></td><td>Multiple bits</td><td>Fast, Short distance</td><td>Printer</td><td>P=Parallel=Power</td></tr>
+        <tr><td><strong>Twisted Pair</strong></td><td>Guided</td><td>Ethernet/LAN cable</td><td>Office LAN</td><td>T=Telephone LAN</td></tr>
+        <tr><td><strong>Fiber Optic</strong></td><td>Guided</td><td>Light (TIR), Plastic, Fastest</td><td>Internet backbone</td><td>F=Fastest</td></tr>
+        <tr><td><strong>Coaxial</strong></td><td>Guided</td><td>High freq., Underground</td><td>Cable TV</td><td>C=Cable TV</td></tr>
+        <tr><td><strong>Radio Wave</strong></td><td>Unguided</td><td>3kHz–1GHz, Long distance</td><td>AM/FM Radio</td><td>R=Really Low freq.</td></tr>
+        <tr><td><strong>Microwave</strong></td><td>Unguided</td><td>1–300GHz, Single direction</td><td>TV Transmission</td><td>M=Mid frequency</td></tr>
+        <tr><td><strong>Infrared</strong></td><td>Unguided</td><td>300–400GHz, LAN, Short range</td><td>TV Remote, Mouse</td><td>I=Intense High</td></tr>
+        <tr><td><strong>TCP/IP</strong></td><td>Protocol</td><td>Data → Packets</td><td>Internet</td><td>T=Tukde (Packets)</td></tr>
+        <tr><td><strong>SMTP</strong></td><td>Protocol</td><td>Email, Port 25</td><td>Email sending</td><td>S=SendMail P25</td></tr>
+        <tr><td><strong>HTTP</strong></td><td>Protocol</td><td>Client-Server connection</td><td>Web browsing</td><td>H=Homepage</td></tr>
+        <tr><td><strong>FTP</strong></td><td>Protocol</td><td>File transfer</td><td>File upload</td><td>F=File</td></tr>
+        <tr><td><strong>VSNL</strong></td><td>ISP</td><td>1986, India's 1st Internet (1995)</td><td>Now Tata Comm.</td><td>V=Videsh 86</td></tr>
+        <tr><td><strong>BSNL</strong></td><td>ISP</td><td>2000, New Delhi HQ</td><td>Govt. Telecom</td><td>B=Born 2000</td></tr>
+        <tr><td><strong>MTNL</strong></td><td>ISP</td><td>1986, Delhi HQ</td><td>Metro cities</td><td>M=Metro 86</td></tr>
+        <tr><td><strong>TRAI</strong></td><td>Regulator</td><td>1997, New Delhi</td><td>Telecom rules</td><td>T=Telecom Rules 97</td></tr>
+        <tr><td><strong>Bluetooth</strong></td><td>Wireless</td><td>2.4-2.8GHz, 7 devices, PAN</td><td>Earphone</td><td>B=Bedroom range</td></tr>
+        <tr><td><strong>Wi-Fi</strong></td><td>Wireless</td><td>1991, LAN, 2.4-5GHz, 100m</td><td>Home internet</td><td>W=Wide room</td></tr>
+        <tr><td><strong>Li-Fi</strong></td><td>Wireless</td><td>2011, LED transmit, Photodiode receive</td><td>Smart lighting</td><td>L=Light</td></tr>
+        <tr><td><strong>Wi-Max</strong></td><td>Wireless</td><td>25-50km, MAN</td><td>City network</td><td>W=Wide city</td></tr>
+        <tr><td><strong>GSM</strong></td><td>Mobile</td><td>Global System, SIM card</td><td>All mobile phones</td><td>G=Global SIM</td></tr>
+        <tr><td><strong>1G-5G</strong></td><td>Mobile Gen</td><td>USA→Finland→Japan→Korea(×2)</td><td>Mobile network</td><td>UFJKK</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-header" style="margin-top:24px">⚡ Quick Reference Tables</div>
+
+  <div class="grid-2">
+    <div class="card sky">
+      <div class="card-title"><div class="card-icon icon-sky">📅</div> स्थापना वर्ष - Quick Reference</div>
+      <table class="data-table">
+        <tr><th>Year</th><th>Event</th></tr>
+        <tr><td><strong>1980</strong></td><td>1G - USA</td></tr>
+        <tr><td><strong>1986</strong></td><td>VSNL & MTNL स्थापना</td></tr>
+        <tr><td><strong>1990</strong></td><td>2G - Finland</td></tr>
+        <tr><td><strong>1991</strong></td><td>Wi-Fi developed</td></tr>
+        <tr><td><strong>1994</strong></td><td>Bluetooth - Haartsen</td></tr>
+        <tr><td><strong>1995</strong></td><td>भारत में पहली बार Internet (VSNL)</td></tr>
+        <tr><td><strong>1995</strong></td><td>Airtel स्थापना, New Delhi</td></tr>
+        <tr><td><strong>1997</strong></td><td>TRAI स्थापना</td></tr>
+        <tr><td><strong>2000</strong></td><td>BSNL स्थापना | 3G - Japan</td></tr>
+        <tr><td><strong>2002</strong></td><td>VSNL का Privatization</td></tr>
+        <tr><td><strong>2007</strong></td><td>Reliance Jio स्थापना</td></tr>
+        <tr><td><strong>2010</strong></td><td>4G - South Korea</td></tr>
+        <tr><td><strong>2011</strong></td><td>Li-Fi - Harald Haas</td></tr>
+        <tr><td><strong>2018</strong></td><td>Vodafone-Idea (Vi) merger</td></tr>
+        <tr><td><strong>2020</strong></td><td>5G - South Korea</td></tr>
+      </table>
+    </div>
+
+    <div class="card green">
+      <div class="card-title"><div class="card-icon icon-green">🌍</div> Company → Country - Quick Reference</div>
+      <table class="data-table">
+        <tr><th>Company</th><th>Country/HQ</th></tr>
+        <tr><td>Google</td><td>🇺🇸 USA</td></tr>
+        <tr><td>Apple</td><td>🇺🇸 USA</td></tr>
+        <tr><td>Motorola</td><td>🇺🇸 Chicago, USA</td></tr>
+        <tr><td>BlackBerry</td><td>🇨🇦 Canada</td></tr>
+        <tr><td>Nokia</td><td>🇫🇮 Finland</td></tr>
+        <tr><td>Samsung</td><td>🇰🇷 Seoul, South Korea</td></tr>
+        <tr><td>Vivo, OPPO, OnePlus, Lenovo</td><td>🇨🇳 China</td></tr>
+        <tr><td>Airtel</td><td>🇮🇳 New Delhi (1995)</td></tr>
+        <tr><td>BSNL</td><td>🇮🇳 New Delhi (2000)</td></tr>
+        <tr><td>MTNL</td><td>🇮🇳 Delhi (1986)</td></tr>
+        <tr><td>Jio</td><td>🇮🇳 India (2007)</td></tr>
+        <tr><td>VSNL (now Tata Comm.)</td><td>🇮🇳 India (1986)</td></tr>
+        <tr><td>TRAI</td><td>🇮🇳 New Delhi (1997)</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><div class="card-icon icon-orange">📡</div> Wireless Technology - Range & Network Type</div>
+      <table class="data-table">
+        <tr><th>Technology</th><th>Range</th><th>Network</th><th>Frequency</th></tr>
+        <tr><td>Bluetooth</td><td>~10m</td><td>PAN</td><td>2.4-2.8 GHz</td></tr>
+        <tr><td>Wi-Fi</td><td>~100m</td><td>LAN</td><td>2.4-5 GHz</td></tr>
+        <tr><td>Wi-Max</td><td>25-50km</td><td>MAN</td><td>Microwave</td></tr>
+        <tr><td>Li-Fi</td><td>Room</td><td>—</td><td>Light (LED)</td></tr>
+        <tr><td>Radio Wave</td><td>Very Long</td><td>WAN</td><td>3kHz-1GHz</td></tr>
+      </table>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title"><div class="card-icon icon-purple">🔋</div> Protocol - Port Numbers</div>
+      <table class="data-table">
+        <tr><th>Protocol</th><th>Port</th><th>उपयोग</th></tr>
+        <tr><td>SMTP</td><td>25</td><td>Email भेजना</td></tr>
+        <tr><td>HTTP</td><td>80</td><td>Web browsing</td></tr>
+        <tr><td>HTTPS</td><td>443</td><td>Secure Web</td></tr>
+        <tr><td>FTP</td><td>21</td><td>File transfer</td></tr>
+        <tr><td>DNS</td><td>53</td><td>Domain lookup</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- END SUMMARY TAB -->
+
+<!-- ===================== TAB 3: RJ PYQ ===================== -->
+<div id="rjpyq" class="tab-content">
+  <div class="mcq-score-bar">
+    <div>
+      <div style="font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.8)">🏜️ Rajasthan PYQ Style - 30 Questions</div>
+      <div class="score-info">+1 सही | -⅓ गलत | Marking: RPSC Pattern</div>
+    </div>
+    <div style="text-align:right">
+      <div class="score-display" id="rj-score">0</div>
+      <div class="answered-count" id="rj-answered">0/30 Attempted</div>
+    </div>
+  </div>
+
+  <div id="rj-progress" class="progress-dots"></div>
+
+  <div id="rj-questions"></div>
+  <button class="submit-all-btn" onclick="submitAll('rj')">✅ Final Result देखें</button>
+</div>
+
+<!-- ===================== TAB 4: STATES PYQ ===================== -->
+<div id="statepyq" class="tab-content">
+  <div class="mcq-score-bar" style="background: linear-gradient(135deg, #1A3A5C, #0D5E3F)">
+    <div>
+      <div style="font-size:0.85rem; font-weight:600; color:rgba(255,255,255,0.8)">🗺️ Other States PYQ Style - 30 Questions</div>
+      <div class="score-info">+1 सही | -⅓ गलत | SSC/UPSC/State PSC Pattern</div>
+    </div>
+    <div style="text-align:right">
+      <div class="score-display" id="st-score">0</div>
+      <div class="answered-count" id="st-answered">0/30 Attempted</div>
+    </div>
+  </div>
+
+  <div id="st-progress" class="progress-dots"></div>
+
+  <div id="st-questions"></div>
+  <button class="submit-all-btn" style="background: linear-gradient(135deg, var(--green), var(--deep-green));" onclick="submitAll('st')">✅ Final Result देखें</button>
+</div>
+
+<!-- ===================== TAB 5: LAST MINUTE ===================== -->
+<div id="lastmin" class="tab-content">
+  <div class="super-mnemonic">
+    <h3>⚡ Super Mnemonics - एक नज़र में सब कुछ</h3>
+    <div class="mnemo-item">
+      <span class="mnemo-key">5 Components:</span> "Santa Ram Make Mango Pie" → Sender, Receiver, Message, Medium, Protocol
+    </div>
+    <div class="mnemo-item">
+      <span class="mnemo-key">Modes:</span> S.H.F. → Simplex (Radio) | Half-Duplex (Walkie-Talkie) | Full-Duplex (Phone)
+    </div>
+    <div class="mnemo-item">
+      <span class="mnemo-key">Cast Types:</span> U=Unique1 | M=Many | B=Big crowd → Unicast | Multicast | Broadcast
+    </div>
+    <div class="mnemo-item">
+      <span class="mnemo-key">Guided Cables:</span> "T-F-C" → Twisted(LAN) | Fiber(Fastest/Light) | Coaxial(Cable TV)
+    </div>
+    <div class="mnemo-item">
+      <span class="mnemo-key">Unguided Freq.:</span> Radio(3kHz-1GHz) → Micro(1-300GHz) → Infra(300-400GHz) = Low→Mid→High
+    </div>
+    <div class="mnemo-item">
+      <span class="mnemo-key">1G-5G Countries:</span> USA → Finland → Japan → Korea → Korea = "Uncle Fights, Japan Kicks Korea"
+    </div>
+    <div class="mnemo-item">
+      <span class="mnemo-key">ISP Years:</span> VSNL&MTNL=1986 | TRAI=1997 | BSNL=2000 | India Internet=1995
+    </div>
+    <div class="mnemo-item">
+      <span class="mnemo-key">Wireless Range:</span> Bluetooth(10m/PAN) &lt; Wi-Fi(100m/LAN) &lt; Wi-Max(50km/MAN)
+    </div>
+  </div>
+
+  <div class="lm-grid">
+    <div class="lm-card s1">
+      <h4>📶 Data Signals</h4>
+      <div class="lm-item"><span class="dot">▸</span>Digital = Binary (0,1) = Electronic</div>
+      <div class="lm-item"><span class="dot">▸</span>Analog = Radio Wave = Continuous</div>
+      <div class="lm-item"><span class="dot">▸</span>Modem = Digital↔Analog converter</div>
+    </div>
+    <div class="lm-card s2">
+      <h4>🔄 Communication Modes</h4>
+      <div class="lm-item"><span class="dot">▸</span>Simplex = Radio, TV (one-way)</div>
+      <div class="lm-item"><span class="dot">▸</span>Half Duplex = Walkie-Talkie</div>
+      <div class="lm-item"><span class="dot">▸</span>Full Duplex = Mobile Call/Chat</div>
+    </div>
+    <div class="lm-card s3">
+      <h4>🌐 Cast Types</h4>
+      <div class="lm-item"><span class="dot">▸</span>Unicast = Email (1→1)</div>
+      <div class="lm-item"><span class="dot">▸</span>Multicast = Live Streaming (1→Many)</div>
+      <div class="lm-item"><span class="dot">▸</span>Broadcast = TV, Radio (1→All)</div>
+    </div>
+    <div class="lm-card s4">
+      <h4>📡 Wireless Technology</h4>
+      <div class="lm-item"><span class="dot">▸</span>Bluetooth: PAN, 7 devices, Haartsen 1994</div>
+      <div class="lm-item"><span class="dot">▸</span>Wi-Fi: 1991, LAN, 100m</div>
+      <div class="lm-item"><span class="dot">▸</span>Li-Fi: 2011, Harald Haas, LED</div>
+      <div class="lm-item"><span class="dot">▸</span>Wi-Max: 25-50km, MAN</div>
+      <div class="lm-item"><span class="dot">▸</span>GSM = SIM | CDMA = No SIM</div>
+    </div>
+    <div class="lm-card s5">
+      <h4>🏢 Indian Telecom (Years)</h4>
+      <div class="lm-item"><span class="dot">▸</span>VSNL: 1986 → Internet 1995 → Tata Comm.</div>
+      <div class="lm-item"><span class="dot">▸</span>MTNL: 1986, Delhi</div>
+      <div class="lm-item"><span class="dot">▸</span>TRAI: 1997, New Delhi</div>
+      <div class="lm-item"><span class="dot">▸</span>BSNL: 2000, New Delhi</div>
+      <div class="lm-item"><span class="dot">▸</span>Airtel: 1995 | Jio: 2007</div>
+    </div>
+    <div class="lm-card s6">
+      <h4>📱 Mobile Generations</h4>
+      <div class="lm-item"><span class="dot">▸</span>1G: 1980, USA</div>
+      <div class="lm-item"><span class="dot">▸</span>2G: 1990, Finland</div>
+      <div class="lm-item"><span class="dot">▸</span>3G: 2000, Japan</div>
+      <div class="lm-item"><span class="dot">▸</span>4G: 2010, S.Korea</div>
+      <div class="lm-item"><span class="dot">▸</span>5G: 2020, S.Korea</div>
+    </div>
+    <div class="lm-card s7">
+      <h4>🌍 Brand Headquarters</h4>
+      <div class="lm-item"><span class="dot">▸</span>Nokia = Finland | Samsung = Seoul</div>
+      <div class="lm-item"><span class="dot">▸</span>Apple, Google, Motorola = USA</div>
+      <div class="lm-item"><span class="dot">▸</span>BlackBerry = Canada</div>
+      <div class="lm-item"><span class="dot">▸</span>Vivo, OPPO, OnePlus, Lenovo = China</div>
+    </div>
+    <div class="lm-card s8">
+      <h4>📋 Key Protocols</h4>
+      <div class="lm-item"><span class="dot">▸</span>TCP/IP = Internet Packets</div>
+      <div class="lm-item"><span class="dot">▸</span>SMTP = Email (Port 25)</div>
+      <div class="lm-item"><span class="dot">▸</span>HTTP = Web (Client-Server)</div>
+      <div class="lm-item"><span class="dot">▸</span>FTP = File Transfer</div>
+      <div class="lm-item"><span class="dot">▸</span>TELNET = Remote Control</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 16px;" class="card gold">
+    <div class="card-title"><div class="card-icon icon-gold">🎯</div>Exam में अक्सर पूछे जाने वाले Tricky Points</div>
+    <ul class="dot-list">
+      <li>भारत में Internet पहली बार VSNL ने 1995 में शुरू किया।</li>
+      <li>Bluetooth का नाम Danish King Harald Bluetooth के नाम पर है (Inventor: Haartsen, 1994)।</li>
+      <li>Wi-Fi = Wireless Fidelity (1991) | Li-Fi = Light Fidelity (2011, Harald Haas)</li>
+      <li>SMTP Port = 25 (याद रखें: SMTP = 25 = पच्चीस = "पत्र" से जोड़ें)</li>
+      <li>Fiber Optic में Total Internal Reflection (पूर्ण आन्तरिक परावर्तन) का सिद्धांत काम करता है।</li>
+      <li>Coaxial Cable जमीन के नीचे बिछाई जाती है → Television Network।</li>
+      <li>5G: पहले South Korea ने launch किया (2020)।</li>
+      <li>2G Finland में 1990 में develop हुई → इसीलिए Nokia Finland में है!</li>
+      <li>CDMA में SIM card की जरूरत नहीं होती।</li>
+      <li>Wi-Max = MAN (Metropolitan Area Network) range = 25-50km।</li>
+    </ul>
+  </div>
+</div>
+
+<!-- RESULT POPUP -->
+<div class="popup-overlay" id="result-popup">
+  <div class="popup-box">
+    <div class="popup-emoji" id="popup-emoji">🎯</div>
+    <div class="popup-title" id="popup-title">Result</div>
+    <div class="popup-score" id="popup-score">0</div>
+    <div class="popup-detail" id="popup-detail"></div>
+    <button class="popup-close" onclick="closePopup()">ठीक है, आगे बढ़ो! 💪</button>
+  </div>
+</div>
+
+<script>
+// ============== QUESTIONS DATA ==============
+
+const rjQuestions = [
+  {
+    q: "भारत में पहली बार Internet किस वर्ष शुरू हुआ?",
+    options: ["1992", "1995", "1998", "2000"],
+    ans: 1,
+    exp: "VSNL ने 1995 में भारत में पहली बार Internet service शुरू की।"
+  },
+  {
+    q: "VSNL का पूरा नाम क्या है?",
+    options: ["Videsh Sanchar Nigam Ltd", "Vishwa Sanchar Network Ltd", "Videsh Seva Nigam Ltd", "Virtual Sanchar Nigam Ltd"],
+    ans: 0,
+    exp: "VSNL = Videsh Sanchar Nigam Limited, स्थापना 1986। अब Tata Communication Ltd।"
+  },
+  {
+    q: "BSNL की स्थापना किस वर्ष हुई?",
+    options: ["1986", "1995", "2000", "1997"],
+    ans: 2,
+    exp: "BSNL (Bharat Sanchar Nigam Ltd) की स्थापना वर्ष 2000 में हुई, मुख्यालय New Delhi।"
+  },
+  {
+    q: "TRAI का पूरा नाम क्या है?",
+    options: ["Telecom Regulatory Authority of India", "Telecom Research Authority of India", "Telecom Review Authority India", "Technology Regulatory Authority of India"],
+    ans: 0,
+    exp: "TRAI = Telecom Regulatory Authority of India, स्थापना 1997, New Delhi।"
+  },
+  {
+    q: "Walkie-Talkie किस प्रकार का communication है?",
+    options: ["Simplex", "Half Duplex", "Full Duplex", "Broadcast"],
+    ans: 1,
+    exp: "Walkie-Talkie Half Duplex है – दोनों दिशाओं में data जा सकता है, लेकिन एक समय में केवल एक दिशा में।"
+  },
+  {
+    q: "Radio broadcasting किस प्रकार का data communication है?",
+    options: ["Unicast", "Multicast", "Broadcast", "Simplex"],
+    ans: 2,
+    exp: "Radio broadcasting Broadcast type है (One to All)। यह Simplex mode में काम करता है।"
+  },
+  {
+    q: "Fiber Optic cable में data किस माध्यम से travel करता है?",
+    options: ["Electricity", "Radio Waves", "Light (प्रकाश)", "Sound"],
+    ans: 2,
+    exp: "Fiber Optic में Total Internal Reflection (पूर्ण आन्तरिक परावर्तन) के सिद्धान्त से प्रकाश के माध्यम से data travel करता है।"
+  },
+  {
+    q: "Bluetooth technology का आविष्कार किसने किया?",
+    options: ["Harald Haas", "Haartsen", "Bill Gates", "Tim Berners-Lee"],
+    ans: 1,
+    exp: "Bluetooth का आविष्कार Haartsen ने 1994 में किया। (Harald Haas ने Li-Fi develop किया था।)"
+  },
+  {
+    q: "Wi-Fi का पूरा नाम क्या है?",
+    options: ["Wide Fidelity", "Wireless Fidelity", "Wire Free Internet", "Wireless Fiber"],
+    ans: 1,
+    exp: "Wi-Fi = Wireless Fidelity। इसे 1991 में develop किया गया। यह LAN network के लिए उपयोग होती है।"
+  },
+  {
+    q: "5G Technology सबसे पहले किस देश ने launch की?",
+    options: ["USA", "China", "Japan", "South Korea"],
+    ans: 3,
+    exp: "5G Technology सबसे पहले South Korea (दक्षिण कोरिया) ने 2020 में launch की। 4G भी S. Korea ने 2010 में launch किया था।"
+  },
+  {
+    q: "MTNL का मुख्यालय कहाँ है?",
+    options: ["Mumbai", "Chennai", "Delhi", "Kolkata"],
+    ans: 2,
+    exp: "MTNL (Mahanagar Telephone Nigam Ltd) का मुख्यालय Delhi में है। स्थापना 1986।"
+  },
+  {
+    q: "Coaxial Cable का मुख्य उपयोग किसमें होता है?",
+    options: ["LAN Network", "Television Network", "Mobile Network", "Satellite Communication"],
+    ans: 1,
+    exp: "Coaxial Cable का उपयोग मुख्यतः Television Network में होता है। इसे जमीन के नीचे बिछाया जाता है।"
+  },
+  {
+    q: "Li-Fi technology किसने develop की?",
+    options: ["Haartsen", "Bill Gates", "Harald Haas", "Tim Berners-Lee"],
+    ans: 2,
+    exp: "Li-Fi (Light Fidelity) को Harald Haas ने 2011 में develop किया। यह LED के माध्यम से data भेजती है।"
+  },
+  {
+    q: "HTTP का पूरा नाम क्या है?",
+    options: ["Hyper Text Transfer Protocol", "High Text Transfer Protocol", "Hyper Transfer Text Protocol", "High Transfer Text Protocol"],
+    ans: 0,
+    exp: "HTTP = HyperText Transfer Protocol। यह Client और Server के मध्य connection बनाता है।"
+  },
+  {
+    q: "SMTP किस Port पर काम करता है?",
+    options: ["21", "25", "80", "443"],
+    ans: 1,
+    exp: "SMTP (Simple Mail Transfer Protocol) Port No. 25 पर काम करता है। यह Email भेजने में use होता है।"
+  },
+  {
+    q: "Airtel की स्थापना किस वर्ष हुई?",
+    options: ["1992", "1995", "2000", "2007"],
+    ans: 1,
+    exp: "Airtel की स्थापना 1995 में New Delhi में हुई।"
+  },
+  {
+    q: "Samsung का मुख्यालय कहाँ है?",
+    options: ["Tokyo", "Beijing", "Seoul", "New York"],
+    ans: 2,
+    exp: "Samsung का मुख्यालय Seoul (सियोल), South Korea (दक्षिण कोरिया) में है।"
+  },
+  {
+    q: "2G mobile technology सबसे पहले किस देश में विकसित हुई?",
+    options: ["USA", "Japan", "Finland", "Germany"],
+    ans: 2,
+    exp: "2G technology 1990 में Finland (फिनलैंड) में विकसित हुई। इसीलिए Nokia Finland की कंपनी है।"
+  },
+  {
+    q: "Bluetooth technology किस network का उदाहरण है?",
+    options: ["LAN", "WAN", "MAN", "PAN"],
+    ans: 3,
+    exp: "Bluetooth PAN (Personal Area Network) का उदाहरण है। यह short range (लगभग 10m) के लिए है।"
+  },
+  {
+    q: "Wi-Max किस network type से संबंधित है?",
+    options: ["PAN", "LAN", "MAN", "WAN"],
+    ans: 2,
+    exp: "Wi-Max, MAN (Metropolitan Area Network) से संबंधित है। इसकी range 25-50 km होती है।"
+  },
+  {
+    q: "VSNL का privatization कब हुआ?",
+    options: ["1999", "2000", "2002", "2005"],
+    ans: 2,
+    exp: "VSNL का privatization 2002 में हुआ। अब यह Tata Communication Ltd के नाम से जाना जाता है।"
+  },
+  {
+    q: "Full Duplex communication का सबसे अच्छा उदाहरण है?",
+    options: ["Radio", "Walkie-Talkie", "Mobile Call", "TV Broadcasting"],
+    ans: 2,
+    exp: "Mobile Call Full Duplex का उदाहरण है – दोनों व्यक्ति एक साथ बात कर सकते हैं।"
+  },
+  {
+    q: "Reliance Jio की स्थापना किस वर्ष हुई?",
+    options: ["2000", "2005", "2007", "2010"],
+    ans: 2,
+    exp: "Reliance-Jio की स्थापना 2007 में हुई।"
+  },
+  {
+    q: "TCP/IP का पूरा नाम क्या है?",
+    options: ["Transmission Control Protocol/Internet Protocol", "Transfer Control Protocol/Internet Protocol", "Transmission Computer Protocol/Internet Protocol", "Technology Control Protocol/Internet Protocol"],
+    ans: 0,
+    exp: "TCP/IP = Transmission Control Protocol / Internet Protocol। यह data को छोटे-छोटे packets में transfer करता है।"
+  },
+  {
+    q: "GSM का पूरा नाम क्या है?",
+    options: ["General System for Mobile", "Global System for Mobile", "General Signal for Mobile", "Global Signal for Mobile"],
+    ans: 1,
+    exp: "GSM = Global System for Mobile Communication। यह mobile SIM card technology है।"
+  },
+  {
+    q: "Nokia किस देश की कंपनी है?",
+    options: ["Sweden", "Norway", "Finland", "Denmark"],
+    ans: 2,
+    exp: "Nokia, Finland (फिनलैंड) की कंपनी है। 2G technology भी Finland में 1990 में develop हुई थी।"
+  },
+  {
+    q: "3G mobile technology किस देश ने पहले शुरू की?",
+    options: ["USA", "China", "Japan", "South Korea"],
+    ans: 2,
+    exp: "3G technology पहले Japan ने 2000 में शुरू की।"
+  },
+  {
+    q: "Twisted Pair cable किस network में उपयोग होती है?",
+    options: ["Television Network", "Satellite Network", "LAN (Local Area Network)", "Mobile Network"],
+    ans: 2,
+    exp: "Twisted Pair cable (Ethernet cable) LAN (Local Area Network) में उपयोग होती है।"
+  },
+  {
+    q: "Infrared Wave transmission की frequency range क्या है?",
+    options: ["3kHz – 1GHz", "1GHz – 300GHz", "300GHz – 400GHz", "400GHz – 800GHz"],
+    ans: 2,
+    exp: "Infrared Wave transmission की frequency range 300GHz से 400GHz होती है। TV Remote, Wireless Mouse इसके उदाहरण हैं।"
+  },
+  {
+    q: "BlackBerry किस देश की कंपनी है?",
+    options: ["USA", "UK", "Canada", "Australia"],
+    ans: 2,
+    exp: "BlackBerry, Canada (कनाडा) की कंपनी है।"
+  }
+];
+
+const stateQuestions = [
+  {
+    q: "Simplex communication में data किस दिशा में flow होता है?",
+    options: ["दोनों दिशाओं में एक साथ", "एक दिशा में", "वैकल्पिक दिशाओं में", "इनमें से कोई नहीं"],
+    ans: 1,
+    exp: "Simplex में data केवल एक दिशा में flow होता है। Sender ही भेज सकता है, Receiver नहीं। उदा: Radio।"
+  },
+  {
+    q: "FTP का पूरा नाम क्या है?",
+    options: ["Fast Transfer Protocol", "File Transfer Protocol", "Free Transfer Protocol", "Fiber Transfer Protocol"],
+    ans: 1,
+    exp: "FTP = File Transfer Protocol। यह Computer और Server के बीच files transfer करने के लिए use होता है।"
+  },
+  {
+    q: "किस transmission medium में Total Internal Reflection का सिद्धान्त काम करता है?",
+    options: ["Twisted Pair Cable", "Coaxial Cable", "Fiber Optic Cable", "Radio Wave"],
+    ans: 2,
+    exp: "Fiber Optic Cable में Total Internal Reflection (पूर्ण आन्तरिक परावर्तन) का सिद्धान्त काम करता है।"
+  },
+  {
+    q: "Parallel Communication किसके बीच सबसे अधिक उपयोग होता है?",
+    options: ["Computer और Modem", "Computer और Printer", "Server और Client", "Router और Switch"],
+    ans: 1,
+    exp: "Parallel Communication सबसे अधिक Computer और Printer के बीच उपयोग होती है। यह fast और short distance के लिए है।"
+  },
+  {
+    q: "Microwave transmission की frequency range कितनी है?",
+    options: ["3kHz – 1GHz", "1GHz – 300GHz", "300GHz – 400GHz", "0.1GHz – 0.5GHz"],
+    ans: 1,
+    exp: "Microwave transmission की frequency range 1GHz से 300GHz होती है। यह TV जैसे single direction transmission में use होती है।"
+  },
+  {
+    q: "CDMA का पूरा नाम क्या है?",
+    options: ["Code Division Multiple Access", "Computer Division Multiple Access", "Code Data Multiple Access", "Central Division Mobile Access"],
+    ans: 0,
+    exp: "CDMA = Code Division Multiple Access। यह wireless application technology है।"
+  },
+  {
+    q: "Data communication में 'Protocol' क्या है?",
+    options: ["Data भेजने का hardware", "Communication के नियम/Rules", "Transmission medium", "Receiver device"],
+    ans: 1,
+    exp: "Protocol, Internet में सूचनाओं के आदान-प्रदान के नियमों को कहते हैं।"
+  },
+  {
+    q: "किस connection type में Modem की आवश्यकता नहीं होती?",
+    options: ["Dial Up", "Leased Line", "ISDN Line", "Broadband"],
+    ans: 2,
+    exp: "ISDN Line में Modem की आवश्यकता नहीं होती। यह Dial Up connection का विकसित रूप है।"
+  },
+  {
+    q: "Live Streaming किस type का communication है?",
+    options: ["Unicast", "Multicast", "Broadcast", "Serial"],
+    ans: 1,
+    exp: "Live Streaming Multicast का उदाहरण है (One to Many)। एक sender device द्वारा अनेक receivers को data भेजना।"
+  },
+  {
+    q: "Hot-Spot क्या है?",
+    options: ["एक प्रकार का virus", "Wireless Access Point Technology", "Data storage device", "Internet Protocol"],
+    ans: 1,
+    exp: "Hot-Spot एक Wireless Access Point Technology है।"
+  },
+  {
+    q: "Serial Communication का मुख्य उपयोग कहाँ होता है?",
+    options: ["Short distance, Fast", "Long distance, Slow", "Medium distance, Medium speed", "No distance restriction"],
+    ans: 1,
+    exp: "Serial Communication एक लाइन के माध्यम से पूरे data को transmit करती है। यह लम्बी दूरी के लिए और Slow होती है।"
+  },
+  {
+    q: "Wi-Fi किस network के लिए use होती है?",
+    options: ["PAN", "LAN", "MAN", "WAN"],
+    ans: 1,
+    exp: "Wi-Fi, LAN (Local Area Network) के लिए use होती है। इसकी range लगभग 100 मीटर होती है।"
+  },
+  {
+    q: "TELNET का उपयोग क्या है?",
+    options: ["Email भेजना", "File transfer करना", "Remote computer को control करना", "Web browsing करना"],
+    ans: 2,
+    exp: "TELNET का उपयोग एक computer को दूर बैठकर उस computer को संचालित/control करने के लिए होता है।"
+  },
+  {
+    q: "1G mobile network सबसे पहले किस देश में शुरू हुआ?",
+    options: ["Japan", "UK", "USA", "Germany"],
+    ans: 2,
+    exp: "1G (First Generation) mobile network सबसे पहले 1980 में USA में शुरू हुआ।"
+  },
+  {
+    q: "Bluetooth में एक साथ अधिकतम कितने devices connect हो सकते हैं?",
+    options: ["3", "5", "7", "10"],
+    ans: 2,
+    exp: "Bluetooth में एक साथ अधिकतम 7 devices connect हो सकती हैं।"
+  },
+  {
+    q: "Email एक किस प्रकार का communication है?",
+    options: ["Unicast", "Multicast", "Broadcast", "Half Duplex"],
+    ans: 0,
+    exp: "Email (एक व्यक्ति द्वारा किसी एक को भेजना) Unicast है (One to One communication)।"
+  },
+  {
+    q: "Analog Signal में data किस माध्यम से transfer होता है?",
+    options: ["Binary digits", "Radio Waves", "Light pulses", "Electric pulses"],
+    ans: 1,
+    exp: "Analog Signal में data Radio Wave के माध्यम से transfer होता है।"
+  },
+  {
+    q: "Radio Wave transmission की maximum frequency क्या है?",
+    options: ["300 MHz", "1 GHz", "300 GHz", "400 GHz"],
+    ans: 1,
+    exp: "Radio Wave transmission की range 3kHz से 1GHz होती है। यह long distance communication के लिए use होती है।"
+  },
+  {
+    q: "Coaxial Cable किसमें उपयोग होती है?",
+    options: ["LAN Network में", "Mobile Network में", "Television Network में", "Satellite में"],
+    ans: 2,
+    exp: "Coaxial Cable उच्च आवृत्ति वाले data का स्थानान्तरण करती है। इसे Television Network में use किया जाता है।"
+  },
+  {
+    q: "DSL का पूरा नाम क्या है?",
+    options: ["Digital Subscriber Line", "Data Subscriber Line", "Direct Subscriber Line", "Digital Service Line"],
+    ans: 0,
+    exp: "DSL = Digital Subscriber Line। यह एक प्रकार का broadband connection है जो fast internet देता है।"
+  },
+  {
+    q: "GOPHER किस प्रकार का protocol है?",
+    options: ["Hardware Protocol", "Software Protocol", "Network Protocol", "Security Protocol"],
+    ans: 1,
+    exp: "GOPHER एक Software Protocol है।"
+  },
+  {
+    q: "Data communication में 'Unicast' का अर्थ है?",
+    options: ["One to All", "One to Many", "One to One", "Many to Many"],
+    ans: 2,
+    exp: "Unicast = One to One communication। एक sender द्वारा एक specific receiver को data भेजना।"
+  },
+  {
+    q: "Infrared Transmission का उपयोग होता है?",
+    options: ["Long distance communication में", "TV Remote और Wireless Mouse में", "Mobile calls में", "Satellite communication में"],
+    ans: 1,
+    exp: "Infrared Transmission का उपयोग TV Remote, Wireless Mouse, और LAN में होता है।"
+  },
+  {
+    q: "Motorola का मुख्यालय कहाँ है?",
+    options: ["New York", "Silicon Valley", "Chicago", "Boston"],
+    ans: 2,
+    exp: "Motorola का मुख्यालय Chicago, USA में है।"
+  },
+  {
+    q: "Leased Line connection में क्या होता है?",
+    options: ["Wireless connection", "Dial up जैसा slow connection", "Telephone line द्वारा ISP से permanent connection", "Satellite connection"],
+    ans: 2,
+    exp: "Leased Line connection में Telephone line के द्वारा computer ISP (Internet Service Provider) से permanently जुड़ा रहता है।"
+  },
+  {
+    q: "Broadband connection की विशेषता क्या है?",
+    options: ["Slow internet speed", "केवल voice call", "Fast internet, cable द्वारा", "Wireless only"],
+    ans: 2,
+    exp: "Broadband connection Fast Internet देता है। यह internet को computer तक cable द्वारा पहुँचाता है।"
+  },
+  {
+    q: "4G technology सबसे पहले किस वर्ष और देश में शुरू हुई?",
+    options: ["2010, Japan", "2010, South Korea", "2012, USA", "2008, Finland"],
+    ans: 1,
+    exp: "4G technology सबसे पहले 2010 में South Korea (दक्षिण कोरिया) में शुरू हुई।"
+  },
+  {
+    q: "Guided Medium की मुख्य विशेषता क्या है?",
+    options: ["Data wireless transmit होता है", "Data cable के माध्यम से transmit होता है", "Data satellite से transmit होता है", "Data radio से transmit होता है"],
+    ans: 1,
+    exp: "Guided Medium में data का संचार cable के माध्यम से होता है। यह उच्च गति, सुरक्षित और कम दूरी के लिए है।"
+  },
+  {
+    q: "Vodafone-Idea (Vi) का merger कब हुआ?",
+    options: ["2015", "2016", "2018", "2020"],
+    ans: 2,
+    exp: "Vodafone-India (Vi) का merger 2018 में हुआ।"
+  },
+  {
+    q: "RPC (Remote Procedure Call) में पहला step कौनसा है?",
+    options: ["Decode", "Execute", "Fetch", "Store"],
+    ans: 2,
+    exp: "RPC में steps: Fetch → Decode → Execute → Store। Fetch = Instruction को memory में लाना।"
+  }
+];
+
+// ============== MCQ LOGIC ==============
+
+let rjState = { scores: new Array(30).fill(null), answered: 0 };
+let stState = { scores: new Array(30).fill(null), answered: 0 };
+
+function buildQuestions(questions, containerId, prefix, stateObj) {
+  const container = document.getElementById(containerId);
+  const progressContainer = document.getElementById(prefix + '-progress');
+  
+  // Build progress dots
+  for (let i = 0; i < questions.length; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'p-dot';
+    dot.id = prefix + '-dot-' + i;
+    progressContainer.appendChild(dot);
+  }
+  
+  questions.forEach((q, idx) => {
+    const card = document.createElement('div');
+    card.className = 'question-card' + (prefix === 'rj' ? ' rj-q' : '');
+    
+    const meta = `
+      <div class="question-meta">
+        <span class="q-number">Q.${idx+1}</span>
+        <span class="tag ${prefix === 'rj' ? 'tag-orange' : 'tag-sky'}">${prefix === 'rj' ? '🏜️ RJ Pattern' : '🗺️ State Pattern'}</span>
+      </div>
+    `;
+    
+    const opts = q.options.map((opt, oi) => 
+      `<button class="option-btn" id="${prefix}-q${idx}-o${oi}" onclick="selectAnswer('${prefix}', ${idx}, ${oi})">${String.fromCharCode(65+oi)}. ${opt}</button>`
+    ).join('');
+    
+    card.innerHTML = `
+      ${meta}
+      <div class="q-text">${q.q}</div>
+      <div class="options-grid">${opts}</div>
+      <div class="explanation" id="${prefix}-exp-${idx}">💡 <strong>व्याख्या:</strong> ${q.exp}</div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function selectAnswer(prefix, qIdx, optIdx) {
+  const stateObj = prefix === 'rj' ? rjState : stState;
+  const questions = prefix === 'rj' ? rjQuestions : stateQuestions;
+  
+  // Already answered
+  if (stateObj.scores[qIdx] !== null) return;
+  
+  const q = questions[qIdx];
+  const isCorrect = optIdx === q.ans;
+  
+  // Disable all options for this question
+  for (let i = 0; i < 4; i++) {
+    const btn = document.getElementById(`${prefix}-q${qIdx}-o${i}`);
+    if (btn) btn.disabled = true;
+  }
+  
+  // Mark correct and selected
+  const selectedBtn = document.getElementById(`${prefix}-q${qIdx}-o${optIdx}`);
+  const correctBtn = document.getElementById(`${prefix}-q${qIdx}-o${q.ans}`);
+  
+  if (isCorrect) {
+    selectedBtn.classList.add('correct');
+    stateObj.scores[qIdx] = 1;
+  } else {
+    selectedBtn.classList.add('wrong');
+    correctBtn.classList.add('reveal');
+    stateObj.scores[qIdx] = -1/3;
+  }
+  
+  // Show explanation
+  document.getElementById(`${prefix}-exp-${qIdx}`).classList.add('show');
+  
+  // Update progress dot
+  const dot = document.getElementById(`${prefix}-dot-${qIdx}`);
+  dot.classList.add(isCorrect ? 'answered' : 'wrong-dot');
+  
+  stateObj.answered++;
+  updateScore(prefix);
+}
+
+function updateScore(prefix) {
+  const stateObj = prefix === 'rj' ? rjState : stState;
+  const questions = prefix === 'rj' ? rjQuestions : stateQuestions;
+  
+  let total = stateObj.scores.reduce((a, b) => a + (b || 0), 0);
+  total = Math.round(total * 100) / 100;
+  
+  document.getElementById(`${prefix}-score`).textContent = total > 0 ? '+' + total : total;
+  document.getElementById(`${prefix}-answered`).textContent = `${stateObj.answered}/${questions.length} Attempted`;
+}
+
+function submitAll(prefix) {
+  const stateObj = prefix === 'rj' ? rjState : stState;
+  const questions = prefix === 'rj' ? rjQuestions : stateQuestions;
+  
+  const total = stateObj.scores.length;
+  const attempted = stateObj.answered;
+  const correct = stateObj.scores.filter(s => s === 1).length;
+  const wrong = stateObj.scores.filter(s => s !== null && s !== 1).length;
+  const score = Math.round(stateObj.scores.reduce((a, b) => a + (b || 0), 0) * 100) / 100;
+  const maxScore = total;
+  const pct = Math.round((score / maxScore) * 100);
+  
+  let emoji, title;
+  if (pct >= 80) { emoji = '🏆'; title = 'शानदार! Excellent!'; }
+  else if (pct >= 60) { emoji = '🎯'; title = 'अच्छा! Good Job!'; }
+  else if (pct >= 40) { emoji = '📚'; title = 'और पढ़ो! Keep Going!'; }
+  else { emoji = '💪'; title = 'हार मत! Try Again!'; }
+  
+  document.getElementById('popup-emoji').textContent = emoji;
+  document.getElementById('popup-title').textContent = title;
+  document.getElementById('popup-score').textContent = score > 0 ? '+' + score : score;
+  document.getElementById('popup-detail').innerHTML = `
+    <strong>कुल प्रश्न:</strong> ${total}<br>
+    <strong>Attempted:</strong> ${attempted} | <strong>सही:</strong> ${correct} | <strong>गलत:</strong> ${wrong}<br>
+    <strong>Score:</strong> ${score}/${maxScore} (${pct}%)<br>
+    ${pct >= 60 ? '✅ Selection Level पर हो!' : '📖 Topics फिर से पढ़ो!'}
+  `;
+  document.getElementById('result-popup').classList.add('show');
+}
+
+function closePopup() {
+  document.getElementById('result-popup').classList.remove('show');
+}
+
+// ============== TAB LOGIC ==============
+
+function showTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Initialize MCQs on load
+window.onload = function() {
+  buildQuestions(rjQuestions, 'rj-questions', 'rj', rjState);
+  buildQuestions(stateQuestions, 'st-questions', 'st', stState);
+};
+</script>
+</body>
+</html>
