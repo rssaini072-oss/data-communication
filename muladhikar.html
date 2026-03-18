@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मूल अधिकार | RPSC RAS & PSI Revision</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--saffron:#FF6B00;--gold:#F4C430;--green:#138808;--navy:#1a237e;--crimson:#B71C1C;--teal:#006064;--purple:#4A148C;--bg:#0A0A16;--card:#12122A;--border:#1E1E40;--text:#E8E8F5;--dim:#8888BB;--r:12px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+/* HEADER */
+.header{background:linear-gradient(135deg,#0d0d2b 0%,#1a0a3d 40%,#3d0a0a 100%);padding:14px 16px 0;text-align:center;border-bottom:3px solid var(--gold);position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 15px,rgba(255,255,255,.015) 15px,rgba(255,255,255,.015) 30px);}
+.hbadge{display:inline-flex;gap:8px;align-items:center;background:rgba(244,196,48,.12);border:1px solid var(--gold);border-radius:20px;padding:3px 14px;font-size:11px;color:var(--gold);letter-spacing:1.5px;margin-bottom:6px;font-family:'Rajdhani',sans-serif;}
+.header h1{font-size:clamp(20px,5vw,34px);font-weight:900;background:linear-gradient(90deg,#FF8C00,#FFD700,#FF6B00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hsub{font-size:12px;color:rgba(255,255,255,.6);margin:3px 0 10px;font-family:'Rajdhani',sans-serif;letter-spacing:2px;}
+/* TABS */
+.tabs{display:flex;overflow-x:auto;background:#060612;border-bottom:2px solid var(--border);scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tb{flex-shrink:0;padding:11px 16px;border:none;background:transparent;color:var(--dim);font-family:'Noto Sans Devanagari',sans-serif;font-size:13px;font-weight:600;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
+.tb:hover{color:var(--text);background:rgba(255,107,0,.06);}
+.tb.active{color:var(--saffron);border-bottom-color:var(--saffron);background:rgba(255,107,0,.09);}
+/* MAIN */
+.tab-content{display:none;padding:16px;max-width:1200px;margin:0 auto;animation:fadeIn .3s ease;}
+.tab-content.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+/* 2-COLUMN GRID */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:700px){.grid2{grid-template-columns:1fr;}}
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:14px;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.c-or::before{background:linear-gradient(90deg,var(--saffron),var(--gold));}
+.c-gr::before{background:linear-gradient(90deg,#1B5E20,#4CAF50);}
+.c-bl::before{background:linear-gradient(90deg,var(--navy),#1976D2);}
+.c-re::before{background:linear-gradient(90deg,var(--crimson),#EF5350);}
+.c-pu::before{background:linear-gradient(90deg,var(--purple),#9C27B0);}
+.c-te::before{background:linear-gradient(90deg,var(--teal),#00ACC1);}
+.c-go::before{background:linear-gradient(90deg,#F57F17,var(--gold));}
+.card-title{font-size:15px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.art-badge{background:var(--saffron);color:#000;font-size:11px;font-weight:700;padding:2px 8px;border-radius:5px;font-family:'Rajdhani',sans-serif;white-space:nowrap;}
+.art-badge.gr{background:#4CAF50;}
+.art-badge.bl{background:#1976D2;}
+.art-badge.re{background:var(--crimson);}
+.art-badge.pu{background:var(--purple);}
+.art-badge.te{background:var(--teal);}
+/* MNEMONIC */
+.mnemo{background:rgba(244,196,48,.08);border:1px dashed var(--gold);border-radius:8px;padding:8px 12px;margin-top:10px;font-size:12px;color:var(--gold);}
+.mnemo span{font-weight:700;font-size:13px;}
+/* LISTS */
+ul.clist{list-style:none;padding:0;}
+ul.clist li{padding:4px 0 4px 16px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.04);position:relative;}
+ul.clist li::before{content:'▸';position:absolute;left:0;color:var(--saffron);}
+ul.clist li:last-child{border-bottom:none;}
+/* HIGHLIGHT */
+.hl{background:rgba(255,107,0,.15);border-left:3px solid var(--saffron);padding:6px 10px;border-radius:4px;font-size:12px;margin-top:8px;}
+.hl-gr{background:rgba(76,175,80,.12);border-left-color:#4CAF50;}
+.hl-bl{background:rgba(25,118,210,.12);border-left-color:#1976D2;}
+.hl-re{background:rgba(183,28,28,.15);border-left-color:#EF5350;}
+.hl-pu{background:rgba(74,20,140,.2);border-left-color:#9C27B0;}
+/* TABLES */
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:12px;}
+th{background:rgba(255,107,0,.2);color:var(--gold);padding:7px 10px;text-align:left;border:1px solid var(--border);}
+td{padding:6px 10px;border:1px solid var(--border);vertical-align:top;}
+tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+tr:hover td{background:rgba(255,107,0,.06);}
+/* SECTION HEADERS */
+.sec-head{font-size:18px;font-weight:800;color:var(--gold);margin:20px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:10px;}
+.sec-head::before{content:'';display:block;width:4px;height:22px;background:var(--saffron);border-radius:2px;}
+/* MCQ */
+.mcq-wrap{margin-bottom:16px;}
+.mcq-q{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;position:relative;}
+.mcq-q::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--teal));}
+.q-num{font-size:11px;font-weight:700;color:var(--gold);font-family:'Rajdhani',sans-serif;margin-bottom:6px;}
+.q-text{font-size:13px;font-weight:600;margin-bottom:10px;line-height:1.5;}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+@media(max-width:500px){.opts{grid-template-columns:1fr;}}
+.opt{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:7px;padding:8px 12px;font-size:12px;cursor:pointer;transition:all .2s;text-align:left;color:var(--text);font-family:'Noto Sans Devanagari',sans-serif;}
+.opt:hover{background:rgba(255,107,0,.12);border-color:var(--saffron);}
+.opt.correct{background:rgba(76,175,80,.2)!important;border-color:#4CAF50!important;color:#81C784!important;}
+.opt.wrong{background:rgba(183,28,28,.2)!important;border-color:#EF5350!important;color:#EF9A9A!important;}
+.opt.revealed-correct{background:rgba(76,175,80,.1)!important;border-color:#4CAF50!important;}
+.opt:disabled{cursor:default;}
+.expl{display:none;margin-top:10px;background:rgba(76,175,80,.08);border:1px solid rgba(76,175,80,.3);border-radius:7px;padding:8px 12px;font-size:12px;color:#81C784;line-height:1.5;}
+.expl.show{display:block;}
+/* SCORE BAR */
+.score-bar{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.score-info{font-size:13px;color:var(--dim);}
+.score-num{font-size:24px;font-weight:900;color:var(--gold);font-family:'Rajdhani',sans-serif;}
+.btn-reset{background:linear-gradient(135deg,var(--saffron),var(--gold));color:#000;border:none;padding:8px 16px;border-radius:7px;font-family:'Noto Sans Devanagari',sans-serif;font-size:12px;font-weight:700;cursor:pointer;}
+/* LAST MINUTE */
+.lm-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin-bottom:10px;}
+.lm-title{font-size:13px;font-weight:800;color:var(--gold);margin-bottom:8px;}
+.lm-item{font-size:12px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:8px;}
+.lm-item:last-child{border-bottom:none;}
+.lm-key{color:var(--saffron);font-weight:700;min-width:80px;flex-shrink:0;}
+.super-mnemo{background:linear-gradient(135deg,rgba(244,196,48,.1),rgba(255,107,0,.1));border:2px solid var(--gold);border-radius:var(--r);padding:14px;margin-bottom:14px;}
+.super-mnemo h3{color:var(--gold);font-size:14px;margin-bottom:10px;}
+.mnemo-item{font-size:12px;padding:4px 0;border-bottom:1px solid rgba(244,196,48,.1);}
+.mnemo-item:last-child{border-bottom:none;}
+.mnemo-word{color:#FFD54F;font-weight:800;}
+/* POPUP */
+.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:1000;align-items:center;justify-content:center;}
+.popup-overlay.show{display:flex;}
+.popup{background:#13132B;border:2px solid var(--gold);border-radius:16px;padding:30px;max-width:400px;width:90%;text-align:center;}
+.popup h2{font-size:24px;color:var(--gold);margin-bottom:10px;}
+.popup .final-score{font-size:48px;font-weight:900;font-family:'Rajdhani',sans-serif;}
+.popup .grade{font-size:16px;margin:10px 0;}
+.popup button{background:linear-gradient(135deg,var(--saffron),var(--gold));color:#000;border:none;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;margin-top:14px;font-family:'Noto Sans Devanagari',sans-serif;}
+/* SCROLLBAR */
+::-webkit-scrollbar{width:5px;height:5px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+.chip{display:inline-block;background:rgba(255,107,0,.15);border:1px solid rgba(255,107,0,.3);border-radius:5px;padding:1px 7px;font-size:11px;color:var(--saffron);margin:2px;}
+.chip.gr{background:rgba(76,175,80,.12);border-color:rgba(76,175,80,.3);color:#81C784;}
+.chip.bl{background:rgba(25,118,210,.12);border-color:rgba(25,118,210,.3);color:#64B5F6;}
+.chip.re{background:rgba(183,28,28,.15);border-color:rgba(183,28,28,.3);color:#EF9A9A;}
+.full-card{grid-column:1/-1;}
+.case-item{background:rgba(255,255,255,.03);border-radius:6px;padding:6px 10px;margin-top:6px;font-size:12px;border-left:3px solid var(--gold);}
+.case-item strong{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="hbadge">🏛️ RPSC RAS PRE &nbsp;|&nbsp; PSI 2025 &nbsp;|&nbsp; POLITY</div>
+  <h1>मूल अधिकार — Fundamental Rights</h1>
+  <div class="hsub">भाग-3 &nbsp;|&nbsp; अनुच्छेद 12-35 &nbsp;|&nbsp; रंजीत सर नोट्स से</div>
+  <div class="tabs">
+    <button class="tb active" onclick="showTab('revision')">📚 Revision</button>
+    <button class="tb" onclick="showTab('summary')">📊 Summary Table</button>
+    <button class="tb" onclick="showTab('rjpyq')">🎯 RJ PYQ (25)</button>
+    <button class="tb" onclick="showTab('statepyq')">🗺️ States PYQ (25)</button>
+    <button class="tb" onclick="showTab('lastmin')">⚡ Last Minute</button>
+    <button class="tb" onclick="showTab('ranjeet')">📖 Ranjeet Sir Notes</button>
+  </div>
+</div>
+
+<!-- ==================== TAB 1: REVISION ==================== -->
+<div id="revision" class="tab-content active">
+
+<div class="sec-head">📌 परिचय एवं ऐतिहासिक पृष्ठभूमि</div>
+<div class="grid2">
+
+<div class="card c-or">
+  <div class="card-title"><span class="art-badge">उत्पत्ति</span> मूल अधिकारों की उत्पत्ति</div>
+  <ul class="clist">
+    <li><b>मैग्नाकार्टा 1215</b> — जॉन-I द्वारा इंग्लैंड में (बीजारोपण)</li>
+    <li><b>पिटीशन ऑफ राइट्स — 1628</b></li>
+    <li><b>बिल ऑफ राइट्स — 1689</b></li>
+    <li><b>USA संविधान</b> — 1787-89 फिलाडेल्फिया सम्मेलन; 1791 में FR शामिल</li>
+    <li>USA के संविधान में सर्वप्रथम Fundamental Rights शामिल</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "MPBBU" — Magna, Petition, Bill, Britain, USA</div>
+</div>
+
+<div class="card c-bl">
+  <div class="card-title"><span class="art-badge bl">माँग</span> भारत में मूल अधिकारों की माँग</div>
+  <ul class="clist">
+    <li>① <b>1895</b> — बाल गंगाधर तिलक</li>
+    <li>② <b>1925</b> — एनी बेसेंट (Commonwealth of India)</li>
+    <li>③ <b>1928</b> — नेहरू रिपोर्ट</li>
+    <li>④ <b>1931</b> — कराची अधिवेशन → सरदार पटेल</li>
+    <li>⑤ <b>1931</b> — दूसरा गोलमेज सम्मेलन → महात्मा गांधी</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "तिलक बेसेंट नेहरू करें गोल" → 1895, 25, 28, 31, 31</div>
+</div>
+
+<div class="card c-gr">
+  <div class="card-title"><span class="art-badge gr">समिति</span> संविधान सभा में समिति</div>
+  <ul class="clist">
+    <li><b>मौलिक अधिकार समिति</b> → सरदार वल्लभभाई पटेल (अध्यक्ष)</li>
+    <li><b>मूल अधिकार उप समिति</b> → J.B. कृपलानी (अध्यक्ष)</li>
+    <li>मूल अधिकार: <b>भाग-3, अनु. 12-35</b></li>
+    <li>प्रावधान <b>USA के संविधान</b> से लिया गया ⭐</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "पटेल ने पाया — कृपलानी ने बनाया"</div>
+</div>
+
+<div class="card c-pu">
+  <div class="card-title"><span class="art-badge pu">तुलना</span> मानव अधिकार vs मूल अधिकार</div>
+  <table>
+    <tr><th>मानव अधिकार</th><th>मूल अधिकार</th></tr>
+    <tr><td>इनकी अवधारणा व्यापक है</td><td>संकुचित अवधारणा</td></tr>
+    <tr><td>देश की सीमा के भीतर बंधे नहीं</td><td>देश की सीमा के भीतर</td></tr>
+    <tr><td>10 Dec. 1948 → UNO</td><td>केवल भाग-3</td></tr>
+    <tr><td>India → NHRC-1993</td><td>वाद योग्य, गारंटीशुदा</td></tr>
+  </table>
+  <div class="mnemo"><span>🧠 Trick:</span> "मानव Universal, मूल Local"</div>
+</div>
+
+<div class="card c-or full-card">
+  <div class="card-title"><span class="art-badge">विशेषताएँ</span> मूल अधिकारों की विशेषताएँ (Applications of Fundamental Rights)</div>
+  <div class="grid2">
+    <ul class="clist">
+      <li>① ये <b>नकारात्मक प्रकृति</b> के हैं (राज्य को रोकते हैं)</li>
+      <li>② ये <b>अत्याज्य नहीं</b> हैं — इनको त्यागा नहीं जा सकता</li>
+      <li>③ ये <b>वाद योग्य</b> हैं — न्यायालय द्वारा प्रवर्तनीय [Justiciable]</li>
+    </ul>
+    <ul class="clist">
+      <li>④ इन्हें <b>गारंटी प्रदान</b> की गई है</li>
+      <li>⑤ ये <b>आत्यांतिक नहीं</b> [Absolute नहीं] — सीमित हैं, पूर्ण नहीं</li>
+      <li>⑥ केवल <b>आपातकाल</b> में समाप्त किए जाते हैं</li>
+    </ul>
+  </div>
+  <div class="mnemo"><span>🧠 Super Trick:</span> "नकात्याजवागासी" → नका+त्या+ज+वा+गा+सी = नकारात्मक, अत्याज्य नहीं, जस्टिसेबल, वाद योग्य, गारंटी, सीमित</div>
+</div>
+</div>
+
+<div class="sec-head">📜 अनुच्छेद 12-13: राज्य की परिभाषा एवं असंगत विधियाँ</div>
+<div class="grid2">
+
+<div class="card c-bl">
+  <div class="card-title"><span class="art-badge bl">अनु. 12</span> राज्य की परिभाषा (Definition of State)</div>
+  <ul class="clist">
+    <li><b>केंद्र सरकार व संसद</b></li>
+    <li><b>राज्य सरकार व विधानमंडल</b></li>
+    <li><b>स्थानीय निकाय</b> → पंचायत, नगरपालिका, ट्रस्ट बोर्ड, जिला बोर्ड</li>
+    <li><b>अन्य प्राधिकरण</b> → LIC, BHEL, ONGC, SAIL (सरकारी स्वामित्व)</li>
+    <li>⭐ <b>न्यायपालिका</b> राज्य की परिभाषा में <b>नहीं</b> आती</li>
+  </ul>
+  <div class="hl hl-re">⚠️ अनु.12 की परिभाषा केवल भाग-3 में लागू है।</div>
+  <div class="mnemo"><span>🧠 Trick:</span> "केंद्र-राज्य-लोकल-अन्य" (4 तत्व) — न्यायपालिका बाहर</div>
+</div>
+
+<div class="card c-gr">
+  <div class="card-title"><span class="art-badge gr">अनु. 13</span> मूल अधिकारों से असंगत विधियाँ</div>
+  <ul class="clist">
+    <li><b>अनु. 13(1)</b> — संविधान लागू होने से पूर्व की विधियाँ [26 जन. 1950] → <b>आच्छादन का सिद्धांत (Doctrine of Eclipse)</b></li>
+    <li><b>अनु. 13(2)</b> — राज्य ऐसी कोई विधि नहीं बनाएगा जो मूल अधिकारों को कम करे → <b>पृथक्करण का सिद्धांत</b></li>
+    <li><b>अनु. 13(3)</b> — विधि में शामिल: आदेश, अध्यादेश, अधिसूचना, नियम, विनियम, उपनियम, रूढ़ि, परंपरा</li>
+    <li><b>अनु. 13(4)</b> → 25वाँ संविधान संशोधन 1971 — अनु.368 के अंतर्गत संशोधन विधि की परिभाषा में शामिल नहीं → मूल अधिकारों में संशोधन हो सकता है</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "पुरानी=Eclipse, नई=Severability, संशोधन=अलग"</div>
+</div>
+</div>
+
+<div class="sec-head">⚖️ समानता का अधिकार — अनु. 14-18 (Right to Equality)</div>
+<div class="grid2">
+
+<div class="card c-or">
+  <div class="card-title"><span class="art-badge">अनु. 14</span> विधि के समक्ष समानता</div>
+  <div class="grid2">
+    <div>
+      <div class="hl hl-bl"><b>Equality before Law (ब्रिटेन)</b><br>• सभी के साथ समान व्यवहार<br>• सभी के लिए एक जैसा कानून<br>• A.V. डायसी द्वारा संकल्पना<br>• <b>नकारात्मक</b> संकल्पना</div>
+    </div>
+    <div>
+      <div class="hl hl-gr"><b>Equal Protection of Law (USA)</b><br>• समान लोगों से समान व्यवहार<br>• असमान से असमान व्यवहार<br>• भारत में इसे भी अपनाया गया<br>• <b>सकारात्मक</b> संकल्पना</div>
+    </div>
+  </div>
+  <div class="hl hl-re" style="margin-top:8px;"><b>अनु.14 के तहत विशेषाधिकार:</b> अनु.361 (राष्ट्रपति/राज्यपाल), अनु.361A (मीडिया), अनु.105 (सांसद), अनु.194 (विधायक), राजदूत/UNO के प्रतिनिधि</div>
+  <div class="mnemo"><span>🧠 Trick:</span> "ब्रिटेन=नकारात्मक-डायसी, USA=सकारात्मक, भारत=दोनों"</div>
+</div>
+
+<div class="card c-bl">
+  <div class="card-title"><span class="art-badge bl">अनु. 15</span> भेदभाव का निषेध</div>
+  <ul class="clist">
+    <li><b>15(1)</b> — राज्य, नागरिकों के साथ धर्म, मूलवंश, जाति, लिंग, जन्म स्थान पर भेदभाव नहीं करेगा (केवल राज्य के विरुद्ध)</li>
+    <li><b>15(2)</b> — दुकान, होटल, सार्वजनिक स्थानों में भेदभाव नहीं (राज्य + नागरिक दोनों के विरुद्ध)</li>
+    <li><b>15(3)</b> — महिला/बच्चों के लिए विशेष प्रावधान (मूल संविधान से)</li>
+    <li><b>15(4)</b> — OBC, SC, ST के लिए विशेष उपाय → <b>1st संविधान संशोधन 1951</b> (चम्पकम दोराई राजन केस)</li>
+    <li><b>15(5)</b> — OBC, SC, ST को शिक्षा में छूट → <b>93वाँ संशोधन 2005</b></li>
+    <li><b>15(6)</b> — EWS को 10% आरक्षण → <b>103वाँ संशोधन 2019</b></li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "धमूजालिज" = धर्म, मूलवंश, जाति, लिंग, जन्मस्थान — 5 आधार</div>
+</div>
+
+<div class="card c-gr">
+  <div class="card-title"><span class="art-badge gr">अनु. 16</span> लोक नियोजन में अवसर की समानता</div>
+  <ul class="clist">
+    <li><b>16(1)</b> — नियुक्ति/रोजगार में अवसर की समानता</li>
+    <li><b>16(2)</b> — धर्म, मूलवंश, जाति, लिंग, उद्भव, जन्मस्थान, निवास पर भेदभाव नहीं</li>
+    <li><b>16(3)</b> — निवास आधार पर विशेष उपाय — केवल <b>संसद</b> कानून बनाएगी</li>
+    <li><b>16(4)</b> — SC/ST/OBC को आरक्षण</li>
+    <li><b>16(4A)</b> — <b>77वाँ संशोधन 1995</b> → SC/ST को पदोन्नति में आरक्षण</li>
+    <li><b>16(4B)</b> — <b>81वाँ संशोधन 2000</b> → कैरी फॉरवर्ड नियम (50% से अधिक नहीं)</li>
+    <li><b>16(5)</b> — धार्मिक संस्था के कार्यों के लिए धर्म विशेष की नियुक्ति</li>
+    <li><b>16(6)</b> — <b>103वाँ संशोधन 2019</b> → EWS 10% आरक्षण (2022 में SC ने 3:2 से वैध माना)</li>
+  </ul>
+  <div class="hl hl-or" style="border-left-color:var(--gold);">
+    <b>🔥 आरक्षण तुलना:</b><br>
+    राजस्थान: SC-16%, ST-12%, OBC-21%, EWS-10%, MBC-5% = <b>कुल 64%</b><br>
+    केंद्र: SC-15%, ST-7.5%, OBC-27%, EWS-10% = <b>कुल 59.5%</b>
+  </div>
+  <div class="mnemo"><span>🧠 Trick:</span> "16(4A)=77वाँ, 16(4B)=81वाँ, 16(6)=103वाँ"</div>
+</div>
+
+<div class="card c-pu">
+  <div class="card-title"><span class="art-badge pu">मंडल केस</span> इंदिरा साहनी वाद 1992 (मंडल वाद)</div>
+  <ul class="clist">
+    <li>① OBC को 27% आरक्षण <b>वैध</b> है (सामाजिक व शैक्षणिक पिछड़ापन)</li>
+    <li>② आर्थिक आधार पर 10% आरक्षण <b>अवैध</b> (बाद में 103वें संशोधन से वैध)</li>
+    <li>③ आरक्षण 50% से अधिक नहीं होना चाहिए (विशेष परिस्थितियों में बढ़ सकता है)</li>
+    <li>④ OBC में <b>क्रीमीलेयर</b> लागू होना चाहिए</li>
+    <li>⑤ पदोन्नति में आरक्षण नहीं होना चाहिए</li>
+  </ul>
+  <div class="case-item"><strong>पिछड़ा वर्ग आयोग:</strong> 1st → 1953 काका कालेलकर (असफल) | 2nd → 1979 बी.पी. मंडल आयोग → VP Singh ने 1989-90 में OBC को 27% लागू किया</div>
+  <div class="mnemo"><span>🧠 Trick:</span> "50% से ज्यादा नहीं, क्रीमीलेयर हटाओ, पदोन्नति में नहीं"</div>
+</div>
+
+<div class="card c-or">
+  <div class="card-title"><span class="art-badge">अनु. 17</span> अस्पृश्यता का अंत</div>
+  <ul class="clist">
+    <li>छुआछूत का अंत — विधि बनाने का अधिकार <b>संसद</b> के पास</li>
+    <li><b>1955</b> → अस्पृश्यता अपराध अधिनियम (नाम परिवर्तन)</li>
+    <li><b>1976</b> → Civil अधिकार संरक्षण Act</li>
+    <li><b>1989</b> → SC/ST संरक्षण अधिनियम (Atrocities Act)</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "55-76-89 — तीन कानून छुआछूत हटाने के"</div>
+</div>
+
+<div class="card c-re">
+  <div class="card-title"><span class="art-badge re">अनु. 18</span> उपाधियों का अंत</div>
+  <ul class="clist">
+    <li><b>18(1)</b> — शिक्षा व सेना को छोड़कर कोई भी उपाधि धारण नहीं</li>
+    <li><b>18(2)</b> — कोई भारतीय नागरिक विदेशी उपाधि धारण नहीं कर सकता</li>
+    <li><b>18(3)</b> — विदेशी नागरिक, भारत में लाभ के पद पर हो तो <b>राष्ट्रपति की सहमति</b> के बिना उपाधि नहीं</li>
+    <li><b>18(4)</b> — भारत में लाभ के पद पर विदेशी → राष्ट्रपति की अनुमति बिना कोई उपलब्धि नहीं</li>
+    <li>⭐ 1954 → भारत सरकार ने <b>भारत रत्न, पद्म विभूषण, पद्म भूषण, पद्म श्री</b> की शुरुआत</li>
+    <li>⭐ 1977 → जनता सरकार ने बंद किया; 1980 → कांग्रेस ने फिर शुरू</li>
+    <li><b>बालाजी राघवन वाद 1996</b> → उपाधि और पुरस्कार अलग-अलग हैं</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "शिक्षा-सेना = OK, बाकी सब = NO; भारतरत्न = पुरस्कार, उपाधि नहीं"</div>
+</div>
+
+</div>
+
+<div class="sec-head">🗣️ स्वतंत्रता का अधिकार — अनु. 19-22</div>
+<div class="grid2">
+
+<div class="card c-or">
+  <div class="card-title"><span class="art-badge">अनु. 19</span> 6 स्वतंत्रताएँ (केवल भारतीय नागरिकों को)</div>
+  <table>
+    <tr><th>उपखंड</th><th>स्वतंत्रता</th><th>प्रतिबंध (अनु.)</th></tr>
+    <tr><td>19(1)(a)</td><td>वाक् एवं अभिव्यक्ति</td><td>19(2) — 8 आधार</td></tr>
+    <tr><td>19(1)(b)</td><td>शांतिपूर्ण सम्मेलन</td><td>19(3)</td></tr>
+    <tr><td>19(1)(c)</td><td>संघ/संगम/सहकारी समिति बनाना</td><td>19(4)</td></tr>
+    <tr><td>19(1)(d)</td><td>भारत में अबाध भ्रमण</td><td>19(5)</td></tr>
+    <tr><td>19(1)(e)</td><td>निवास/बसने का अधिकार</td><td>19(5)</td></tr>
+    <tr><td>19(1)(g)</td><td>व्यवसाय/वृत्ति/आजीविका</td><td>19(6)</td></tr>
+  </table>
+  <div class="hl hl-re"><b>19(1)(f) — सम्पत्ति का अधिकार</b> → <b>44वाँ संशोधन 1978</b> से हटाया गया (अब अनु.300A)</div>
+  <div class="hl"><b>19(1)(c)</b> में सहकारी समिति → <b>97वाँ संशोधन 2011</b> से जोड़ा</div>
+  <div class="mnemo"><span>🧠 Trick:</span> "वाश-संघ-भ्रमण-निवास-व्यापार" = 6 (f हटी)</div>
+</div>
+
+<div class="card c-bl">
+  <div class="card-title"><span class="art-badge bl">अनु. 19(2)</span> वाक् स्वतंत्रता पर प्रतिबंध के 8 आधार</div>
+  <ul class="clist">
+    <li>① राज्य की प्रभुता एवं अखंडता</li>
+    <li>② राज्य की सुरक्षा</li>
+    <li>③ विदेशी राज्यों से मैत्रीपूर्ण संबंध</li>
+    <li>④ लोक व्यवस्था</li>
+    <li>⑤ अपराचार व नैतिकता</li>
+    <li>⑥ मानहानि</li>
+    <li>⑦ न्यायिक अवमानन</li>
+    <li>⑧ न्यायालय की अवमानना</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "प्रसु-विलो-अनमा-न्याय" = प्रभुता, सुरक्षा, विदेश, लोकव्यवस्था, अपराचार, नैतिकता, मानहानि, न्यायालय</div>
+</div>
+
+<div class="card c-re">
+  <div class="card-title"><span class="art-badge re">अनु. 20</span> अपराध के लिए दोषसिद्धि से संरक्षण</div>
+  <ul class="clist">
+    <li><b>20(1)</b> — <b>पूर्वलक्षी कानून से संरक्षण</b> (Ex-post facto law) — केवल आपराधिक मामलों में, दीवानी में नहीं</li>
+    <li><b>20(2)</b> — <b>दोहरे दंड से संरक्षण</b> — एक अपराध के लिए एक बार ही दंड (Double Jeopardy)</li>
+    <li><b>20(3)</b> — <b>स्वयं के विरुद्ध साक्ष्य</b> देने के लिए बाध्य नहीं (Self-incrimination)</li>
+  </ul>
+  <div class="hl hl-re">⭐ अनु. 20 आपातकाल में भी <b>निलंबित नहीं</b> हो सकता (अनु.21 के साथ)</div>
+  <div class="mnemo"><span>🧠 Trick:</span> "पूर्व-दोहरा-स्वयं" = 20(1), 20(2), 20(3)</div>
+</div>
+
+<div class="card c-gr">
+  <div class="card-title"><span class="art-badge gr">अनु. 21</span> प्राण एवं दैहिक स्वतंत्रता का अधिकार</div>
+  <ul class="clist">
+    <li><b>प्राण</b> → जीवन जीने का अधिकार (शरीर की सुरक्षा)</li>
+    <li><b>दैहिक</b> → व्यक्तिगत स्वतंत्रता (मन की स्वतंत्रता)</li>
+    <li><b>A.K. गोपालन केस 1950</b> → संकीर्ण व्याख्या (पुलिस ने गिरफ्तार)</li>
+    <li><b>मेनका गांधी वाद 1978</b> → उदारवादी व्याख्या — गरिमामय जीवन का अधिकार</li>
+    <li>प्राकृतिक न्याय का सिद्धांत: उचित सुनवाई + अपराध-दंड संतुलन + उचित अधिकारी</li>
+  </ul>
+  <div class="hl hl-gr">
+    <b>अनु.21 के तहत अन्य अधिकार:</b><br>
+    • विदेश में घूमने का अधिकार (मेनका गांधी वाद)<br>
+    • स्वच्छ पर्यावरण का अधिकार (M.C. मेहता वाद)<br>
+    • कार्यस्थल पर यौन उत्पीड़न से संरक्षण (विशाखा गाइडलाइन)<br>
+    • जीवन जीने के अधिकार में मृत्यु का अधिकार नहीं (ज्ञान कौर वाद)<br>
+    • निजता का अधिकार — Right to Privacy (K. पुट्टस्वामी वाद)<br>
+    • शिक्षा का अधिकार (मोहिनी जैन, उन्नीकृष्णन केस)
+  </div>
+  <div class="mnemo"><span>🧠 Trick:</span> "गोपालन=संकीर्ण, मेनका=उदार; 19+21 = संविधान की आत्मिक संरचना"</div>
+</div>
+
+<div class="card c-te">
+  <div class="card-title"><span class="art-badge te">अनु. 21A</span> शिक्षा का अधिकार (RTE)</div>
+  <ul class="clist">
+    <li>6-14 वर्ष के बच्चों को <b>अनिवार्य एवं निःशुल्क शिक्षा</b> का अधिकार</li>
+    <li><b>86वाँ संविधान संशोधन 2002</b> से जोड़ा गया</li>
+    <li>RTE अधिनियम 2009 → <b>1 अप्रैल 2010</b> से लागू</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "86वाँ=2002, RTE=2009, लागू=2010; 6-14 वर्ष"</div>
+</div>
+
+<div class="card c-pu">
+  <div class="card-title"><span class="art-badge pu">अनु. 22</span> मनमानी गिरफ्तारी से संरक्षण</div>
+  <ul class="clist">
+    <li><b>22(1)</b> — गिरफ्तारी का कारण एवं आधार जानने का अधिकार</li>
+    <li><b>22(2)</b> — अपने पसंद का वकील चुनने का अधिकार</li>
+    <li><b>22(3)</b> — गिरफ्तार व्यक्ति को <b>24 घंटे</b> के भीतर मजिस्ट्रेट के समक्ष पेश करना होगा (यात्रा व अवकाश का समय शामिल नहीं)</li>
+    <li><b>22(3)</b> — 22(1) और 22(2) शत्रु देश के नागरिक और निवारक निरोध अधिनियम के तहत गिरफ्तार व्यक्ति को नहीं मिलेगा</li>
+    <li><b>22(4)-22(7)</b> — निवारक निरोध Act के तहत गिरफ्तार व्यक्ति को अधिकतम 3 माह जेल में रख सकते हैं → सलाहकार बोर्ड (High Court के जज)</li>
+  </ul>
+  <div class="hl hl-re"><b>दंडात्मक निरोध</b> — अपराध के बाद दंड (अपराध सिद्ध) vs <b>निवारक निरोध</b> — अपराध होने की आशंका पर गिरफ्तार; <b>निवारक निरोध = समवर्ती सूची</b></div>
+  <div class="mnemo"><span>🧠 Trick:</span> "24 घंटे = मजिस्ट्रेट; 3 माह = निवारक निरोध सीमा"</div>
+</div>
+
+</div>
+
+<div class="sec-head">🚫 शोषण के विरुद्ध अधिकार — अनु. 23-24</div>
+<div class="grid2">
+
+<div class="card c-re">
+  <div class="card-title"><span class="art-badge re">अनु. 23</span> मानव दुर्व्यापार, बलात्श्रम व बेगार का निषेध</div>
+  <ul class="clist">
+    <li><b>मानव दुर्व्यापार</b> → मानवीय अंगों का क्रय-विक्रय, महिला व बच्चों का क्रय-विक्रय, दास प्रथा</li>
+    <li><b>बलात्श्रम</b> → अपनी इच्छा के विरुद्ध काम करवाना (न्यूनतम वेतन से कम)</li>
+    <li><b>बेगार प्रथा</b> → बिना वेतन के कार्य करवाना</li>
+    <li><b>23(2)</b> — अपवाद: राज्य सार्वजनिक उद्देश्य के लिए अनिवार्य सेवा ले सकता है (धर्म, मूलवंश, जाति, वर्ग के आधार पर भेदभाव नहीं)</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "मान-बलात-बेगार" तीन निषेध, अपवाद = सार्वजनिक उद्देश्य</div>
+</div>
+
+<div class="card c-bl">
+  <div class="card-title"><span class="art-badge bl">अनु. 24</span> बाल श्रम निषेध</div>
+  <ul class="clist">
+    <li><b>14 वर्ष से कम</b> उम्र के बच्चों को खदान, कारखाना, जोखिम वाले काम में नहीं करवाया जाएगा</li>
+    <li>⭐ घरेलू कार्यों में बच्चे, माता-पिता की सहायता कर सकता है</li>
+    <li><b>1986</b> → बाल श्रम (प्रतिषेध व विनियमन) Act 1986</li>
+    <li><b>2016</b> → बाल एवं किशोर श्रम (प्रतिषेध व विनियमन) Act 1986 का संशोधन</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "14 से कम = खदान-कारखाना नहीं; घरेलू = OK"</div>
+</div>
+</div>
+
+<div class="sec-head">🕌 धार्मिक स्वतंत्रता का अधिकार — अनु. 25-28</div>
+<div class="grid2">
+
+<div class="card c-or">
+  <div class="card-title"><span class="art-badge">अनु. 25-28</span> धार्मिक स्वतंत्रता का अधिकार</div>
+  <table>
+    <tr><th>अनुच्छेद</th><th>विषय</th></tr>
+    <tr><td><b>25(1)</b></td><td>सभी व्यक्तियों को धर्म मानने, आचरण, प्रचार की स्वतंत्रता (सापेक्ष — लोकव्यवस्था, स्वास्थ्य, सदाचार पर प्रतिबंध)</td></tr>
+    <tr><td><b>25(2)</b></td><td>राज्य धर्म की पंथनिरपेक्ष गतिविधियाँ नियंत्रित कर सकता है</td></tr>
+    <tr><td><b>26</b></td><td>धार्मिक कार्यों में प्रबंधन की स्वतंत्रता + संस्था की स्थापना</td></tr>
+    <tr><td><b>27</b></td><td>किसी धर्म के प्रोत्साहन पर Tax नहीं लगाया जाएगा</td></tr>
+    <tr><td><b>28(1)</b></td><td>राज्य द्वारा पूर्ण वित्त पोषित संस्थानों में धार्मिक शिक्षा नहीं</td></tr>
+    <tr><td><b>28(2)</b></td><td>किसी ट्रस्ट द्वारा संचालित संस्थानों में धार्मिक शिक्षा दी जा सकती है (मदरसा)</td></tr>
+    <tr><td><b>28(3)</b></td><td>राज्य द्वारा मान्यता प्राप्त संस्थानों में धार्मिक शिक्षा दी जा सकती है लेकिन सहमति अनिवार्य</td></tr>
+  </table>
+  <div class="case-item"><strong>स्टेनिसलास वाद 1977:</strong> धर्म का प्रचार = अधिकार, लेकिन धर्मांतरण (लोभ, लालच, छल से) = असंवैधानिक</div>
+  <div class="case-item"><strong>स्पष्टीकरण:</strong> हिंदू धर्म में सिख, बौद्ध, जैन धर्म शामिल; सिख = कृपाण धारण = धार्मिक स्वतंत्रता</div>
+  <div class="mnemo"><span>🧠 Trick:</span> "25=मानने-आचरण-प्रचार, 26=प्रबंधन, 27=Tax नहीं, 28=शिक्षा संस्था"</div>
+</div>
+
+<div class="card c-gr">
+  <div class="card-title"><span class="art-badge gr">भारत की पंथनिरपेक्षता</span></div>
+  <div class="grid2">
+    <div>
+      <div class="hl hl-bl"><b>धर्म का कार्य:</b><br>• व्यक्ति का आत्माध्यात्मिक उत्थान<br>• ईश्वर और व्यक्ति के मध्य कोई हस्तक्षेप नहीं</div>
+    </div>
+    <div>
+      <div class="hl hl-gr"><b>राज्य का कार्य:</b><br>• व्यक्ति का भौतिक उत्थान (शिक्षा, स्वास्थ्य, रोजगार, पेंशन)<br>• राज्य का कोई धर्म नहीं</div>
+    </div>
+  </div>
+  <div class="mnemo"><span>🧠 Trick:</span> "धर्म=आत्मा, राज्य=शरीर — दोनों अलग"</div>
+</div>
+</div>
+
+<div class="sec-head">📖 संस्कृति एवं शिक्षा का अधिकार — अनु. 29-30</div>
+<div class="grid2">
+
+<div class="card c-te">
+  <div class="card-title"><span class="art-badge te">अनु. 29-30</span> संस्कृति एवं शिक्षा का अधिकार</div>
+  <ul class="clist">
+    <li><b>29(1)</b> — नागरिकों के किन्हीं वर्गों को अपनी भाषा, लिपि, संस्कृति बनाए रखने का अधिकार</li>
+    <li><b>29(2)</b> — राज्य द्वारा वित्त पोषित शिक्षण संस्थानों में प्रवेश में राज्य केवल धर्म, मूलवंश, जाति, भाषा के आधार पर वंचित नहीं करेगा</li>
+    <li><b>30(1)</b> — धार्मिक व भाषायी माध्यम पर अल्पसंख्यकों को अपनी रुचि की शिक्षण संस्था स्थापित व संचालित करने का अधिकार (Ex: मदरसा)</li>
+    <li><b>30(2)</b> — राज्य, अल्पसंख्यकों के शैक्षाणिक संस्थानों को वित्त पोषित कर सकता है</li>
+    <li>⭐ भारतीय संविधान में अल्पसंख्यक शब्द को परिभाषित नहीं किया गया</li>
+    <li><b>TMA पाई फाउंडेशन वाद</b> → भारत में अल्पसंख्यकता दो आधार पर: भाषा + धर्म</li>
+    <li><b>1992</b> → संसदीय विधि द्वारा अल्पसंख्यक आयोग: मुस्लिम, सिख, बौद्ध, ईसाई, पारसी; <b>जैन → 2014</b></li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "29=भाषा-लिपि-संस्कृति; 30=संस्था बनाने का अधिकार; अल्पसंख्यक = 6 समुदाय (1992+जैन2014)"</div>
+</div>
+
+<div class="card c-pu">
+  <div class="card-title"><span class="art-badge pu">अनु. 32 vs 226</span> संवैधानिक उपचारों का अधिकार</div>
+  <table>
+    <tr><th>अनु. 32 (सर्वोच्च न्यायालय)</th><th>अनु. 226 (उच्च न्यायालय)</th></tr>
+    <tr><td>केवल मूल अधिकारों की रक्षा</td><td>मूल अधिकार + अन्य कानूनी अधिकार</td></tr>
+    <tr><td>क्षेत्र सीमित</td><td>क्षेत्र व्यापक</td></tr>
+    <tr><td>स्वयं एक मूल अधिकार</td><td>मूल अधिकार नहीं</td></tr>
+    <tr><td>Dr. Ambedkar = "संविधान की आत्मा"</td><td>—</td></tr>
+  </table>
+  <div class="hl hl-gr" style="margin-top:8px;"><b>5 रिट:</b> बंदी प्रत्यक्षीकरण, परमादेश, प्रतिषेध, उत्प्रेषण, अधिकार पृच्छा</div>
+  <div class="mnemo"><span>🧠 Trick:</span> "बं-पर-प्र-उत्प-अधि" = 5 रिट; 32=आत्मा, 226=व्यापक</div>
+</div>
+</div>
+
+</div>
+<!-- END REVISION TAB -->
+
+<!-- ==================== TAB 2: SUMMARY TABLE ==================== -->
+<div id="summary" class="tab-content">
+
+<div class="sec-head">📊 मास्टर टेबल — मूल अधिकार (भाग-3, अनु.12-35)</div>
+
+<div class="card c-or">
+  <div class="card-title">🗂️ 6 मूल अधिकारों की Master Table</div>
+  <table>
+    <tr><th>क्र.</th><th>अधिकार</th><th>अनुच्छेद</th><th>विशेष बिंदु</th></tr>
+    <tr><td>1</td><td><b>समानता का अधिकार</b></td><td>14-18</td><td>USA (Equal Protection) + ब्रिटेन (Equality before Law)</td></tr>
+    <tr><td>2</td><td><b>स्वतंत्रता का अधिकार</b></td><td>19-22</td><td>6 स्वतंत्रताएँ; 19(1)(f) हटाई गई 44वें संशोधन से</td></tr>
+    <tr><td>3</td><td><b>शोषण के विरुद्ध</b></td><td>23-24</td><td>बेगार+मानव दुर्व्यापार+बाल श्रम निषेध</td></tr>
+    <tr><td>4</td><td><b>धार्मिक स्वतंत्रता</b></td><td>25-28</td><td>मानने+आचरण+प्रचार (अनु.25) — सापेक्ष</td></tr>
+    <tr><td>5</td><td><b>संस्कृति व शिक्षा</b></td><td>29-30</td><td>अल्पसंख्यकों के लिए — 6 समुदाय</td></tr>
+    <tr><td>6</td><td><b>संवैधानिक उपचार</b></td><td>32</td><td>Dr. Ambedkar = "संविधान की आत्मा", 5 रिट</td></tr>
+  </table>
+  <div class="hl hl-re">⭐ संपत्ति का अधिकार (अनु.19(f)) — 44वें संशोधन 1978 से हटाया → अब अनु.300A (कानूनी अधिकार)</div>
+</div>
+
+<div class="card c-bl">
+  <div class="card-title">📅 महत्वपूर्ण संविधान संशोधन — Quick Reference</div>
+  <table>
+    <tr><th>संशोधन</th><th>वर्ष</th><th>संबंधित अनु.</th><th>विषय</th></tr>
+    <tr><td>1वाँ</td><td>1951</td><td>15(4)</td><td>OBC/SC/ST के लिए शिक्षा में विशेष प्रावधान (चम्पकम दोराई केस)</td></tr>
+    <tr><td>44वाँ</td><td>1978</td><td>19(1)(f)</td><td>सम्पत्ति का अधिकार हटाया → अनु.300A</td></tr>
+    <tr><td>77वाँ</td><td>1995</td><td>16(4A)</td><td>SC/ST को पदोन्नति में आरक्षण</td></tr>
+    <tr><td>81वाँ</td><td>2000</td><td>16(4B)</td><td>कैरी फॉरवर्ड नियम (50% से अधिक नहीं)</td></tr>
+    <tr><td>85वाँ</td><td>2002</td><td>16(4A)</td><td>पदोन्नति में वरिष्ठता = आधार</td></tr>
+    <tr><td>86वाँ</td><td>2002</td><td>21A</td><td>6-14 वर्ष के बच्चों को निःशुल्क शिक्षा</td></tr>
+    <tr><td>93वाँ</td><td>2005</td><td>15(5)</td><td>OBC/SC/ST को उच्च शिक्षा में आरक्षण (UPA)</td></tr>
+    <tr><td>97वाँ</td><td>2011</td><td>19(1)(c)</td><td>सहकारी समिति जोड़ी</td></tr>
+    <tr><td>103वाँ</td><td>2019</td><td>15(6), 16(6)</td><td>EWS को 10% आरक्षण (NDA)</td></tr>
+  </table>
+</div>
+
+<div class="card c-gr">
+  <div class="card-title">⚖️ महत्वपूर्ण वाद (Landmark Cases) — Quick Reference</div>
+  <table>
+    <tr><th>वाद</th><th>वर्ष</th><th>विषय</th><th>निर्णय</th></tr>
+    <tr><td>A.K. गोपालन</td><td>1950</td><td>अनु.21</td><td>संकीर्ण व्याख्या — केवल शारीरिक सुरक्षा</td></tr>
+    <tr><td>चम्पकम दोराई राजन बनाम मद्रास सरकार</td><td>1951</td><td>अनु.15</td><td>धर्म/जाति आधार पर आरक्षण अवैध → 1st संशोधन</td></tr>
+    <tr><td>इंदिरा साहनी (मंडल वाद)</td><td>1992</td><td>अनु.16</td><td>OBC 27% वैध; 50% सीमा; क्रीमीलेयर; पदोन्नति में नहीं</td></tr>
+    <tr><td>मेनका गांधी</td><td>1978</td><td>अनु.21</td><td>उदारवादी व्याख्या — गरिमापूर्ण जीवन</td></tr>
+    <tr><td>नागराजन वाद</td><td>2005</td><td>77,81,85वाँ संशोधन</td><td>संवैधानिक हैं</td></tr>
+    <tr><td>बालाजी राघवन</td><td>1996</td><td>अनु.18</td><td>उपाधि और पुरस्कार अलग-अलग</td></tr>
+    <tr><td>M.C. मेहता</td><td>—</td><td>अनु.21</td><td>स्वच्छ पर्यावरण का अधिकार</td></tr>
+    <tr><td>K. पुट्टस्वामी</td><td>2017</td><td>अनु.21</td><td>निजता का अधिकार = मूल अधिकार</td></tr>
+    <tr><td>स्टेनिसलास</td><td>1977</td><td>अनु.25</td><td>धर्म प्रचार=अधिकार, बल से धर्मांतरण=असंवैधानिक</td></tr>
+    <tr><td>TMA पाई फाउंडेशन</td><td>—</td><td>अनु.30</td><td>अल्पसंख्यकता = भाषा + धर्म के आधार पर</td></tr>
+  </table>
+</div>
+
+<div class="card c-re">
+  <div class="card-title">🚫 मूल अधिकार — आपातकाल में निलंबन</div>
+  <table>
+    <tr><th>अनुच्छेद</th><th>विषय</th><th>आपातकाल में स्थिति</th></tr>
+    <tr><td>19</td><td>6 स्वतंत्रताएँ</td><td>अनु.352 (राष्ट्रीय आपातकाल) में निलंबित</td></tr>
+    <tr><td>20</td><td>दोषसिद्धि से संरक्षण</td><td><b>कभी निलंबित नहीं</b></td></tr>
+    <tr><td>21</td><td>प्राण एवं दैहिक स्वतंत्रता</td><td><b>कभी निलंबित नहीं</b></td></tr>
+    <tr><td>32</td><td>संवैधानिक उपचार</td><td>आपातकाल में निलंबित हो सकता है (अनु.359)</td></tr>
+  </table>
+  <div class="mnemo"><span>🧠 Trick:</span> "20 और 21 — कभी नहीं रुकते = सबसे सुरक्षित अधिकार"</div>
+</div>
+
+<div class="card c-pu">
+  <div class="card-title">🔑 5 रिट (Writs) — Quick Reference Table</div>
+  <table>
+    <tr><th>रिट</th><th>हिंदी अर्थ</th><th>किसके लिए</th><th>विशेष</th></tr>
+    <tr><td>Habeas Corpus</td><td>बंदी प्रत्यक्षीकरण</td><td>अवैध हिरासत में बंद व्यक्ति</td><td>अनु.21 से जुड़ा; सबसे महत्वपूर्ण</td></tr>
+    <tr><td>Mandamus</td><td>परमादेश</td><td>लोक कर्तव्य न निभाने पर</td><td>निजी व्यक्ति, राष्ट्रपति, उच्च न्यायालय पर नहीं</td></tr>
+    <tr><td>Prohibition</td><td>प्रतिषेध</td><td>अधीनस्थ न्यायालय को रोकना</td><td>केवल न्यायिक/अर्ध-न्यायिक निकायों पर</td></tr>
+    <tr><td>Certiorari</td><td>उत्प्रेषण</td><td>अधीनस्थ के निर्णय को रद्द करना</td><td>कार्यवाही समाप्त होने के बाद</td></tr>
+    <tr><td>Quo Warranto</td><td>अधिकार पृच्छा</td><td>सार्वजनिक पद पर अवैध कब्जा</td><td>केवल सार्वजनिक पद के लिए</td></tr>
+  </table>
+  <div class="mnemo"><span>🧠 Trick:</span> "हमाप-परमा-प्रतिषेध-उत्प्र-अधिकारपृ" = BMPCA</div>
+</div>
+
+</div>
+<!-- END SUMMARY TAB -->
+
+<!-- ==================== TAB 3: RJ PYQ ==================== -->
+<div id="rjpyq" class="tab-content">
+
+<div class="score-bar">
+  <div><div class="score-info">राजस्थान PYQ Style MCQs (+1 सही / -⅓ गलत)</div><div class="score-info" id="rj-progress">प्रश्न हल करें और Score देखें</div></div>
+  <div style="display:flex;align-items:center;gap:12px;"><div><div class="score-info">Score</div><div class="score-num" id="rj-score">0.00</div></div><button class="btn-reset" onclick="resetQuiz('rj')">🔄 Reset</button><button class="btn-reset" style="background:linear-gradient(135deg,#4CAF50,#8BC34A);" onclick="showResult('rj')">📊 Result</button></div>
+</div>
+
+<div id="rj-questions"></div>
+
+</div>
+
+<!-- ==================== TAB 4: STATES PYQ ==================== -->
+<div id="statepyq" class="tab-content">
+
+<div class="score-bar">
+  <div><div class="score-info">अन्य राज्य PYQ Style MCQs (+1 सही / -⅓ गलत)</div><div class="score-info" id="st-progress">प्रश्न हल करें और Score देखें</div></div>
+  <div style="display:flex;align-items:center;gap:12px;"><div><div class="score-info">Score</div><div class="score-num" id="st-score">0.00</div></div><button class="btn-reset" onclick="resetQuiz('st')">🔄 Reset</button><button class="btn-reset" style="background:linear-gradient(135deg,#4CAF50,#8BC34A);" onclick="showResult('st')">📊 Result</button></div>
+</div>
+
+<div id="st-questions"></div>
+
+</div>
+
+<!-- ==================== TAB 5: LAST MINUTE ==================== -->
+<div id="lastmin" class="tab-content">
+
+<div class="sec-head">⚡ Last Minute Revision — Compact Cards</div>
+
+<div class="grid2">
+
+<div class="super-mnemo">
+  <h3>🧠 SUPER MNEMONIC — 6 मूल अधिकार</h3>
+  <div class="mnemo-item"><span class="mnemo-word">स</span>मानता → अनु. 14-18</div>
+  <div class="mnemo-item"><span class="mnemo-word">स्व</span>तंत्रता → अनु. 19-22</div>
+  <div class="mnemo-item"><span class="mnemo-word">शो</span>षण के विरुद्ध → अनु. 23-24</div>
+  <div class="mnemo-item"><span class="mnemo-word">धा</span>र्मिक स्वतंत्रता → अनु. 25-28</div>
+  <div class="mnemo-item"><span class="mnemo-word">सं</span>स्कृति व शिक्षा → अनु. 29-30</div>
+  <div class="mnemo-item"><span class="mnemo-word">सं</span>वैधानिक उपचार → अनु. 32</div>
+  <div style="margin-top:8px;font-size:13px;color:var(--gold);font-weight:700;">"स-स्व-शो-धा-सं-सं" = 6 अधिकार याद!</div>
+</div>
+
+<div class="super-mnemo">
+  <h3>🧠 SUPER MNEMONIC — 5 रिट</h3>
+  <div class="mnemo-item"><span class="mnemo-word">ब</span>ंदी प्रत्यक्षीकरण = Habeas Corpus</div>
+  <div class="mnemo-item"><span class="mnemo-word">प</span>रमादेश = Mandamus</div>
+  <div class="mnemo-item"><span class="mnemo-word">प्र</span>तिषेध = Prohibition</div>
+  <div class="mnemo-item"><span class="mnemo-word">उ</span>त्प्रेषण = Certiorari</div>
+  <div class="mnemo-item"><span class="mnemo-word">अ</span>धिकार पृच्छा = Quo Warranto</div>
+  <div style="margin-top:8px;font-size:13px;color:var(--gold);font-weight:700;">"बपप्रउअ" = 5 रिट!</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ अनु.15 — भेदभाव आधार "धमूजालिज"</div>
+  <div class="lm-item"><span class="lm-key">ध</span>र्म के आधार पर</div>
+  <div class="lm-item"><span class="lm-key">मू</span>लवंश के आधार पर</div>
+  <div class="lm-item"><span class="lm-key">जा</span>ति के आधार पर</div>
+  <div class="lm-item"><span class="lm-key">लि</span>ंग के आधार पर</div>
+  <div class="lm-item"><span class="lm-key">ज</span>न्म स्थान के आधार पर</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ अनु.19(2) — वाक् स्वतंत्रता पर 8 प्रतिबंध</div>
+  <div class="lm-item"><span class="lm-key">प्र</span>भुता/अखंडता</div>
+  <div class="lm-item"><span class="lm-key">सु</span>रक्षा</div>
+  <div class="lm-item"><span class="lm-key">वि</span>देशी संबंध</div>
+  <div class="lm-item"><span class="lm-key">लो</span>क व्यवस्था</div>
+  <div class="lm-item"><span class="lm-key">अ</span>पराचार+नैतिकता</div>
+  <div class="lm-item"><span class="lm-key">मा</span>नहानि</div>
+  <div class="lm-item"><span class="lm-key">न्या</span>यालय अवमानना</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ अनु.16 — रोजगार में भेदभाव आधार (16(2))</div>
+  <div class="lm-item"><span class="lm-key">धर्म</span>के आधार पर नहीं</div>
+  <div class="lm-item"><span class="lm-key">मूलवंश</span>के आधार पर नहीं</div>
+  <div class="lm-item"><span class="lm-key">जाति</span>के आधार पर नहीं</div>
+  <div class="lm-item"><span class="lm-key">लिंग</span>के आधार पर नहीं</div>
+  <div class="lm-item"><span class="lm-key">जन्मस्थान</span>के आधार पर नहीं</div>
+  <div class="lm-item"><span class="lm-key">निवास</span>के आधार पर नहीं</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ आरक्षण — राजस्थान vs केंद्र</div>
+  <div class="lm-item"><span class="lm-key">SC</span>RJ=16%, केंद्र=15%</div>
+  <div class="lm-item"><span class="lm-key">ST</span>RJ=12%, केंद्र=7.5%</div>
+  <div class="lm-item"><span class="lm-key">OBC</span>RJ=21%, केंद्र=27%</div>
+  <div class="lm-item"><span class="lm-key">EWS</span>RJ=10%, केंद्र=10%</div>
+  <div class="lm-item"><span class="lm-key">MBC</span>RJ=5%, केंद्र=नहीं</div>
+  <div class="lm-item"><span class="lm-key">कुल</span>RJ=64%, केंद्र=59.5%</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ अनु.20 — 3 संरक्षण (कभी निलंबित नहीं)</div>
+  <div class="lm-item"><span class="lm-key">20(1)</span>पूर्वलक्षी कानून से नहीं</div>
+  <div class="lm-item"><span class="lm-key">20(2)</span>दोहरे दंड से नहीं (Double Jeopardy)</div>
+  <div class="lm-item"><span class="lm-key">20(3)</span>स्वयं के विरुद्ध साक्ष्य नहीं (Self Incrimination)</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ अनु.22 — गिरफ्तारी के अधिकार</div>
+  <div class="lm-item"><span class="lm-key">22(1)</span>गिरफ्तारी का कारण जानने का अधिकार</div>
+  <div class="lm-item"><span class="lm-key">22(2)</span>अपना वकील चुनने का अधिकार</div>
+  <div class="lm-item"><span class="lm-key">22(3)</span>24 घंटे में मजिस्ट्रेट के समक्ष</div>
+  <div class="lm-item"><span class="lm-key">22(4-7)</span>निवारक निरोध = 3 माह + सलाहकार बोर्ड</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ महत्वपूर्ण वाद — एक नजर में</div>
+  <div class="lm-item"><span class="lm-key">1950</span>AK गोपालन = अनु.21 संकीर्ण</div>
+  <div class="lm-item"><span class="lm-key">1951</span>चम्पकम = 1st संशोधन कारण</div>
+  <div class="lm-item"><span class="lm-key">1977</span>स्टेनिसलास = धर्मांतरण=नहीं</div>
+  <div class="lm-item"><span class="lm-key">1978</span>मेनका गांधी = अनु.21 उदार</div>
+  <div class="lm-item"><span class="lm-key">1992</span>मंडल = 50% सीमा, क्रीमीलेयर</div>
+  <div class="lm-item"><span class="lm-key">1996</span>बालाजी = उपाधि≠पुरस्कार</div>
+</div>
+
+<div class="lm-card full-card">
+  <div class="lm-title">⚡ EXAM में अक्सर पूछे जाने वाले Numbers</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin-top:6px;">
+    <div class="chip">अनु.12 — राज्य की परिभाषा</div>
+    <div class="chip gr">अनु.13 — असंगत विधि</div>
+    <div class="chip bl">अनु.14 — समानता</div>
+    <div class="chip re">अनु.15(4) — 1951 संशोधन</div>
+    <div class="chip">अनु.16(4A) — 77वाँ 1995</div>
+    <div class="chip gr">अनु.16(4B) — 81वाँ 2000</div>
+    <div class="chip bl">अनु.19(1)(f) — 44वाँ 1978</div>
+    <div class="chip re">अनु.20,21 — निलंबित नहीं</div>
+    <div class="chip">अनु.21A — 86वाँ 2002</div>
+    <div class="chip gr">RTE — 1 अप्रैल 2010</div>
+    <div class="chip bl">अनु.32 — संविधान की आत्मा</div>
+    <div class="chip re">6-14 वर्ष — अनु.21A</div>
+    <div class="chip">14 वर्ष — बाल श्रम</div>
+    <div class="chip gr">24 घंटे — अनु.22(3)</div>
+    <div class="chip bl">50% — आरक्षण सीमा</div>
+    <div class="chip re">103वाँ — EWS 10% 2019</div>
+  </div>
+</div>
+
+</div>
+</div>
+<!-- END LAST MINUTE TAB -->
+
+<!-- ==================== TAB: RANJEET SIR NOTES ==================== -->
+<div id="ranjeet" class="tab-content">
+
+<div class="sec-head">📖 Ranjeet Sir Notes — PDF 13 &amp; 14</div>
+
+<div class="sec-head" style="font-size:15px;color:#64B5F6;margin-top:10px;">📄 PDF 13 — अनु. 31 व अनु. 32</div>
+<div class="grid2">
+
+<div class="card c-or">
+  <div class="card-title"><span class="art-badge">अनु. 31</span> संपत्ति का अधिकार</div>
+  <ul class="clist">
+    <li><b>44वाँ संविधान संशोधन — 1978</b> द्वारा मूल अधिकार से <b>हटाया गया</b></li>
+    <li>अब यह <b>कानूनी अधिकार</b> है — <b>अनु. 300A</b> के अंतर्गत</li>
+    <li>अनु. 300A — बिना कानूनी प्राधिकरण के संपत्ति नहीं छीनी जा सकती</li>
+  </ul>
+  <div class="mnemo"><span>🧠 Trick:</span> "31 गया → 300A आया" — 44वाँ संशोधन 1978</div>
+</div>
+
+<div class="card c-bl">
+  <div class="card-title"><span class="art-badge bl">अनु. 32</span> संवैधानिक उपचारों का अधिकार</div>
+  <ul class="clist">
+    <li><b>32(1)</b> — भाग-3 के मूल अधिकार SC द्वारा प्रवर्तनीय (वाद योग्य)</li>
+    <li><b>32(2)</b> — SC को Direction, Order, Writ जारी करने का अधिकार</li>
+    <li><b>32(3)</b> — संसद विधि बनाकर अन्य न्यायालयों को Writ अधिकारिता दे सकती है</li>
+    <li><b>32(4)</b> — संवैधानिक उपवेध के दौरान निलंबित किया जा सकता है</li>
+  </ul>
+  <div class="hl hl-gr">✅ <b>डॉ. B.R. अम्बेडकर</b> ने अनु.32 को <b>"भारतीय संविधान की आत्मा एवं हृदय"</b> कहा।</div>
+  <div class="hl hl-bl" style="margin-top:6px;">✅ SC को <b>संविधान का संरक्षक/अभिभावक</b> माना जाता है।</div>
+</div>
+
+<div class="card c-re full-card">
+  <div class="card-title"><span class="art-badge re">Writ — रिटें</span> 5 प्रकार की रिटें (अनु. 32 व 226)</div>
+  <div class="grid2">
+    <div>
+      <div class="hl hl-bl" style="margin-bottom:8px;"><b>① बंदी प्रत्यक्षीकरण (Habeas Corpus)</b><br>
+        अर्थ: अपना शरीर प्राप्त करना / सशरीर पेश होना<br>
+        🔹 जारी: अनु.32 (SC) व अनु.226 (HC)<br>
+        🔹 कब: किसी व्यक्ति को अवैध रूप से बंदी बनाने पर<br>
+        🔹 किसके विरुद्ध: राज्य व निजी व्यक्ति दोनों<br>
+        🔹 प्रयोजन: अनु.21 व 22 का उल्लंघन होने पर
+      </div>
+      <div class="hl hl-gr" style="margin-bottom:8px;"><b>② परमादेश (Mandamus)</b><br>
+        अर्थ: हम आदेश देते हैं<br>
+        🔹 किसको: सार्वजनिक पद पर बैठे अधिकारी को<br>
+        🔹 कब: अधिकारी द्वारा कर्तव्य का पालन न करने पर<br>
+        🔹 नहीं दिया जाएगा: निजी व्यक्ति, निजी कंपनी, राज्यपाल, राष्ट्रपति को
+      </div>
+      <div class="hl hl-re"><b>③ प्रतिषेध (Prohibition)</b><br>
+        अर्थ: रोकना<br>
+        🔹 किसे रोकना: अधीनस्थ न्यायालय को<br>
+        🔹 क्यों: क्षेत्राधिकार का उल्लंघन करने पर<br>
+        🔹 कब: मामला Pending (लंबित) हो और प्राकृतिक न्याय का उल्लंघन हो<br>
+        🔹 प्रशासनिक व अन्यायिक संस्थानों के विरुद्ध भी जारी होती है
+      </div>
+    </div>
+    <div>
+      <div class="hl hl-pu" style="margin-bottom:8px;"><b>④ उत्प्रेषण (Certiorari)</b><br>
+        अर्थ: प्रमाणित करना<br>
+        🔹 कब जारी: अधीनस्थ न्यायालय द्वारा निर्णय दिए जाने पर<br>
+        🔹 उपचार: SC/HC मामले को अपने पास मंगवा सकता है, उचित न्यायालय में भिजवा सकता है या मामला समाप्त कर सकता है
+      </div>
+      <div class="hl" style="border-left-color:#FFD54F;background:rgba(255,213,79,.08);margin-bottom:8px;"><b>⑤ अधिकार पृच्छा (Quo Warranto)</b><br>
+        अर्थ: किस अधिकार से / किस हैसियत से<br>
+        🔹 जारी कब: यदि कोई व्यक्ति सार्वजनिक पद पर अवैध तरीके से काबिज हो<br>
+        🔹 उपचार: अनु.14, 16, 19(g) का उल्लंघन होने पर
+      </div>
+      <div class="mnemo"><span>🧠 Trick (5 रिटें):</span><br><span style="font-size:15px;color:#FFD54F;font-weight:800;">"ब प प्र उ अ"</span><br><b>ब</b>ंदी प्रत्यक्षीकरण, <b>प</b>रमादेश, <b>प्र</b>तिषेध, <b>उत्</b>प्रेषण, <b>अ</b>धिकार पृच्छा</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="sec-head" style="font-size:15px;color:#81C784;margin-top:20px;">📄 PDF 14 — SC vs HC Writ, अनु. 33-35</div>
+<div class="grid2">
+
+<div class="card c-gr full-card">
+  <div class="card-title"><span class="art-badge gr">तुलना</span> SC (अनु.32) vs HC (अनु.226) — Writ अधिकारिता में अंतर</div>
+  <table>
+    <tr><th>बिंदु</th><th>सर्वोच्च न्यायालय (SC) — अनु.32</th><th>उच्च न्यायालय (HC) — अनु.226</th></tr>
+    <tr><td>मूल अधिकार</td><td>अनु.32 स्वयं एक मूल अधिकार है → SC को FR के संबंध में Writ जारी करना <b>बाध्यकारी</b></td><td>अनु.226 FR नहीं है → HC का Writ जारी करना <b>बाध्यकारी नहीं</b></td></tr>
+    <tr><td>क्षेत्र</td><td>SC केवल FR के संदर्भ में Writ जारी कर सकता है</td><td>HC — FR के साथ-साथ अन्य कानूनी मामलों में भी Writ जारी कर सकता है</td></tr>
+    <tr><td>शक्ति</td><td>SC की Writ शक्ति सीमित</td><td>HC की Writ शक्ति SC से <b>व्यापक</b> है (SC &lt; HC)</td></tr>
+    <tr><td>राष्ट्रीय आपातकाल</td><td>अनु.32 को <b>निलंबित किया जा सकता है</b></td><td>अनु.226 को <b>निलंबित नहीं</b> किया जा सकता</td></tr>
+  </table>
+  <div class="mnemo"><span>🧠 Key Point:</span> Writ क्षेत्राधिकार में <b>HC &gt; SC</b> | आपातकाल में <b>अनु.32 निलंबित</b> हो सकता है, <b>226 नहीं</b></div>
+</div>
+
+<div class="card c-pu">
+  <div class="card-title"><span class="art-badge pu">अनु. 33</span> कुछ लोगों के FR पर प्रतिबंध</div>
+  <ul class="clist">
+    <li>निम्न लोगों के मूल अधिकारों पर प्रतिबंध रहेगा:</li>
+    <li>① <b>सैन्य बल</b></li>
+    <li>② <b>लोक व्यवस्था बनाने वाले कार्मिक</b></li>
+    <li>③ <b>आसूचना तंत्र (खुफिया एजेंसी) में कार्य करने वाले कर्मिक</b></li>
+  </ul>
+  <div class="hl hl-re">⚠️ इन पर FR के कुछ प्रावधान पूरी तरह लागू नहीं होते।</div>
+</div>
+
+<div class="card c-te">
+  <div class="card-title"><span class="art-badge te">अनु. 34</span> मार्शल लॉ के दौरान FR पर प्रतिबंध</div>
+  <ul class="clist">
+    <li>किसी <b>क्षेत्र विशेष</b> पर मौलिक अधिकारों पर प्रतिबंध लगाया जा सकता है</li>
+    <li>→ जिस क्षेत्र में <b>मार्शल लॉ (सैन्य कानून)</b> लागू हो</li>
+  </ul>
+  <div class="hl hl-bl">💡 मार्शल लॉ वाले क्षेत्र में FR पर प्रतिबंध — बाकी भारत पर नहीं।</div>
+</div>
+
+<div class="card c-or">
+  <div class="card-title"><span class="art-badge">अनु. 35</span> FR पर कानून बनाने का अधिकार</div>
+  <ul class="clist">
+    <li>मूल अधिकारों पर <b>कानून बनाने का अधिकार केवल संसद के पास</b> है</li>
+    <li>राज्य विधानमंडल FR पर कानून नहीं बना सकते</li>
+  </ul>
+  <div class="hl">⭐ FR पर कानून बनाना = <b>संसद का एकाधिकार</b></div>
+</div>
+
+<div class="card c-bl full-card">
+  <div class="card-title"><span class="art-badge bl">📝 Notes MCQ</span> Ranjeet Sir Notes से महत्वपूर्ण प्रश्न</div>
+  <div class="grid2">
+    <div class="case-item"><strong>Q. भारतीय संविधान की आत्मा एवं हृदय किसे कहा जाता है?</strong><br>✅ संवैधानिक उपचारों का अधिकार (अनु.32) — डॉ. B.R. अम्बेडकर</div>
+    <div class="case-item"><strong>Q. SC को संविधान का क्या कहा जाता है?</strong><br>✅ संरक्षक / अभिभावक (Guardian of Constitution)</div>
+    <div class="case-item"><strong>Q. 'Writ' का अर्थ क्या है?</strong><br>✅ न्याय देना</div>
+    <div class="case-item"><strong>Q. परमादेश किसे जारी नहीं किया जाएगा?</strong><br>✅ निजी व्यक्ति, निजी कंपनी, राज्यपाल, राष्ट्रपति को</div>
+    <div class="case-item"><strong>Q. Writ क्षेत्राधिकार में SC या HC — कौन व्यापक?</strong><br>✅ HC (अनु.226) — SC (अनु.32) से व्यापक</div>
+    <div class="case-item"><strong>Q. राष्ट्रीय आपातकाल में कौन सा अनु. निलंबित नहीं होता?</strong><br>✅ अनु.226 (HC) — केवल अनु.32 निलंबित हो सकता है</div>
+    <div class="case-item"><strong>Q. अनु.31 कब हटाया गया?</strong><br>✅ 44वाँ संविधान संशोधन 1978 — अब अनु.300A के तहत कानूनी अधिकार</div>
+    <div class="case-item"><strong>Q. प्रतिषेध रिट कब जारी होती है?</strong><br>✅ जब अधीनस्थ न्यायालय में मामला Pending हो और क्षेत्राधिकार का उल्लंघन हो</div>
+  </div>
+</div>
+
+</div>
+</div>
+<!-- END RANJEET SIR NOTES TAB -->
+
+<!-- POPUP -->
+<div class="popup-overlay" id="result-popup">
+  <div class="popup">
+    <h2>🎯 Result</h2>
+    <div class="final-score" id="popup-score" style="color:var(--gold);">0</div>
+    <div class="grade" id="popup-grade"></div>
+    <div id="popup-detail" style="font-size:13px;color:var(--dim);margin-top:8px;"></div>
+    <button onclick="document.getElementById('result-popup').classList.remove('show')">✅ ठीक है</button>
+  </div>
+</div>
+
+<script>
+// ===== QUIZ DATA =====
+const rjQuestions = [
+  {q:"भारत के संविधान में मूल अधिकारों का प्रावधान किस देश के संविधान से लिया गया है?",opts:["ब्रिटेन","ऑस्ट्रेलिया","USA","USSR"],ans:2,exp:"मूल अधिकारों का प्रावधान USA के संविधान से लिया गया है।"},
+  {q:"भारतीय संविधान में मूल अधिकार किस भाग में हैं?",opts:["भाग-2","भाग-3","भाग-4","भाग-5"],ans:1,exp:"मूल अधिकार भाग-3 (अनु. 12-35) में हैं।"},
+  {q:"'अस्पृश्यता का अंत' किस अनुच्छेद में है?",opts:["अनु. 14","अनु. 15","अनु. 17","अनु. 18"],ans:2,exp:"अनु. 17 — अस्पृश्यता का अंत। विधि बनाने का अधिकार संसद के पास।"},
+  {q:"'विधि के समक्ष समता' की संकल्पना किस देश से ली गई?",opts:["USA","ब्रिटेन","फ्रांस","जापान"],ans:1,exp:"Equality before Law = ब्रिटेन (A.V. डायसी), Equal Protection of Law = USA"},
+  {q:"अनु. 19(1)(f) — सम्पत्ति का अधिकार किस संशोधन से हटाया गया?",opts:["42वाँ 1976","44वाँ 1978","46वाँ 1982","52वाँ 1985"],ans:1,exp:"44वाँ संविधान संशोधन 1978 से सम्पत्ति का अधिकार हटाया गया।"},
+  {q:"'मंडल आयोग' का संबंध किस अनुच्छेद से है?",opts:["अनु. 15","अनु. 16","अनु. 17","अनु. 19"],ans:1,exp:"मंडल आयोग — अनु. 16(4) — OBC को 27% आरक्षण।"},
+  {q:"इंदिरा साहनी वाद में सर्वोच्च न्यायालय ने आरक्षण की अधिकतम सीमा क्या निर्धारित की?",opts:["40%","50%","60%","75%"],ans:1,exp:"इंदिरा साहनी वाद 1992 (मंडल वाद) — आरक्षण 50% से अधिक नहीं होना चाहिए।"},
+  {q:"राजस्थान में SC के लिए आरक्षण का प्रतिशत क्या है?",opts:["14%","15%","16%","18%"],ans:2,exp:"राजस्थान में SC = 16%, केंद्र में SC = 15%"},
+  {q:"अनु. 21A किस संशोधन के द्वारा जोड़ा गया?",opts:["84वाँ","85वाँ","86वाँ","87वाँ"],ans:2,exp:"86वाँ संविधान संशोधन 2002 — अनु. 21A — 6-14 वर्ष के बच्चों को निःशुल्क शिक्षा।"},
+  {q:"RTE (Right to Education) Act कब से लागू हुआ?",opts:["1 जनवरी 2009","1 अप्रैल 2009","1 जनवरी 2010","1 अप्रैल 2010"],ans:3,exp:"RTE Act 2009 में पास हुआ लेकिन 1 अप्रैल 2010 से लागू हुआ।"},
+  {q:"अनु. 12 के तहत 'राज्य' में कौन शामिल नहीं है?",opts:["केंद्र सरकार","संसद","न्यायपालिका","स्थानीय निकाय"],ans:2,exp:"न्यायपालिका अनु. 12 के तहत 'राज्य' की परिभाषा में नहीं आती।"},
+  {q:"'आच्छादन का सिद्धांत' (Doctrine of Eclipse) किस अनुच्छेद से संबंधित है?",opts:["अनु. 12","अनु. 13(1)","अनु. 13(2)","अनु. 14"],ans:1,exp:"अनु. 13(1) — संविधान लागू होने से पूर्व की विधियाँ — आच्छादन का सिद्धांत (Eclipse)"},
+  {q:"चम्पकम दोराई राजन बनाम मद्रास सरकार वाद किस वर्ष हुआ?",opts:["1949","1951","1952","1955"],ans:1,exp:"1951 में यह वाद हुआ जिसके कारण 1st संविधान संशोधन 1951 आया और अनु. 15(4) जोड़ा गया।"},
+  {q:"'संविधान की आत्मा' किस अनुच्छेद को कहा गया है?",opts:["अनु. 14","अनु. 21","अनु. 32","अनु. 19"],ans:2,exp:"Dr. B.R. Ambedkar ने अनु. 32 (संवैधानिक उपचारों का अधिकार) को 'संविधान की आत्मा' कहा।"},
+  {q:"EWS को 10% आरक्षण किस संशोधन द्वारा दिया गया?",opts:["97वाँ","101वाँ","103वाँ","105वाँ"],ans:2,exp:"103वाँ संविधान संशोधन 2019 (NDA सरकार) — EWS को सरकारी नौकरी व शिक्षा में 10% आरक्षण।"},
+  {q:"निवारक निरोध किस सूची का विषय है?",opts:["संघ सूची","राज्य सूची","समवर्ती सूची","अवशिष्ट"],ans:2,exp:"निवारक निरोध — समवर्ती सूची का विषय है।"},
+  {q:"अनु. 22(3) के तहत गिरफ्तार व्यक्ति को कितने घंटे में मजिस्ट्रेट के सामने पेश करना होगा?",opts:["12 घंटे","24 घंटे","48 घंटे","72 घंटे"],ans:1,exp:"अनु. 22(3) — 24 घंटे के भीतर मजिस्ट्रेट के समक्ष (यात्रा व अवकाश का समय शामिल नहीं)"},
+  {q:"'बालाजी राघवन वाद 1996' का संबंध किस अनुच्छेद से है?",opts:["अनु. 14","अनु. 16","अनु. 18","अनु. 21"],ans:2,exp:"अनु. 18 — बालाजी राघवन वाद 1996 — उपाधि और पुरस्कार अलग-अलग हैं।"},
+  {q:"पहला पिछड़ा वर्ग आयोग किसकी अध्यक्षता में गठित हुआ?",opts:["B.P. मंडल","काका कालेलकर","V.P. Singh","P.V. नरसिम्हा राव"],ans:1,exp:"पहला पिछड़ा वर्ग आयोग 1953 — काका कालेलकर की अध्यक्षता में (असफल रहा)।"},
+  {q:"अनु. 15(5) किस संशोधन द्वारा जोड़ा गया?",opts:["77वाँ 1995","86वाँ 2002","93वाँ 2005","103वाँ 2019"],ans:2,exp:"93वाँ संविधान संशोधन 2005 (UPA सरकार) — OBC/SC/ST को उच्च शिक्षा में आरक्षण।"},
+  {q:"मेनका गांधी बनाम भारत संघ वाद (1978) का संबंध किस अनुच्छेद से है?",opts:["अनु. 14","अनु. 19","अनु. 21","अनु. 22"],ans:2,exp:"अनु. 21 — मेनका गांधी वाद 1978 — प्राण एवं दैहिक स्वतंत्रता की उदारवादी व्याख्या।"},
+  {q:"भारत रत्न की शुरुआत किस वर्ष हुई?",opts:["1950","1952","1954","1956"],ans:2,exp:"1954 में भारत सरकार ने भारत रत्न, पद्म विभूषण, पद्म भूषण और पद्म श्री की शुरुआत की।"},
+  {q:"16(4A) — SC/ST को पदोन्नति में आरक्षण किस संशोधन से जोड़ा गया?",opts:["72वाँ","75वाँ","77वाँ","79वाँ"],ans:2,exp:"77वाँ संविधान संशोधन 1995 — अनु. 16(4A) — SC/ST को पदोन्नति में आरक्षण।"},
+  {q:"अनु. 19(1)(c) में 'सहकारी समिति' किस संशोधन से जोड़ी गई?",opts:["93वाँ 2005","97वाँ 2011","99वाँ 2014","100वाँ 2015"],ans:1,exp:"97वाँ संविधान संशोधन 2011 — अनु. 19(1)(c) में सहकारी समिति जोड़ी गई।"},
+  {q:"मूल संविधान में अनुच्छेद 15 के कितने खंड थे?",opts:["2","3","4","5"],ans:1,exp:"मूल संविधान में अनु. 15(1), 15(2) और 15(3) — केवल 3 खंड थे।"},
+];
+
+const stQuestions = [
+  {q:"'Equal Protection of Law' की अवधारणा किस देश से ली गई है?",opts:["ब्रिटेन","फ्रांस","USA","ऑस्ट्रेलिया"],ans:2,exp:"'Equal Protection of Law' USA के संविधान से ली गई अवधारणा है।"},
+  {q:"किस अनुच्छेद के तहत 'Habeas Corpus' रिट जारी की जा सकती है?",opts:["केवल अनु. 32","केवल अनु. 226","अनु. 32 और 226 दोनों","अनु. 21"],ans:2,exp:"Habeas Corpus रिट अनु. 32 (सर्वोच्च न्यायालय) और अनु. 226 (उच्च न्यायालय) दोनों से जारी हो सकती है।"},
+  {q:"अनु. 20(2) किससे संबंधित है?",opts:["पूर्वलक्षी कानून","दोहरे दंड से संरक्षण","स्वयं के विरुद्ध साक्ष्य","निवारक निरोध"],ans:1,exp:"अनु. 20(2) — दोहरे दंड से संरक्षण (Double Jeopardy) — एक अपराध के लिए एक बार ही दंड।"},
+  {q:"निजता का अधिकार (Right to Privacy) किस वाद में मूल अधिकार घोषित हुआ?",opts:["मेनका गांधी वाद","AK गोपालन वाद","K. पुट्टस्वामी वाद","विशाखा वाद"],ans:2,exp:"K.S. पुट्टस्वामी बनाम भारत संघ — निजता का अधिकार = अनु. 21 के तहत मूल अधिकार।"},
+  {q:"'Quo Warranto' रिट का प्रयोग किस स्थिति में होता है?",opts:["अवैध हिरासत में","सार्वजनिक पद पर अवैध कब्जा","न्यायालय को रोकना","निर्णय रद्द करना"],ans:1,exp:"Quo Warranto (अधिकार पृच्छा) — सार्वजनिक पद पर अवैध कब्जे के विरुद्ध।"},
+  {q:"स्टेनिसलास वाद 1977 किस अनुच्छेद से संबंधित है?",opts:["अनु. 25","अनु. 26","अनु. 27","अनु. 28"],ans:0,exp:"स्टेनिसलास वाद 1977 — अनु. 25 — धर्म का प्रचार अधिकार है लेकिन बलपूर्वक धर्मांतरण नहीं।"},
+  {q:"अनु. 21 के तहत 'विशाखा गाइडलाइन' किससे संबंधित है?",opts:["शिक्षा का अधिकार","स्वच्छ पर्यावरण","कार्यस्थल पर यौन उत्पीड़न","जीवन का अधिकार"],ans:2,exp:"विशाखा गाइडलाइन — अनु. 21 के तहत — कार्यस्थल पर यौन उत्पीड़न से संरक्षण।"},
+  {q:"भारतीय संविधान में 'अल्पसंख्यक' शब्द को कहाँ परिभाषित किया गया है?",opts:["अनु. 29","अनु. 30","अनु. 350A","कहीं नहीं"],ans:3,exp:"भारतीय संविधान में 'अल्पसंख्यक' शब्द को परिभाषित नहीं किया गया है।"},
+  {q:"'Mandamus' रिट किस पर जारी नहीं हो सकती?",opts:["लोक अधिकारियों पर","राष्ट्रपति पर","केंद्र सरकार पर","राज्य सरकार पर"],ans:1,exp:"Mandamus (परमादेश) रिट राष्ट्रपति और उच्च न्यायालय पर जारी नहीं हो सकती।"},
+  {q:"अनु. 13(1) में 'आच्छादन के सिद्धांत' के अनुसार क्या होता है?",opts:["पुरानी विधि स्वतः रद्द हो जाती है","पुरानी विधि निष्क्रिय हो जाती है","पुरानी विधि पूर्णतः समाप्त हो जाती है","पुरानी विधि लागू रहती है"],ans:1,exp:"Eclipse (आच्छादन) — पुरानी विधि निष्क्रिय (Eclipsed) हो जाती है लेकिन रद्द नहीं — यदि FR में संशोधन हो तो पुनः जीवित।"},
+  {q:"अनु. 25(1) के तहत धार्मिक स्वतंत्रता किसे प्राप्त है?",opts:["केवल भारतीय नागरिकों को","केवल धार्मिक समुदायों को","सभी व्यक्तियों को","केवल हिंदुओं को"],ans:2,exp:"अनु. 25(1) — सभी व्यक्तियों को (नागरिक और विदेशी दोनों) धार्मिक स्वतंत्रता।"},
+  {q:"'Certiorari' रिट कब जारी होती है?",opts:["अवैध हिरासत में","कार्यवाही समाप्त होने के बाद","कार्यवाही शुरू होने से पहले","लोक कर्तव्य न निभाने पर"],ans:1,exp:"Certiorari (उत्प्रेषण) — कार्यवाही समाप्त होने के बाद निचली अदालत का निर्णय रद्द करने के लिए।"},
+  {q:"अनु. 23(2) के तहत कौन सा अपवाद है?",opts:["व्यावसायिक श्रम","बाल श्रम","सार्वजनिक उद्देश्य के लिए अनिवार्य सेवा","धार्मिक सेवा"],ans:2,exp:"अनु. 23(2) — राज्य सार्वजनिक उद्देश्य के लिए अनिवार्य सेवा ले सकता है।"},
+  {q:"अनु. 32 और अनु. 226 में मुख्य अंतर क्या है?",opts:["दोनों समान हैं","32 केवल FR के लिए, 226 व्यापक","226 केवल FR के लिए, 32 व्यापक","दोनों में 5 ही रिट हैं"],ans:1,exp:"अनु. 32 = केवल मूल अधिकारों की रक्षा, अनु. 226 = मूल अधिकार + अन्य कानूनी अधिकार (व्यापक)।"},
+  {q:"'Prohibition' रिट का प्रयोग कब होता है?",opts:["अवैध हिरासत में","न्यायिक कार्यवाही के दौरान रोकने के लिए","पद से हटाने के लिए","कर्तव्य निभाने के लिए"],ans:1,exp:"Prohibition (प्रतिषेध) — न्यायिक कार्यवाही जारी रहने के दौरान अधीनस्थ न्यायालय को रोकना।"},
+  {q:"अनु. 21 में 'दैहिक स्वतंत्रता' का अर्थ क्या है?",opts:["शरीर की सुरक्षा","व्यक्तिगत/मानसिक स्वतंत्रता","जीवन जीने का अधिकार","संपत्ति का अधिकार"],ans:1,exp:"'दैहिक स्वतंत्रता' = व्यक्तिगत स्वतंत्रता = व्यक्ति अपने मन का मालिक स्वयं (अपने निजी मामलों में हस्तक्षेप नहीं)।"},
+  {q:"अनु. 28(1) के तहत किस प्रकार की संस्थाओं में धार्मिक शिक्षा वर्जित है?",opts:["ट्रस्ट द्वारा संचालित","राज्य द्वारा मान्यता प्राप्त","राज्य द्वारा पूर्ण वित्त पोषित","निजी संस्थान"],ans:2,exp:"अनु. 28(1) — राज्य द्वारा पूर्ण वित्त पोषित शैक्षणिक संस्थाओं में धार्मिक शिक्षा नहीं दी जाएगी।"},
+  {q:"M.C. मेहता वाद में किस अधिकार की व्याख्या की गई?",opts:["शिक्षा का अधिकार","स्वच्छ पर्यावरण का अधिकार","निजता का अधिकार","धार्मिक स्वतंत्रता"],ans:1,exp:"M.C. मेहता वाद — अनु. 21 के तहत स्वच्छ पर्यावरण का अधिकार।"},
+  {q:"अनु. 19 के तहत स्वतंत्रताएँ केवल किन्हें प्राप्त हैं?",opts:["सभी व्यक्तियों को","केवल भारतीय नागरिकों को","केवल वयस्कों को","केवल मतदाताओं को"],ans:1,exp:"अनु. 19 की 6 स्वतंत्रताएँ केवल भारतीय नागरिकों को प्राप्त हैं, विदेशियों को नहीं।"},
+  {q:"भारत में अल्पसंख्यक का दर्जा किस आधार पर मिलता है?",opts:["केवल धर्म","केवल भाषा","धर्म और भाषा दोनों","जनसंख्या"],ans:2,exp:"TMA पाई फाउंडेशन वाद — भारत में अल्पसंख्यकता दो आधार पर: भाषा और धर्म।"},
+  {q:"अनु. 20(3) — 'स्वयं के विरुद्ध साक्ष्य' (Self-incrimination) से संरक्षण किन मामलों में मिलता है?",opts:["केवल दीवानी मामलों में","केवल आपराधिक मामलों में","दोनों में","किसी में नहीं"],ans:1,exp:"अनु. 20 — केवल आपराधिक मामलों में संरक्षण, दीवानी मामलों में नहीं।"},
+  {q:"'ज्ञान कौर वाद' किस अधिकार से संबंधित है?",opts:["शिक्षा","जीवन के अधिकार में मृत्यु नहीं","धर्म","निजता"],ans:1,exp:"ज्ञान कौर वाद — जीवन जीने के अधिकार (अनु.21) में मृत्यु का अधिकार शामिल नहीं है।"},
+  {q:"अनु. 29(1) किसे अधिकार देता है?",opts:["केवल बहुसंख्यकों को","नागरिकों के किन्हीं वर्गों को भाषा-लिपि-संस्कृति बनाए रखने का","केवल अल्पसंख्यकों को","राज्य सरकार को"],ans:1,exp:"अनु. 29(1) — नागरिकों के किन्हीं वर्गों को (बहुसंख्यक या अल्पसंख्यक) अपनी भाषा, लिपि, संस्कृति बनाए रखने का अधिकार।"},
+  {q:"अनु. 16(4B) — 'कैरी फॉरवर्ड नियम' किस संशोधन से जोड़ा गया?",opts:["77वाँ 1995","79वाँ 1999","81वाँ 2000","85वाँ 2002"],ans:2,exp:"81वाँ संविधान संशोधन 2000 — अनु. 16(4B) — SC/ST/OBC में कैरी फॉरवर्ड नियम, 50% से अधिक नहीं।"},
+  {q:"अनु. 32 के तहत सर्वोच्च न्यायालय कितने प्रकार की रिट जारी कर सकता है?",opts:["3","4","5","6"],ans:2,exp:"सर्वोच्च न्यायालय अनु. 32 के तहत 5 प्रकार की रिट जारी कर सकता है: बंदी प्रत्यक्षीकरण, परमादेश, प्रतिषेध, उत्प्रेषण, अधिकार पृच्छा।"},
+];
+
+// ===== QUIZ STATE =====
+const state = {
+  rj: {answered:{}, score:0, total:0},
+  st: {answered:{}, score:0, total:0}
+};
+
+function renderQuiz(prefix, questions) {
+  const container = document.getElementById(prefix+'-questions');
+  container.innerHTML = '';
+  questions.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'mcq-wrap';
+    div.innerHTML = `
+      <div class="mcq-q" id="${prefix}-q${i}">
+        <div class="q-num">${prefix==='rj'?'राजस्थान':'अन्य राज्य'} PYQ #${i+1}</div>
+        <div class="q-text">${q.q}</div>
+        <div class="opts">
+          ${q.opts.map((o,j)=>`<button class="opt" onclick="selectAns('${prefix}',${i},${j})" id="${prefix}-opt${i}-${j}">(${String.fromCharCode(65+j)}) ${o}</button>`).join('')}
+        </div>
+        <div class="expl" id="${prefix}-expl${i}">💡 ${q.exp}</div>
+      </div>`;
+    container.appendChild(div);
+  });
+}
+
+function selectAns(prefix, qi, oi) {
+  const q = prefix==='rj'?rjQuestions[qi]:stQuestions[qi];
+  if (state[prefix].answered[qi] !== undefined) return;
+  state[prefix].answered[qi] = oi;
+  const correct = q.ans;
+  const allOpts = document.querySelectorAll(`[id^="${prefix}-opt${qi}-"]`);
+  allOpts.forEach(btn => btn.disabled = true);
+  const selectedBtn = document.getElementById(`${prefix}-opt${qi}-${oi}`);
+  const correctBtn = document.getElementById(`${prefix}-opt${qi}-${correct}`);
+  if (oi === correct) {
+    selectedBtn.classList.add('correct');
+    state[prefix].score += 1;
+  } else {
+    selectedBtn.classList.add('wrong');
+    correctBtn.classList.add('revealed-correct');
+    state[prefix].score -= 1/3;
+  }
+  const expl = document.getElementById(`${prefix}-expl${qi}`);
+  expl.classList.add('show');
+  updateScore(prefix);
+}
+
+function updateScore(prefix) {
+  const answered = Object.keys(state[prefix].answered).length;
+  const total = prefix==='rj'?rjQuestions.length:stQuestions.length;
+  document.getElementById(`${prefix}-score`).textContent = state[prefix].score.toFixed(2);
+  document.getElementById(`${prefix}-progress`).textContent = `${answered}/${total} हल किए`;
+}
+
+function resetQuiz(prefix) {
+  state[prefix] = {answered:{}, score:0, total:0};
+  const questions = prefix==='rj'?rjQuestions:stQuestions;
+  renderQuiz(prefix, questions);
+  document.getElementById(`${prefix}-score`).textContent = '0.00';
+  document.getElementById(`${prefix}-progress`).textContent = 'प्रश्न हल करें और Score देखें';
+}
+
+function showResult(prefix) {
+  const questions = prefix==='rj'?rjQuestions:stQuestions;
+  const total = questions.length;
+  const answered = Object.keys(state[prefix].answered).length;
+  const score = parseFloat(state[prefix].score.toFixed(2));
+  const max = total;
+  let grade, color;
+  const pct = score/max*100;
+  if (pct >= 80) { grade = '🏆 Outstanding! बहुत बढ़िया!'; color = '#4CAF50'; }
+  else if (pct >= 60) { grade = '🎯 Good! अच्छा प्रयास!'; color = '#FFC107'; }
+  else if (pct >= 40) { grade = '📚 Average — और पढ़ो!'; color = '#FF9800'; }
+  else { grade = '💪 Keep Trying — हार मत मानो!'; color = '#EF5350'; }
+  document.getElementById('popup-score').textContent = score;
+  document.getElementById('popup-score').style.color = color;
+  document.getElementById('popup-grade').textContent = grade;
+  document.getElementById('popup-detail').textContent = `${answered}/${total} प्रश्न हल किए | अधिकतम = ${max}`;
+  document.getElementById('result-popup').classList.add('show');
+}
+
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Init
+renderQuiz('rj', rjQuestions);
+renderQuiz('st', stQuestions);
+</script>
+</body>
+</html>

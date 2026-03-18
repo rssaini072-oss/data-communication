@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>राष्ट्रपति - Complete Revision | RAS & PSI 2025</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Baloo+2:wght@400;600;700;800&display=swap');
+
+  :root {
+    --saffron: #FF6B00;
+    --saffron-light: #FFF0E0;
+    --green: #1a7a35;
+    --green-light: #E8F5EC;
+    --blue: #1a4fa0;
+    --blue-light: #E8EFFE;
+    --red: #c0392b;
+    --red-light: #FDEDEC;
+    --purple: #6c3483;
+    --purple-light: #F5EEF8;
+    --teal: #0e7c7b;
+    --teal-light: #E0F5F5;
+    --gold: #b7860b;
+    --gold-light: #FFFDE7;
+    --dark: #1a1a2e;
+    --gray: #f5f6fa;
+    --border: #dee2e6;
+    --shadow: 0 4px 20px rgba(0,0,0,0.10);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Baloo 2', 'Tiro Devanagari Hindi', sans-serif;
+    background: #f0f2f8;
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #FF6B00 0%, #c0392b 40%, #1a4fa0 100%);
+    color: white;
+    padding: 18px 20px 14px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+  }
+  .header h1 { font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; }
+  .header p { font-size: 0.8rem; opacity: 0.9; margin-top: 2px; }
+  .exam-badges { display: flex; justify-content: center; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow-x: auto;
+    position: sticky;
+    top: 88px;
+    z-index: 99;
+  }
+  .tab-btn {
+    flex: 1;
+    min-width: 100px;
+    padding: 12px 8px;
+    border: none;
+    background: transparent;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.25s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { background: var(--gray); color: var(--saffron); }
+  .tab-btn.active { color: var(--saffron); border-bottom-color: var(--saffron); background: var(--saffron-light); }
+
+  /* CONTENT */
+  .tab-content { display: none; padding: 20px; max-width: 1200px; margin: 0 auto; }
+  .tab-content.active { display: block; }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 20px 0 12px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .st-orange { background: var(--saffron-light); color: var(--saffron); border-left: 5px solid var(--saffron); }
+  .st-green { background: var(--green-light); color: var(--green); border-left: 5px solid var(--green); }
+  .st-blue { background: var(--blue-light); color: var(--blue); border-left: 5px solid var(--blue); }
+  .st-red { background: var(--red-light); color: var(--red); border-left: 5px solid var(--red); }
+  .st-purple { background: var(--purple-light); color: var(--purple); border-left: 5px solid var(--purple); }
+  .st-teal { background: var(--teal-light); color: var(--teal); border-left: 5px solid var(--teal); }
+
+  /* 2-COL GRID */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media(max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  /* CARD */
+  .card {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--saffron);
+  }
+  .card.green-top { border-top-color: var(--green); }
+  .card.blue-top { border-top-color: var(--blue); }
+  .card.red-top { border-top-color: var(--red); }
+  .card.purple-top { border-top-color: var(--purple); }
+  .card.teal-top { border-top-color: var(--teal); }
+  .card.gold-top { border-top-color: var(--gold); }
+
+  .card h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px dashed var(--border);
+  }
+
+  /* ARTICLE TAG */
+  .art-tag {
+    display: inline-block;
+    background: var(--saffron);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .art-tag.green { background: var(--green); }
+  .art-tag.blue { background: var(--blue); }
+  .art-tag.red { background: var(--red); }
+  .art-tag.purple { background: var(--purple); }
+  .art-tag.teal { background: var(--teal); }
+  .art-tag.gold { background: var(--gold); }
+
+  /* LIST ITEMS */
+  .info-list { list-style: none; padding: 0; }
+  .info-list li {
+    padding: 5px 0 5px 20px;
+    position: relative;
+    font-size: 0.88rem;
+    border-bottom: 1px solid #f0f0f0;
+    line-height: 1.5;
+  }
+  .info-list li:last-child { border-bottom: none; }
+  .info-list li::before { content: '→'; position: absolute; left: 0; color: var(--saffron); font-weight: bold; }
+
+  /* HIGHLIGHT BOXES */
+  .highlight-box {
+    background: var(--saffron-light);
+    border: 1.5px solid #FFCBA4;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-size: 0.88rem;
+  }
+  .highlight-box.green { background: var(--green-light); border-color: #a8d5b5; }
+  .highlight-box.blue { background: var(--blue-light); border-color: #a8bfe0; }
+  .highlight-box.red { background: var(--red-light); border-color: #f0a8a8; }
+  .highlight-box.purple { background: var(--purple-light); border-color: #cba8e0; }
+  .highlight-box.gold { background: var(--gold-light); border-color: #e0d08a; }
+
+  /* MNEMONIC */
+  .mnemonic {
+    background: linear-gradient(135deg, #FFF9C4, #FFF3E0);
+    border: 2px solid #FFD700;
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+  }
+  .mnemonic-title { font-weight: 800; color: var(--gold); font-size: 0.8rem; margin-bottom: 4px; }
+
+  /* TABLE */
+  .rev-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 8px 0; }
+  .rev-table th {
+    background: var(--dark);
+    color: white;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .rev-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .rev-table tr:nth-child(even) { background: var(--gray); }
+  .rev-table tr:hover { background: var(--saffron-light); }
+
+  /* MCQ SECTION */
+  .mcq-header {
+    background: linear-gradient(135deg, var(--dark), #16213e);
+    color: white;
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .score-display { font-size: 1.1rem; font-weight: 800; }
+  .score-rule { font-size: 0.78rem; opacity: 0.8; margin-top: 4px; }
+
+  .mcq-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--blue);
+  }
+  .mcq-card.rj { border-left-color: var(--saffron); }
+  .mcq-card.state { border-left-color: var(--green); }
+
+  .mcq-num { font-size: 0.75rem; font-weight: 800; color: var(--blue); margin-bottom: 8px; }
+  .mcq-num.rj { color: var(--saffron); }
+  .mcq-num.state { color: var(--green); }
+
+  .mcq-q { font-size: 0.92rem; font-weight: 700; margin-bottom: 12px; line-height: 1.6; }
+  .mcq-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media(max-width: 600px) { .mcq-options { grid-template-columns: 1fr; } }
+
+  .mcq-opt {
+    padding: 9px 14px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    background: white;
+    text-align: left;
+    font-family: 'Baloo 2', sans-serif;
+  }
+  .mcq-opt:hover:not(:disabled) { background: var(--blue-light); border-color: var(--blue); }
+  .mcq-opt.correct { background: var(--green-light); border-color: var(--green); color: var(--green); font-weight: 700; }
+  .mcq-opt.wrong { background: var(--red-light); border-color: var(--red); color: var(--red); }
+  .mcq-opt.reveal { background: var(--green-light); border-color: var(--green); }
+  .mcq-opt:disabled { cursor: default; }
+
+  .mcq-explanation {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: var(--gold-light);
+    border-radius: 8px;
+    font-size: 0.82rem;
+    display: none;
+    border-left: 3px solid var(--gold);
+  }
+  .mcq-explanation.show { display: block; }
+
+  /* SUBMIT BUTTON */
+  .submit-btn {
+    background: linear-gradient(135deg, var(--saffron), #c0392b);
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    box-shadow: var(--shadow);
+    font-family: 'Baloo 2', sans-serif;
+    transition: transform 0.2s;
+  }
+  .submit-btn:hover { transform: scale(1.04); }
+
+  /* RESULT POPUP */
+  .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+  .overlay.show { display: flex; }
+  .result-box {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    animation: popIn 0.3s ease;
+  }
+  @keyframes popIn { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .result-emoji { font-size: 3.5rem; margin-bottom: 10px; }
+  .result-score { font-size: 2.5rem; font-weight: 800; color: var(--saffron); }
+  .result-msg { font-size: 1.1rem; font-weight: 700; margin: 10px 0; }
+  .result-detail { font-size: 0.85rem; color: #666; margin: 4px 0; }
+  .close-btn {
+    background: var(--dark);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 16px;
+    font-family: 'Baloo 2', sans-serif;
+  }
+
+  /* LAST MINUTE */
+  .lm-card {
+    background: white;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border);
+    margin-bottom: 14px;
+  }
+  .lm-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: white;
+    background: var(--dark);
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .lm-point {
+    font-size: 0.83rem;
+    padding: 4px 0;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .lm-point:last-child { border-bottom: none; }
+  .lm-icon { min-width: 20px; }
+
+  .super-mnemonic {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 14px;
+    padding: 18px;
+    color: white;
+    margin: 14px 0;
+  }
+  .sm-title { font-size: 1rem; font-weight: 800; color: #FFD700; margin-bottom: 10px; }
+  .sm-item { padding: 5px 0; font-size: 0.88rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .sm-item:last-child { border-bottom: none; }
+  .sm-key { color: #FFD700; font-weight: 800; }
+
+  /* CHIPS */
+  .chip {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin: 2px;
+  }
+  .chip-orange { background: var(--saffron-light); color: var(--saffron); border: 1px solid #FFCBA4; }
+  .chip-green { background: var(--green-light); color: var(--green); border: 1px solid #a8d5b5; }
+  .chip-blue { background: var(--blue-light); color: var(--blue); border: 1px solid #a8bfe0; }
+  .chip-red { background: var(--red-light); color: var(--red); border: 1px solid #f0a8a8; }
+
+  /* PROGRESS BAR */
+  .progress-wrap { background: #eee; border-radius: 10px; height: 8px; margin: 8px 0; overflow: hidden; }
+  .progress-bar { height: 100%; background: linear-gradient(90deg, var(--saffron), var(--red)); border-radius: 10px; transition: width 0.5s; }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 2px dashed var(--border); margin: 20px 0; }
+
+  /* IMPORTANT NUMBER */
+  .imp-num { font-size: 2rem; font-weight: 800; color: var(--saffron); display: block; }
+  .imp-label { font-size: 0.78rem; color: #666; }
+
+  .stats-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+  .stat-box {
+    flex: 1;
+    min-width: 80px;
+    background: var(--gray);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    border-top: 3px solid var(--saffron);
+  }
+  .stat-box.green { border-top-color: var(--green); }
+  .stat-box.blue { border-top-color: var(--blue); }
+  .stat-box.red { border-top-color: var(--red); }
+
+  /* FLOW DIAGRAM */
+  .flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 6px 0;
+    font-size: 0.82rem;
+  }
+  .flow-item {
+    background: var(--blue-light);
+    border: 1.5px solid var(--blue);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--blue);
+  }
+  .flow-arrow { color: var(--saffron); font-weight: bold; font-size: 1.1rem; }
+
+  /* PRESIDENTS TABLE */
+  .pres-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  .pres-table th { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; padding: 8px; text-align: center; }
+  .pres-table td { padding: 7px 8px; border-bottom: 1px solid var(--border); text-align: center; }
+  .pres-table tr:nth-child(even) { background: var(--gray); }
+  .pres-table tr:hover { background: var(--blue-light); }
+
+  .flag-banner {
+    background: linear-gradient(90deg, #FF6B00, white 33%, #138808);
+    padding: 3px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .flag-inner { background: white; border-radius: 4px; padding: 8px 12px; text-align: center; }
+
+  /* MCQ Set tabs */
+  .mcq-set-tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .mst-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 2px solid var(--border);
+    background: white;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .mst-btn.active-rj { background: var(--saffron); color: white; border-color: var(--saffron); }
+  .mst-btn.active-state { background: var(--green); color: white; border-color: var(--green); }
+
+  .mcq-set { display: none; }
+  .mcq-set.active { display: block; }
+
+  .attempt-counter {
+    background: var(--dark);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+  }
+  .live-score { font-weight: 800; color: #FFD700; font-size: 1rem; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏛️ राष्ट्रपति (President) — Complete Revision</h1>
+  <p>Ranjeet Sir Notes | अनु. 52–151 | भाग-V</p>
+  <div class="exam-badges">
+    <span class="badge">📋 RAS Pre 2025</span>
+    <span class="badge">👮 PSI 2025</span>
+    <span class="badge">📖 अनुच्छेद आधारित</span>
+    <span class="badge">✅ PYQ MCQs</span>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('revision')">📚 Revision</button>
+  <button class="tab-btn" onclick="showTab('summary')">📊 Summary Table</button>
+  <button class="tab-btn" onclick="showTab('rjpyq')">🔴 RJ PYQ (25)</button>
+  <button class="tab-btn" onclick="showTab('statepyq')">🟢 States PYQ (25)</button>
+  <button class="tab-btn" onclick="showTab('lastminute')">⚡ Last Minute</button>
+</div>
+
+<!-- ==================== TAB 1: REVISION ==================== -->
+<div id="tab-revision" class="tab-content active">
+
+  <div class="section-title st-orange">🏛️ संघ सरकार की संरचना</div>
+  <div class="card">
+    <div class="flow">
+      <div class="flow-item">संघ सरकार (भाग-V, अनु. 52→151)</div>
+      <span class="flow-arrow">↓</span>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:8px; font-size:0.85rem;">
+      <div class="highlight-box">🏛️ <strong>विधायिका</strong><br>संसद<br><small>कानून बनाना</small></div>
+      <div class="highlight-box green">⚙️ <strong>कार्यपालिका</strong><br>राष्ट्रपति, PM, मंत्री<br><small>कानून लागू करना</small></div>
+      <div class="highlight-box blue">⚖️ <strong>न्यायपालिका</strong><br>सर्वोच्च न्यायालय<br><small>कानून की जाँच</small></div>
+    </div>
+  </div>
+
+  <div class="section-title st-green">👑 राष्ट्रपति — परिचय (अनु. 52-53)</div>
+  <div class="grid-2">
+    <div class="card green-top">
+      <span class="art-tag green">Art. 52</span>
+      <h3>भारत का एक राष्ट्रपति होगा</h3>
+      <ul class="info-list">
+        <li>भाग-V, अध्याय-1, अनु. 52-78</li>
+        <li>राष्ट्रपति का पद → <strong>अमेरिका</strong> से</li>
+        <li>राष्ट्रपति के पद की रिपोर्ट → <strong>ब्रिटेन</strong> से</li>
+        <li>तीनों सेनाओं का प्रमुख → <strong>अमेरिका</strong> से</li>
+        <li>निर्वाचन मंडल → <strong>आयरलैंड</strong> से</li>
+      </ul>
+      <div class="mnemonic">
+        <div class="mnemonic-title">💡 Trick: "अ-ब्र-अ-आ"</div>
+        <strong>अ</strong>मेरिका-पद | <strong>ब्र</strong>िटेन-रिपोर्ट | <strong>अ</strong>मेरिका-सेना | <strong>आ</strong>यरलैंड-निर्वाचन
+      </div>
+    </div>
+    <div class="card blue-top">
+      <span class="art-tag blue">Art. 53</span>
+      <h3>कार्यपालिका शक्तियाँ</h3>
+      <ul class="info-list">
+        <li>संघ की <strong>समस्त</strong> कार्यपालिका शक्तियाँ राष्ट्रपति में</li>
+        <li>राष्ट्रपति <strong>स्वयं</strong> या <strong>अधीनस्थ अधिकारियों</strong> के माध्यम से</li>
+        <li>राष्ट्रपति तीनों सेनाओं का <strong>प्रमुख</strong> होता है</li>
+        <li>अधीनस्थ अधिकारी = <strong>मंत्रिपरिषद</strong></li>
+        <li>Art.74 → सलाह देने के लिए <strong>मंत्रिपरिषद</strong></li>
+        <li>Art.77 → सभी कार्य <strong>राष्ट्रपति के नाम से</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <span class="art-tag">Art. 77-78</span>
+      <h3>राष्ट्रपति की स्थिति</h3>
+      <ul class="info-list">
+        <li>राष्ट्रपति = <strong>संवैधानिक प्रधान</strong> (Nominal Head)</li>
+        <li>PM = <strong>वास्तविक प्रमुख</strong> (Real Head)</li>
+        <li>राष्ट्रपति = देश का <strong>प्रथम नागरिक</strong></li>
+        <li>राष्ट्रपति = <strong>एकता व अखंडता</strong> का प्रतीक</li>
+        <li>Art.78 → PM का कर्तव्य: शासन की जानकारी देना</li>
+      </ul>
+      <div class="mnemonic">
+        <div class="mnemonic-title">💡 Trick: "रा-प्र-ए-प्र"</div>
+        राष्ट्रपति = <strong>प्र</strong>तीकात्मक | PM = <strong>वा</strong>स्तविक
+      </div>
+    </div>
+    <div class="card red-top">
+      <span class="art-tag red">Art. 54</span>
+      <h3>निर्वाचन मंडल (Electoral College)</h3>
+      <ul class="info-list">
+        <li>लोकसभा के <strong>निर्वाचित</strong> सदस्य ✅ (मनोनीत ❌)</li>
+        <li>राज्यसभा के <strong>निर्वाचित</strong> सदस्य ✅ (मनोनीत ❌)</li>
+        <li>विधानसभा के <strong>निर्वाचित</strong> सदस्य ✅ (मनोनीत ❌)</li>
+        <li>केंद्र शासित → <strong>दिल्ली व पुडुचेरी</strong> के निर्वाचित सदस्य</li>
+        <li>70वाँ संविधान संशोधन <strong>1992</strong> → दिल्ली व पुड्डु शामिल</li>
+      </ul>
+      <div class="mnemonic">
+        <div class="mnemonic-title">💡 Trick: "लो-रा-वि-दि-पु"</div>
+        <strong>लो</strong>कसभा + <strong>रा</strong>ज्यसभा + <strong>वि</strong>धानसभा + <strong>दि</strong>ल्ली + <strong>पु</strong>डुचेरी = निर्वाचन मंडल
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title st-blue">🗳️ निर्वाचन प्रक्रिया (Art. 55)</div>
+  <div class="grid-2">
+    <div class="card blue-top">
+      <h3>विधायक का मत मूल्य</h3>
+      <div class="highlight-box blue" style="font-size:0.85rem; text-align:center;">
+        <strong>मत मूल्य = राज्य की जनसंख्या (1971) ÷ राज्य के कुल विधायक × 1/1000</strong>
+      </div>
+      <ul class="info-list">
+        <li>सर्वाधिक मत मूल्य → <strong>उत्तर प्रदेश (208)</strong></li>
+        <li>न्यूनतम मत मूल्य → <strong>सिक्किम (7)</strong></li>
+        <li>राजस्थान के विधायक का मत मूल्य → <strong>129</strong></li>
+      </ul>
+    </div>
+    <div class="card green-top">
+      <h3>सांसद का मत मूल्य</h3>
+      <div class="highlight-box green" style="font-size:0.85rem; text-align:center;">
+        <strong>सांसद मत मूल्य = भारत के सभी विधायकों का कुल मत मूल्य ÷ सभी सांसद</strong>
+      </div>
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="imp-num">708</span>
+          <span class="imp-label">सांसद का वर्तमान मत मूल्य</span>
+        </div>
+        <div class="stat-box green">
+          <span class="imp-num">1251</span>
+          <span class="imp-label">कोटा (Quota) सूत्र</span>
+        </div>
+      </div>
+      <div class="highlight-box" style="font-size:0.82rem; margin-top:8px;">
+        <strong>कोटा = कुल वैध मत ÷ (पदों की संख्या + 1) + 1</strong><br>
+        <strong>विधि:</strong> आनुपातिक प्रतिनिधित्व वाली एकल संक्रमणीय (एकल हस्तांतरणीय) प्रणाली<br>
+        <strong>V.V. गिरी (1969)</strong> → दूसरी वरीयता के मत से जीतने वाले एकमात्र राष्ट्रपति
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title st-red">📅 कार्यकाल, त्यागपत्र और हटाना (Art. 56-57)</div>
+  <div class="grid-2">
+    <div class="card red-top">
+      <span class="art-tag red">Art. 56</span>
+      <h3>राष्ट्रपति का कार्यकाल</h3>
+      <ul class="info-list">
+        <li>पद ग्रहण से <strong>5 वर्ष</strong> तक</li>
+        <li>त्यागपत्र → <strong>उपराष्ट्रपति</strong> को देगा</li>
+        <li>उपराष्ट्रपति लोकसभा स्पीकर को सूचना देगा</li>
+        <li>हटाना → <strong>महाभियोग</strong> द्वारा (Art. 61)</li>
+        <li>उत्तराधिकारी चुने जाने तक पद पर बना रहेगा</li>
+      </ul>
+      <div class="mnemonic">
+        <div class="mnemonic-title">💡 Trick: "पाँच-उप-लोक"</div>
+        <strong>5 वर्ष</strong> → <strong>उप</strong>राष्ट्रपति को पत्र → <strong>लोक</strong>सभा स्पीकर को सूचना
+      </div>
+    </div>
+    <div class="card purple-top">
+      <span class="art-tag purple">Art. 57</span>
+      <h3>पुनः निर्वाचन</h3>
+      <ul class="info-list">
+        <li>भारत में कितनी भी बार राष्ट्रपति बन सकता है</li>
+        <li><strong>USA में</strong> Franklin D. Roosevelt के बाद अधिकतम <strong>2 बार</strong></li>
+        <li>USA राष्ट्रपति का कार्यकाल = <strong>4 वर्ष</strong></li>
+      </ul>
+      <span class="art-tag red">Art. 62</span>
+      <h3 style="margin-top:8px;">पद रिक्तता</h3>
+      <ul class="info-list">
+        <li>रिक्तता के कारण: त्यागपत्र, निधन, हटाया, अन्य</li>
+        <li>रिक्तता पर <strong>6 माह</strong> के भीतर चुनाव अनिवार्य</li>
+        <li>कार्यकाल समाप्ति से <strong>60 दिन पूर्व</strong> चुनाव घोषणा</li>
+        <li>चुनाव → <strong>भारत का निर्वाचन आयोग</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-title st-orange">📋 योग्यता, शर्तें और शपथ (Art. 58-60)</div>
+  <div class="grid-2">
+    <div class="card">
+      <span class="art-tag">Art. 58</span>
+      <h3>राष्ट्रपति की योग्यता</h3>
+      <ul class="info-list">
+        <li>भारत का <strong>नागरिक</strong> होना</li>
+        <li><strong>35 वर्ष</strong> की आयु पूर्ण</li>
+        <li>लोकसभा सदस्य बनने की <strong>योग्यता</strong> रखता हो</li>
+        <li>कोई <strong>लाभ का पद</strong> न रखता हो</li>
+        <li>लाभ के पद नहीं: राष्ट्रपति, उपराष्ट्रपति, राज्यपाल, मंत्री</li>
+      </ul>
+      <div class="highlight-box red">⭐ <strong>USA में</strong> जन्म से नागरिकता जरूरी | भारत में नहीं</div>
+      <div class="highlight-box blue">💰 चुनाव लड़ने के लिए <strong>₹15,000</strong> जमानत राशि RBI में | 1/6 मत न मिले तो जब्त</div>
+      <div class="mnemonic">
+        <div class="mnemonic-title">💡 Trick: "ना-35-लो-ला"</div>
+        <strong>ना</strong>गरिक + <strong>35</strong> साल + <strong>लो</strong>कसभा योग्यता + <strong>ला</strong>भ का पद नहीं
+      </div>
+    </div>
+    <div class="card green-top">
+      <span class="art-tag green">Art. 59</span>
+      <h3>राष्ट्रपति की शर्तें</h3>
+      <ul class="info-list">
+        <li>संसद एवं विधानमंडल का सदस्य <strong>नहीं</strong> होगा</li>
+        <li>अन्य लाभ का पद <strong>धारण नहीं</strong> करेगा</li>
+        <li>बिना किराए का आवास मिलेगा → <strong>राष्ट्रपति भवन, नई दिल्ली</strong></li>
+        <li>वेतन-भत्ते <strong>कम नहीं</strong> किए जा सकते</li>
+        <li>वर्तमान वेतन = <strong>₹5 लाख/माह</strong> (भारत की संचित निधि से)</li>
+      </ul>
+      <span class="art-tag green">Art. 60</span>
+      <h3 style="margin-top:10px;">शपथ</h3>
+      <ul class="info-list">
+        <li>शपथ → <strong>सर्वोच्च न्यायालय के मुख्य न्यायाधीश</strong> द्वारा</li>
+        <li>अनुपस्थिति में → <strong>वरिष्ठ न्यायाधीश</strong> द्वारा</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-title st-blue">⚖️ महाभियोग (Art. 61)</div>
+  <div class="card blue-top">
+    <div class="grid-2">
+      <div>
+        <h3>महाभियोग प्रक्रिया</h3>
+        <ul class="info-list">
+          <li>शब्द का प्रयोग केवल <strong>राष्ट्रपति</strong> को हटाने के लिए</li>
+          <li>महाभियोग = <strong>अर्ध-न्यायिक प्रक्रिया</strong></li>
+          <li>महाभियोग से <strong>संयुक्त बैठक नहीं</strong> बुला सकते</li>
+          <li>प्रक्रिया के दौरान राष्ट्रपति की <strong>शक्तियों पर कोई प्रभाव नहीं</strong></li>
+          <li>14 दिन पूर्व राष्ट्रपति को सूचित करना</li>
+          <li>जिस सदन में प्रस्ताव → उस सदन के <strong>3/4 सदस्यों</strong> का हस्ताक्षर</li>
+        </ul>
+      </div>
+      <div>
+        <h3>प्रक्रिया के चरण</h3>
+        <div class="flow" style="flex-direction:column; align-items:flex-start;">
+          <div><span class="chip chip-orange">Step 1</span> पहले सदन में प्रस्ताव → <strong>2/3 बहुमत</strong> से पास</div>
+          <div style="margin:4px 0;">↓</div>
+          <div><span class="chip chip-blue">Step 2</span> दूसरे सदन में भेजा जाता है</div>
+          <div style="margin:4px 0;">↓</div>
+          <div><span class="chip chip-green">Step 3</span> दूसरा सदन जाँच करता है, राष्ट्रपति प्रतिनिधित्व भेज सकता है</div>
+          <div style="margin:4px 0;">↓</div>
+          <div><span class="chip chip-red">Step 4</span> दूसरे सदन में <strong>2/3 बहुमत</strong> → राष्ट्रपति का पद रिक्त</div>
+        </div>
+        <div class="highlight-box red" style="margin-top:10px; font-size:0.82rem;">
+          ✅ विधानसभा के निर्वाचित → राष्ट्रपति चुनाव में भाग ✅, महाभियोग में ❌<br>
+          ✅ राज्यसभा के मनोनीत → महाभियोग में भाग ✅, चुनाव में ❌
+        </div>
+      </div>
+    </div>
+    <div class="mnemonic">
+      <div class="mnemonic-title">💡 Trick: "14-3/4-2/3-जाँच-2/3-रिक्त"</div>
+      14 दिन नोटिस → 3/4 हस्ताक्षर → पहले सदन 2/3 → दूसरे सदन जाँच → 2/3 पास → पद रिक्त
+    </div>
+  </div>
+
+  <div class="section-title st-purple">🔄 राष्ट्रपति का पद रिक्त होने पर (Art. 65)</div>
+  <div class="card purple-top">
+    <h3>कार्यभार क्रम</h3>
+    <div class="flow">
+      <div class="flow-item">राष्ट्रपति</div>
+      <span class="flow-arrow">रिक्त→</span>
+      <div class="flow-item">उपराष्ट्रपति</div>
+      <span class="flow-arrow">रिक्त→</span>
+      <div class="flow-item">CJI</div>
+      <span class="flow-arrow">रिक्त→</span>
+      <div class="flow-item">SC वरिष्ठ जज</div>
+    </div>
+    <div class="highlight-box purple" style="margin-top:10px; font-size:0.82rem;">
+      🌟 <strong>1969 का ऐतिहासिक घटनाक्रम:</strong> जाकिर हुसैन (निधन) → V.V.गिरी (त्यागपत्र) → मो. हिदायतुल्लाह (CJI कार्यकारी) → V.V.गिरी जीते (नीलम संजीव रेड्डी को हराया)
+    </div>
+    <div class="mnemonic">
+      <div class="mnemonic-title">💡 Trick: "रा-उप-CJI-वरि"</div>
+      राष्ट्रपति → उपराष्ट्रपति → CJI → वरिष्ठ न्यायाधीश
+    </div>
+  </div>
+
+  <div class="section-title st-teal">⚡ राष्ट्रपति की शक्तियाँ</div>
+
+  <!-- KARYAPALIKA SHAKTI -->
+  <div class="card teal-top">
+    <span class="art-tag teal">कार्यपालिका शक्तियाँ</span>
+    <h3>प्रमुख नियुक्तियाँ (Art. 75, 76, 124, 155, 217)</h3>
+    <div class="grid-2">
+      <table class="rev-table">
+        <tr><th>पद</th><th>अनुच्छेद</th></tr>
+        <tr><td>महान्यायवादी</td><td>Art. 76</td></tr>
+        <tr><td>CAG (नियंत्रक व महालेखा)</td><td>Art. 148</td></tr>
+        <tr><td>SC के जज</td><td>Art. 124</td></tr>
+        <tr><td>HC के जज</td><td>Art. 217</td></tr>
+        <tr><td>HC जज का स्थानांतरण</td><td>Art. 222</td></tr>
+        <tr><td>राज्यपाल</td><td>Art. 155</td></tr>
+      </table>
+      <table class="rev-table">
+        <tr><th>पद</th><th>अनुच्छेद</th></tr>
+        <tr><td>दिल्ली CM</td><td>Art. 239AA</td></tr>
+        <tr><td>UPSC अध्यक्ष व सदस्य</td><td>Art. 316</td></tr>
+        <tr><td>वित्त आयोग</td><td>Art. 280</td></tr>
+        <tr><td>SC (अनुसूचित जाति) आयोग</td><td>Art. 338</td></tr>
+        <tr><td>SC (अनुसूचित जनजाति)</td><td>Art. 338A</td></tr>
+        <tr><td>OBC आयोग</td><td>Art. 338B</td></tr>
+      </table>
+    </div>
+    <div class="highlight-box" style="font-size:0.82rem; margin-top:8px;">
+      ⚠️ <strong>गैर-संवैधानिक संस्थाएँ</strong> (राष्ट्रपति द्वारा नियुक्त किंतु संविधान में नहीं): राष्ट्रीय मानवाधिकार आयोग, महिला आयोग, केंद्रीय सतर्कता आयोग, लोकपाल, राष्ट्रीय हरित अधिकरण
+    </div>
+  </div>
+
+  <!-- VIDHAYEE SHAKTI -->
+  <div class="card blue-top">
+    <span class="art-tag blue">विधायी शक्तियाँ</span>
+    <h3>संसद संबंधित शक्तियाँ (Art. 79-99)</h3>
+    <div class="grid-2">
+      <div>
+        <ul class="info-list">
+          <li>Art.79 → संसद = LS + RS + <strong>राष्ट्रपति</strong></li>
+          <li>Art.80(3) → RS में <strong>12 सदस्य</strong> मनोनीत (साहित्य, कला, विज्ञान, समाज सेवा)</li>
+          <li>Art.85 → संसद सत्र को <strong>आहूत, सत्रावसान, विघटन</strong> करेगा</li>
+          <li>Art.86 → संसद को <strong>संदेश भेजना</strong></li>
+          <li>Art.87 → <strong>अभिभाषण</strong> (नई संसद + सत्र शुरू से पहले)</li>
+          <li>Art.99 → सदस्यों को <strong>शपथ दिलाना</strong></li>
+          <li>Art.108 → <strong>संयुक्त बैठक</strong> बुलाना (साधारण विधेयक पर गतिरोध)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="highlight-box blue" style="font-size:0.82rem;">
+          <strong>संसद सत्र (Art.85):</strong><br>
+          📅 बजट सत्र: Feb-May<br>
+          📅 मानसून सत्र: July-Sept<br>
+          📅 शीतकाल सत्र: Nov-Dec<br>
+          ⚠️ दो सत्रों के बीच 6 माह से अधिक नहीं
+        </div>
+        <div class="highlight-box" style="margin-top:8px; font-size:0.82rem;">
+          <strong>संयुक्त बैठक (Art.108):</strong><br>
+          अध्यक्षता → <strong>लोकसभा अध्यक्ष</strong><br>
+          भारत में 3 बार: (1) दहेज निषेध 1961 (2) बैंकिंग 1978 (3) POTA 2002<br>
+          तीनों बैठकों में भाग → <strong>अटल बिहारी वाजपेयी</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VETO SHAKTI -->
+  <div class="card red-top">
+    <span class="art-tag red">वीटो शक्ति (Art. 111)</span>
+    <h3>राष्ट्रपति की वीटो शक्ति</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:8px; font-size:0.82rem;">
+      <div class="highlight-box">
+        <strong>🚫 आत्यांतिक वीटो</strong><br>(Absolute Veto)<br>
+        मना कर देना / अस्वीकृत करना<br>
+        <small>PEPSU Act-1954 (पहली बार)</small>
+      </div>
+      <div class="highlight-box blue">
+        <strong>⏸️ निलम्बनकारी वीटो</strong><br>(Suspensive Veto)<br>
+        पुनर्विचार के लिए लौटाना<br>
+        <small>संसद दुबारा भेजे तो मानना होगा</small>
+      </div>
+      <div class="highlight-box purple">
+        <strong>🗂️ पॉकेट वीटो</strong><br>(Pocket Veto)<br>
+        कोई प्रक्रिया नहीं करना<br>
+        <small>1986 → जानी जेल सिंह → डाक संशोधन</small>
+      </div>
+    </div>
+    <div class="highlight-box" style="margin-top:10px; font-size:0.82rem;">
+      ⚠️ <strong>इन विधेयकों पर राष्ट्रपति की पूर्वानुमति जरूरी:</strong> धन विधेयक | वित्त विधेयक ['1'] | नये राज्यों का निर्माण | राज्य के नाम/सीमा परिवर्तन
+    </div>
+    <div class="mnemonic">
+      <div class="mnemonic-title">💡 Trick: "अ-नि-पॉ"</div>
+      <strong>अ</strong>त्यांतिक=रोकना | <strong>नि</strong>लंबनकारी=लौटाना | <strong>पॉ</strong>केट=रखना
+    </div>
+  </div>
+
+  <!-- ADHYADESH -->
+  <div class="card green-top">
+    <span class="art-tag green">Art. 123</span>
+    <h3>अध्यादेश (Ordinance)</h3>
+    <div class="grid-2">
+      <ul class="info-list">
+        <li>संसद सत्र में <strong>न हो</strong> तब जारी होता है</li>
+        <li>संसद द्वारा बनाए जाने वाले कानून जैसी शक्ति</li>
+        <li>पुनः सत्र में आने पर पहली बैठक से <strong>6 सप्ताह</strong> तक वैध</li>
+        <li>संसद चाहे तो दोनों से अनुमोदन → कानून बन सकता है</li>
+      </ul>
+      <div class="highlight-box green" style="font-size:0.82rem;">
+        ⚡ सर्वाधिक अध्यादेश जारी करने वाले राष्ट्रपति → <strong>फखरुद्दीन अली अहमद</strong> (राष्ट्रपति 1974-77)<br><br>
+        ⚠️ राष्ट्रपति अध्यादेश उन्हीं विषयों पर जारी करता है जिन पर <strong>संसद को कानून बनाने का अधिकार</strong> है
+      </div>
+    </div>
+  </div>
+
+  <!-- NYAYIK SHAKTI -->
+  <div class="card purple-top">
+    <span class="art-tag purple">न्यायिक शक्तियाँ (Art. 72)</span>
+    <h3>क्षमादान की शक्तियाँ</h3>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px; font-size:0.85rem;">
+      <div class="highlight-box purple"><strong>क्षमा</strong> → सजा पूर्णतः माफी</div>
+      <div class="highlight-box blue"><strong>विलम्बन</strong> → सजा पर अस्थायी रोक</div>
+      <div class="highlight-box"><strong>विराम</strong> → सजा की अवधि व प्रकृति बदलना</div>
+      <div class="highlight-box green"><strong>परिहार</strong> → सजा की अवधि कम करना</div>
+    </div>
+    <div class="highlight-box red" style="margin-top:8px; font-size:0.82rem;">
+      <strong>लघुकरण</strong> → सजा की प्रकृति बदलना (जैसे फाँसी → उम्रकैद)<br>
+      Art.50 → कार्यपालिका व न्यायपालिका का पृथक्करण<br>
+      Art.143 → राष्ट्रपति SC से कानूनी सलाह माँग सकता है
+    </div>
+    <div class="mnemonic">
+      <div class="mnemonic-title">💡 Trick: "क्ष-वि-वि-प-ल"</div>
+      <strong>क्ष</strong>मा | <strong>वि</strong>लम्बन | <strong>वि</strong>राम | <strong>प</strong>रिहार | <strong>ल</strong>घुकरण
+    </div>
+  </div>
+
+  <!-- VITTIYA SHAKTI -->
+  <div class="card teal-top">
+    <span class="art-tag teal">वित्तीय शक्तियाँ</span>
+    <h3>वित्तीय शक्तियाँ</h3>
+    <ul class="info-list">
+      <li>Art.110 → <strong>धन विधेयक</strong> राष्ट्रपति की पूर्वानुमति से पेश</li>
+      <li>Art.112 → राष्ट्रपति के नाम से <strong>वार्षिक वित्तीय विवरण (बजट)</strong> पेश</li>
+      <li>Art.267 → <strong>आकस्मिक निधि</strong> पर अधिकार राष्ट्रपति का</li>
+      <li>Art.280 → प्रत्येक <strong>5 वर्ष</strong> में वित्त आयोग का गठन</li>
+    </ul>
+  </div>
+
+  <!-- SWAVIVEKADHEEN SHAKTI -->
+  <div class="card red-top">
+    <span class="art-tag red">स्वाविवेकीय शक्तियाँ</span>
+    <h3>स्वविवेक शक्तियाँ</h3>
+    <ul class="info-list">
+      <li>जब किसी राजनीतिक दल को <strong>पूर्ण बहुमत नहीं</strong> → स्वविवेक से PM नियुक्ति</li>
+      <li>जब लोकसभा में PM के पास <strong>बहुमत नहीं</strong> → लोकसभा विघटन</li>
+      <li>जब PM बहुमत न हो और <strong>त्यागपत्र न दे</strong> → सरकार बर्खास्त</li>
+    </ul>
+    <div class="mnemonic">
+      <div class="mnemonic-title">💡 Trick: "बहुमत नहीं = राष्ट्रपति स्वतंत्र"</div>
+      जब कोई पार्टी 272 का जादुई आँकड़ा न पाए → राष्ट्रपति अपनी मर्जी से PM चुनेगा
+    </div>
+  </div>
+
+  <!-- AAPATKAALIN SHAKTI -->
+  <div class="card green-top">
+    <span class="art-tag green">आपातकालीन शक्तियाँ</span>
+    <h3>तीन प्रकार के आपातकाल</h3>
+    <div class="grid-2">
+      <table class="rev-table">
+        <tr><th>अनुच्छेद</th><th>प्रकार</th></tr>
+        <tr><td><strong>Art. 352</strong></td><td>राष्ट्रीय आपातकाल</td></tr>
+        <tr><td><strong>Art. 356</strong></td><td>राज्य में राष्ट्रपति शासन</td></tr>
+        <tr><td><strong>Art. 360</strong></td><td>वित्तीय आपातकाल</td></tr>
+      </table>
+      <div class="highlight-box" style="font-size:0.82rem;">
+        📌 राष्ट्रपति को संविधान के भाग-XVIII में विशेष आपातकालीन शक्तियाँ प्राप्त हैं।<br>
+        📌 Art.356 को <strong>राज्य आपातकाल</strong> या <strong>राष्ट्रपति शासन</strong> कहते हैं
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title st-orange">📜 भारत के राष्ट्रपतियों की सूची</div>
+  <div style="overflow-x:auto;">
+    <table class="pres-table">
+      <tr>
+        <th>#</th><th>नाम</th><th>कार्यकाल</th><th>विशेष तथ्य</th>
+      </tr>
+      <tr><td>1</td><td>डॉ. राजेंद्र प्रसाद</td><td>1950-1962</td><td>सर्वाधिक दो बार, भारत रत्न 1962</td></tr>
+      <tr><td>2</td><td>डॉ. सर्वपल्ली राधाकृष्णन</td><td>1962-1967</td><td>पूर्व में उपराष्ट्रपति, भारत रत्न 1954</td></tr>
+      <tr><td>3</td><td>डॉ. जाकिर हुसैन</td><td>1967-1969</td><td>पद पर रहते निधन (1969), भारत रत्न 1963, बिहार के राज्यपाल</td></tr>
+      <tr><td>4</td><td>वी.वी. गिरी</td><td>1969-1974</td><td>दूसरी वरीयता से जीते, भारत रत्न 1975</td></tr>
+      <tr><td>5</td><td>फखरुद्दीन अली अहमद</td><td>1974-1977</td><td>पद पर रहते निधन (1977), सर्वाधिक अध्यादेश</td></tr>
+      <tr><td>6</td><td>नीलम संजीव रेड्डी</td><td>1977-1982</td><td>निर्विरोध निर्वाचित, लोकसभा अध्यक्ष रहे, आंध्र के CM</td></tr>
+      <tr><td>7</td><td>ज्ञानी जेल सिंह</td><td>1982-1987</td><td>पंजाब CM, पॉकेट वीटो 1986 (डाक संशोधन)</td></tr>
+      <tr><td>8</td><td>आर. वेंकटरमण</td><td>1987-1992</td><td>तमिलनाडु</td></tr>
+      <tr><td>9</td><td>शंकर दयाल शर्मा</td><td>1992-1997</td><td>MP के CM, पंजाब-महाराष्ट्र-आंध्र के राज्यपाल</td></tr>
+      <tr><td>10</td><td>के.आर. नारायणन</td><td>1997-2002</td><td>प्रथम दलित राष्ट्रपति, राजदूत: चीन, तुर्की, USA, थाईलैंड</td></tr>
+      <tr><td>11</td><td>डॉ. A.P.J. अब्दुल कलाम</td><td>2002-2007</td><td>मिसाइल मैन, भारत रत्न 1997, अल्पसंख्यक</td></tr>
+      <tr><td>12</td><td>प्रतिभा पाटिल</td><td>2007-2012</td><td>प्रथम महिला राष्ट्रपति, राजस्थान की राज्यपाल</td></tr>
+      <tr><td>13</td><td>प्रणब मुखर्जी</td><td>2012-2017</td><td>भारत रत्न 2019</td></tr>
+      <tr><td>14</td><td>रामनाथ कोविंद</td><td>2017-2022</td><td>बिहार के राज्यपाल, दलित</td></tr>
+      <tr><td>15</td><td>द्रौपदी मुर्मू</td><td>2022-वर्तमान</td><td>दूसरी महिला, प्रथम आदिवासी, झारखंड की राज्यपाल</td></tr>
+    </table>
+  </div>
+
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="card">
+      <h3>🏆 विशेष श्रेणियाँ</h3>
+      <ul class="info-list">
+        <li><strong>भारत रत्न पाने वाले:</strong> राधाकृष्णन, जाकिर हुसैन, वी.वी.गिरी, V.वेंकटरमण, कलाम, प्रणब</li>
+        <li><strong>मुख्यमंत्री रहे:</strong> नीलम संजीव रेड्डी (AP), जानी जेल सिंह (पंजाब), शंकर दयाल शर्मा (MP), B.D.जत्ती (Mysore)</li>
+        <li><strong>राज्यपाल रहे:</strong> जाकिर हुसैन (बिहार), रामनाथ कोविंद (बिहार), प्रतिभा पाटिल (राजस्थान), द्रौपदी मुर्मू (झारखंड)</li>
+        <li><strong>पद पर निधन:</strong> जाकिर हुसैन (1969), फखरुद्दीन अली अहमद (1977)</li>
+        <li><strong>अल्पसंख्यक राष्ट्रपति:</strong> जाकिर हुसैन, FAA अहमद, हिदायतुल्लाह, जानी जेल सिंह, कलाम</li>
+      </ul>
+    </div>
+    <div class="card green-top">
+      <h3>👩 महिला प्रत्याशी इतिहास</h3>
+      <ul class="info-list">
+        <li>कृष्णा कुमारी चटर्जी - 1952</li>
+        <li>मनाहर होल्कर - 1967 (शून्य वोट)</li>
+        <li>फूल चरण कौर - 1969</li>
+        <li>लक्ष्मी सहगल - 2002</li>
+        <li><strong>प्रतिभा पाटिल - 2007 ✅ (जीतीं)</strong></li>
+        <li>मीरा कुमार - 2017</li>
+        <li><strong>द्रौपदी मुर्मू - 2022 ✅ (जीतीं)</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== TAB 2: SUMMARY TABLE ==================== -->
+<div id="tab-summary" class="tab-content">
+  <div class="section-title st-orange">📊 Master Summary Table — अनुच्छेद क्रम</div>
+  <div style="overflow-x:auto;">
+    <table class="rev-table">
+      <tr><th>अनुच्छेद</th><th>विषय</th><th>महत्वपूर्ण तथ्य</th></tr>
+      <tr><td><strong>Art. 52</strong></td><td>भारत का एक राष्ट्रपति</td><td>भारत का एक राष्ट्रपति होगा</td></tr>
+      <tr><td><strong>Art. 53</strong></td><td>कार्यपालिका शक्तियाँ</td><td>सभी शक्तियाँ राष्ट्रपति में निहित; तीनों सेनाओं का प्रमुख</td></tr>
+      <tr><td><strong>Art. 54</strong></td><td>निर्वाचन मंडल</td><td>LS+RS (निर्वाचित) + विधानसभा + दिल्ली-पुडुचेरी</td></tr>
+      <tr><td><strong>Art. 55</strong></td><td>चुनाव प्रक्रिया</td><td>आनुपातिक प्रतिनिधित्व; एकल हस्तांतरणीय; विधायक मत मूल्य; सांसद मत मूल्य = 708</td></tr>
+      <tr><td><strong>Art. 56</strong></td><td>कार्यकाल</td><td>5 वर्ष; त्यागपत्र → उपराष्ट्रपति; महाभियोग से हटाना</td></tr>
+      <tr><td><strong>Art. 57</strong></td><td>पुनः निर्वाचन</td><td>कितनी भी बार (USA में अधिकतम 2 बार)</td></tr>
+      <tr><td><strong>Art. 58</strong></td><td>योग्यता</td><td>नागरिक + 35 वर्ष + LS योग्यता + लाभ का पद नहीं; ₹15,000 जमानत</td></tr>
+      <tr><td><strong>Art. 59</strong></td><td>शर्तें</td><td>संसद/विधानमंडल सदस्य नहीं; वेतन ₹5 लाख/माह; राष्ट्रपति भवन</td></tr>
+      <tr><td><strong>Art. 60</strong></td><td>शपथ</td><td>CJI द्वारा; अनुपस्थिति में वरिष्ठ जज</td></tr>
+      <tr><td><strong>Art. 61</strong></td><td>महाभियोग</td><td>14 दिन नोटिस; 3/4 हस्ताक्षर; दोनों सदनों में 2/3 बहुमत; अर्ध-न्यायिक</td></tr>
+      <tr><td><strong>Art. 62</strong></td><td>पद रिक्तता</td><td>6 माह में चुनाव; कार्यकाल समाप्ति से 60 दिन पूर्व घोषणा</td></tr>
+      <tr><td><strong>Art. 65</strong></td><td>कार्यकारी राष्ट्रपति</td><td>रिक्तता → उपराष्ट्रपति → CJI → वरिष्ठ जज</td></tr>
+      <tr><td><strong>Art. 72</strong></td><td>क्षमादान</td><td>क्षमा, विलम्बन, विराम, परिहार, लघुकरण</td></tr>
+      <tr><td><strong>Art. 74</strong></td><td>मंत्रिपरिषद</td><td>राष्ट्रपति को सलाह देने के लिए PM की अध्यक्षता में</td></tr>
+      <tr><td><strong>Art. 77</strong></td><td>सरकारी कार्य</td><td>सभी कार्य राष्ट्रपति के नाम से</td></tr>
+      <tr><td><strong>Art. 78</strong></td><td>PM का कर्तव्य</td><td>शासन-प्रशासन की जानकारी राष्ट्रपति को देना</td></tr>
+      <tr><td><strong>Art. 79</strong></td><td>संसद की संरचना</td><td>LS + RS + राष्ट्रपति</td></tr>
+      <tr><td><strong>Art. 80(3)</strong></td><td>RS में मनोनयन</td><td>12 सदस्य (साहित्य, कला, विज्ञान, समाज सेवा)</td></tr>
+      <tr><td><strong>Art. 85</strong></td><td>संसद सत्र</td><td>आहूत, सत्रावसान, विघटन; 6 माह का अंतर नहीं</td></tr>
+      <tr><td><strong>Art. 86</strong></td><td>संदेश</td><td>राष्ट्रपति संसद को संदेश भेज सकता है</td></tr>
+      <tr><td><strong>Art. 87</strong></td><td>अभिभाषण</td><td>नई संसद की पहली बैठक व प्रत्येक सत्र शुरू से पहले</td></tr>
+      <tr><td><strong>Art. 99</strong></td><td>शपथ दिलाना</td><td>सांसदों को शपथ; प्रोटेम स्पीकर नए सदस्यों को</td></tr>
+      <tr><td><strong>Art. 108</strong></td><td>संयुक्त बैठक</td><td>गतिरोध पर; लोकसभा अध्यक्ष की अध्यक्षता; 3 बार हुई</td></tr>
+      <tr><td><strong>Art. 110</strong></td><td>धन विधेयक</td><td>राष्ट्रपति की पूर्वानुमति से पेश</td></tr>
+      <tr><td><strong>Art. 111</strong></td><td>वीटो शक्ति</td><td>आत्यांतिक, निलम्बनकारी, पॉकेट वीटो</td></tr>
+      <tr><td><strong>Art. 112</strong></td><td>बजट</td><td>वार्षिक वित्तीय विवरण = बजट; राष्ट्रपति के नाम से</td></tr>
+      <tr><td><strong>Art. 123</strong></td><td>अध्यादेश</td><td>सत्र में न हो तब; 6 सप्ताह वैध; संसद कानून बना सकती</td></tr>
+      <tr><td><strong>Art. 124</strong></td><td>SC जज नियुक्ति</td><td>राष्ट्रपति द्वारा</td></tr>
+      <tr><td><strong>Art. 143</strong></td><td>कानूनी सलाह</td><td>SC से सलाह माँग सकता है (बाध्य नहीं)</td></tr>
+      <tr><td><strong>Art. 155</strong></td><td>राज्यपाल नियुक्ति</td><td>राष्ट्रपति द्वारा</td></tr>
+      <tr><td><strong>Art. 267</strong></td><td>आकस्मिक निधि</td><td>राष्ट्रपति का अधिकार</td></tr>
+      <tr><td><strong>Art. 280</strong></td><td>वित्त आयोग</td><td>राष्ट्रपति हर 5 साल में गठन करेगा</td></tr>
+      <tr><td><strong>Art. 352</strong></td><td>राष्ट्रीय आपातकाल</td><td>राष्ट्रपति घोषणा करता है</td></tr>
+      <tr><td><strong>Art. 356</strong></td><td>राष्ट्रपति शासन</td><td>राज्य में संवैधानिक तंत्र विफल</td></tr>
+      <tr><td><strong>Art. 360</strong></td><td>वित्तीय आपातकाल</td><td>देश की वित्तीय स्थिरता खतरे में</td></tr>
+    </table>
+  </div>
+
+  <div class="section-title st-blue" style="margin-top:24px;">🔢 Quick Reference Numbers</div>
+  <div class="grid-2">
+    <table class="rev-table">
+      <tr><th>संख्या</th><th>तथ्य</th></tr>
+      <tr><td><strong>5 वर्ष</strong></td><td>राष्ट्रपति का कार्यकाल</td></tr>
+      <tr><td><strong>35 वर्ष</strong></td><td>न्यूनतम आयु</td></tr>
+      <tr><td><strong>₹5 लाख/माह</strong></td><td>वर्तमान वेतन</td></tr>
+      <tr><td><strong>₹15,000</strong></td><td>जमानत राशि</td></tr>
+      <tr><td><strong>708</strong></td><td>सांसद का मत मूल्य</td></tr>
+      <tr><td><strong>208</strong></td><td>UP विधायक का मत मूल्य (सर्वाधिक)</td></tr>
+      <tr><td><strong>7</strong></td><td>सिक्किम का मत मूल्य (न्यूनतम)</td></tr>
+      <tr><td><strong>129</strong></td><td>राजस्थान विधायक का मत मूल्य</td></tr>
+    </table>
+    <table class="rev-table">
+      <tr><th>संख्या</th><th>तथ्य</th></tr>
+      <tr><td><strong>12</strong></td><td>RS में मनोनीत सदस्य (Art.80(3))</td></tr>
+      <tr><td><strong>6 माह</strong></td><td>रिक्तता पर चुनाव की अधिकतम समयसीमा</td></tr>
+      <tr><td><strong>60 दिन</strong></td><td>कार्यकाल समाप्ति से पहले चुनाव घोषणा</td></tr>
+      <tr><td><strong>6 सप्ताह</strong></td><td>अध्यादेश की वैधता (सत्र शुरू से)</td></tr>
+      <tr><td><strong>14 दिन</strong></td><td>महाभियोग नोटिस</td></tr>
+      <tr><td><strong>3/4</strong></td><td>महाभियोग हस्ताक्षर</td></tr>
+      <tr><td><strong>2/3</strong></td><td>दोनों सदनों में महाभियोग बहुमत</td></tr>
+      <tr><td><strong>3 बार</strong></td><td>भारत में संयुक्त बैठक</td></tr>
+    </table>
+  </div>
+
+  <div class="section-title st-green" style="margin-top:20px;">🌐 तुलनात्मक तथ्य (India vs USA)</div>
+  <table class="rev-table">
+    <tr><th>विषय</th><th>भारत 🇮🇳</th><th>USA 🇺🇸</th></tr>
+    <tr><td>राष्ट्रपति का स्वरूप</td><td>नाममात्र का प्रमुख</td><td>वास्तविक प्रमुख</td></tr>
+    <tr><td>कार्यकाल</td><td>5 वर्ष</td><td>4 वर्ष</td></tr>
+    <tr><td>पुनः निर्वाचन</td><td>कितनी भी बार</td><td>अधिकतम 2 बार</td></tr>
+    <tr><td>नागरिकता शर्त</td><td>किसी भी प्रकार की नागरिकता</td><td>जन्म से नागरिक होना जरूरी</td></tr>
+    <tr><td>निर्वाचन</td><td>अप्रत्यक्ष (निर्वाचन मंडल)</td><td>अप्रत्यक्ष (Electoral College)</td></tr>
+    <tr><td>सेनाओं का प्रमुख</td><td>हाँ (नाममात्र)</td><td>हाँ (वास्तविक)</td></tr>
+  </table>
+</div>
+
+<!-- ==================== TAB 3: RJ PYQ ==================== -->
+<div id="tab-rjpyq" class="tab-content">
+  <div class="mcq-header">
+    <div>
+      <div class="score-display">🔴 राजस्थान PYQ — 25 प्रश्न</div>
+      <div class="score-rule">+1 सही | -1/3 गलत | RAS Pre & PSI Style</div>
+    </div>
+    <div id="rj-live" class="live-score">Score: 0</div>
+  </div>
+
+  <div class="attempt-counter">
+    <span>प्रश्न: <strong id="rj-attempted">0</strong>/25 attempt</span>
+    <span>✅ सही: <strong id="rj-correct">0</strong> | ❌ गलत: <strong id="rj-wrong">0</strong></span>
+  </div>
+
+  <div id="rj-questions"></div>
+  <button class="submit-btn" onclick="submitRJ()">📊 परिणाम देखें (RJ)</button>
+</div>
+
+<!-- ==================== TAB 4: STATES PYQ ==================== -->
+<div id="tab-statepyq" class="tab-content">
+  <div class="mcq-header" style="background: linear-gradient(135deg, #1a7a35, #0e7c7b);">
+    <div>
+      <div class="score-display">🟢 अन्य राज्य PYQ — 25 प्रश्न</div>
+      <div class="score-rule">+1 सही | -1/3 गलत | UPSC/State PSC Style</div>
+    </div>
+    <div id="state-live" class="live-score">Score: 0</div>
+  </div>
+
+  <div class="attempt-counter">
+    <span>प्रश्न: <strong id="state-attempted">0</strong>/25 attempt</span>
+    <span>✅ सही: <strong id="state-correct">0</strong> | ❌ गलत: <strong id="state-wrong">0</strong></span>
+  </div>
+
+  <div id="state-questions"></div>
+  <button class="submit-btn" style="background: linear-gradient(135deg, #1a7a35, #0e7c7b);" onclick="submitState()">📊 परिणाम देखें (States)</button>
+</div>
+
+<!-- ==================== TAB 5: LAST MINUTE ==================== -->
+<div id="tab-lastminute" class="tab-content">
+  <div class="section-title st-orange">⚡ Last Minute Revision Cards</div>
+
+  <div class="grid-2">
+    <div class="lm-card">
+      <span class="lm-title">🔢 Key Numbers — याद करो</span>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>कार्यकाल = <strong>5 वर्ष</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>आयु = <strong>35 वर्ष</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>वेतन = <strong>₹5 लाख/माह</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>जमानत = <strong>₹15,000</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>सांसद मत मूल्य = <strong>708</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>UP विधायक मत मूल्य = <strong>208</strong> (सर्वाधिक)</span></div>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>सिक्किम = <strong>7</strong> (न्यूनतम)</span></div>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>राजस्थान विधायक = <strong>129</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>RS मनोनीत = <strong>12</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>रिक्तता पर चुनाव = <strong>6 माह</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">📌</span><span>अध्यादेश वैधता = <strong>6 सप्ताह</strong></span></div>
+    </div>
+    <div class="lm-card">
+      <span class="lm-title">📜 Key Articles — झट से याद</span>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.52 = एक राष्ट्रपति होगा</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.53 = कार्यपालिका शक्तियाँ</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.54 = निर्वाचन मंडल</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.55 = चुनाव प्रक्रिया</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.56 = कार्यकाल (5 वर्ष)</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.58 = योग्यता</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.61 = महाभियोग</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.72 = क्षमादान</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.108 = संयुक्त बैठक</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.111 = वीटो</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.123 = अध्यादेश</span></div>
+      <div class="lm-point"><span class="lm-icon">🔵</span><span>Art.143 = SC से सलाह</span></div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:14px;">
+    <div class="lm-card">
+      <span class="lm-title">⚠️ Tricky Points — जो गलत होता है</span>
+      <div class="lm-point"><span class="lm-icon">❗</span><span>विधानसभा के <strong>मनोनीत सदस्य</strong> — चुनाव में ❌, महाभियोग में ❌</span></div>
+      <div class="lm-point"><span class="lm-icon">❗</span><span>राज्यसभा के <strong>मनोनीत सदस्य</strong> — चुनाव में ❌, महाभियोग में ✅</span></div>
+      <div class="lm-point"><span class="lm-icon">❗</span><span>राष्ट्रपति = <strong>संवैधानिक प्रधान</strong> (वास्तविक नहीं)</span></div>
+      <div class="lm-point"><span class="lm-icon">❗</span><span>महाभियोग में <strong>संयुक्त बैठक नहीं</strong> होती</span></div>
+      <div class="lm-point"><span class="lm-icon">❗</span><span>राष्ट्रपति चुनाव में <strong>कोई अध्यक्ष नहीं</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">❗</span><span>V.V. गिरी — <strong>दूसरी वरीयता</strong> के मत से जीते</span></div>
+      <div class="lm-point"><span class="lm-icon">❗</span><span>सर्वाधिक अध्यादेश = <strong>फखरुद्दीन अली अहमद</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">❗</span><span>पॉकेट वीटो = <strong>ज्ञानी जेल सिंह</strong> (1986)</span></div>
+      <div class="lm-point"><span class="lm-icon">❗</span><span>70वाँ संशोधन 1992 → दिल्ली-पुडुचेरी <strong>निर्वाचन मंडल में</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">❗</span><span>भारत में पुनः निर्वाचन पर <strong>कोई सीमा नहीं</strong></span></div>
+    </div>
+    <div class="lm-card">
+      <span class="lm-title">🏆 First & Special — परीक्षा में आता है</span>
+      <div class="lm-point"><span class="lm-icon">⭐</span><span>प्रथम राष्ट्रपति = <strong>राजेंद्र प्रसाद</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">⭐</span><span>प्रथम महिला = <strong>प्रतिभा पाटिल</strong> (2007)</span></div>
+      <div class="lm-point"><span class="lm-icon">⭐</span><span>प्रथम दलित = <strong>K.R. नारायणन</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">⭐</span><span>प्रथम आदिवासी = <strong>द्रौपदी मुर्मू</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">⭐</span><span>निर्विरोध निर्वाचित = <strong>नीलम संजीव रेड्डी</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">⭐</span><span>दूसरी वरीयता से जीते = <strong>V.V. गिरी</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">⭐</span><span>2 बार राष्ट्रपति = <strong>राजेंद्र प्रसाद</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">⭐</span><span>पद पर निधन = <strong>जाकिर हुसैन</strong> (1969) & <strong>FAA अहमद</strong> (1977)</span></div>
+      <div class="lm-point"><span class="lm-icon">⭐</span><span>तीनों संयुक्त बैठक में = <strong>अटल बिहारी वाजपेयी</strong></span></div>
+      <div class="lm-point"><span class="lm-icon">⭐</span><span>राजस्थान से राज्यपाल = <strong>प्रतिभा पाटिल</strong></span></div>
+    </div>
+  </div>
+
+  <!-- SUPER MNEMONICS -->
+  <div class="super-mnemonic" style="margin-top:16px;">
+    <div class="sm-title">🔥 SUPER MNEMONICS — 100% याद</div>
+    <div class="sm-item"><span class="sm-key">🎯 "अ-ब्र-अ-आ" (राष्ट्रपति के लक्षण):</span> <strong>अ</strong>मेरिका (पद), <strong>ब्र</strong>िटेन (रिपोर्ट), <strong>अ</strong>मेरिका (सेना), <strong>आ</strong>यरलैंड (निर्वाचन मंडल)</div>
+    <div class="sm-item"><span class="sm-key">🎯 "ना-35-लो-ला" (योग्यता):</span> <strong>ना</strong>गरिक + <strong>35</strong> वर्ष + <strong>लो</strong>कसभा योग्यता + <strong>ला</strong>भ का पद नहीं</div>
+    <div class="sm-item"><span class="sm-key">🎯 "5-उप-CJI" (कार्यकाल के बाद):</span> <strong>5</strong> वर्ष → त्यागपत्र <strong>उप</strong>राष्ट्रपति को → रिक्त हो तो <strong>CJI</strong> कार्यकारी</div>
+    <div class="sm-item"><span class="sm-key">🎯 "14-3/4-दो बार-2/3" (महाभियोग):</span> <strong>14</strong> दिन नोटिस → <strong>3/4</strong> हस्ताक्षर → <strong>दो</strong> सदनों में → <strong>2/3</strong> बहुमत</div>
+    <div class="sm-item"><span class="sm-key">🎯 "अ-नि-पॉ" (वीटो):</span> <strong>अ</strong>त्यांतिक (रोको) | <strong>नि</strong>लंबनकारी (लौटाओ) | <strong>पॉ</strong>केट (रखो)</div>
+    <div class="sm-item"><span class="sm-key">🎯 "क्ष-वि-वि-प-ल" (क्षमादान):</span> <strong>क्ष</strong>मा | <strong>वि</strong>लम्बन | <strong>वि</strong>राम | <strong>प</strong>रिहार | <strong>ल</strong>घुकरण</div>
+    <div class="sm-item"><span class="sm-key">🎯 "लो-रा-वि-70वाँ" (निर्वाचन मंडल):</span> <strong>लो</strong>कसभा + <strong>रा</strong>ज्यसभा + <strong>वि</strong>धानसभा निर्वाचित + <strong>70वाँ</strong> संशोधन (दिल्ली-पुडुचेरी)</div>
+    <div class="sm-item"><span class="sm-key">🎯 "राज-V-F-नील-ज्ञान" (1950-1987 याद करो):</span> <strong>राज</strong>ेंद्र → <strong>रा</strong>धाकृष्णन → <strong>जा</strong>किर → <strong>V.V.</strong>गिरी → <strong>F</strong>AA अहमद → <strong>नील</strong>म → <strong>ज्ञान</strong>ी</div>
+    <div class="sm-item"><span class="sm-key">🎯 राजस्थान connection:</span> प्रतिभा पाटिल (राजस्थान राज्यपाल → राष्ट्रपति) | द्रौपदी मुर्मू (झारखंड राज्यपाल → राष्ट्रपति)</div>
+  </div>
+
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="lm-card" style="border:2px solid var(--saffron);">
+      <span class="lm-title" style="background: var(--saffron);">🎯 RAS Pre में अक्सर पूछे जाते</span>
+      <div class="lm-point"><span class="lm-icon">1.</span><span>निर्वाचन मंडल में कौन शामिल नहीं (मनोनीत पूछते हैं)</span></div>
+      <div class="lm-point"><span class="lm-icon">2.</span><span>वीटो का प्रकार और उदाहरण</span></div>
+      <div class="lm-point"><span class="lm-icon">3.</span><span>सांसद/विधायक का मत मूल्य</span></div>
+      <div class="lm-point"><span class="lm-icon">4.</span><span>महाभियोग प्रक्रिया के चरण</span></div>
+      <div class="lm-point"><span class="lm-icon">5.</span><span>राष्ट्रपति की नियुक्तियाँ व अनुच्छेद</span></div>
+      <div class="lm-point"><span class="lm-icon">6.</span><span>पहली/विशेष राष्ट्रपति (महिला, दलित, आदिवासी)</span></div>
+      <div class="lm-point"><span class="lm-icon">7.</span><span>क्षमादान के प्रकार</span></div>
+    </div>
+    <div class="lm-card" style="border:2px solid var(--green);">
+      <span class="lm-title" style="background: var(--green);">🎯 PSI में अक्सर पूछे जाते</span>
+      <div class="lm-point"><span class="lm-icon">1.</span><span>योग्यता (35 साल, नागरिक, LS)</span></div>
+      <div class="lm-point"><span class="lm-icon">2.</span><span>कार्यकाल व त्यागपत्र प्रक्रिया</span></div>
+      <div class="lm-point"><span class="lm-icon">3.</span><span>अध्यादेश की वैधता</span></div>
+      <div class="lm-point"><span class="lm-icon">4.</span><span>संयुक्त बैठक कब और कितनी बार</span></div>
+      <div class="lm-point"><span class="lm-icon">5.</span><span>किस देश से क्या लिया (USA/Ireland/UK)</span></div>
+      <div class="lm-point"><span class="lm-icon">6.</span><span>पद रिक्तता पर उत्तराधिकार क्रम</span></div>
+      <div class="lm-point"><span class="lm-icon">7.</span><span>70वाँ संशोधन 1992</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULT POPUP -->
+<div class="overlay" id="result-overlay">
+  <div class="result-box">
+    <div class="result-emoji" id="res-emoji">🎉</div>
+    <div class="result-score" id="res-score">0</div>
+    <div class="result-msg" id="res-msg">परिणाम</div>
+    <div class="result-detail" id="res-detail"></div>
+    <div class="result-detail" id="res-grade"></div>
+    <button class="close-btn" onclick="closeResult()">बंद करें</button>
+  </div>
+</div>
+
+<script>
+// TAB SWITCHING
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// MCQ DATA
+const rjQuestions = [
+  { q: "राष्ट्रपति के निर्वाचन मंडल में निम्न में से कौन शामिल नहीं है?", opts: ["लोकसभा के निर्वाचित सदस्य", "राज्यसभा के मनोनीत सदस्य", "विधानसभा के निर्वाचित सदस्य", "दिल्ली विधानसभा के निर्वाचित सदस्य"], ans: 1, exp: "राज्यसभा के मनोनीत सदस्य निर्वाचन मंडल में शामिल नहीं होते। केवल निर्वाचित सदस्य शामिल होते हैं।" },
+  { q: "भारत के राष्ट्रपति को शपथ कौन दिलाता है?", opts: ["प्रधानमंत्री", "सर्वोच्च न्यायालय के मुख्य न्यायाधीश", "लोकसभा अध्यक्ष", "उपराष्ट्रपति"], ans: 1, exp: "Art.60 के अनुसार, राष्ट्रपति को शपथ CJI दिलाते हैं। उनकी अनुपस्थिति में SC के वरिष्ठ न्यायाधीश।" },
+  { q: "राष्ट्रपति बनने के लिए न्यूनतम आयु कितनी होनी चाहिए?", opts: ["25 वर्ष", "30 वर्ष", "35 वर्ष", "40 वर्ष"], ans: 2, exp: "Art.58 के अनुसार, राष्ट्रपति पद के लिए 35 वर्ष की आयु आवश्यक है।" },
+  { q: "राजस्थान के विधायक का राष्ट्रपति चुनाव में मत मूल्य कितना है?", opts: ["100", "108", "129", "148"], ans: 2, exp: "राजस्थान के विधायक का मत मूल्य 129 है।" },
+  { q: "भारत में सर्वाधिक अध्यादेश जारी करने वाले राष्ट्रपति कौन थे?", opts: ["ज्ञानी जेल सिंह", "फखरुद्दीन अली अहमद", "वी.वी. गिरी", "के.आर. नारायणन"], ans: 1, exp: "फखरुद्दीन अली अहमद (1974-77) ने सर्वाधिक अध्यादेश जारी किए।" },
+  { q: "राष्ट्रपति का त्यागपत्र किसे संबोधित होता है?", opts: ["प्रधानमंत्री", "लोकसभा अध्यक्ष", "उपराष्ट्रपति", "CJI"], ans: 2, exp: "Art.56 के अनुसार, राष्ट्रपति अपना त्यागपत्र उपराष्ट्रपति को देता है।" },
+  { q: "प्रतिभा पाटिल किस राज्य की राज्यपाल रह चुकी हैं?", opts: ["गुजरात", "महाराष्ट्र", "राजस्थान", "मध्य प्रदेश"], ans: 2, exp: "प्रतिभा पाटिल राजस्थान की राज्यपाल रह चुकी हैं, फिर 2007 में प्रथम महिला राष्ट्रपति बनीं।" },
+  { q: "70वें संविधान संशोधन (1992) द्वारा राष्ट्रपति के निर्वाचन मंडल में कौन से केंद्र शासित प्रदेश शामिल किए गए?", opts: ["चंडीगढ़ व लक्षद्वीप", "दिल्ली व दमन-दीव", "दिल्ली व पुडुचेरी", "पुडुचेरी व लद्दाख"], ans: 2, exp: "70वें संविधान संशोधन 1992 द्वारा दिल्ली व पुडुचेरी के निर्वाचित विधायक राष्ट्रपति के निर्वाचन मंडल में शामिल हुए।" },
+  { q: "राष्ट्रपति की वर्तमान मासिक वेतन कितनी है?", opts: ["₹1.5 लाख", "₹3 लाख", "₹5 लाख", "₹7.5 लाख"], ans: 2, exp: "राष्ट्रपति का वर्तमान वेतन ₹5 लाख प्रति माह है जो भारत की संचित निधि से दी जाती है।" },
+  { q: "भारत में पॉकेट वीटो का प्रयोग किसने किया था?", opts: ["वी.वी. गिरी", "के.आर. नारायणन", "ज्ञानी जेल सिंह", "फखरुद्दीन अली अहमद"], ans: 2, exp: "1986 में ज्ञानी जेल सिंह ने डाक संशोधन विधेयक पर पॉकेट वीटो का प्रयोग किया।" },
+  { q: "V.V. गिरी किस विशेषता से राष्ट्रपति बने?", opts: ["निर्विरोध निर्वाचित", "प्रथम महिला उम्मीदवार को हराया", "दूसरी वरीयता के मत से जीते", "सर्वाधिक मतों से जीते"], ans: 2, exp: "V.V. गिरी 1969 में दूसरी वरीयता के मतों से जीते, नीलम संजीव रेड्डी को हराया। वे ऐसा करने वाले एकमात्र राष्ट्रपति हैं।" },
+  { q: "Art. 72 के तहत राष्ट्रपति की क्षमादान शक्तियों में 'परिहार' का अर्थ है?", opts: ["सजा पूर्णतः माफ करना", "सजा पर अस्थायी रोक", "सजा की अवधि कम करना", "सजा की प्रकृति बदलना"], ans: 2, exp: "परिहार का अर्थ है सजा की अवधि कम करना (जैसे 10 साल → 5 साल)।" },
+  { q: "निम्न में से कौन राष्ट्रपति चुनाव की अध्यक्षता करता है?", opts: ["उपराष्ट्रपति", "CJI", "लोकसभा अध्यक्ष", "कोई अध्यक्ष नहीं होता"], ans: 3, exp: "राष्ट्रपति के चुनाव में कोई अध्यक्ष नहीं होता। यह भारत का निर्वाचन आयोग आयोजित करता है।" },
+  { q: "उत्तर प्रदेश के विधायक का राष्ट्रपति चुनाव में मत मूल्य कितना है?", opts: ["128", "208", "308", "148"], ans: 1, exp: "उत्तर प्रदेश के विधायक का मत मूल्य 208 है जो सर्वाधिक है।" },
+  { q: "महाभियोग में संयुक्त बैठक हो सकती है या नहीं?", opts: ["हाँ, दोनों सदन साथ बैठते हैं", "नहीं, संयुक्त बैठक नहीं हो सकती", "केवल पहले सदन में", "राष्ट्रपति की इच्छा पर"], ans: 1, exp: "महाभियोग में संयुक्त बैठक नहीं हो सकती। दोनों सदन अलग-अलग 2/3 बहुमत से प्रस्ताव पास करते हैं।" },
+  { q: "राष्ट्रपति चुनाव में कौन-सी प्रणाली अपनाई जाती है?", opts: ["प्रत्यक्ष चुनाव प्रणाली", "सूची प्रणाली", "एकल हस्तांतरणीय प्रणाली", "फर्स्ट पास्ट द पोस्ट"], ans: 2, exp: "राष्ट्रपति का चुनाव आनुपातिक प्रतिनिधित्व वाली एकल हस्तांतरणीय (एकल संक्रमणीय) प्रणाली से होता है।" },
+  { q: "भारत की प्रथम आदिवासी राष्ट्रपति कौन हैं?", opts: ["प्रतिभा पाटिल", "मीरा कुमार", "द्रौपदी मुर्मू", "सुषमा स्वराज"], ans: 2, exp: "द्रौपदी मुर्मू (2022-वर्तमान) भारत की प्रथम आदिवासी राष्ट्रपति हैं। वे झारखंड की राज्यपाल भी रही हैं।" },
+  { q: "Art. 123 के अनुसार अध्यादेश की वैधता कब तक होती है?", opts: ["3 सप्ताह", "4 सप्ताह", "6 सप्ताह", "8 सप्ताह"], ans: 2, exp: "संसद के पुनः सत्र में आने पर पहली बैठक से 6 सप्ताह तक अध्यादेश वैध रहता है।" },
+  { q: "किस अनुच्छेद में राष्ट्रपति द्वारा राज्यसभा में 12 सदस्यों को मनोनीत करने का प्रावधान है?", opts: ["Art. 79", "Art. 80(3)", "Art. 85", "Art. 86"], ans: 1, exp: "Art. 80(3) में प्रावधान है कि राष्ट्रपति साहित्य, कला, विज्ञान व समाज सेवा के क्षेत्र में योगदान देने वाले 12 व्यक्तियों को RS में मनोनीत करेगा।" },
+  { q: "निर्विरोध निर्वाचित होने वाले राष्ट्रपति कौन थे?", opts: ["डॉ. राजेंद्र प्रसाद", "नीलम संजीव रेड्डी", "वी.वी. गिरी", "के.आर. नारायणन"], ans: 1, exp: "नीलम संजीव रेड्डी (1977) निर्विरोध निर्वाचित होने वाले एकमात्र राष्ट्रपति हैं।" },
+  { q: "भारत के किस राष्ट्रपति ने सर्वाधिक दो बार पद धारण किया?", opts: ["डॉ. राधाकृष्णन", "डॉ. राजेंद्र प्रसाद", "वी.वी. गिरी", "के.आर. नारायणन"], ans: 1, exp: "डॉ. राजेंद्र प्रसाद एकमात्र ऐसे राष्ट्रपति हैं जिन्होंने दो बार पद धारण किया (1950-1962)।" },
+  { q: "राष्ट्रपति पद के रिक्त होने पर कितने माह में चुनाव कराना अनिवार्य है?", opts: ["3 माह", "4 माह", "6 माह", "1 वर्ष"], ans: 2, exp: "Art. 62 के अनुसार, पद रिक्त होने पर 6 माह के भीतर राष्ट्रपति का चुनाव अनिवार्य है।" },
+  { q: "राष्ट्रपति की क्षमा शक्ति (Art.72) किस मामले में राज्यपाल (Art.161) से अधिक है?", opts: ["सिविल मामले में", "सैन्य न्यायालय की सजा में", "राज्य के अपराधों में", "संवैधानिक मामलों में"], ans: 1, exp: "राष्ट्रपति सैन्य न्यायालय द्वारा दी गई सजा में भी क्षमा दे सकता है। राज्यपाल यह नहीं कर सकता।" },
+  { q: "राष्ट्रपति महाभियोग के संदर्भ में कौन-सा कथन सही है?", opts: ["यह एक न्यायिक प्रक्रिया है", "यह एक अर्ध-न्यायिक प्रक्रिया है", "इसमें संयुक्त बैठक होती है", "केवल लोकसभा इसे आरंभ कर सकती है"], ans: 1, exp: "महाभियोग एक अर्ध-न्यायिक (quasi-judicial) प्रक्रिया है और कोई भी सदन इसे आरंभ कर सकता है।" },
+  { q: "Art. 87 के अनुसार राष्ट्रपति का अभिभाषण कब होता है?", opts: ["प्रत्येक माह", "प्रत्येक बजट सत्र में", "नई संसद की पहली बैठक व प्रत्येक सत्र आरंभ से पहले", "केवल चुनाव के बाद"], ans: 2, exp: "Art. 87 के अनुसार नई संसद की पहली बैठक और प्रत्येक वर्ष के पहले सत्र के शुरू में राष्ट्रपति संयुक्त बैठक को संबोधित करता है।" },
+];
+
+const stateQuestions = [
+  { q: "भारत के राष्ट्रपति को कौन निर्वाचित करता है? [UPSC Style]", opts: ["लोकसभा के सभी सदस्य", "संसद के निर्वाचित सदस्य + राज्य विधानसभाओं के निर्वाचित सदस्य", "केवल संसद सदस्य", "सभी नागरिक"], ans: 1, exp: "राष्ट्रपति का चुनाव निर्वाचन मंडल करता है जिसमें संसद के निर्वाचित सदस्य + सभी राज्यों + दिल्ली-पुडुचेरी के विधायक शामिल हैं।" },
+  { q: "निम्नलिखित में से किसे भारत का 'मिसाइल मैन' कहा जाता है?", opts: ["डॉ. राजेंद्र प्रसाद", "डॉ. A.P.J. अब्दुल कलाम", "वी.वी. गिरी", "के.आर. नारायणन"], ans: 1, exp: "डॉ. A.P.J. अब्दुल कलाम को 'मिसाइल मैन' कहा जाता है। वे 11वें राष्ट्रपति (2002-2007) थे।" },
+  { q: "संविधान के किस अनुच्छेद के तहत राष्ट्रपति अध्यादेश जारी करता है?", opts: ["Art. 85", "Art. 111", "Art. 123", "Art. 143"], ans: 2, exp: "Art. 123 के तहत राष्ट्रपति संसद के सत्र में न होने पर अध्यादेश जारी करता है।" },
+  { q: "भारत में पहली महिला राष्ट्रपति कौन थीं?", opts: ["द्रौपदी मुर्मू", "प्रतिभा पाटिल", "सुषमा स्वराज", "मीरा कुमार"], ans: 1, exp: "प्रतिभा पाटिल 2007 में भारत की प्रथम महिला राष्ट्रपति बनीं।" },
+  { q: "राष्ट्रपति के महाभियोग में किस सदन में प्रस्ताव पेश किया जा सकता है?", opts: ["केवल लोकसभा में", "केवल राज्यसभा में", "दोनों में से किसी में", "संयुक्त बैठक में"], ans: 2, exp: "महाभियोग का प्रस्ताव किसी भी सदन (लोकसभा या राज्यसभा) में पेश किया जा सकता है।" },
+  { q: "Art. 72 के तहत राष्ट्रपति की 'क्षमा' का अर्थ है?", opts: ["सजा की अवधि कम करना", "सजा पूर्णतः माफ करना", "सजा पर अस्थायी रोक", "सजा की प्रकृति बदलना"], ans: 1, exp: "क्षमा (Pardon) का अर्थ है - अपराधी को सजा से पूर्णतः मुक्त कर देना।" },
+  { q: "भारत के राष्ट्रपति के विषय में कौन-सा कथन गलत है?", opts: ["वे देश के प्रथम नागरिक हैं", "वे तीनों सेनाओं के सर्वोच्च कमांडर हैं", "वे वास्तविक कार्यकारी प्रमुख हैं", "वे संसद के अभिन्न अंग हैं"], ans: 2, exp: "राष्ट्रपति नाममात्र के (Constitutional Head) प्रमुख हैं, वास्तविक कार्यकारी प्रमुख PM होते हैं।" },
+  { q: "राज्यसभा में राष्ट्रपति कितने सदस्यों को मनोनीत करता है?", opts: ["2", "10", "12", "15"], ans: 2, exp: "Art. 80(3) के अनुसार राष्ट्रपति साहित्य, कला, विज्ञान और समाज सेवा के क्षेत्र में 12 सदस्यों को मनोनीत करता है।" },
+  { q: "भारत के प्रथम दलित राष्ट्रपति कौन थे?", opts: ["जाकिर हुसैन", "के.आर. नारायणन", "रामनाथ कोविंद", "वी.वी. गिरी"], ans: 1, exp: "के.आर. नारायणन (1997-2002) भारत के प्रथम दलित राष्ट्रपति थे।" },
+  { q: "संयुक्त बैठक (Art. 108) की अध्यक्षता कौन करता है?", opts: ["राष्ट्रपति", "उपराष्ट्रपति", "लोकसभा अध्यक्ष", "प्रधानमंत्री"], ans: 2, exp: "संयुक्त बैठक की अध्यक्षता लोकसभा अध्यक्ष करता है। उनकी अनुपस्थिति में उपाध्यक्ष।" },
+  { q: "राष्ट्रपति का चुनाव लड़ने के लिए कितनी जमानत राशि जमा करनी होती है?", opts: ["₹5,000", "₹10,000", "₹15,000", "₹20,000"], ans: 2, exp: "राष्ट्रपति का चुनाव लड़ने के लिए ₹15,000 जमानत राशि RBI बैंक में जमा करनी होती है।" },
+  { q: "भारतीय राष्ट्रपति अपनी स्वाविवेकीय शक्ति का प्रयोग किस स्थिति में करता है?", opts: ["सदैव", "जब PM की सलाह हो", "जब किसी दल को पूर्ण बहुमत न हो", "कभी नहीं"], ans: 2, exp: "जब किसी राजनीतिक दल को पूर्ण बहुमत नहीं मिलता, तब राष्ट्रपति स्वाविवेक से PM की नियुक्ति करता है।" },
+  { q: "Art. 143 के अनुसार राष्ट्रपति किससे कानूनी सलाह माँग सकता है?", opts: ["महान्यायवादी", "सर्वोच्च न्यायालय", "संसद", "प्रधानमंत्री"], ans: 1, exp: "Art. 143 के अनुसार राष्ट्रपति सर्वोच्च न्यायालय से कानूनी सलाह माँग सकता है, हालाँकि सर्वोच्च न्यायालय इसे मानने के लिए बाध्य नहीं।" },
+  { q: "भारत में अब तक कितनी बार संयुक्त बैठक हुई है?", opts: ["1", "2", "3", "4"], ans: 2, exp: "भारत में 3 बार संयुक्त बैठक हुई: दहेज निषेध (1961), बैंकिंग सेवा आयोग (1978), POTA (2002)।" },
+  { q: "राष्ट्रपति के निर्वाचन मंडल में 70वें संविधान संशोधन द्वारा किन्हें शामिल किया गया?", opts: ["चंडीगढ़ व दादरा", "अंडमान-निकोबार व लक्षद्वीप", "दिल्ली व पुडुचेरी", "जम्मू-कश्मीर व लद्दाख"], ans: 2, exp: "70वें संविधान संशोधन 1992 से दिल्ली और पुडुचेरी के निर्वाचित विधायक राष्ट्रपति के निर्वाचन मंडल में शामिल हुए।" },
+  { q: "राष्ट्रपति पद की रिक्तता पर कार्यभार ग्रहण करने का सही क्रम क्या है?", opts: ["CJI → उपराष्ट्रपति → वरिष्ठ जज", "उपराष्ट्रपति → CJI → वरिष्ठ जज", "PM → उपराष्ट्रपति → CJI", "लोकसभा अध्यक्ष → उपराष्ट्रपति → CJI"], ans: 1, exp: "Art. 65 के अनुसार: उपराष्ट्रपति → CJI → SC का वरिष्ठ न्यायाधीश।" },
+  { q: "राष्ट्रपति चुनाव में 'कोटा' (Quota) की गणना किस सूत्र से होती है?", opts: ["कुल मत ÷ पद + 1", "कुल मत ÷ (पद +1) + 1", "कुल मत × पद + 1", "कुल मत ÷ 2 + 1"], ans: 1, exp: "कोटा = (कुल वैध मत) ÷ (भरे जाने वाले पदों की संख्या + 1) + 1" },
+  { q: "भारत के संविधान का कौन-सा अनुच्छेद वित्त आयोग से संबंधित है?", opts: ["Art. 267", "Art. 280", "Art. 316", "Art. 338"], ans: 1, exp: "Art. 280 में वित्त आयोग का प्रावधान है। राष्ट्रपति हर 5 साल में इसका गठन करता है।" },
+  { q: "निम्न में से कौन-से राष्ट्रपति पद पर रहते हुए निधन हुआ?", opts: ["वी.वी. गिरी", "नीलम संजीव रेड्डी", "जाकिर हुसैन", "राधाकृष्णन"], ans: 2, exp: "जाकिर हुसैन (1969) और फखरुद्दीन अली अहमद (1977) पद पर रहते हुए निधन हुए।" },
+  { q: "राष्ट्रपति का निर्वाचन किस प्रकार की मतदान प्रणाली से होता है?", opts: ["प्रत्यक्ष मतदान", "एकल संक्रमणीय मत प्रणाली", "सूची प्रणाली", "सापेक्षिक बहुमत प्रणाली"], ans: 1, exp: "राष्ट्रपति का चुनाव आनुपातिक प्रतिनिधित्व वाली एकल संक्रमणीय मत (Single Transferable Vote) प्रणाली से होता है।" },
+  { q: "भारत के किस राष्ट्रपति को भारत रत्न 1997 में दिया गया?", opts: ["के.आर. नारायणन", "आर. वेंकटरमण", "डॉ. A.P.J. अब्दुल कलाम", "शंकर दयाल शर्मा"], ans: 2, exp: "डॉ. A.P.J. अब्दुल कलाम को 1997 में भारत रत्न दिया गया था (राष्ट्रपति बनने से पहले)।" },
+  { q: "Art. 111 के अनुसार 'निलम्बनकारी वीटो' (Suspensive Veto) क्या है?", opts: ["विधेयक को सदा के लिए रोकना", "विधेयक को पुनर्विचार के लिए वापस भेजना", "बिना कार्यवाही किए रखना", "विधेयक को अस्वीकृत करना"], ans: 1, exp: "निलम्बनकारी वीटो में राष्ट्रपति विधेयक को पुनर्विचार के लिए संसद को वापस भेजता है। यदि संसद पुनः पास करे तो राष्ट्रपति को मानना होगा।" },
+  { q: "राष्ट्रपति के 'विलम्बन' (Art.72) का सही अर्थ है?", opts: ["सजा माफ करना", "सजा पर अस्थायी रोक लगाना", "सजा कम करना", "सजा की प्रकृति बदलना"], ans: 1, exp: "विलम्बन का अर्थ है सजा पर अस्थायी रोक लगाना (Reprieve)। जैसे अपील के लिए समय देना।" },
+  { q: "Art. 87 के अनुसार राष्ट्रपति का अभिभाषण कब होता है?", opts: ["प्रत्येक माह", "प्रत्येक बजट सत्र में", "नई संसद की पहली बैठक व प्रत्येक सत्र आरंभ से पहले", "केवल चुनाव के बाद"], ans: 2, exp: "Art. 87 के अनुसार नई संसद की पहली बैठक के प्रारंभ में तथा प्रत्येक वर्ष के पहले सत्र के शुरू में राष्ट्रपति संयुक्त बैठक को अभिभाषण देता है।" },
+  { q: "राष्ट्रपति के चुनाव में कौन मत नहीं दे सकता?", opts: ["लोकसभा के निर्वाचित सदस्य", "विधानसभा के निर्वाचित सदस्य", "राज्यसभा के मनोनीत सदस्य", "लोकसभा के सदस्य जो LS अध्यक्ष हैं"], ans: 2, exp: "राज्यसभा के मनोनीत सदस्य राष्ट्रपति के चुनाव में मत नहीं दे सकते। केवल निर्वाचित सदस्य निर्वाचन मंडल में होते हैं।" },
+];
+
+// RENDER MCQs
+function renderMCQs(questions, containerId, prefix) {
+  const container = document.getElementById(containerId);
+  questions.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'mcq-card ' + prefix;
+    div.innerHTML = `
+      <div class="mcq-num ${prefix}">प्रश्न ${i+1} ${prefix==='rj'?'🔴':'🟢'}</div>
+      <div class="mcq-q">${q.q}</div>
+      <div class="mcq-options">
+        ${q.opts.map((opt,j) => `<button class="mcq-opt" onclick="selectOpt(this, ${i}, ${j}, '${prefix}')">(${String.fromCharCode(65+j)}) ${opt}</button>`).join('')}
+      </div>
+      <div class="mcq-explanation" id="${prefix}-exp-${i}">💡 <strong>व्याख्या:</strong> ${q.exp}</div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+renderMCQs(rjQuestions, 'rj-questions', 'rj');
+renderMCQs(stateQuestions, 'state-questions', 'state');
+
+// SCORING STATE
+const state = {
+  rj: { answers: {}, correct: 0, wrong: 0, attempted: 0 },
+  state: { answers: {}, correct: 0, wrong: 0, attempted: 0 }
+};
+
+function selectOpt(btn, qIdx, optIdx, prefix) {
+  const questions = prefix === 'rj' ? rjQuestions : stateQuestions;
+  const q = questions[qIdx];
+  if (state[prefix].answers[qIdx] !== undefined) return;
+
+  const opts = btn.parentElement.querySelectorAll('.mcq-opt');
+  opts.forEach(o => o.disabled = true);
+
+  state[prefix].answers[qIdx] = optIdx;
+  state[prefix].attempted++;
+
+  if (optIdx === q.ans) {
+    btn.classList.add('correct');
+    state[prefix].correct++;
+  } else {
+    btn.classList.add('wrong');
+    opts[q.ans].classList.add('reveal');
+    state[prefix].wrong++;
+  }
+
+  const expEl = document.getElementById(`${prefix}-exp-${qIdx}`);
+  expEl.classList.add('show');
+
+  updateLiveScore(prefix);
+}
+
+function updateLiveScore(prefix) {
+  const s = state[prefix];
+  const score = s.correct - (s.wrong * (1/3));
+  document.getElementById(`${prefix}-live`).textContent = `Score: ${score.toFixed(2)}`;
+  document.getElementById(`${prefix}-attempted`).textContent = s.attempted;
+  document.getElementById(`${prefix}-correct`).textContent = s.correct;
+  document.getElementById(`${prefix}-wrong`).textContent = s.wrong;
+}
+
+function showResult(prefix) {
+  const s = state[prefix];
+  const total = prefix === 'rj' ? 25 : 25;
+  const score = s.correct - (s.wrong * (1/3));
+  const pct = (score / total) * 100;
+
+  let emoji, msg, grade;
+  if(pct >= 80) { emoji='🏆'; msg='शानदार प्रदर्शन!'; grade='Grade: A+ (Excellent)'; }
+  else if(pct >= 60) { emoji='🎯'; msg='बहुत अच्छा!'; grade='Grade: A (Good)'; }
+  else if(pct >= 40) { emoji='📚'; msg='ठीक है, और मेहनत करो!'; grade='Grade: B (Average)'; }
+  else { emoji='💪'; msg='फिर से revision करो!'; grade='Grade: C (Need Improvement)'; }
+
+  document.getElementById('res-emoji').textContent = emoji;
+  document.getElementById('res-score').textContent = `${score.toFixed(2)} / ${total}`;
+  document.getElementById('res-msg').textContent = msg;
+  document.getElementById('res-detail').textContent = `✅ सही: ${s.correct} | ❌ गलत: ${s.wrong} | 📝 Attempt: ${s.attempted}/${total}`;
+  document.getElementById('res-grade').textContent = grade;
+  document.getElementById('result-overlay').classList.add('show');
+}
+
+function submitRJ() {
+  if(state.rj.attempted < 25) {
+    if(!confirm(`आपने केवल ${state.rj.attempted}/25 प्रश्न attempt किए हैं। क्या आप परिणाम देखना चाहते हैं?`)) return;
+  }
+  showResult('rj');
+}
+
+function submitState() {
+  if(state.state.attempted < 25) {
+    if(!confirm(`आपने केवल ${state.state.attempted}/25 प्रश्न attempt किए हैं। क्या आप परिणाम देखना चाहते हैं?`)) return;
+  }
+  showResult('state');
+}
+
+function closeResult() {
+  document.getElementById('result-overlay').classList.remove('show');
+}
+</script>
+</body>
+</html>

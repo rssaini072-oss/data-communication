@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भारत शासन अधिनियम 1919 व 1935 | RPSC RAS/PSI Revision</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Hind:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --saffron: #FF6B1A;
+  --deep-saffron: #E55A00;
+  --green: #138808;
+  --deep-green: #0d6b06;
+  --navy: #1a1a4e;
+  --gold: #F5A623;
+  --light-gold: #FFF3DC;
+  --sky: #E8F4FD;
+  --white: #FFFFFF;
+  --gray: #6c757d;
+  --light-gray: #f8f9fa;
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  --hover-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Hind', sans-serif;
+  background: linear-gradient(135deg, #fff9f0 0%, #f0f7ff 100%);
+  color: var(--navy);
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, var(--navy) 0%, #2a2a7e 50%, #1a4a8e 100%);
+  padding: 16px 20px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.header h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: clamp(15px, 3.5vw, 22px);
+  color: var(--gold);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.header p {
+  color: #aad4ff;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.badge {
+  background: var(--saffron);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* TABS */
+.tabs-wrapper {
+  display: flex;
+  overflow-x: auto;
+  background: var(--navy);
+  padding: 0 8px 8px;
+  gap: 4px;
+  scrollbar-width: none;
+}
+.tabs-wrapper::-webkit-scrollbar { display: none; }
+
+.tab {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  color: #ccd;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  transition: all 0.25s;
+  font-family: 'Hind', sans-serif;
+}
+.tab.active {
+  background: var(--saffron);
+  color: white;
+  box-shadow: 0 3px 12px rgba(255,107,26,0.5);
+}
+.tab:hover:not(.active) { background: rgba(255,255,255,0.2); color: white; }
+
+/* CONTENT */
+.content { padding: 16px; max-width: 900px; margin: 0 auto; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* CARDS */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--card-shadow);
+  border-left: 5px solid var(--saffron);
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: var(--hover-shadow); }
+.card.green { border-left-color: var(--green); }
+.card.navy { border-left-color: var(--navy); }
+.card.gold { border-left-color: var(--gold); }
+
+.card-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-title .icon { font-size: 20px; }
+
+/* 2-COL GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+
+/* TABLE */
+.rev-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 8px;
+}
+.rev-table th {
+  background: var(--navy);
+  color: var(--gold);
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 700;
+}
+.rev-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+.rev-table tr:nth-child(even) td { background: var(--light-gray); }
+.rev-table tr:hover td { background: var(--light-gold); }
+
+/* MNEMONIC BOX */
+.mnemonic {
+  background: linear-gradient(135deg, #fff8e1, #fff3dc);
+  border: 2px dashed var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.mnemonic strong {
+  color: var(--saffron);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* HIGHLIGHT BOXES */
+.highlight {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  margin: 6px 0;
+  font-weight: 600;
+}
+.h-orange { background: #fff0e6; color: #c45000; border-left: 3px solid var(--saffron); }
+.h-green { background: #e8f5e9; color: #1b5e20; border-left: 3px solid var(--green); }
+.h-blue { background: #e3f2fd; color: #0d47a1; border-left: 3px solid #2196f3; }
+.h-red { background: #fce4ec; color: #880e4f; border-left: 3px solid #e91e63; }
+.h-purple { background: #f3e5f5; color: #4a148c; border-left: 3px solid #9c27b0; }
+
+/* YEAR BADGE */
+.year-badge {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--gold);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* MCQ SECTION */
+.mcq-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--card-shadow);
+}
+.q-num {
+  font-size: 11px;
+  color: var(--saffron);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.question {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.options { display: flex; flex-direction: column; gap: 8px; }
+.option-btn {
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  border: 2px solid #e0e0e0;
+  background: var(--light-gray);
+  color: var(--navy);
+  font-family: 'Hind', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+.option-btn:hover:not(:disabled) { border-color: var(--saffron); background: #fff5ee; }
+.option-btn.correct { background: #e8f5e9; border-color: var(--green); color: #1b5e20; font-weight: 700; }
+.option-btn.wrong { background: #fce4ec; border-color: #e91e63; color: #880e4f; font-weight: 700; }
+.option-btn:disabled { cursor: default; }
+
+.explanation {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f0f7ff;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: #1a3a6e;
+  border-left: 3px solid #2196f3;
+  display: none;
+}
+.explanation.show { display: block; }
+
+.score-strip {
+  background: var(--navy);
+  color: white;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.score-val { font-family: 'Baloo 2', cursive; font-size: 20px; color: var(--gold); font-weight: 800; }
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-family: 'Baloo 2', cursive;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  box-shadow: 0 4px 15px rgba(255,107,26,0.4);
+  transition: all 0.2s;
+}
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,107,26,0.5); }
+
+/* POPUP */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+.popup-overlay.show { display: flex; }
+.popup {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 24px;
+  max-width: 340px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: popIn 0.3s ease;
+}
+@keyframes popIn { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.popup .emoji { font-size: 48px; display: block; margin-bottom: 10px; }
+.popup h2 { font-family: 'Baloo 2', cursive; font-size: 22px; color: var(--navy); margin-bottom: 6px; }
+.popup .score-big { font-family: 'Baloo 2', cursive; font-size: 42px; font-weight: 800; color: var(--saffron); }
+.popup p { font-size: 13px; color: var(--gray); margin: 6px 0; }
+.popup-close {
+  background: var(--navy);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-family: 'Baloo 2', cursive;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 14px;
+}
+
+/* LAST MINUTE CARDS */
+.lm-card {
+  background: linear-gradient(135deg, var(--navy) 0%, #2a2a7e 100%);
+  color: white;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.lm-card .lm-title { font-family: 'Baloo 2', cursive; font-size: 15px; color: var(--gold); margin-bottom: 8px; }
+.lm-card .lm-point { font-size: 13px; padding: 3px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.lm-card .lm-point:last-child { border: none; }
+.lm-card span.tag { background: var(--saffron); color: white; font-size: 10px; padding: 1px 6px; border-radius: 8px; margin-right: 5px; font-weight: 700; }
+
+.super-mnemonic {
+  background: linear-gradient(135deg, #FF6B1A, #ff9a4a);
+  color: white;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.super-mnemonic .sm-title { font-family: 'Baloo 2', cursive; font-size: 14px; font-weight: 800; margin-bottom: 8px; }
+.super-mnemonic .sm-text { font-size: 15px; font-weight: 700; line-height: 1.8; }
+.super-mnemonic .sm-explain { font-size: 12px; opacity: 0.9; margin-top: 6px; }
+
+/* SECTION HEADER */
+.sec-head {
+  font-family: 'Baloo 2', cursive;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--navy);
+  padding: 8px 0 12px;
+  border-bottom: 3px solid var(--saffron);
+  margin-bottom: 14px;
+}
+
+/* PILL TAGS */
+.pill { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; margin: 2px; }
+.pill-o { background: #fff0e6; color: var(--saffron); }
+.pill-g { background: #e8f5e9; color: var(--deep-green); }
+.pill-b { background: #e3f2fd; color: #1565c0; }
+
+ul.point-list { padding-left: 16px; }
+ul.point-list li { font-size: 13px; padding: 3px 0; line-height: 1.6; }
+
+.divider { height: 2px; background: linear-gradient(90deg, var(--saffron), transparent); margin: 16px 0; border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>📜 भारत शासन अधिनियम 1919 व 1935</h1>
+      <p>RPSC RAS Pre & PSI Exam — Polity Revision Module</p>
+    </div>
+    <span class="badge">🎯 Exam Ready</span>
+  </div>
+  <div class="tabs-wrapper" style="margin-top:10px;">
+    <button class="tab active" onclick="switchTab('revision')">📖 Revision</button>
+    <button class="tab" onclick="switchTab('summary')">📊 Summary Table</button>
+    <button class="tab" onclick="switchTab('rj-pyq')">🏆 RJ PYQ (25)</button>
+    <button class="tab" onclick="switchTab('state-pyq')">🗺️ States PYQ (25)</button>
+    <button class="tab" onclick="switchTab('lastmin')">⚡ Last Minute</button>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ====================== REVISION TAB ====================== -->
+<div id="tab-revision" class="tab-panel active">
+
+  <div class="sec-head">📖 Revision — भारत शासन अधिनियम 1909</div>
+
+  <div class="card navy">
+    <div class="card-title"><span class="icon">⚙️</span> भारत शासन अधिनियम — 1909</div>
+    <div class="highlight h-blue">उपनाम: <strong>मार्ले-मिन्टो सुधार अधिनियम</strong></div>
+    <ul class="point-list">
+      <li>मार्ले → भारत सचिव | मिन्टो → वायसराय</li>
+      <li>पृथक् निर्वाचन मंडल की शुरुआत — मुसलमानों के लिए</li>
+      <li>भारत परिषद में एक भारतीय सदस्य शामिल करने का प्रावधान</li>
+    </ul>
+    <div class="mnemonic">
+      <strong>🧠 Trick: "मार्ले = सचिव, मिन्टो = राज"</strong>
+      याद करें: <em>मा(र्ले) = स(चिव) → M = S | मि(न्टो) = वा(यसराय) → Mi = V</em>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="sec-head">📖 भारत शासन अधिनियम 1919</div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="icon">📅</span> मूल जानकारी</div>
+      <table class="rev-table">
+        <tr><th>बिंदु</th><th>विवरण</th></tr>
+        <tr><td>उपनाम</td><td><strong>मोन्टेग्यु-चेम्सफोर्ड अधिनियम</strong></td></tr>
+        <tr><td>मोन्टेग्यु</td><td>भारत सचिव</td></tr>
+        <tr><td>चेम्सफोर्ड</td><td>वायसराय</td></tr>
+        <tr><td>प्रकाशन</td><td>8 July 1920</td></tr>
+        <tr><td>लागू</td><td>1 Jan 1921</td></tr>
+        <tr><td>समाप्त</td><td>1 April 1937</td></tr>
+      </table>
+      <div class="mnemonic">
+        <strong>🧠 Trick: "मोन्ट = सचिव | चेम्स = वायसराय"</strong>
+        <em>Mo = Secretary | Ch = Viceroy</em>
+      </div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title"><span class="icon">🏛️</span> द्विसदनीय व्यवस्था (केन्द्र)</div>
+      <div class="highlight h-green">पहली बार केन्द्र में द्विसदनीय व्यवस्था</div>
+      <div class="pill pill-g">विधानसभा (Lower House)</div>
+      <div class="pill pill-b">राज्य परिषद (Upper House)</div>
+      <br><br>
+      <div class="highlight h-orange">पृथक् निर्वाचन मंडल का विस्तार:</div>
+      <ul class="point-list">
+        <li>मुसलिम</li>
+        <li>सिख</li>
+        <li>ईसाई</li>
+        <li>Anglo Indian</li>
+      </ul>
+      <div class="mnemonic">
+        <strong>🧠 Trick: "MSCIA" — मु+सि+ई+A-I</strong>
+        <em>M-S-C-I-A = Muslim, Sikh, Christian, Indian Anglo</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="card gold">
+    <div class="card-title"><span class="icon">⚖️</span> द्विध शासन (Dyarchy) — प्रान्तों में</div>
+    <div class="grid-2">
+      <div>
+        <div class="highlight h-red">🔒 आरक्षित विषय (Governor के पास)</div>
+        <ul class="point-list">
+          <li>भूमि कर</li>
+          <li>न्याय</li>
+          <li>पुलिस</li>
+          <li>वित्त</li>
+          <li>पेन्शन</li>
+          <li>समाचार पत्र</li>
+        </ul>
+      </div>
+      <div>
+        <div class="highlight h-green">🔓 हस्तान्तरित विषय (मंत्री के पास)</div>
+        <ul class="point-list">
+          <li>स्वास्थ्य</li>
+          <li>शिक्षा</li>
+          <li>कृषि</li>
+          <li>सार्वजनिक सेवा</li>
+          <li>स्थानीय स्वायत्त शासन</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mnemonic">
+      <strong>🧠 Trick आरक्षित = "भ न पु वि पे स" → "भनपु विपेस"</strong>
+      <em>भूमि, न्याय, पुलिस, वित्त, पेन्शन, समाचार</em><br>
+      <strong>हस्तान्तरित = "स्वा शि कृ सा स्था" → "स्वाशि कृसास्था"</strong>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><span class="icon">📌</span> अन्य प्रावधान — 1919</div>
+      <ul class="point-list">
+        <li>पहली बार <strong>प्रत्यक्ष निर्वाचन</strong> की व्यवस्था (10% लोग — शिक्षा + सम्पत्ति)</li>
+        <li>वायसराय की कार्यकारी परिषद में 6 सदस्य, कम से कम <strong>3 भारतीय</strong> (Commander-in-Chief को छोड़कर)</li>
+        <li>पहली बार <strong>केन्द्रीय बजट</strong> से राज्य बजट अलग</li>
+        <li><strong>लोक सेवा आयोग</strong> की स्थापना का प्रावधान</li>
+        <li>एक <strong>वैधानिक आयोग</strong> का गठन — 10 वर्ष बाद समीक्षा</li>
+      </ul>
+    </div>
+    <div class="card navy">
+      <div class="card-title"><span class="icon">🔍</span> साइमन कमीशन</div>
+      <div class="highlight h-blue">गठन → 8 Nov. 1927 | भारत आगमन → 3 Feb. 1928</div>
+      <ul class="point-list">
+        <li>कार्य: 1919 अधिनियम की कमियों की समीक्षा</li>
+        <li>सभी सदस्य अंग्रेज → भारतीयों ने <strong>विरोध</strong> किया</li>
+        <li><strong>लाला लाजपतराय</strong> की पीट-पीटकर हत्या</li>
+        <li>अध्यक्ष: <strong>जॉन साइमन</strong></li>
+      </ul>
+      <div class="mnemonic">
+        <strong>🧠 Simon = "सब Angreज Members In One Navy"</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="sec-head">📖 भारत शासन अधिनियम 1935</div>
+
+  <div class="grid-2">
+    <div class="card green">
+      <div class="card-title"><span class="icon">📅</span> मूल जानकारी — 1935</div>
+      <table class="rev-table">
+        <tr><th>बिंदु</th><th>विवरण</th></tr>
+        <tr><td>स्वीकृति</td><td>4 Aug. 1935 (ब्रिटिश सम्राट)</td></tr>
+        <tr><td>लागू</td><td>1 April 1937</td></tr>
+        <tr><td>धाराएं</td><td>321 धाराएं + 10 अनुसूचियां</td></tr>
+        <tr><td>सबसे लम्बा</td><td>भारत का सबसे लम्बा अधिनियम</td></tr>
+      </table>
+      <div class="mnemonic">
+        <strong>🧠 Trick: "1935 = 321 + 10"</strong>
+        <em>3+2+1=6, 1+0=1 → याद रखो "321 धाराएं"</em>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon">🏗️</span> संघीय व्यवस्था</div>
+      <div class="highlight h-green">पहली बार संघीय शासन प्रणाली की नींव</div>
+      <ul class="point-list">
+        <li>(i) ब्रिटिश भारतीय प्रान्त</li>
+        <li>(ii) देशी रियासत</li>
+      </ul>
+      <div class="highlight h-red">⚠️ संघीय व्यवस्था लागू नहीं हुई क्योंकि देशी रियासतों ने शामिल होने से मना कर दिया</div>
+      <div class="highlight h-orange">प्रान्तों में द्विध शासन समाप्त → केन्द्र में द्विध शासन लागू</div>
+    </div>
+  </div>
+
+  <div class="card gold">
+    <div class="card-title"><span class="icon">📋</span> तीन सूचियां — 1935</div>
+    <table class="rev-table">
+      <tr><th>सूची</th><th>विषयों की संख्या</th><th>उदाहरण</th></tr>
+      <tr><td><strong>संघ सूची</strong></td><td class="h-orange" style="color:var(--saffron)"><strong>59 विषय</strong></td><td>रक्षा, विदेश नीति</td></tr>
+      <tr><td><strong>राज्य सूची</strong></td><td style="color:var(--deep-green)"><strong>54 विषय</strong></td><td>पुलिस, स्वास्थ्य</td></tr>
+      <tr><td><strong>समवर्ती सूची</strong></td><td style="color:#1565c0"><strong>36 विषय</strong></td><td>शिक्षा, विवाह</td></tr>
+    </table>
+    <div class="mnemonic">
+      <strong>🧠 Trick: "59-54-36" → "पचास-नौ, पचास-चार, छत्तीस" → "संघ > राज्य > समवर्ती"</strong>
+      <em>याद करें उल्टे क्रम से: 36 < 54 < 59 | "छ < प४ < प९"</em>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card navy">
+      <div class="card-title"><span class="icon">🏦</span> RBI की स्थापना — 1935</div>
+      <div class="highlight h-blue">देश में मुद्रा व साख नियन्त्रण के लिए <strong>RBI की स्थापना</strong></div>
+      <ul class="point-list">
+        <li>1937 में <strong>बर्मा</strong> को भारत से अलग किया गया</li>
+        <li>इस अधिनियम के तहत 1937 में <strong>संघीय न्यायालय</strong> की स्थापना</li>
+        <li><strong>मताधिकार</strong> का विस्तार किया गया</li>
+      </ul>
+      <div class="mnemonic">
+        <strong>🧠 "1935 = RBI + Federal Court + Burma Out"</strong>
+      </div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title"><span class="icon">🏢</span> लोक सेवा आयोग — 1935</div>
+      <ul class="point-list">
+        <li><strong>संघ लोक सेवा आयोग</strong> (UPSC)</li>
+        <li><strong>राज्य लोक सेवा आयोग</strong></li>
+        <li><strong>संयुक्त राज्य लोक सेवा आयोग</strong></li>
+        <li>दलित, महिला व मजदूर के लिए निर्वाचन व्यवस्था</li>
+        <li>भारत सचिव की परिषद समाप्त (1858 में स्थापित)</li>
+      </ul>
+      <div class="mnemonic">
+        <strong>🧠 "1935 ने 1858 की परिषद खत्म की"</strong>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end revision tab -->
+
+<!-- ====================== SUMMARY TABLE TAB ====================== -->
+<div id="tab-summary" class="tab-panel">
+
+  <div class="sec-head">📊 Master Comparison Table</div>
+  <div class="card" style="overflow-x:auto;">
+    <table class="rev-table">
+      <tr>
+        <th>बिंदु</th>
+        <th>1909 (मार्ले-मिन्टो)</th>
+        <th>1919 (मोन्टेग्यु-चेम्सफोर्ड)</th>
+        <th>1935</th>
+      </tr>
+      <tr>
+        <td>उपनाम</td>
+        <td>मार्ले-मिन्टो सुधार</td>
+        <td>मोन्टेग्यु-चेम्सफोर्ड</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>प्रमुख नाम</td>
+        <td>मार्ले (सचिव)<br>मिन्टो (वायसराय)</td>
+        <td>मोन्टेग्यु (सचिव)<br>चेम्सफोर्ड (वायसराय)</td>
+        <td>साइमन रिपोर्ट आधार</td>
+      </tr>
+      <tr>
+        <td>लागू</td>
+        <td>1909</td>
+        <td>1 Jan 1921</td>
+        <td>1 April 1937</td>
+      </tr>
+      <tr>
+        <td>द्विसदनीय व्यवस्था</td>
+        <td>❌ नहीं</td>
+        <td>✅ केन्द्र में</td>
+        <td>✅ केन्द्र व प्रान्त</td>
+      </tr>
+      <tr>
+        <td>द्विध शासन</td>
+        <td>❌</td>
+        <td>✅ प्रान्तों में</td>
+        <td>✅ केन्द्र में (प्रान्तों में समाप्त)</td>
+      </tr>
+      <tr>
+        <td>पृथक् निर्वाचन</td>
+        <td>मुसलमान</td>
+        <td>मुस्लिम+सिख+ईसाई+Anglo Indian</td>
+        <td>विस्तार</td>
+      </tr>
+      <tr>
+        <td>संघीय व्यवस्था</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅ (लागू नहीं हुई)</td>
+      </tr>
+      <tr>
+        <td>प्रत्यक्ष निर्वाचन</td>
+        <td>❌</td>
+        <td>✅ (10% लोग)</td>
+        <td>✅ विस्तारित</td>
+      </tr>
+      <tr>
+        <td>RBI</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅ 1935</td>
+      </tr>
+      <tr>
+        <td>संघीय न्यायालय</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅ 1937 में</td>
+      </tr>
+      <tr>
+        <td>PSC</td>
+        <td>❌</td>
+        <td>प्रावधान (नहीं हुई)</td>
+        <td>✅ UPSC + SPSC</td>
+      </tr>
+      <tr>
+        <td>बर्मा अलग</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅ 1937</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="sec-head" style="margin-top:20px;">⚡ Quick Reference Table</div>
+  <div class="grid-2">
+    <div class="card navy">
+      <div class="card-title">🗓️ महत्वपूर्ण तिथियां</div>
+      <table class="rev-table">
+        <tr><th>घटना</th><th>तिथि</th></tr>
+        <tr><td>साइमन कमीशन गठन</td><td>8 Nov 1927</td></tr>
+        <tr><td>साइमन भारत आया</td><td>3 Feb 1928</td></tr>
+        <tr><td>1935 की स्वीकृति</td><td>4 Aug 1935</td></tr>
+        <tr><td>1919 प्रकाशन</td><td>8 July 1920</td></tr>
+        <tr><td>1919 लागू</td><td>1 Jan 1921</td></tr>
+        <tr><td>1935 लागू</td><td>1 April 1937</td></tr>
+        <tr><td>बर्मा अलग</td><td>1937</td></tr>
+        <tr><td>RBI स्थापना</td><td>1935</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">🔢 संख्याएं याद करें</div>
+      <table class="rev-table">
+        <tr><th>विषय</th><th>संख्या</th></tr>
+        <tr><td>संघ सूची (1935)</td><td><strong>59</strong></td></tr>
+        <tr><td>राज्य सूची (1935)</td><td><strong>54</strong></td></tr>
+        <tr><td>समवर्ती सूची (1935)</td><td><strong>36</strong></td></tr>
+        <tr><td>1935 कुल धाराएं</td><td><strong>321</strong></td></tr>
+        <tr><td>1935 अनुसूचियां</td><td><strong>10</strong></td></tr>
+        <tr><td>Viceroy Council (1919)</td><td><strong>6 सदस्य (3 भारतीय)</strong></td></tr>
+        <tr><td>प्रत्यक्ष निर्वाचन % (1919)</td><td><strong>10%</strong></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card gold">
+    <div class="card-title">🔗 परिणाम श्रृंखला (Chain of Events)</div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;">
+      <span class="pill pill-o">1909 (पृथक् निर्वाचन)</span>
+      <span>→</span>
+      <span class="pill pill-b">1919 (द्विध शासन)</span>
+      <span>→</span>
+      <span class="pill pill-o">Simon Commission 1927</span>
+      <span>→</span>
+      <span class="pill pill-g">1935 (संघीय + PSC + RBI)</span>
+      <span>→</span>
+      <span class="pill pill-b">1947 स्वतन्त्रता</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ====================== RJ PYQ TAB ====================== -->
+<div id="tab-rj-pyq" class="tab-panel">
+
+  <div class="sec-head">🏆 राजस्थान PYQ — 25 प्रश्न</div>
+
+  <div class="score-strip">
+    <span>स्कोर: <span class="score-val" id="rj-score">0</span></span>
+    <span>सही: <span id="rj-correct" style="color:#4CAF50;font-weight:700">0</span> | गलत: <span id="rj-wrong" style="color:#f44336;font-weight:700">0</span></span>
+    <span>📌 +1 सही / -⅓ गलत</span>
+  </div>
+
+  <div id="rj-questions"></div>
+  <button class="submit-btn" onclick="submitQuiz('rj')">📊 Result देखें</button>
+
+</div>
+
+<!-- ====================== STATE PYQ TAB ====================== -->
+<div id="tab-state-pyq" class="tab-panel">
+
+  <div class="sec-head">🗺️ अन्य राज्य PYQ — 25 प्रश्न</div>
+
+  <div class="score-strip">
+    <span>स्कोर: <span class="score-val" id="state-score">0</span></span>
+    <span>सही: <span id="state-correct" style="color:#4CAF50;font-weight:700">0</span> | गलत: <span id="state-wrong" style="color:#f44336;font-weight:700">0</span></span>
+    <span>📌 +1 सही / -⅓ गलत</span>
+  </div>
+
+  <div id="state-questions"></div>
+  <button class="submit-btn" onclick="submitQuiz('state')">📊 Result देखें</button>
+
+</div>
+
+<!-- ====================== LAST MINUTE TAB ====================== -->
+<div id="tab-lastmin" class="tab-panel">
+
+  <div class="sec-head">⚡ Last Minute Revision</div>
+
+  <div class="super-mnemonic">
+    <div class="sm-title">🧠 Super Mnemonic #1 — 1919 के 6 मुख्य बिंदु</div>
+    <div class="sm-text">"दो पृ मो बज आ वै"</div>
+    <div class="sm-explain">
+      <strong>दो</strong>=द्विसदनीय | <strong>पृ</strong>=पृथक् निर्वाचन विस्तार | <strong>मो</strong>=मोन्टेग्यु-चेम्सफोर्ड |
+      <strong>बज</strong>=बजट अलग | <strong>आ</strong>=आरक्षित-हस्तान्तरित | <strong>वै</strong>=वैधानिक आयोग
+    </div>
+  </div>
+
+  <div class="super-mnemonic">
+    <div class="sm-title">🧠 Super Mnemonic #2 — 1935 के प्रमुख बिंदु</div>
+    <div class="sm-text">"संघ RBI PSC बर्मा दी"</div>
+    <div class="sm-explain">
+      <strong>संघ</strong>=संघीय व्यवस्था (लागू नहीं) | <strong>RBI</strong>=RBI स्थापना |
+      <strong>PSC</strong>=UPSC+SPSC | <strong>बर्मा</strong>=बर्मा अलग 1937 | <strong>दी</strong>=द्विध शासन केन्द्र में
+    </div>
+  </div>
+
+  <div class="super-mnemonic">
+    <div class="sm-title">🧠 Super Mnemonic #3 — तीन सूचियां "59-54-36"</div>
+    <div class="sm-text">"संघ पचास-नौ, राज पचास-चार, सम छत्तीस"</div>
+    <div class="sm-explain">
+      याद करें: <em>पहली (Union) सबसे बड़ी 59, दूसरी (State) 54, तीसरी (Concurrent) 36</em>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="lm-card">
+      <div class="lm-title">⚡ 1919 — 10 Key Points</div>
+      <div class="lm-point"><span class="tag">1</span>मोन्टेग्यु-चेम्सफोर्ड Act</div>
+      <div class="lm-point"><span class="tag">2</span>केन्द्र में द्विसदनीय (विधानसभा + राज्य परिषद)</div>
+      <div class="lm-point"><span class="tag">3</span>प्रान्तों में द्विध शासन</div>
+      <div class="lm-point"><span class="tag">4</span>आरक्षित = भनपुविपेस</div>
+      <div class="lm-point"><span class="tag">5</span>हस्तान्तरित = स्वाशिकृसास्था</div>
+      <div class="lm-point"><span class="tag">6</span>पृथक् निर्वाचन: मुस्लिम+सिख+ईसाई+Anglo</div>
+      <div class="lm-point"><span class="tag">7</span>10% प्रत्यक्ष निर्वाचन</div>
+      <div class="lm-point"><span class="tag">8</span>Viceroy Council में 3 भारतीय</div>
+      <div class="lm-point"><span class="tag">9</span>बजट अलग (केन्द्र-राज्य)</div>
+      <div class="lm-point"><span class="tag">10</span>वैधानिक आयोग — 10 साल बाद</div>
+    </div>
+    <div class="lm-card">
+      <div class="lm-title">⚡ 1935 — 10 Key Points</div>
+      <div class="lm-point"><span class="tag">1</span>4 Aug 1935 स्वीकृत, 1 Apr 1937 लागू</div>
+      <div class="lm-point"><span class="tag">2</span>321 धाराएं + 10 अनुसूचियां</div>
+      <div class="lm-point"><span class="tag">3</span>संघीय व्यवस्था (लागू नहीं हुई)</div>
+      <div class="lm-point"><span class="tag">4</span>तीन सूचियां: 59-54-36</div>
+      <div class="lm-point"><span class="tag">5</span>केन्द्र में द्विध शासन</div>
+      <div class="lm-point"><span class="tag">6</span>प्रान्तों में द्विध शासन समाप्त</div>
+      <div class="lm-point"><span class="tag">7</span>RBI स्थापना</div>
+      <div class="lm-point"><span class="tag">8</span>UPSC + SPSC स्थापना</div>
+      <div class="lm-point"><span class="tag">9</span>बर्मा अलग — 1937</div>
+      <div class="lm-point"><span class="tag">10</span>संघीय न्यायालय — 1937</div>
+    </div>
+  </div>
+
+  <div class="card gold" style="margin-top:14px;">
+    <div class="card-title">🎯 परीक्षा में सबसे ज्यादा पूछे जाने वाले</div>
+    <div class="highlight h-orange">1. द्विध शासन (Dyarchy) कहाँ लागू हुआ?</div>
+    <div style="font-size:13px;padding:4px 0">→ 1919 में प्रान्तों में | 1935 में केन्द्र में (प्रान्तों से हटा)</div>
+    <div class="highlight h-green">2. संघीय न्यायालय कब स्थापित?</div>
+    <div style="font-size:13px;padding:4px 0">→ 1935 Act के तहत 1937 में</div>
+    <div class="highlight h-blue">3. पृथक् निर्वाचन पहली बार?</div>
+    <div style="font-size:13px;padding:4px 0">→ 1909 में मुसलमानों के लिए, 1919 में विस्तार</div>
+    <div class="highlight h-purple">4. 1935 — सबसे लम्बा अधिनियम?</div>
+    <div style="font-size:13px;padding:4px 0">→ हाँ, 321 धाराएं + 10 अनुसूचियां</div>
+  </div>
+
+</div>
+</div><!-- end content -->
+
+<!-- POPUP -->
+<div class="popup-overlay" id="result-popup">
+  <div class="popup">
+    <span class="emoji" id="popup-emoji">🎉</span>
+    <h2 id="popup-title">परिणाम</h2>
+    <div class="score-big" id="popup-score">0</div>
+    <p id="popup-detail"></p>
+    <p id="popup-grade"></p>
+    <button class="popup-close" onclick="closePopup()">बन्द करें</button>
+  </div>
+</div>
+
+<script>
+// ======================== TAB SWITCH ========================
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ======================== QUIZ DATA ========================
+const rjQuestions = [
+  { q: "मोन्टेग्यु-चेम्सफोर्ड सुधार किस अधिनियम से सम्बन्धित है?", opts: ["भारत शासन अधिनियम 1909", "भारत शासन अधिनियम 1919", "भारत शासन अधिनियम 1935", "भारतीय परिषद अधिनियम 1892"], ans: 1, exp: "मोन्टेग्यु (भारत सचिव) और चेम्सफोर्ड (वायसराय) के नाम पर 1919 अधिनियम को यह नाम दिया गया।" },
+  { q: "भारत शासन अधिनियम 1919 के तहत प्रान्तों में किस शासन पद्धति की शुरुआत हुई?", opts: ["संघीय शासन", "द्विध शासन", "एकात्मक शासन", "राष्ट्रपति शासन"], ans: 1, exp: "1919 में प्रान्तों में द्विध शासन (Dyarchy) की शुरुआत हुई — विषय आरक्षित और हस्तान्तरित में बंटे।" },
+  { q: "1919 के अधिनियम के तहत आरक्षित विषय किसके अधीन था?", opts: ["मंत्रियों के", "गवर्नर की कार्यकारी परिषद के", "विधान परिषद के", "वायसराय के"], ans: 1, exp: "आरक्षित विषय (जैसे भूमि कर, न्याय, पुलिस) गवर्नर की कार्यकारी परिषद के अधीन थे।" },
+  { q: "भारत शासन अधिनियम 1919 की एक प्रमुख विशेषता थी:", opts: ["पृथक् निर्वाचन की समाप्ति", "केन्द्र में द्विसदनीय विधायिका", "संघीय न्यायालय की स्थापना", "RBI की स्थापना"], ans: 1, exp: "1919 में पहली बार केन्द्र में द्विसदनीय व्यवस्था — विधानसभा (निम्न) और राज्य परिषद (उच्च) बनी।" },
+  { q: "साइमन कमीशन का गठन किस वर्ष हुआ?", opts: ["1919", "1925", "1927", "1930"], ans: 2, exp: "साइमन कमीशन का गठन 8 नवम्बर 1927 को हुआ था।" },
+  { q: "साइमन कमीशन भारत कब आया?", opts: ["1926", "1927", "1928", "1929"], ans: 2, exp: "साइमन कमीशन 3 फरवरी 1928 को भारत आया।" },
+  { q: "भारत शासन अधिनियम 1935 को ब्रिटिश सम्राट ने किस तिथि को स्वीकृति दी?", opts: ["1 January 1935", "4 August 1935", "15 August 1935", "1 April 1935"], ans: 1, exp: "4 अगस्त 1935 को ब्रिटिश सम्राट ने इसे स्वीकृति दी और 1 अप्रैल 1937 को यह लागू हुआ।" },
+  { q: "भारत शासन अधिनियम 1935 के तहत 'संघ सूची' में कितने विषय थे?", opts: ["47", "54", "59", "36"], ans: 2, exp: "1935 में संघ सूची में 59, राज्य सूची में 54 और समवर्ती सूची में 36 विषय थे।" },
+  { q: "1935 के अधिनियम में 'राज्य सूची' में कितने विषय थे?", opts: ["59", "36", "54", "66"], ans: 2, exp: "राज्य सूची में 54 विषय थे। संघ(59) > राज्य(54) > समवर्ती(36)।" },
+  { q: "1935 के अधिनियम में 'समवर्ती सूची' में कितने विषय थे?", opts: ["59", "54", "36", "48"], ans: 2, exp: "समवर्ती सूची में 36 विषय थे।" },
+  { q: "भारत शासन अधिनियम 1935 में कितनी धाराएं थीं?", opts: ["150", "221", "321", "421"], ans: 2, exp: "1935 अधिनियम में 321 धाराएं और 10 अनुसूचियां थीं — यह भारत का सबसे लम्बा अधिनियम था।" },
+  { q: "1935 के तहत संघीय व्यवस्था लागू क्यों नहीं हो सकी?", opts: ["अंग्रेजों ने विरोध किया", "देशी रियासतों ने शामिल होने से मना किया", "INC ने विरोध किया", "ब्रिटिश संसद ने मना किया"], ans: 1, exp: "देशी रियासतों ने संघ में शामिल होने से मना करने के कारण संघीय व्यवस्था लागू नहीं हो सकी।" },
+  { q: "भारतीय रिजर्व बैंक (RBI) की स्थापना किस अधिनियम के तहत हुई?", opts: ["1909", "1919", "1929", "1935"], ans: 3, exp: "1935 अधिनियम के तहत देश में मुद्रा व साख नियन्त्रण के लिए RBI की स्थापना हुई।" },
+  { q: "भारत शासन अधिनियम 1935 के तहत 1937 में किस देश को भारत से अलग किया गया?", opts: ["श्रीलंका", "नेपाल", "बर्मा", "भूटान"], ans: 2, exp: "1935 अधिनियम के तहत 1937 में बर्मा को भारत से अलग कर दिया गया।" },
+  { q: "1935 के अधिनियम के तहत किसकी स्थापना हुई?", opts: ["केवल UPSC", "केवल SPSC", "UPSC, SPSC और संयुक्त लोक सेवा आयोग", "केवल संघीय न्यायालय"], ans: 2, exp: "1935 में संघ लोक सेवा आयोग, राज्य लोक सेवा आयोग और संयुक्त राज्य लोक सेवा आयोग की स्थापना हुई।" },
+  { q: "किस अधिनियम द्वारा पहली बार 'प्रत्यक्ष निर्वाचन' की व्यवस्था की गई?", opts: ["1892", "1909", "1919", "1935"], ans: 2, exp: "1919 के अधिनियम द्वारा पहली बार प्रत्यक्ष निर्वाचन की व्यवस्था की गई (10% लोग — शिक्षा + सम्पत्ति)।" },
+  { q: "भारत शासन अधिनियम 1935 के तहत संघीय न्यायालय की स्थापना कब हुई?", opts: ["1935", "1936", "1937", "1938"], ans: 2, exp: "1935 के अधिनियम के तहत 1937 में संघीय न्यायालय की स्थापना हुई।" },
+  { q: "मार्ले-मिन्टो सुधार (1909) द्वारा किसके लिए पृथक् निर्वाचन मण्डल बनाया गया?", opts: ["हिन्दू", "मुसलमान", "सिख", "ईसाई"], ans: 1, exp: "1909 में पहली बार मुसलमानों के लिए पृथक् निर्वाचन मण्डल बनाया गया — यह साम्प्रदायिक निर्वाचन की शुरुआत थी।" },
+  { q: "1919 अधिनियम के तहत पृथक् निर्वाचन मण्डल का विस्तार किस समुदाय तक किया गया?", opts: ["सिख, ईसाई और Anglo Indian", "बौद्ध और जैन", "SC/ST", "महिलाएं"], ans: 0, exp: "1919 में मुस्लिम के अलावा सिख, ईसाई और Anglo Indian को भी पृथक् निर्वाचन मण्डल दिया गया।" },
+  { q: "द्विध शासन में 'हस्तान्तरित' विषयों में कौन-सा विषय था?", opts: ["पुलिस", "न्याय", "शिक्षा", "भूमि कर"], ans: 2, exp: "शिक्षा, स्वास्थ्य, कृषि, सार्वजनिक सेवा और स्थानीय स्वायत्त शासन हस्तान्तरित विषय थे।" },
+  { q: "'लाला लाजपतराय' की मृत्यु किस कमीशन के विरोध में हुई?", opts: ["हंटर कमीशन", "साइमन कमीशन", "क्रिप्स मिशन", "कैबिनेट मिशन"], ans: 1, exp: "साइमन कमीशन के विरोध प्रदर्शन में लाला लाजपतराय को पुलिस ने लाठियों से पीटा जिससे उनकी मृत्यु हो गई।" },
+  { q: "1919 के अधिनियम के तहत वायसराय की कार्यकारी परिषद में कम से कम कितने भारतीय होने चाहिए थे?", opts: ["2", "3", "4", "5"], ans: 1, exp: "6 सदस्यों में से कम से कम 3 भारतीय होना अनिवार्य था (Commander-in-Chief को छोड़कर)।" },
+  { q: "भारत शासन अधिनियम 1935 के तहत प्रान्तों में क्या हुआ?", opts: ["द्विध शासन शुरू हुआ", "द्विध शासन समाप्त हुआ", "एकात्मक शासन आया", "प्रान्त समाप्त हुए"], ans: 1, exp: "1935 में प्रान्तों में द्विध शासन समाप्त हुआ और केन्द्र में द्विध शासन लागू हुआ।" },
+  { q: "किस अधिनियम ने भारत सचिव की परिषद (1858 में स्थापित) को समाप्त किया?", opts: ["1909", "1919", "1935", "1947"], ans: 2, exp: "भारत शासन अधिनियम 1935 ने 1858 में स्थापित भारत सचिव की परिषद को समाप्त कर दिया।" },
+  { q: "पहली बार केन्द्रीय बजट को राज्य बजट से अलग करने की व्यवस्था किस अधिनियम में हुई?", opts: ["1892", "1909", "1919", "1935"], ans: 2, exp: "1919 के अधिनियम के तहत पहली बार केन्द्रीय बजट से राज्य बजट अलग किया गया।" }
+];
+
+const stateQuestions = [
+  { q: "भारत शासन अधिनियम 1919 को किस नाम से भी जाना जाता है? (UPPSC)", opts: ["मार्ले-मिन्टो", "मोन्टेग्यु-चेम्सफोर्ड", "साइमन-रिपोर्ट", "माउंटबेटन"], ans: 1, exp: "1919 के अधिनियम को मोन्टेग्यु-चेम्सफोर्ड सुधार कहा जाता है।" },
+  { q: "किस अधिनियम द्वारा भारत में द्विसदनीय विधायिका की स्थापना हुई? (MPPSC)", opts: ["1892", "1909", "1919", "1935"], ans: 2, exp: "1919 के अधिनियम द्वारा केन्द्र में पहली बार द्विसदनीय विधायिका (विधानसभा + राज्य परिषद) बनी।" },
+  { q: "1935 के अधिनियम में निम्न में से क्या शामिल नहीं था? (BPSC)", opts: ["RBI की स्थापना", "संघ लोक सेवा आयोग", "मौलिक अधिकार", "संघीय न्यायालय"], ans: 2, exp: "मौलिक अधिकारों का प्रावधान 1935 में नहीं था — यह 1950 के संविधान में आया।" },
+  { q: "भारत शासन अधिनियम 1935 में अवशिष्ट शक्तियां किसे दी गई थीं? (UPSC 2017)", opts: ["राज्यों को", "केन्द्र को (वायसराय)", "राज्यपालों को", "संघीय न्यायालय को"], ans: 1, exp: "1935 में अवशिष्ट शक्तियां वायसराय (केन्द्र) को दी गई थीं, राज्यों को नहीं।" },
+  { q: "मोन्टेग्यु-चेम्सफोर्ड रिपोर्ट आधारित थी? (Jharkhand PSC)", opts: ["1905 की घटनाओं पर", "1916 की लखनऊ पैक्ट पर", "साइमन कमीशन पर", "रौलेट एक्ट पर"], ans: 1, exp: "मोन्टेग्यु-चेम्सफोर्ड सुधार 1916 की लखनऊ पैक्ट (INC-Muslim League समझौता) की भावना पर आधारित थे।" },
+  { q: "भारत में पहला संघीय न्यायालय किस अधिनियम के तहत स्थापित हुआ? (UPSC)", opts: ["1919", "1935", "1947", "1950"], ans: 1, exp: "भारत शासन अधिनियम 1935 के तहत 1937 में पहला संघीय न्यायालय स्थापित हुआ।" },
+  { q: "साइमन कमीशन में कितने सदस्य थे? (UPPSC)", opts: ["5", "7", "9", "11"], ans: 1, exp: "साइमन कमीशन में 7 सदस्य थे — सभी ब्रिटिश थे।" },
+  { q: "1919 अधिनियम के आरक्षित विषयों में कौन-सा नहीं था? (BPSC)", opts: ["भूमि कर", "पुलिस", "शिक्षा", "पेन्शन"], ans: 2, exp: "शिक्षा हस्तान्तरित विषय था, आरक्षित नहीं। आरक्षित = भनपुविपेस।" },
+  { q: "भारत शासन अधिनियम 1909 के तहत किसे भारत परिषद में शामिल करने का प्रावधान था? (UPSC)", opts: ["एक मुस्लिम", "एक भारतीय", "दो भारतीय", "एक सिख"], ans: 1, exp: "1909 में भारत परिषद में एक भारतीय सदस्य शामिल करने का प्रावधान था।" },
+  { q: "निम्न में से कौन-सा 1935 के अधिनियम की विशेषता नहीं है? (MPPSC)", opts: ["RBI की स्थापना", "द्विध शासन केन्द्र में", "मतदान का अधिकार सबको", "बर्मा अलग"], ans: 2, exp: "1935 में मताधिकार का विस्तार हुआ लेकिन सार्वभौमिक मताधिकार नहीं — सम्पत्ति/शिक्षा शर्त थी।" },
+  { q: "1935 के अधिनियम के समवर्ती सूची में कितने विषय थे? (CGPSC)", opts: ["36", "47", "54", "59"], ans: 0, exp: "समवर्ती सूची में 36 विषय थे। 59-54-36 याद रखें।" },
+  { q: "भारत शासन अधिनियम 1919 कब लागू हुआ? (UPSC Pre)", opts: ["8 July 1919", "1 January 1920", "8 July 1920", "1 January 1921"], ans: 3, exp: "यह 8 July 1920 को प्रकाशित हुआ और 1 January 1921 को लागू हुआ।" },
+  { q: "द्विध शासन (Dyarchy) शब्द किसने दिया? (UPSC)", opts: ["मोन्टेग्यु", "चेम्सफोर्ड", "Lionel Curtis", "साइमन"], ans: 2, exp: "द्विध शासन (Dyarchy) शब्द Lionel Curtis ने दिया था।" },
+  { q: "1935 के अधिनियम में कुल अनुसूचियां थीं? (JPSC)", opts: ["7", "8", "10", "12"], ans: 2, exp: "1935 अधिनियम में 321 धाराएं और 10 अनुसूचियां थीं।" },
+  { q: "किस अधिनियम ने पहली बार 'प्रान्तीय स्वायत्तता' दी? (UPPSC)", opts: ["1909", "1919", "1935", "1947"], ans: 2, exp: "1935 के अधिनियम ने प्रान्तों को स्वायत्तता दी और प्रान्तों में द्विध शासन समाप्त किया।" },
+  { q: "भारत शासन अधिनियम 1935 की आलोचना 'दासता का नया चार्टर' किसने की? (MPPSC)", opts: ["नेहरू", "गांधी", "अम्बेडकर", "सुभाष"], ans: 0, exp: "जवाहरलाल नेहरू ने 1935 के अधिनियम को 'दासता का नया चार्टर' कहा।" },
+  { q: "1935 में 'प्रान्तीय विधायिका' में किस प्रकार की व्यवस्था थी? (BPSC)", opts: ["सभी प्रान्तों में द्विसदनीय", "कुछ प्रान्तों में द्विसदनीय", "सभी एकसदनीय", "कोई विधायिका नहीं"], ans: 1, exp: "केवल 6 प्रमुख प्रान्तों में द्विसदनीय विधायिका थी, बाकी में एकसदनीय।" },
+  { q: "साइमन कमीशन के विरोध में भारत में क्या नारा दिया गया? (UPSC)", opts: ["'Simon Go Back'", "'Quit India'", "'Do or Die'", "'Jai Hind'"], ans: 0, exp: "साइमन कमीशन के विरोध में 'Simon Go Back' का नारा दिया गया।" },
+  { q: "1919 में 'हस्तान्तरित' विषयों में 'कृषि' था, यह कथन है? (CGPSC)", opts: ["सही", "गलत", "आंशिक सही", "अनिश्चित"], ans: 0, exp: "हाँ, कृषि हस्तान्तरित विषय था जो मंत्रियों के अधीन था।" },
+  { q: "भारत शासन अधिनियम 1935 के अनुसार 'संघ' में कौन शामिल होने वाले थे? (UPSC 2019)", opts: ["केवल ब्रिटिश प्रान्त", "केवल देशी रियासत", "ब्रिटिश प्रान्त + देशी रियासत", "केवल 11 प्रान्त"], ans: 2, exp: "संघ में ब्रिटिश भारतीय प्रान्त और देशी रियासत दोनों शामिल होने वाले थे।" },
+  { q: "1919 Act के तहत 'Central Legislative Assembly' में कितने सदस्य थे? (Haryana PSC)", opts: ["60", "100", "145", "250"], ans: 2, exp: "Central Legislative Assembly में 145 सदस्य थे (104 निर्वाचित + 41 मनोनीत)।" },
+  { q: "निम्न में से 1935 Act का प्रत्यक्ष परिणाम था? (UPPSC 2018)", opts: ["भारत का विभाजन", "1937 में प्रान्तीय चुनाव", "गांधी जी की गिरफ्तारी", "INC का विघटन"], ans: 1, exp: "1935 Act के बाद 1937 में प्रान्तीय चुनाव हुए जिसमें INC ने 11 में से 8 प्रान्तों में सरकार बनाई।" },
+  { q: "किस भारतीय नेता ने साइमन कमीशन का सबसे तीव्र विरोध किया और बाद में लाठी चोट से मृत्यु हुई? (MPPSC)", opts: ["बाल गंगाधर तिलक", "लाला लाजपतराय", "बिपिन चन्द्र पाल", "गोपाल कृष्ण गोखले"], ans: 1, exp: "लाला लाजपतराय को साइमन कमीशन विरोध में लाठियां लगीं और उनकी मृत्यु हुई।" },
+  { q: "भारत शासन अधिनियम 1919 में 'State Council' (राज्य परिषद) के कितने सदस्य थे? (UPSC)", opts: ["40", "60", "80", "100"], ans: 1, exp: "राज्य परिषद में 60 सदस्य थे (34 निर्वाचित + 26 मनोनीत)।" },
+  { q: "1935 के अधिनियम को 'अगस्त प्रस्ताव' से पहले लागू किया गया? (BPSC)", opts: ["सही", "गलत"], ans: 0, exp: "हाँ, 1935 Act 1 April 1937 से लागू हुआ जबकि अगस्त प्रस्ताव 1940 में आया। तो 1935 Act पहले था।" }
+];
+
+// ======================== QUIZ RENDER ========================
+function renderQuiz(questions, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  questions.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'mcq-card';
+    div.innerHTML = `
+      <div class="q-num">प्रश्न ${i+1} / ${questions.length}</div>
+      <div class="question">${q.q}</div>
+      <div class="options">
+        ${q.opts.map((opt, j) => `<button class="option-btn" onclick="selectAns(this, ${i}, ${j}, '${containerId}')">${String.fromCharCode(65+j)}. ${opt}</button>`).join('')}
+      </div>
+      <div class="explanation" id="exp-${containerId}-${i}">💡 ${q.exp}</div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+renderQuiz(rjQuestions, 'rj-questions');
+renderQuiz(stateQuestions, 'state-questions');
+
+// ======================== QUIZ LOGIC ========================
+const scores = { rj: 0, state: 0 };
+const answered = { rj: new Set(), state: new Set() };
+const results = { rj: { correct: 0, wrong: 0 }, state: { correct: 0, wrong: 0 } };
+
+function getQuestions(containerId) {
+  return containerId === 'rj-questions' ? rjQuestions : stateQuestions;
+}
+function getPrefix(containerId) {
+  return containerId === 'rj-questions' ? 'rj' : 'state';
+}
+
+function selectAns(btn, qIdx, optIdx, containerId) {
+  const prefix = getPrefix(containerId);
+  if (answered[prefix].has(qIdx)) return;
+  answered[prefix].add(qIdx);
+
+  const qs = containerId === 'rj-questions' ? rjQuestions : stateQuestions;
+  const correct = qs[qIdx].ans;
+  const allBtns = btn.closest('.options').querySelectorAll('.option-btn');
+  allBtns.forEach(b => b.disabled = true);
+
+  if (optIdx === correct) {
+    btn.classList.add('correct');
+    scores[prefix] = parseFloat((scores[prefix] + 1).toFixed(2));
+    results[prefix].correct++;
+  } else {
+    btn.classList.add('wrong');
+    allBtns[correct].classList.add('correct');
+    scores[prefix] = parseFloat((scores[prefix] - 1/3).toFixed(2));
+    results[prefix].wrong++;
+  }
+
+  document.getElementById(`exp-${containerId}-${qIdx}`).classList.add('show');
+  document.getElementById(prefix + '-score').textContent = scores[prefix].toFixed(2);
+  document.getElementById(prefix + '-correct').textContent = results[prefix].correct;
+  document.getElementById(prefix + '-wrong').textContent = results[prefix].wrong;
+}
+
+function submitQuiz(prefix) {
+  const score = scores[prefix];
+  const correct = results[prefix].correct;
+  const wrong = results[prefix].wrong;
+  const total = prefix === 'rj' ? 25 : 25;
+
+  let emoji, grade, title;
+  const pct = (correct / total) * 100;
+  if (pct >= 80) { emoji = '🏆'; grade = 'शानदार! IAS material!'; title = 'उत्कृष्ट'; }
+  else if (pct >= 60) { emoji = '🎯'; grade = 'बहुत अच्छा! थोड़ा और करो'; title = 'अच्छा'; }
+  else if (pct >= 40) { emoji = '📚'; grade = 'ठीक है, और Revision करो'; title = 'ठीक'; }
+  else { emoji = '💪'; grade = 'हिम्मत रखो! फिर से पढ़ो'; title = 'और मेहनत करो'; }
+
+  document.getElementById('popup-emoji').textContent = emoji;
+  document.getElementById('popup-title').textContent = title;
+  document.getElementById('popup-score').textContent = score.toFixed(2) + ' / ' + total;
+  document.getElementById('popup-detail').textContent = `✅ सही: ${correct} | ❌ गलत: ${wrong} | ⬜ छोड़े: ${total - correct - wrong}`;
+  document.getElementById('popup-grade').textContent = grade;
+  document.getElementById('result-popup').classList.add('show');
+}
+
+function closePopup() {
+  document.getElementById('result-popup').classList.remove('show');
+}
+</script>
+</body>
+</html>

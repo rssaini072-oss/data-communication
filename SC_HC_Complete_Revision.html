@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सर्वोच्च व उच्च न्यायालय | RPSC RAS/PSI Revision</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Hind:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --saffron:#FF6B1A;--deep-saffron:#E55A00;--green:#138808;--deep-green:#0d6b06;
+  --navy:#1a1a4e;--gold:#F5A623;--light-gold:#FFF3DC;
+  --white:#FFFFFF;--gray:#6c757d;--light-gray:#f8f9fa;
+  --card-shadow:0 4px 20px rgba(0,0,0,0.1);--hover-shadow:0 8px 30px rgba(0,0,0,0.18);
+  --radius:14px;--radius-sm:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Hind',sans-serif;background:linear-gradient(135deg,#fff9f0 0%,#f0f7ff 100%);color:var(--navy);min-height:100vh;}
+.header{background:linear-gradient(135deg,var(--navy) 0%,#1a3a6e 50%,#2a2a7e 100%);padding:16px 20px 10px;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+.header-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.header h1{font-family:'Baloo 2',cursive;font-size:clamp(14px,3vw,20px);color:var(--gold);font-weight:800;}
+.header p{color:#aad4ff;font-size:11px;margin-top:2px;}
+.badge{background:var(--saffron);color:white;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;}
+.tabs-wrapper{display:flex;overflow-x:auto;background:var(--navy);padding:0 8px 8px;gap:4px;scrollbar-width:none;margin-top:10px;}
+.tabs-wrapper::-webkit-scrollbar{display:none;}
+.tab{padding:7px 12px;border-radius:20px;background:rgba(255,255,255,0.1);color:#ccd;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap;border:none;transition:all 0.25s;font-family:'Hind',sans-serif;}
+.tab.active{background:var(--saffron);color:white;box-shadow:0 3px 12px rgba(255,107,26,0.5);}
+.tab.hc-tab.active{background:#00897b;box-shadow:0 3px 12px rgba(0,137,123,0.5);}
+.tab.compare-tab.active{background:#9c27b0;box-shadow:0 3px 12px rgba(156,39,176,0.5);}
+.tab:hover:not(.active){background:rgba(255,255,255,0.2);color:white;}
+.content{padding:16px;max-width:960px;margin:0 auto;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.card{background:white;border-radius:var(--radius);padding:16px;margin-bottom:14px;box-shadow:var(--card-shadow);border-left:5px solid var(--saffron);transition:box-shadow 0.2s;}
+.card:hover{box-shadow:var(--hover-shadow);}
+.card.green{border-left-color:var(--green);}
+.card.navy{border-left-color:var(--navy);}
+.card.gold{border-left-color:var(--gold);}
+.card.purple{border-left-color:#9c27b0;}
+.card.teal{border-left-color:#00897b;}
+.card.red{border-left-color:#e53935;}
+.card.pink{border-left-color:#e91e63;}
+.card.hc{border-left-color:#00897b;}
+.art-badge{display:inline-block;background:var(--navy);color:var(--gold);padding:4px 14px;border-radius:12px;font-size:13px;font-weight:700;margin-bottom:10px;}
+.art-badge.hc{background:#00897b;}
+.card-title{font-family:'Baloo 2',cursive;font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr;}}
+.rev-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;}
+.rev-table th{background:var(--navy);color:var(--gold);padding:8px 10px;text-align:left;font-weight:700;}
+.rev-table.hc-table th{background:#00897b;}
+.rev-table.compare-table th{background:#7b1fa2;color:white;}
+.rev-table td{padding:7px 10px;border-bottom:1px solid #eee;vertical-align:top;}
+.rev-table tr:nth-child(even) td{background:var(--light-gray);}
+.rev-table tr:hover td{background:var(--light-gold);}
+.mnemonic{background:linear-gradient(135deg,#fff8e1,#fff3dc);border:2px dashed var(--gold);border-radius:var(--radius-sm);padding:10px 14px;margin-top:10px;font-size:13px;}
+.mnemonic strong{color:var(--saffron);font-size:14px;display:block;margin-bottom:4px;}
+.highlight{padding:8px 12px;border-radius:var(--radius-sm);font-size:13px;margin:6px 0;font-weight:600;}
+.h-orange{background:#fff0e6;color:#c45000;border-left:3px solid var(--saffron);}
+.h-green{background:#e8f5e9;color:#1b5e20;border-left:3px solid var(--green);}
+.h-blue{background:#e3f2fd;color:#0d47a1;border-left:3px solid #2196f3;}
+.h-red{background:#fce4ec;color:#880e4f;border-left:3px solid #e91e63;}
+.h-purple{background:#f3e5f5;color:#4a148c;border-left:3px solid #9c27b0;}
+.h-teal{background:#e0f2f1;color:#004d40;border-left:3px solid #009688;}
+ul.point-list{padding-left:16px;}
+ul.point-list li{font-size:13px;padding:3px 0;line-height:1.6;}
+.divider{height:2px;background:linear-gradient(90deg,var(--saffron),transparent);margin:16px 0;border-radius:2px;}
+.divider.hc{background:linear-gradient(90deg,#00897b,transparent);}
+.sec-head{font-family:'Baloo 2',cursive;font-size:17px;font-weight:800;color:var(--navy);padding:8px 0 10px;border-bottom:3px solid var(--saffron);margin-bottom:14px;}
+.sec-head.hc{border-bottom-color:#00897b;}
+.note-box{background:linear-gradient(135deg,#fff3e0,#fff8e1);border:2px solid var(--gold);border-radius:var(--radius-sm);padding:10px 14px;margin:8px 0;font-size:13px;}
+.note-box.hc{background:linear-gradient(135deg,#e0f2f1,#e8f5e9);border-color:#00897b;}
+.note-box .note-title{color:var(--saffron);font-weight:700;font-size:13px;margin-bottom:4px;}
+.note-box.hc .note-title{color:#00897b;}
+/* MCQ */
+.score-strip{background:var(--navy);color:white;padding:10px 16px;border-radius:var(--radius);display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:13px;flex-wrap:wrap;gap:8px;}
+.score-val{font-family:'Baloo 2',cursive;font-size:20px;color:var(--gold);font-weight:800;}
+.mcq-card{background:white;border-radius:var(--radius);padding:16px;margin-bottom:16px;box-shadow:var(--card-shadow);}
+.q-num{font-size:11px;color:var(--saffron);font-weight:700;margin-bottom:6px;}
+.question{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:12px;line-height:1.6;}
+.options{display:flex;flex-direction:column;gap:8px;}
+.option-btn{padding:9px 14px;border-radius:var(--radius-sm);border:2px solid #e0e0e0;background:var(--light-gray);color:var(--navy);font-family:'Hind',sans-serif;font-size:13px;cursor:pointer;text-align:left;transition:all 0.2s;font-weight:500;}
+.option-btn:hover:not(:disabled){border-color:var(--saffron);background:#fff5ee;}
+.option-btn.correct{background:#e8f5e9;border-color:var(--green);color:#1b5e20;font-weight:700;}
+.option-btn.wrong{background:#fce4ec;border-color:#e91e63;color:#880e4f;font-weight:700;}
+.option-btn:disabled{cursor:default;}
+.explanation{margin-top:10px;padding:10px;background:#f0f7ff;border-radius:var(--radius-sm);font-size:12px;color:#1a3a6e;border-left:3px solid #2196f3;display:none;}
+.explanation.show{display:block;}
+.submit-btn{background:linear-gradient(135deg,var(--saffron),var(--deep-saffron));color:white;border:none;padding:12px 30px;border-radius:25px;font-family:'Baloo 2',cursive;font-size:15px;font-weight:700;cursor:pointer;display:block;margin:20px auto;box-shadow:0 4px 15px rgba(255,107,26,0.4);transition:all 0.2s;}
+.submit-btn:hover{transform:translateY(-2px);}
+.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:999;justify-content:center;align-items:center;}
+.popup-overlay.show{display:flex;}
+.popup{background:white;border-radius:20px;padding:30px 24px;max-width:340px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:popIn 0.3s ease;}
+@keyframes popIn{from{transform:scale(0.7);opacity:0;}to{transform:scale(1);opacity:1;}}
+.popup .emoji{font-size:48px;display:block;margin-bottom:10px;}
+.popup h2{font-family:'Baloo 2',cursive;font-size:22px;color:var(--navy);margin-bottom:6px;}
+.popup .score-big{font-family:'Baloo 2',cursive;font-size:42px;font-weight:800;color:var(--saffron);}
+.popup p{font-size:13px;color:var(--gray);margin:6px 0;}
+.popup-close{background:var(--navy);color:white;border:none;padding:10px 24px;border-radius:20px;font-family:'Baloo 2',cursive;font-size:14px;cursor:pointer;margin-top:14px;}
+/* LAST MIN */
+.lm-card{background:linear-gradient(135deg,var(--navy) 0%,#1a3a6e 100%);color:white;border-radius:var(--radius);padding:14px 16px;margin-bottom:10px;}
+.lm-card.hc{background:linear-gradient(135deg,#00695c 0%,#00897b 100%);}
+.lm-title{font-family:'Baloo 2',cursive;font-size:15px;color:var(--gold);margin-bottom:8px;}
+.lm-card.hc .lm-title{color:#b2dfdb;}
+.lm-point{font-size:13px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.1);}
+.lm-point:last-child{border:none;}
+.lm-point span.tag{background:var(--saffron);color:white;font-size:10px;padding:1px 6px;border-radius:8px;margin-right:5px;font-weight:700;}
+.lm-point span.tag.hc{background:#00897b;}
+.super-mnemonic{background:linear-gradient(135deg,#FF6B1A,#ff9a4a);color:white;border-radius:var(--radius);padding:14px 16px;margin-bottom:10px;}
+.super-mnemonic.hc{background:linear-gradient(135deg,#00897b,#4db6ac);}
+.sm-title{font-family:'Baloo 2',cursive;font-size:14px;font-weight:800;margin-bottom:8px;}
+.sm-text{font-size:15px;font-weight:700;line-height:1.8;}
+.sm-explain{font-size:12px;opacity:0.9;margin-top:6px;}
+.timeline-item{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start;}
+.timeline-dot{width:30px;height:30px;border-radius:50%;background:var(--saffron);color:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+.timeline-dot.hc{background:#00897b;}
+.timeline-content{background:white;border-radius:var(--radius-sm);padding:8px 12px;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,0.08);flex:1;}
+.timeline-content strong{color:var(--navy);display:block;font-size:12px;}
+/* Compare */
+.compare-sc{background:#e8eaf6;border-left:4px solid #3f51b5;}
+.compare-hc{background:#e0f2f1;border-left:4px solid #00897b;}
+.compare-label-sc{display:inline-block;background:#3f51b5;color:white;font-size:10px;padding:1px 7px;border-radius:8px;margin-right:4px;font-weight:700;}
+.compare-label-hc{display:inline-block;background:#00897b;color:white;font-size:10px;padding:1px 7px;border-radius:8px;margin-right:4px;font-weight:700;}
+.section-divider{text-align:center;margin:20px 0;font-family:'Baloo 2',cursive;font-size:13px;color:#888;}
+.section-divider::before,.section-divider::after{content:'';display:inline-block;width:80px;height:1px;background:#ccc;vertical-align:middle;margin:0 8px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>⚖️ सर्वोच्च व उच्च न्यायालय — SC & HC</h1>
+      <p>RPSC RAS Pre & PSI | Art. 124–147 (SC) | Art. 214–231 (HC) | SC vs HC Comparison</p>
+    </div>
+    <span class="badge">🎯 Complete Module</span>
+  </div>
+  <div class="tabs-wrapper">
+    <button class="tab active" onclick="switchTab('sc-revision',this)">📖 SC Revision</button>
+    <button class="tab" onclick="switchTab('sc-summary',this)">📊 SC Table</button>
+    <button class="tab hc-tab" onclick="switchTab('hc-revision',this)">🏛️ HC Revision</button>
+    <button class="tab hc-tab" onclick="switchTab('hc-summary',this)">📋 HC Table</button>
+    <button class="tab compare-tab" onclick="switchTab('compare',this)">⚖️ SC vs HC</button>
+    <button class="tab" onclick="switchTab('sc-mcq',this)">🏆 SC MCQ (25)</button>
+    <button class="tab hc-tab" onclick="switchTab('hc-mcq',this)">🟢 HC MCQ (20)</button>
+    <button class="tab" onclick="switchTab('lastmin',this)">⚡ Last Minute</button>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ========== SC REVISION ========== -->
+<div id="tab-sc-revision" class="tab-panel active">
+  <div class="sec-head">📜 सर्वोच्च न्यायालय — ऐतिहासिक पृष्ठभूमि</div>
+  <div class="grid-2">
+    <div class="card navy">
+      <div class="card-title">🏛️ इतिहास</div>
+      <ul class="point-list">
+        <li><strong>1773</strong> → Regulating Act → सर्वोच्च न्यायालय का उल्लेख</li>
+        <li><strong>22 Oct. 1774</strong> → स्थापना → कलकत्ता (Fort William)</li>
+        <li>जज = 1+3 = 4 | मुख्य जज = <strong>फिलिज इम्पी</strong></li>
+        <li><strong>1935</strong> → भारत शासन अधिनियम → संघीय न्यायालय (1 Oct. 1937 दिल्ली)</li>
+        <li>मुख्य जज — <strong>मौरिज ग्वेयर</strong></li>
+        <li><strong>28 Jan. 1950</strong> → वर्तमान सर्वोच्च न्यायालय स्थापना</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "1773→1774→1937→1950" = रेगु→कलकत्ता→संघीय→SC</strong></div>
+    </div>
+    <div class="card green">
+      <div class="card-title">⚖️ SC — मूल जानकारी (Art. 124)</div>
+      <ul class="point-list">
+        <li><strong>भाग-5</strong> | अनुच्छेद <strong>124-147</strong></li>
+        <li>न्यायपालिका → <strong>एकीकृत</strong> → USA से</li>
+        <li>मूल जज = 1+7 = <strong>8</strong></li>
+        <li>वर्तमान जज = 1+33 = <strong>34</strong></li>
+        <li>नियुक्ति → राष्ट्रपति द्वारा कोलेजियम प्रक्रिया से</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "SC = भाग-5 | Art.124-147 | 34 जज | USA = एकीकृत न्यायपालिका"</strong></div>
+    </div>
+  </div>
+
+  <div class="sec-head">👨‍⚖️ जजों की नियुक्ति — Judges Case Timeline</div>
+  <div class="card gold">
+    <div class="card-title">📅 Judges Cases — कोलेजियम की यात्रा</div>
+    <div class="timeline-item">
+      <div class="timeline-dot">1st</div>
+      <div class="timeline-content"><strong>1978 → पहला Judges Case (फैसला 1981)</strong>राष्ट्रपति, CJI की सलाह मानने के लिए <strong>बाध्य नहीं</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">2nd</div>
+      <div class="timeline-content"><strong>1993 → दूसरा Judges Case</strong>राष्ट्रपति, CJI की सलाह मानने के लिए <strong>बाध्य है</strong> | कोलेजियम = CJI + 2 वरिष्ठ जज (1+2=3)</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">3rd</div>
+      <div class="timeline-content"><strong>1998 → तीसरा Judges Case</strong>वर्तमान कोलेजियम = CJI + 4 वरिष्ठ जज = <strong>1+4=5</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">NJAC</div>
+      <div class="timeline-content"><strong>2014 → 99वां संशोधन → NJAC</strong>6 सदस्य | 16 Oct. 2015 को <strong>रद्द</strong> किया गया (मूलभूत ढांचे को खतरा)</div>
+    </div>
+    <div class="mnemonic"><strong>🧠 "1st=नहीं | 2nd=हाँ(3) | 3rd=5 | NJAC=रद्द" = 1978→1993→1998→2015</strong></div>
+  </div>
+
+  <div class="sec-head">📋 जजों की योग्यता, वेतन व हटाना</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">✅ SC जज की योग्यता</div>
+      <ul class="point-list">
+        <li>भारत का <strong>नागरिक</strong> हो</li>
+        <li>किसी HC में <strong>5 वर्ष तक जज</strong> रहा हो</li>
+        <li><strong>या</strong> किसी HC में लगातार <strong>10 वर्ष वकालत</strong> की हो</li>
+        <li>राष्ट्रपति की नजर में <strong>विधि में पारंगत</strong> हो</li>
+        <li>सेवानिवृत्ति आयु → <strong>65 वर्ष</strong></li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "5 जज या 10 वकालत या विधि पारंगत → 65 वर्ष"</strong></div>
+    </div>
+    <div class="card red">
+      <div class="card-title">❌ SC जज को हटाना (Impeachment)</div>
+      <ul class="point-list">
+        <li>कारण: <strong>सिद्ध कदाचार</strong> या <strong>अक्षमता</strong></li>
+        <li><strong>लोकसभा</strong>: 100 सदस्यों की सहमति</li>
+        <li><strong>राज्यसभा</strong>: 50 सदस्यों की सहमति</li>
+        <li>पास सदन में: उपस्थित व मत देने वाले के <strong>2/3 बहुमत</strong></li>
+        <li>जांच समिति → CJI + HC के CJI + वरिष्ठ विधिज्ञ</li>
+        <li>SC जज → सेवानिवृत्त के बाद <strong>भारत में कहीं भी वकालत नहीं</strong></li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "100 LS + 50 RS + 2/3 बहुमत = Impeach"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card purple">
+      <div class="art-badge">Art. 125 — वेतन</div>
+      <div class="card-title">💰 SC जज का वेतन</div>
+      <ul class="point-list">
+        <li>निर्धारण → <strong>संसद</strong></li>
+        <li>CJI → <strong>₹2.80 लाख/माह</strong></li>
+        <li>अन्य जज → <strong>₹2.50 लाख/माह</strong></li>
+        <li>वेतन → <strong>भारत की संचित निधि</strong> से</li>
+        <li>वित्तीय आपातकाल में → <strong>वेतन में कटौती</strong> हो सकती है</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "CJI=2.80 | Other=2.50 | 30 हजार का फर्क"</strong></div>
+    </div>
+    <div class="card teal">
+      <div class="art-badge">Art. 126, 127, 128</div>
+      <div class="card-title">👨‍⚖️ विशेष न्यायाधीश</div>
+      <div class="highlight h-blue"><strong>Art.126 → कार्यकारी CJI</strong> — SC वरिष्ठ जज | राष्ट्रपति द्वारा</div>
+      <div class="highlight h-orange"><strong>Art.127 → तदर्थ जज</strong> — HC के योग्य जज | CJI राष्ट्रपति से पूर्व अनुमति + HC CJI से सलाह</div>
+      <div class="highlight h-green"><strong>Art.128 → सेवानिवृत्त जज</strong> — CJI (राष्ट्रपति से पूर्व सहमति)</div>
+    </div>
+  </div>
+
+  <div class="sec-head">📍 SC का क्षेत्राधिकार (Jurisdiction)</div>
+  <div class="grid-2">
+    <div class="card navy">
+      <div class="art-badge">Art. 131 — मूल क्षेत्राधिकार</div>
+      <div class="card-title">🏛️ मूल/आरंभिक क्षेत्राधिकार</div>
+      <div class="highlight h-red">एकल पारम्भिक (केवल SC में)</div>
+      <ul class="point-list">
+        <li>केन्द्र व राज्यों तथा राज्यों व राज्यों के मध्य विवाद</li>
+        <li>राष्ट्रपति व उपराष्ट्रपति के निर्वाचन संबंधी विवाद</li>
+      </ul>
+      <div class="highlight h-green">समवर्ती पारम्भिक (SC और HC दोनों में)</div>
+      <ul class="point-list">
+        <li>रिट अधिकार: Art.32 → SC | Art.226 → HC</li>
+        <li>संविधान की व्याख्या, संसद की विधियों की समीक्षा</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="art-badge">Art. 132-134 — अपीलीय</div>
+      <div class="card-title">📤 अपीलीय क्षेत्राधिकार</div>
+      <div class="highlight h-blue"><strong>Art.132</strong> → HC के संवैधानिक मामलों की अपील</div>
+      <div class="highlight h-green"><strong>Art.133</strong> → दीवानी (Civil) — विवाह, तलाक, सम्पत्ति</div>
+      <div class="highlight h-orange"><strong>Art.134</strong> → फौजदारी (Criminal) — मृत्युदण्ड के मामले</div>
+      <div class="highlight h-red"><strong>Art.136</strong> → SLP (Special Leave Petition) — SC का अंतिम हथियार</div>
+      <div class="highlight h-purple"><strong>Art.143</strong> → परामर्शी — राष्ट्रपति SC से सलाह माँगता है</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card teal">
+      <div class="art-badge">Art. 140-143</div>
+      <div class="card-title">🔮 महत्वपूर्ण अनुच्छेद</div>
+      <div class="highlight h-green"><strong>★ Art.141</strong> → SC का निर्णय सभी न्यायालयों पर बाध्यकारी</div>
+      <div class="highlight h-red"><strong>★★ Art.142</strong> → SC की पूर्ण-न्याय करने की शक्ति (न्यायिक सक्रियता)</div>
+      <ul class="point-list"><li>राम जन्मभूमि-बाबरी मस्जिद | कार्बाइड वार्ता</li></ul>
+      <div class="highlight h-orange"><strong>★★ Art.143(1)</strong> → SC सलाह देने को बाध्य नहीं</div>
+      <div class="highlight h-blue"><strong>★★ Art.143(2)</strong> → SC सलाह देने को बाध्य है</div>
+      <div class="highlight h-purple"><strong>Art.145(3)</strong> → संविधान व्याख्या → न्यूनतम 5 जजों की बेंच</div>
+    </div>
+    <div class="card gold">
+      <div class="card-title">⭐ SC के महत्वपूर्ण तथ्य</div>
+      <div class="highlight h-orange">वर्तमान CJI → B.R. गवई (2025)</div>
+      <div class="highlight h-green">सर्वाधिक कार्यकाल → Y.V. चन्द्रचूड़ (1978-85)</div>
+      <div class="highlight h-blue">न्यूनतम कार्यकाल → कमल नारायण सिंह (18 दिन, 1991)</div>
+      <div class="highlight h-purple">पहली महिला जज → फातिमा बीबी</div>
+      <div class="highlight h-red">प्रथम CJI → हिरालाल J. कानिया (पद पर रहते निधन)</div>
+      <div class="highlight h-teal">SC/ST के प्रथम CJI → K.G. बालकृष्णन</div>
+      <div class="mnemonic"><strong>🧠 "PIL = P.N. भगवती + V.R. कृष्णा अय्यर | ICJ = हेग | 15 जज | 9 वर्ष"</strong></div>
+    </div>
+  </div>
+</div><!-- end sc-revision -->
+
+<!-- ========== SC SUMMARY ========== -->
+<div id="tab-sc-summary" class="tab-panel">
+  <div class="sec-head">📊 SC Master Table — अनुच्छेद 124-147</div>
+  <div class="card" style="overflow-x:auto;padding:10px;">
+    <table class="rev-table">
+      <tr><th>अनुच्छेद</th><th>विषय</th><th>Key Point</th></tr>
+      <tr><td><strong>124</strong></td><td>SC का गठन</td><td>CJI+33=34 जज | कोलेजियम नियुक्ति | 65 वर्ष सेवानिवृत्ति</td></tr>
+      <tr style="background:#fff0e6"><td><strong>125</strong></td><td>वेतन</td><td>CJI=₹2.80L | अन्य=₹2.50L | संसद तय करे | संचित निधि से</td></tr>
+      <tr><td><strong>126</strong></td><td>कार्यकारी CJI</td><td>SC वरिष्ठ जज | राष्ट्रपति द्वारा</td></tr>
+      <tr><td><strong>127</strong></td><td>तदर्थ जज</td><td>HC का योग्य जज | CJI → राष्ट्रपति से अनुमति</td></tr>
+      <tr><td><strong>128</strong></td><td>सेवानिवृत्त जज</td><td>CJI (राष्ट्रपति की पूर्व सहमति)</td></tr>
+      <tr><td><strong>129</strong></td><td>अभिलेख न्यायालय</td><td>Court of Record</td></tr>
+      <tr><td><strong>130</strong></td><td>स्थान = दिल्ली</td><td>CJI राष्ट्रपति की पूर्व अनुमति से अन्यत्र भी</td></tr>
+      <tr style="background:#e8f5e9"><td><strong>★131</strong></td><td>मूल क्षेत्राधिकार</td><td>केन्द्र-राज्य विवाद | एकल पारम्भिक</td></tr>
+      <tr><td><strong>132</strong></td><td>अपीलीय (संवैधानिक)</td><td>HC के संवैधानिक मामलों की अपील</td></tr>
+      <tr><td><strong>133</strong></td><td>अपीलीय (दीवानी)</td><td>Civil — विवाह, सम्पत्ति</td></tr>
+      <tr><td><strong>134</strong></td><td>अपीलीय (फौजदारी)</td><td>Criminal — मृत्युदण्ड</td></tr>
+      <tr><td><strong>136</strong></td><td>SLP</td><td>विशेष अनुमति याचिका — SC का अंतिम हथियार</td></tr>
+      <tr><td><strong>137</strong></td><td>पुनरावलोकन</td><td>न्यायिक पुनरावलोकन</td></tr>
+      <tr><td><strong>138</strong></td><td>क्षेत्राधिकार विस्तार</td><td>संसद विधि बनाकर बढ़ा सकती है</td></tr>
+      <tr style="background:#e3f2fd"><td><strong>★★141</strong></td><td>निर्णय बाध्यकारी</td><td>सभी न्यायालयों पर SC का निर्णय</td></tr>
+      <tr style="background:#e3f2fd"><td><strong>★★142</strong></td><td>पूर्ण न्याय</td><td>न्यायिक सक्रियता | राम जन्मभूमि</td></tr>
+      <tr style="background:#fff0e6"><td><strong>★★143</strong></td><td>परामर्शी क्षेत्राधिकार</td><td>143(1)=बाध्य नहीं | 143(2)=बाध्य</td></tr>
+      <tr><td><strong>144</strong></td><td>सहायता</td><td>सभी अधिकारी SC की सहायता करेंगे</td></tr>
+      <tr><td><strong>145(3)</strong></td><td>संविधान व्याख्या बेंच</td><td>न्यूनतम 5 जज</td></tr>
+    </table>
+  </div>
+
+  <div class="grid-2" style="margin-top:14px;">
+    <div class="card navy">
+      <div class="card-title">📅 Judges Cases Quick Table</div>
+      <table class="rev-table">
+        <tr><th>केस</th><th>वर्ष</th><th>कोलेजियम</th><th>फैसला</th></tr>
+        <tr><td>1st</td><td>1978/81</td><td>—</td><td>CJI सलाह बाध्य नहीं</td></tr>
+        <tr><td>2nd</td><td>1993</td><td>CJI+2=3</td><td>CJI सलाह बाध्य है</td></tr>
+        <tr><td>3rd</td><td>1998</td><td>CJI+4=5</td><td>वर्तमान कोलेजियम</td></tr>
+        <tr><td>NJAC</td><td>2014/15</td><td>6 सदस्य</td><td>रद्द किया गया</td></tr>
+      </table>
+    </div>
+    <div class="card green">
+      <div class="card-title">🌐 ICJ — अन्तर्राष्ट्रीय न्यायालय</div>
+      <ul class="point-list">
+        <li>स्थापना → <strong>3 Apr. 1946</strong></li>
+        <li>मुख्यालय → <strong>हेग (नीदरलैंड)</strong></li>
+        <li>जज → <strong>15</strong> | कार्यकाल → <strong>9 वर्ष</strong></li>
+        <li>राजस्थान से जज → <strong>दलबीर भण्डारी</strong> (जोधपुर) 2012-27</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "ICJ = 15 जज | 9 साल | हेग | दलबीर = राजस्थान से"</strong></div>
+    </div>
+  </div>
+</div><!-- end sc-summary -->
+
+<!-- ========== HC REVISION ========== -->
+<div id="tab-hc-revision" class="tab-panel">
+  <div class="sec-head hc">🏛️ उच्च न्यायालय (High Court) — परिचय</div>
+  <div class="grid-2">
+    <div class="card hc">
+      <div class="card-title">📋 मूल जानकारी</div>
+      <ul class="point-list">
+        <li><strong>भाग-6</strong> | अनुच्छेद <strong>214-231</strong></li>
+        <li>एकीकृत न्यायपालिका → <strong>USA</strong> से</li>
+        <li>पहला HC → <strong>भारत शासन Act 1861</strong> के तहत</li>
+        <li>स्वतंत्रता के समय → <strong>11 HC</strong></li>
+        <li>वर्तमान HC → <strong>25</strong></li>
+        <li>नवीनतम HC → <strong>आन्ध्र प्रदेश HC</strong> (1 Jan. 2019)</li>
+        <li>2013 में तीन नए HC → <strong>मेघालय, मणिपुर, त्रिपुरा</strong></li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "1861→1862→25 HC | नवीनतम = AP 2019 | 2013 = 3 नए"</strong></div>
+    </div>
+    <div class="card green">
+      <div class="card-title">📜 HC का इतिहास — 1862</div>
+      <ul class="point-list">
+        <li><strong>भारत शासन Act 1861</strong> के तहत 1862 में:</li>
+        <li>① <strong>कलकत्ता HC</strong> → 1862 (सर्वप्रथम)</li>
+        <li>② <strong>बॉम्बे HC</strong> → 1862</li>
+        <li>③ <strong>मद्रास HC</strong> → 1862</li>
+        <li>★ <strong>इलाहाबाद HC</strong> → 1866</li>
+        <li><strong>2016 में नाम परिवर्तन:</strong> कलकत्ता→कोलकाता | बॉम्बे→मुम्बई | मद्रास→चेन्नई</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "3 HC 1862 → कलकत्ता सर्वप्रथम | इलाहाबाद 1866"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card navy">
+      <div class="card-title">📊 HC के आँकड़े</div>
+      <ul class="point-list">
+        <li>सबसे <strong>बड़ा HC</strong> → प्रयागराज HC (<strong>160 जज</strong>)</li>
+        <li>सबसे <strong>छोटा HC</strong> → <strong>सिक्किम</strong> (3 जज)</li>
+        <li>वर्तमान में <strong>7 संयुक्त HC</strong> हैं</li>
+        <li><strong>Raj. HC में जज</strong> → <strong>50</strong> (1+49)</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "बड़ा = इलाहाबाद(160) | छोटा = सिक्किम(3)"</strong></div>
+    </div>
+    <div class="card teal">
+      <div class="art-badge hc">Art. 231 — संयुक्त HC</div>
+      <div class="card-title">🤝 7 संयुक्त HC</div>
+      <ul class="point-list">
+        <li>① J&K HC → J&K, <strong>लद्दाख</strong></li>
+        <li>② केरल HC → केरल, <strong>लक्षद्वीप</strong></li>
+        <li>③ चेन्नई HC → तमिलनाडु, <strong>पुड्डुचेरी</strong></li>
+        <li>④ मुम्बई HC → महाराष्ट्र, गोवा, दमनदीव, दादरा नागर हवेली</li>
+        <li>⑤ कोलकाता HC → प. बंगाल, <strong>अण्डमान निकोबार</strong></li>
+        <li>⑥ पंजाब-हरियाणा HC → पंजाब, हरियाणा, <strong>चण्डीगढ़</strong></li>
+        <li>⑦ गौहाटी HC → असम, अरुणाचल, मिजोरम, <strong>नागालैण्ड</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec-head hc">⚖️ HC का गठन व अनुच्छेद</div>
+  <div class="grid-2">
+    <div class="card hc">
+      <div class="art-badge hc">Art. 214</div>
+      <div class="card-title">🏛️ प्रत्येक राज्य का एक HC</div>
+      <ul class="point-list">
+        <li>Art. 214 → प्रत्येक राज्य का एक HC होगा</li>
+        <li><strong>7वाँ संविधान संशोधन 1956</strong> → एक HC को दो या अधिक राज्यों के लिए</li>
+        <li>HC के अन्य जजों की संख्या का निर्धारण → <strong>राष्ट्रपति</strong></li>
+      </ul>
+    </div>
+    <div class="card green">
+      <div class="art-badge hc">Art. 215</div>
+      <div class="card-title">📜 HC = अभिलेख न्यायालय</div>
+      <ul class="point-list">
+        <li>Art. 215 → HC <strong>अभिलेख न्यायालय (Court of Record)</strong> है</li>
+        <li>★ जिला व अधीनस्थ न्यायालय <strong>अभिलेख न्यायालय नहीं</strong> होते</li>
+        <li>SC भी Art. 129 के तहत <strong>अभिलेख न्यायालय</strong> है</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "SC=129 | HC=215 | दोनों = अभिलेख न्यायालय"</strong></div>
+    </div>
+  </div>
+
+  <div class="sec-head hc">👨‍⚖️ HC जजों की नियुक्ति व योग्यता</div>
+  <div class="grid-2">
+    <div class="card hc">
+      <div class="art-badge hc">Art. 217 — नियुक्ति</div>
+      <div class="card-title">👤 HC जजों की नियुक्ति</div>
+      <ul class="point-list">
+        <li>नियुक्ति → <strong>राष्ट्रपति</strong> द्वारा</li>
+        <li><strong>HC के मुख्य जज</strong> की नियुक्ति में सलाह:
+          <ul><li>① राज्यपाल</li><li>② कोलेजियम प्रणाली (CJI + 2 वरिष्ठ जज = 1+2=3)</li></ul>
+        </li>
+        <li><strong>HC के अन्य जज</strong> की नियुक्ति में सलाह:
+          <ul><li>① राज्यपाल</li><li>② HC के मुख्य न्यायाधीश</li><li>③ कोलेजियम</li></ul>
+        </li>
+        <li>SC कोलेजियम = <strong>1+4=5</strong> | HC कोलेजियम = <strong>1+2=3</strong></li>
+      </ul>
+    </div>
+    <div class="card navy">
+      <div class="art-badge hc">HC जज की योग्यता</div>
+      <div class="card-title">✅ HC जज की योग्यता</div>
+      <ul class="point-list">
+        <li>भारत का <strong>नागरिक</strong> हो</li>
+        <li>किसी HC में कम से कम <strong>10 वर्ष वकालत</strong> की हो</li>
+        <li><strong>या</strong> कम से कम <strong>10 वर्ष न्यायिक पद</strong> पर रहा हो</li>
+        <li>सेवानिवृत्ति आयु → <strong>62 वर्ष</strong></li>
+        <li><strong>15वाँ संविधान संशोधन 1963</strong> → आयु 60 वर्ष से बढ़ाकर <strong>62 वर्ष</strong> की गई</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "SC=65 वर्ष | HC=62 वर्ष | 3 वर्ष का फर्क"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card red">
+      <div class="art-badge hc">Art. 220 — शर्तें</div>
+      <div class="card-title">❌ HC जज की शर्तें (सेवानिवृत्ति के बाद)</div>
+      <ul class="point-list">
+        <li>HC जज सेवानिवृत्ति के बाद <strong>उसी HC को छोड़कर</strong> अन्य HC व SC में वकालत कर सकते हैं</li>
+        <li>सेवानिवृत्ति के बाद <strong>लाभ का पद धारण नहीं</strong> कर सकते</li>
+        <li>त्यागपत्र → <strong>राष्ट्रपति</strong> को</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "SC जज = कहीं वकालत नहीं | HC जज = उसी HC छोड़ बाकी सब में"</strong></div>
+    </div>
+    <div class="card purple">
+      <div class="art-badge hc">Art. 221 — वेतन</div>
+      <div class="card-title">💰 HC जज का वेतन</div>
+      <ul class="point-list">
+        <li>HC मुख्य जज → <strong>₹2.50 लाख/माह</strong></li>
+        <li>HC अन्य जज → <strong>₹2.25 लाख/माह</strong></li>
+        <li>वेतन → <strong>राज्य की संचित निधि</strong> से</li>
+        <li>पेंशन → <strong>केन्द्र की संचित निधि</strong> से</li>
+        <li>Note → HC जज का वेतन <strong>संसद</strong> द्वारा निर्धारित</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "वेतन = राज्य | पेंशन = केन्द्र"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card hc">
+      <div class="art-badge hc">Art. 222-224A</div>
+      <div class="card-title">🔄 HC जज का स्थानांतरण व अन्य</div>
+      <div class="highlight h-teal"><strong>Art.222</strong> → HC जजों का स्थानान्तरण → राष्ट्रपति (कोलेजियम सलाह)</div>
+      <div class="highlight h-blue"><strong>Art.223</strong> → कार्यवाहक जज — HC मुख्य जज का पद रिक्त हो तो राष्ट्रपति नियुक्त करे</div>
+      <div class="highlight h-orange"><strong>Art.224</strong> → अपर न्यायाधीश/अतिरिक्त जज — 2 वर्ष तक की सेवावधि</div>
+      <div class="highlight h-green"><strong>Art.224A</strong> → सेवानिवृत्त जज की पुनः नियुक्ति — HC का मुख्य जज राष्ट्रपति की परामर्श से</div>
+    </div>
+    <div class="card gold">
+      <div class="art-badge hc">Art. 225-230</div>
+      <div class="card-title">⚖️ HC का क्षेत्राधिकार</div>
+      <div class="highlight h-orange"><strong>Art.225</strong> → HC की मूल अधिकारिता — मूल अधिकारों, विवाह, तलाक, सम्पत्ति</div>
+      <div class="highlight h-red"><strong>Art.226</strong> → HC द्वारा Writ (रिट) जारी करने की शक्ति (5 प्रकार की Writ)</div>
+      <ul class="point-list" style="font-size:12px;">
+        <li>① बन्दी उत्प्रेक्षीकरण (Habeas Corpus) — प्रशासनिक</li>
+        <li>② परमादेश (Mandamus) — प्रशासनिक</li>
+        <li>③ अधिकार हरचा (Quo Warranto) — प्रशासनिक</li>
+        <li>④ उत्प्रेषण (Certiorari) — न्यायिक</li>
+        <li>⑤ प्रतिषेध (Prohibition) — न्यायिक</li>
+      </ul>
+      <div class="highlight h-purple"><strong>Art.227</strong> → HC की अधीक्षण शक्ति — अधीनस्थ न्यायालयों पर नियंत्रण</div>
+      <div class="highlight h-blue"><strong>Art.228</strong> → HC अधीनस्थ न्यायालय के मामले अपने पास मँगवा सकता है</div>
+      <div class="highlight h-teal"><strong>Art.230</strong> → संसद HC के क्षेत्राधिकार को केन्द्रशासित प्रदेश तक बढ़ा सकती है</div>
+    </div>
+  </div>
+
+  <div class="sec-head hc">🏛️ राजस्थान उच्च न्यायालय — महत्वपूर्ण तथ्य</div>
+  <div class="grid-2">
+    <div class="card hc">
+      <div class="card-title">📜 राज. HC — इतिहास</div>
+      <ul class="point-list">
+        <li>स्थापना → <strong>21 Aug. 1949</strong> के समय 1+11 = 12 जज</li>
+        <li>स्थापना के समय — <strong>जोधपुर</strong> में</li>
+        <li>B.R. पटेल समिति की सिफारिश पर स्थापना</li>
+        <li>सदस्य → <strong>S.P. सिन्ह</strong> + कर्नल T.C. पुरी</li>
+        <li>संविधान लागू (26 Jan. 1950) बाद → Raj. HC = 1+7 = <strong>8</strong> जज</li>
+        <li>वर्तमान → 1+49 = <strong>50 जज</strong></li>
+        <li>मुख्यालय → <strong>जोधपुर</strong> | खण्डपीठ → <strong>जयपुर</strong></li>
+        <li>जयपुर खण्डपीठ स्थापना → <strong>31 Jan. 1977</strong></li>
+      </ul>
+    </div>
+    <div class="card navy">
+      <div class="card-title">👨‍⚖️ राज. HC — महत्वपूर्ण नाम</div>
+      <ul class="point-list">
+        <li>प्रथम मुख्य जज → <strong>K.K. वर्मा (कमलकांत वर्मा)</strong></li>
+        <li>संविधान लागू होने के बाद पहले CJI → <strong>कैलाश नाथ वांचू</strong></li>
+        <li>वर्तमान CJI (Raj. HC) → <strong>K.R. राम सिंह</strong> (43वें)</li>
+        <li>सर्वाधिक कार्यकाल → <strong>कैलाश नाथ वांचू</strong> (1951-58)</li>
+        <li>न्यूनतम कार्यकाल → <strong>सतीश कुमार मित्तल</strong> (5 मार्च-14 अप्रैल 2016)</li>
+        <li>Raj. HC का CJI जो भारत का CJI भी बना → <strong>J.S. वर्मा</strong></li>
+        <li>Raj. HC पहली महिला CJI → <strong>अन्ना चांडी</strong></li>
+        <li>किसी HC की पहली महिला मुख्य जज → <strong>लीला सेठ (HP)</strong></li>
+        <li>SC की पहली महिला जज → <strong>फातिमा बीबी / मीरा फातिमा बीबी</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card gold">
+    <div class="card-title">🗺️ राजस्थान HC — जिला न्यायालय</div>
+    <div class="grid-2">
+      <div>
+        <div class="highlight h-blue">राज. HC के अंतर्गत → <strong>36 जिला न्यायालय</strong></div>
+        <div class="highlight h-orange">19 जिला न्यायालय → <strong>जोधपुर HC</strong> के क्षेत्राधिकार</div>
+        <div class="highlight h-green">17 जिला न्यायालय → <strong>जयपुर HC</strong> के क्षेत्राधिकार</div>
+      </div>
+      <div>
+        <div class="highlight h-purple">Raj. HC के CJI जो <strong>विधि आयोग</strong> के सदस्य → <strong>A.R. भटनागर</strong></div>
+        <div class="highlight h-red">Raj. HC के CJI जो <strong>स्वतंत्रता सेनानी व लोकसभा सदस्य</strong> रहे:
+          ① कैलाश नाथ वांचू ② होलनमल भण्डारी</div>
+      </div>
+    </div>
+    <div class="mnemonic"><strong>🧠 "Raj HC = 21 Aug 1949 | जोधपुर मुख्यालय | जयपुर खण्डपीठ 1977 | 50 जज | 36 जिला न्यायालय"</strong></div>
+  </div>
+</div><!-- end hc-revision -->
+
+<!-- ========== HC SUMMARY TABLE ========== -->
+<div id="tab-hc-summary" class="tab-panel">
+  <div class="sec-head hc">📋 HC Master Table — अनुच्छेद 214-231</div>
+  <div class="card" style="overflow-x:auto;padding:10px;">
+    <table class="rev-table hc-table">
+      <tr><th>अनुच्छेद</th><th>विषय</th><th>Key Point</th></tr>
+      <tr><td><strong>214</strong></td><td>HC का गठन</td><td>प्रत्येक राज्य का एक HC | 7वाँ संशोधन 1956</td></tr>
+      <tr style="background:#e0f2f1"><td><strong>215</strong></td><td>अभिलेख न्यायालय</td><td>HC = Court of Record | जिला न्यायालय नहीं</td></tr>
+      <tr><td><strong>216</strong></td><td>HC का गठन</td><td>मुख्य जज + अन्य जज | अन्य की संख्या = राष्ट्रपति</td></tr>
+      <tr><td><strong>217</strong></td><td>नियुक्ति व योग्यता</td><td>राष्ट्रपति द्वारा | 10 वर्ष वकालत/न्यायिक पद | 62 वर्ष सेवानिवृत्ति</td></tr>
+      <tr style="background:#e0f2f1"><td><strong>218</strong></td><td>SC के कुछ प्रावधान HC पर लागू</td><td>SC के कुछ नियम HC पर भी लागू होते हैं</td></tr>
+      <tr><td><strong>219</strong></td><td>HC जज की शपथ</td><td>राज्यपाल द्वारा शपथ | तीसरी अनुसूची</td></tr>
+      <tr><td><strong>220</strong></td><td>सेवानिवृत्ति बाद शर्तें</td><td>उसी HC छोड़ बाकी HC/SC में वकालत कर सकते हैं</td></tr>
+      <tr style="background:#e0f2f1"><td><strong>221</strong></td><td>वेतन</td><td>CJI=₹2.50L | अन्य=₹2.25L | वेतन=राज्य | पेंशन=केन्द्र</td></tr>
+      <tr><td><strong>222</strong></td><td>स्थानांतरण</td><td>राष्ट्रपति (कोलेजियम सलाह)</td></tr>
+      <tr><td><strong>223</strong></td><td>कार्यवाहक जज</td><td>CJI पद रिक्त → राष्ट्रपति नियुक्त करे</td></tr>
+      <tr><td><strong>224</strong></td><td>अपर/अतिरिक्त जज</td><td>2 वर्ष तक की सेवावधि</td></tr>
+      <tr style="background:#e0f2f1"><td><strong>224A</strong></td><td>सेवानिवृत्त जज</td><td>15वाँ संशोधन 1963 | HC CJI राष्ट्रपति से परामर्श</td></tr>
+      <tr><td><strong>★225</strong></td><td>HC की अधिकारिता</td><td>मूल अधिकार, विवाह, तलाक, सम्पत्ति</td></tr>
+      <tr style="background:#e8f5e9"><td><strong>★★226</strong></td><td>Writ (रिट) शक्ति</td><td>5 प्रकार की Writ जारी कर सकता है | मूल अधिकार उल्लंघन पर</td></tr>
+      <tr><td><strong>227</strong></td><td>अधीक्षण शक्ति</td><td>अधीनस्थ न्यायालयों पर नियंत्रण | SC को यह शक्ति नहीं</td></tr>
+      <tr><td><strong>228</strong></td><td>मामले मँगवाना</td><td>HC अधीनस्थ न्यायालय से मामले मँगवा सकता है</td></tr>
+      <tr><td><strong>229</strong></td><td>कर्मचारी नियुक्ति</td><td>HC अपने कर्मचारी व अधिकारी स्वयं नियुक्त करता है</td></tr>
+      <tr style="background:#e0f2f1"><td><strong>230</strong></td><td>क्षेत्राधिकार विस्तार</td><td>संसद HC का क्षेत्राधिकार केन्द्रशासित क्षेत्र तक बढ़ा सकती है</td></tr>
+      <tr><td><strong>231</strong></td><td>संयुक्त HC</td><td>2+ राज्यों का एक HC | वर्तमान में 7 संयुक्त HC</td></tr>
+    </table>
+  </div>
+
+  <div class="grid-2" style="margin-top:14px;">
+    <div class="card hc">
+      <div class="card-title">⭐ HC 5 प्रकार की Writ (Art. 226)</div>
+      <table class="rev-table hc-table">
+        <tr><th>Writ</th><th>प्रकार</th><th>अर्थ</th></tr>
+        <tr><td>बन्दी उत्प्रेक्षीकरण</td><td>प्रशासनिक</td><td>बंदी को न्यायालय में पेश करो</td></tr>
+        <tr><td>परमादेश</td><td>प्रशासनिक</td><td>सार्वजनिक पदाधिकारी को आदेश</td></tr>
+        <tr><td>अधिकार हरचा</td><td>प्रशासनिक</td><td>किस अधिकार से पद धारण किया</td></tr>
+        <tr><td>उत्प्रेषण</td><td>न्यायिक</td><td>मामला ऊपर की अदालत में भेजो</td></tr>
+        <tr><td>प्रतिषेध</td><td>न्यायिक</td><td>निचली अदालत को रोको</td></tr>
+      </table>
+    </div>
+    <div class="card navy">
+      <div class="card-title">📊 SC vs HC वेतन तुलना</div>
+      <table class="rev-table">
+        <tr><th>पद</th><th>वेतन</th><th>स्रोत</th></tr>
+        <tr><td>SC CJI</td><td>₹2.80 लाख</td><td>भारत की संचित निधि</td></tr>
+        <tr><td>SC अन्य जज</td><td>₹2.50 लाख</td><td>भारत की संचित निधि</td></tr>
+        <tr><td>HC CJI</td><td>₹2.50 लाख</td><td>राज्य की संचित निधि</td></tr>
+        <tr><td>HC अन्य जज</td><td>₹2.25 लाख</td><td>राज्य की संचित निधि</td></tr>
+      </table>
+    </div>
+  </div>
+</div><!-- end hc-summary -->
+
+<!-- ========== SC vs HC COMPARISON ========== -->
+<div id="tab-compare" class="tab-panel">
+  <div class="sec-head" style="border-bottom-color:#9c27b0;">⚖️ सर्वोच्च न्यायालय बनाम उच्च न्यायालय — तुलना</div>
+  <div class="card" style="overflow-x:auto;padding:10px;">
+    <table class="rev-table compare-table">
+      <tr><th>विषय</th><th>सर्वोच्च न्यायालय (SC)</th><th>उच्च न्यायालय (HC)</th></tr>
+      <tr>
+        <td><strong>संवैधानिक भाग</strong></td>
+        <td>भाग-5</td>
+        <td>भाग-6</td>
+      </tr>
+      <tr>
+        <td><strong>अनुच्छेद</strong></td>
+        <td>124-147</td>
+        <td>214-231</td>
+      </tr>
+      <tr style="background:#f3e5f5">
+        <td><strong>स्थापना</strong></td>
+        <td>28 जनवरी 1950</td>
+        <td>भारत शासन Act 1861 (पहला HC 1862)</td>
+      </tr>
+      <tr>
+        <td><strong>संख्या</strong></td>
+        <td>1 (पूरे भारत में)</td>
+        <td>25 (वर्तमान में)</td>
+      </tr>
+      <tr>
+        <td><strong>नियुक्ति</strong></td>
+        <td>राष्ट्रपति (SC कोलेजियम = CJI+4=5)</td>
+        <td>राष्ट्रपति (HC कोलेजियम = CJI+2=3)</td>
+      </tr>
+      <tr style="background:#f3e5f5">
+        <td><strong>सेवानिवृत्ति आयु</strong></td>
+        <td>65 वर्ष</td>
+        <td>62 वर्ष</td>
+      </tr>
+      <tr>
+        <td><strong>CJI वेतन</strong></td>
+        <td>₹2.80 लाख/माह</td>
+        <td>₹2.50 लाख/माह</td>
+      </tr>
+      <tr>
+        <td><strong>अन्य जज वेतन</strong></td>
+        <td>₹2.50 लाख/माह</td>
+        <td>₹2.25 लाख/माह</td>
+      </tr>
+      <tr style="background:#f3e5f5">
+        <td><strong>वेतन स्रोत</strong></td>
+        <td>भारत की संचित निधि</td>
+        <td>राज्य की संचित निधि</td>
+      </tr>
+      <tr>
+        <td><strong>पेंशन स्रोत</strong></td>
+        <td>भारत की संचित निधि</td>
+        <td>केन्द्र की संचित निधि</td>
+      </tr>
+      <tr style="background:#f3e5f5">
+        <td><strong>अभिलेख न्यायालय</strong></td>
+        <td>हाँ (Art. 129)</td>
+        <td>हाँ (Art. 215)</td>
+      </tr>
+      <tr>
+        <td><strong>Writ जारी करना</strong></td>
+        <td>Art. 32 — केवल मूल अधिकार उल्लंघन</td>
+        <td>Art. 226 — मूल अधिकार + अन्य सभी</td>
+      </tr>
+      <tr style="background:#f3e5f5">
+        <td><strong>Writ का दायरा</strong></td>
+        <td>SC (Art.32) का दायरा सँकरा</td>
+        <td>HC (Art.226) का दायरा व्यापक ✓</td>
+      </tr>
+      <tr>
+        <td><strong>त्यागपत्र</strong></td>
+        <td>राष्ट्रपति को</td>
+        <td>राष्ट्रपति को</td>
+      </tr>
+      <tr style="background:#f3e5f5">
+        <td><strong>शपथ</strong></td>
+        <td>राष्ट्रपति द्वारा (CJI को) | CJI अन्य जजों को</td>
+        <td>राज्यपाल द्वारा | तीसरी अनुसूची</td>
+      </tr>
+      <tr>
+        <td><strong>वकालत प्रतिबंध</strong></td>
+        <td>भारत में कहीं भी वकालत नहीं (Art. 124)</td>
+        <td>उसी HC छोड़ अन्य HC/SC में वकालत कर सकते</td>
+      </tr>
+      <tr style="background:#f3e5f5">
+        <td><strong>अधीक्षण शक्ति</strong></td>
+        <td>नहीं</td>
+        <td>हाँ — Art. 227 के तहत अधीनस्थ न्यायालयों पर</td>
+      </tr>
+      <tr>
+        <td><strong>कोलेजियम</strong></td>
+        <td>SC कोलेजियम = 1+4 = 5 सदस्य</td>
+        <td>SC कोलेजियम ही HC जजों की नियुक्ति में = 1+4 = 5 (वर्तमान)</td>
+      </tr>
+      <tr style="background:#f3e5f5">
+        <td><strong>NJAC (2014)</strong></td>
+        <td>99वाँ संशोधन — रद्द हुआ</td>
+        <td>99वाँ संशोधन — रद्द हुआ</td>
+      </tr>
+      <tr>
+        <td><strong>स्थान</strong></td>
+        <td>दिल्ली (Art. 130)</td>
+        <td>प्रत्येक राज्य में | संयुक्त HC भी हो सकते</td>
+      </tr>
+      <tr style="background:#f3e5f5">
+        <td><strong>क्षेत्राधिकार बढ़ाना</strong></td>
+        <td>Art. 138 — संसद विधि बनाकर</td>
+        <td>Art. 230 — संसद केन्द्रशासित क्षेत्र तक</td>
+      </tr>
+      <tr>
+        <td><strong>SLP</strong></td>
+        <td>Art. 136 — SC में SLP दाखिल हो सकती है</td>
+        <td>HC में SLP नहीं</td>
+      </tr>
+      <tr style="background:#f3e5f5">
+        <td><strong>परामर्शी क्षेत्राधिकार</strong></td>
+        <td>Art. 143 — राष्ट्रपति SC से सलाह माँग सकता है</td>
+        <td>HC को परामर्शी क्षेत्राधिकार नहीं</td>
+      </tr>
+      <tr>
+        <td><strong>निर्णय बाध्यकारी</strong></td>
+        <td>Art. 141 — सभी न्यायालयों पर</td>
+        <td>अपने अधीनस्थ न्यायालयों पर</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="grid-2" style="margin-top:14px;">
+    <div class="card" style="border-left-color:#3f51b5;">
+      <div class="card-title">🔵 SC की विशेष शक्तियाँ (HC में नहीं)</div>
+      <ul class="point-list">
+        <li>Art. 142 → <strong>पूर्ण न्याय</strong> की शक्ति</li>
+        <li>Art. 143 → राष्ट्रपति का <strong>परामर्शी क्षेत्राधिकार</strong></li>
+        <li>Art. 136 → <strong>SLP</strong> — किसी भी अदालत से अपील</li>
+        <li>Art. 141 → निर्णय <strong>सभी न्यायालयों पर बाध्यकारी</strong></li>
+        <li>Art. 131 → केन्द्र-राज्य विवाद (एकल पारम्भिक)</li>
+      </ul>
+    </div>
+    <div class="card hc">
+      <div class="card-title">🟢 HC की विशेष शक्तियाँ (SC में नहीं)</div>
+      <ul class="point-list">
+        <li>Art. 227 → <strong>अधीक्षण शक्ति</strong> — अधीनस्थ न्यायालयों पर प्रशासनिक नियंत्रण</li>
+        <li>Art. 226 → <strong>व्यापक Writ शक्ति</strong> — मूल अधिकार + अन्य सभी उद्देश्यों के लिए</li>
+        <li>Art. 228 → अधीनस्थ न्यायालय से <strong>मामले मँगवाना</strong></li>
+        <li>Art. 229 → अपने <strong>कर्मचारी स्वयं नियुक्त</strong> करना</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- end compare -->
+
+<!-- ========== SC MCQ ========== -->
+<div id="tab-sc-mcq" class="tab-panel">
+  <div class="score-strip">
+    <div>📊 SC MCQ Score: <span class="score-val" id="sc-score">0.00</span></div>
+    <div>✅ <span id="sc-correct">0</span> &nbsp; ❌ <span id="sc-wrong">0</span></div>
+    <div style="font-size:11px;">+1 सही | -⅓ गलत</div>
+  </div>
+  <div id="sc-questions"></div>
+  <button class="submit-btn" onclick="submitQuiz('sc')">📊 Result देखें</button>
+</div>
+
+<!-- ========== HC MCQ ========== -->
+<div id="tab-hc-mcq" class="tab-panel">
+  <div class="score-strip" style="background:#00695c;">
+    <div>📊 HC MCQ Score: <span class="score-val" id="hc-score">0.00</span></div>
+    <div>✅ <span id="hc-correct">0</span> &nbsp; ❌ <span id="hc-wrong">0</span></div>
+    <div style="font-size:11px;">+1 सही | -⅓ गलत</div>
+  </div>
+  <div id="hc-questions"></div>
+  <button class="submit-btn" style="background:linear-gradient(135deg,#00897b,#00695c);" onclick="submitQuiz('hc')">📊 Result देखें</button>
+</div>
+
+<!-- ========== LAST MINUTE ========== -->
+<div id="tab-lastmin" class="tab-panel">
+  <div class="super-mnemonic">
+    <div class="sm-title">🧠 Super Mnemonic #1 — SC की सेवानिवृत्ति "65"</div>
+    <div class="sm-text">SC का जज = 65 वर्ष | HC का जज = 62 वर्ष | अंतर = 3 वर्ष</div>
+    <div class="sm-explain">याद रखें: SC बड़ा → 65 | HC छोटा → 62</div>
+  </div>
+  <div class="super-mnemonic hc">
+    <div class="sm-title">🧠 Super Mnemonic #2 — HC का वेतन "राज्य-केन्द्र"</div>
+    <div class="sm-text">HC वेतन = राज्य की संचित निधि | HC पेंशन = केन्द्र की संचित निधि</div>
+    <div class="sm-explain">SC दोनों = भारत की संचित निधि | HC = वेतन राज्य / पेंशन केन्द्र</div>
+  </div>
+  <div class="super-mnemonic">
+    <div class="sm-title">🧠 Super Mnemonic #3 — Writ का दायरा</div>
+    <div class="sm-text">Art.32 (SC) = Only मूल अधिकार | Art.226 (HC) = मूल अधिकार + सब</div>
+    <div class="sm-explain">HC की Writ शक्ति SC से ज्यादा व्यापक है!</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="lm-card">
+      <div class="lm-title">⚡ SC Key Articles</div>
+      <div class="lm-point"><span class="tag">124</span>SC गठन | 34 जज | 65 वर्ष</div>
+      <div class="lm-point"><span class="tag">125</span>CJI=₹2.80L | अन्य=₹2.50L</div>
+      <div class="lm-point"><span class="tag">129</span>अभिलेख न्यायालय</div>
+      <div class="lm-point"><span class="tag">131</span>केन्द्र-राज्य विवाद (एकल)</div>
+      <div class="lm-point"><span class="tag">141</span>SC निर्णय सभी पर बाध्य</div>
+      <div class="lm-point"><span class="tag">142</span>पूर्ण न्याय | राम जन्मभूमि</div>
+      <div class="lm-point"><span class="tag">143</span>143(1)=बाध्य नहीं | 143(2)=बाध्य</div>
+    </div>
+    <div class="lm-card hc">
+      <div class="lm-title">⚡ HC Key Articles</div>
+      <div class="lm-point"><span class="tag hc">214</span>प्रत्येक राज्य का एक HC</div>
+      <div class="lm-point"><span class="tag hc">215</span>HC = अभिलेख न्यायालय</div>
+      <div class="lm-point"><span class="tag hc">217</span>10 वर्ष वकालत | 62 वर्ष</div>
+      <div class="lm-point"><span class="tag hc">221</span>CJI=₹2.50L | अन्य=₹2.25L</div>
+      <div class="lm-point"><span class="tag hc">226</span>5 प्रकार की Writ शक्ति</div>
+      <div class="lm-point"><span class="tag hc">227</span>अधीनस्थ न्यायालय पर नियंत्रण</div>
+      <div class="lm-point"><span class="tag hc">231</span>7 संयुक्त HC</div>
+    </div>
+  </div>
+
+  <div class="card gold" style="margin-top:12px;">
+    <div class="card-title">🎯 Exam में सबसे ज्यादा पूछे जाने वाले</div>
+    <div class="highlight h-orange">Q: SC और HC की सेवानिवृत्ति आयु?</div>
+    <div style="font-size:13px;padding:3px 0;">→ SC = 65 वर्ष | HC = 62 वर्ष (15वाँ संशोधन 1963 से 60→62)</div>
+    <div class="highlight h-green">Q: HC की Writ शक्ति (Art.226) SC की Writ (Art.32) से कैसे अलग?</div>
+    <div style="font-size:13px;padding:3px 0;">→ HC (226) = मूल अधिकार + अन्य सभी उद्देश्य | SC (32) = केवल मूल अधिकार</div>
+    <div class="highlight h-blue">Q: राज. HC की स्थापना कब और कहाँ हुई?</div>
+    <div style="font-size:13px;padding:3px 0;">→ 21 August 1949 | जोधपुर में | B.R. पटेल समिति की सिफारिश पर</div>
+    <div class="highlight h-purple">Q: HC का कार्यवाहक जज किस अनुच्छेद में है?</div>
+    <div style="font-size:13px;padding:3px 0;">→ Art. 223 | SC का = Art. 126</div>
+    <div class="highlight h-red">Q: HC का अधीक्षण क्षेत्राधिकार किस अनुच्छेद में?</div>
+    <div style="font-size:13px;padding:3px 0;">→ Art. 227 | SC को यह शक्ति नहीं है</div>
+    <div class="highlight h-teal">Q: Raj. HC की जयपुर खण्डपीठ कब बनी?</div>
+    <div style="font-size:13px;padding:3px 0;">→ 31 January 1977 | राज्य पुनर्गठन Act 1956 की धारा 51</div>
+  </div>
+</div><!-- end lastmin -->
+
+</div><!-- end content -->
+
+<!-- POPUP -->
+<div class="popup-overlay" id="result-popup">
+  <div class="popup">
+    <span class="emoji" id="popup-emoji">🎉</span>
+    <h2 id="popup-title">परिणाम</h2>
+    <div class="score-big" id="popup-score">0</div>
+    <p id="popup-detail"></p>
+    <p id="popup-grade"></p>
+    <button class="popup-close" onclick="closePopup()">बन्द करें</button>
+  </div>
+</div>
+
+<script>
+function switchTab(name,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ===== SC MCQ =====
+const scQ=[
+  {q:"सर्वोच्च न्यायालय की स्थापना कब हुई?",opts:["26 Jan. 1950","28 Jan. 1950","15 Aug. 1947","1 Oct. 1937"],ans:1,exp:"28 जनवरी 1950 को भारत के सर्वोच्च न्यायालय की स्थापना हुई।"},
+  {q:"SC का उल्लेख किस भाग व अनुच्छेदों में है?",opts:["भाग-4, Art.100-120","भाग-5, Art.124-147","भाग-6, Art.163-164","भाग-3, Art.12-35"],ans:1,exp:"सर्वोच्च न्यायालय का उल्लेख भाग-5 के अनुच्छेद 124 से 147 तक है।"},
+  {q:"वर्तमान में SC में कितने जज हैं?",opts:["26","30","34","36"],ans:2,exp:"वर्तमान में SC में CJI सहित 34 जज (1+33) हैं।"},
+  {q:"SC के जजों की सेवानिवृत्ति आयु कितनी है?",opts:["62 वर्ष","65 वर्ष","67 वर्ष","70 वर्ष"],ans:1,exp:"SC के जजों की सेवानिवृत्ति आयु 65 वर्ष है।"},
+  {q:"वर्तमान कोलेजियम प्रणाली में कितने सदस्य होते हैं?",opts:["3","4","5","6"],ans:2,exp:"1998 के तीसरे Judges Case से वर्तमान कोलेजियम में CJI + 4 वरिष्ठ जज = 5 सदस्य।"},
+  {q:"दूसरे Judges Case (1993) में क्या निर्णय हुआ?",opts:["राष्ट्रपति CJI की सलाह मानने को बाध्य नहीं","राष्ट्रपति CJI की सलाह मानने को बाध्य है","NJAC बनाया गया","5 सदस्यीय कोलेजियम"],ans:1,exp:"दूसरे Judges Case 1993 में निर्णय हुआ कि राष्ट्रपति CJI की सलाह मानने को बाध्य है।"},
+  {q:"99वें संविधान संशोधन (NJAC) को कब रद्द किया गया?",opts:["2014","2015","2016","2017"],ans:1,exp:"99वें संशोधन 2014 द्वारा बने NJAC को 16 October 2015 को SC ने रद्द किया।"},
+  {q:"SC के CJI का वेतन कितना है?",opts:["₹2.00 लाख/माह","₹2.50 लाख/माह","₹2.80 लाख/माह","₹3.00 लाख/माह"],ans:2,exp:"Art.125 के अनुसार SC के CJI का वेतन ₹2.80 लाख/माह है।"},
+  {q:"Art.141 के अनुसार SC के निर्णय कहाँ बाध्यकारी हैं?",opts:["केवल HC पर","केवल निचली अदालतों पर","सभी न्यायालयों पर","केवल SC पर"],ans:2,exp:"Art.141 के अनुसार SC का निर्णय भारत के राज्य क्षेत्रों के सभी न्यायालयों पर बाध्यकारी है।"},
+  {q:"Art.143(2) में SC के बारे में क्या है?",opts:["SC सलाह देने को बाध्य नहीं","SC सलाह देने को बाध्य है","राष्ट्रपति सलाह मानने को बाध्य है","SC मना नहीं कर सकता"],ans:1,exp:"Art.143(2) में SC सलाह देने के लिए बाध्य है। Art.143(1) में SC बाध्य नहीं है।"},
+  {q:"ICJ का मुख्यालय कहाँ है?",opts:["जेनेवा","न्यूयॉर्क","हेग (नीदरलैंड)","लंदन"],ans:2,exp:"ICJ का मुख्यालय हेग (नीदरलैंड) में है। स्थापना 3 April 1946।"},
+  {q:"SC की पहली महिला जज कौन थीं?",opts:["इन्दु मल्होत्रा","B.V. नागरत्ना","फातिमा बीबी","लीला सेठ"],ans:2,exp:"फातिमा बीबी SC की पहली महिला न्यायाधीश थीं।"},
+  {q:"PIL को भारत में किसने लोकप्रिय बनाया?",opts:["B.R. अम्बेडकर और नेहरू","P.N. भगवती और V.R. कृष्णा अय्यर","A.N. रे और H.R. खन्ना","Y.V. चन्द्रचूड़"],ans:1,exp:"PIL को भारत में P.N. भगवती और V.R. कृष्णा अय्यर के प्रयासों से लोकप्रिय बनाया गया।"},
+  {q:"SC में Impeachment के लिए लोकसभा में कितनी सहमति चाहिए?",opts:["50","100","150","200"],ans:1,exp:"SC के जज को Impeach करने के लिए लोकसभा में 100 और राज्यसभा में 50 सदस्यों की सहमति।"},
+  {q:"Art.131 के तहत एकल पारम्भिक क्षेत्राधिकार में कौन-से विवाद?",opts:["Criminal मामले","केन्द्र व राज्यों के बीच विवाद","HC के मामले","PIL"],ans:1,exp:"Art.131 — केन्द्र-राज्य तथा राज्यों के मध्य विवाद एकल पारम्भिक क्षेत्राधिकार में।"},
+  {q:"Art.142 का सम्बन्ध किससे है?",opts:["जजों का वेतन","पूर्ण न्याय करने की शक्ति","परामर्शी क्षेत्राधिकार","अभिलेख न्यायालय"],ans:1,exp:"Art.142 SC को पूर्ण न्याय करने की शक्ति देता है — न्यायिक सक्रियता।"},
+  {q:"संविधान व्याख्या के लिए न्यूनतम कितने जजों की बेंच?",opts:["3","5","7","13"],ans:1,exp:"Art.145(3) के अनुसार संविधान की व्याख्या के लिए न्यूनतम 5 जजों की बेंच।"},
+  {q:"SC के प्रथम CJI कौन थे?",opts:["Y.V. चन्द्रचूड़","हिरालाल J. कानिया","K.G. बालकृष्णन","P.N. भगवती"],ans:1,exp:"हिरालाल J. कानिया SC के पहले CJI थे। वह पद पर रहते हुए निधन हुए।"},
+  {q:"SC में तदर्थ जज का प्रावधान किस अनुच्छेद में है?",opts:["Art. 125","Art. 126","Art. 127","Art. 128"],ans:2,exp:"Art.127 — जब SC में जजों की कमी हो तो CJI, HC के योग्य जज को तदर्थ जज नियुक्त कर सकता है।"},
+  {q:"SC में सबसे लंबा कार्यकाल किस CJI का रहा?",opts:["P.N. भगवती","Y.V. चन्द्रचूड़","K. सुब्बाराव","H.R. खन्ना"],ans:1,exp:"Y.V. चन्द्रचूड़ SC के सबसे लंबे कार्यकाल वाले CJI — 1978 से 1985 तक।"},
+  {q:"SC का स्थान किस अनुच्छेद में बताया गया है?",opts:["Art. 128","Art. 129","Art. 130","Art. 131"],ans:2,exp:"Art.130 के अनुसार SC का स्थान दिल्ली होगा।"},
+  {q:"ICJ में कितने जज होते हैं और कार्यकाल कितना?",opts:["10 जज, 6 वर्ष","12 जज, 8 वर्ष","15 जज, 9 वर्ष","18 जज, 10 वर्ष"],ans:2,exp:"ICJ में 15 जज होते हैं और प्रत्येक का कार्यकाल 9 वर्ष का होता है।"},
+  {q:"SC/ST के प्रथम CJI कौन थे?",opts:["फातिमा बीबी","K.G. बालकृष्णन","P.N. भगवती","Y.V. चन्द्रचूड़"],ans:1,exp:"K.G. बालकृष्णन SC के पहले SC/ST CJI थे।"},
+  {q:"वित्तीय आपातकाल में SC जजों के वेतन के बारे में क्या?",opts:["वेतन में कोई बदलाव नहीं","वेतन में कटौती हो सकती है","वेतन बढ़ाया जाता है","वेतन रोक दिया जाता है"],ans:1,exp:"Art.125 के अनुसार वित्तीय आपातकाल के दौरान SC के जजों के वेतन में कटौती की जा सकती है।"},
+  {q:"Art.136 के तहत SLP (Special Leave Petition) क्या है?",opts:["केवल Criminal मामले","SC का अंतिम हथियार — किसी भी अदालत से अपील","केवल HC के फैसलों पर","केवल Civil मामले"],ans:1,exp:"Art.136 — SLP SC का सबसे व्यापक अधिकार है जिसके तहत किसी भी अदालत के निर्णय पर अपील की जा सकती है।"}
+];
+
+// ===== HC MCQ =====
+const hcQ=[
+  {q:"HC का उल्लेख किस भाग व अनुच्छेदों में है?",opts:["भाग-5, Art.124-147","भाग-6, Art.214-231","भाग-4, Art.36-51","भाग-3, Art.12-35"],ans:1,exp:"HC का उल्लेख भाग-6 के अनुच्छेद 214 से 231 तक है।"},
+  {q:"भारत का पहला HC कहाँ और कब स्थापित हुआ?",opts:["बॉम्बे, 1862","कलकत्ता, 1862","मद्रास, 1862","इलाहाबाद, 1866"],ans:1,exp:"भारत शासन Act 1861 के तहत 1862 में कलकत्ता HC पहला और सर्वप्रथम HC बना।"},
+  {q:"वर्तमान में भारत में कितने HC हैं?",opts:["21","23","25","28"],ans:2,exp:"वर्तमान में भारत में 25 उच्च न्यायालय हैं।"},
+  {q:"HC के जजों की सेवानिवृत्ति आयु कितनी है?",opts:["60 वर्ष","62 वर्ष","65 वर्ष","67 वर्ष"],ans:1,exp:"HC के जजों की सेवानिवृत्ति आयु 62 वर्ष है। 15वाँ संशोधन 1963 से 60→62 हुई।"},
+  {q:"HC के जज की नियुक्ति किसके द्वारा की जाती है?",opts:["राज्यपाल","CJI","राष्ट्रपति","प्रधानमंत्री"],ans:2,exp:"Art.217 के अनुसार HC के जजों की नियुक्ति राष्ट्रपति द्वारा की जाती है।"},
+  {q:"HC के CJI के वेतन का स्रोत क्या है?",opts:["केन्द्र की संचित निधि","राज्य की संचित निधि","कोंसोलिडेटेड फण्ड ऑफ इंडिया","भारत सरकार"],ans:1,exp:"HC के जज का वेतन राज्य की संचित निधि से दिया जाता है, जबकि पेंशन केन्द्र की संचित निधि से।"},
+  {q:"Art.226 के तहत HC कितने प्रकार की Writ जारी कर सकता है?",opts:["3","4","5","6"],ans:2,exp:"Art.226 के तहत HC 5 प्रकार की Writ जारी कर सकता है — बन्दी उत्प्रेक्षीकरण, परमादेश, अधिकार हरचा, उत्प्रेषण, प्रतिषेध।"},
+  {q:"भारत का सबसे बड़ा HC कौन-सा है?",opts:["दिल्ली HC","मुम्बई HC","प्रयागराज HC","मद्रास HC"],ans:2,exp:"भारत का सबसे बड़ा HC प्रयागराज (इलाहाबाद) HC है जिसमें 160 जज हैं।"},
+  {q:"Art.227 के तहत HC की अधीक्षण शक्ति का अर्थ क्या है?",opts:["HC अपने जजों को हटा सकता है","HC अधीनस्थ न्यायालयों पर प्रशासनिक नियंत्रण रखता है","HC PIL सुन सकता है","HC SLP दाखिल कर सकता है"],ans:1,exp:"Art.227 के तहत HC अपने अधीनस्थ जिला व अधीनस्थ न्यायालयों के अधिकारियों व कर्मचारियों पर प्रशासनिक नियंत्रण रखता है।"},
+  {q:"वर्तमान में भारत में कितने संयुक्त HC हैं?",opts:["5","6","7","8"],ans:2,exp:"वर्तमान में भारत में 7 संयुक्त HC हैं — J&K, केरल, चेन्नई, मुम्बई, कोलकाता, पंजाब-हरियाणा, गौहाटी।"},
+  {q:"HC के जज की योग्यता में कितने वर्ष की वकालत जरूरी है?",opts:["5 वर्ष","7 वर्ष","10 वर्ष","15 वर्ष"],ans:2,exp:"HC के जज की योग्यता — किसी HC में कम से कम 10 वर्ष वकालत या 10 वर्ष न्यायिक पद पर।"},
+  {q:"राजस्थान HC का मुख्यालय कहाँ है?",opts:["जयपुर","जोधपुर","उदयपुर","अजमेर"],ans:1,exp:"राजस्थान HC का मुख्यालय जोधपुर में है और खण्डपीठ जयपुर में है।"},
+  {q:"Raj. HC की स्थापना कब हुई?",opts:["26 Jan. 1950","21 Aug. 1949","15 Aug. 1947","29 Aug. 1949"],ans:1,exp:"राजस्थान HC की स्थापना 21 August 1949 को हुई।"},
+  {q:"Raj. HC की जयपुर खण्डपीठ कब बनी?",opts:["1950","1958","1977","1985"],ans:2,exp:"राज्य पुनर्गठन Act 1958 की धारा 51 के तहत 31 January 1977 को जयपुर में खण्डपीठ स्थापित की गई।"},
+  {q:"Art.215 के अनुसार HC क्या है?",opts:["संघीय न्यायालय","अभिलेख न्यायालय","संवैधानिक न्यायालय","मूल न्यायालय"],ans:1,exp:"Art.215 के अनुसार HC एक अभिलेख न्यायालय (Court of Record) है।"},
+  {q:"HC के जज सेवानिवृत्ति के बाद कहाँ वकालत कर सकते हैं?",opts:["कहीं भी नहीं","केवल SC में","उसी HC को छोड़कर अन्य HC व SC में","केवल उसी HC में"],ans:2,exp:"Art.220 — HC के जज सेवानिवृत्ति के बाद उसी HC को छोड़कर अन्य HC व SC में वकालत कर सकते हैं।"},
+  {q:"HC के कार्यवाहक जज का प्रावधान किस अनुच्छेद में है?",opts:["Art.220","Art.222","Art.223","Art.224"],ans:2,exp:"Art.223 — जब HC के मुख्य जज का पद रिक्त हो तो राष्ट्रपति कार्यवाहक जज की नियुक्ति करता है।"},
+  {q:"भारत का सबसे नवीनतम HC कौन-सा है?",opts:["तेलंगाना HC","आन्ध्र प्रदेश HC","मेघालय HC","त्रिपुरा HC"],ans:1,exp:"भारत का सबसे नवीनतम HC आन्ध्र प्रदेश HC है जो 1 January 2019 को स्थापित हुआ।"},
+  {q:"Raj. HC के प्रथम मुख्य जज कौन थे?",opts:["K.K. वर्मा","कैलाश नाथ वांचू","J.S. वर्मा","A.R. भटनागर"],ans:0,exp:"K.K. वर्मा (कमलकांत वर्मा) राजस्थान HC के प्रथम मुख्य जज थे।"},
+  {q:"Art.226 (HC Writ) और Art.32 (SC Writ) में क्या मुख्य अंतर है?",opts:["HC की Writ केवल Criminal मामले","HC की Writ का दायरा SC से व्यापक है","SC की Writ का दायरा HC से व्यापक है","दोनों बराबर हैं"],ans:1,exp:"Art.226 (HC) — मूल अधिकार + अन्य सभी उद्देश्यों के लिए Writ | Art.32 (SC) — केवल मूल अधिकारों के उल्लंघन पर। इसलिए HC की Writ शक्ति अधिक व्यापक है।"}
+];
+
+function renderQuiz(qs,cid){
+  const c=document.getElementById(cid);c.innerHTML='';
+  qs.forEach((q,i)=>{
+    const d=document.createElement('div');d.className='mcq-card';
+    d.innerHTML=`<div class="q-num">प्रश्न ${i+1}/${qs.length}</div>
+      <div class="question">${q.q}</div>
+      <div class="options">${q.opts.map((o,j)=>`<button class="option-btn" onclick="selectAns(this,${i},${j},'${cid}')">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>
+      <div class="explanation" id="exp-${cid}-${i}">💡 ${q.exp}</div>`;
+    c.appendChild(d);
+  });
+}
+renderQuiz(scQ,'sc-questions');
+renderQuiz(hcQ,'hc-questions');
+
+const scores={sc:0,hc:0},answered={sc:new Set(),hc:new Set()},results={sc:{correct:0,wrong:0},hc:{correct:0,wrong:0}};
+function getPfx(cid){return cid==='sc-questions'?'sc':'hc';}
+function getQs(cid){return cid==='sc-questions'?scQ:hcQ;}
+function selectAns(btn,qi,oi,cid){
+  const pfx=getPfx(cid);
+  if(answered[pfx].has(qi))return;
+  answered[pfx].add(qi);
+  const ca=getQs(cid)[qi].ans;
+  const allB=btn.closest('.options').querySelectorAll('.option-btn');
+  allB.forEach(b=>b.disabled=true);
+  if(oi===ca){btn.classList.add('correct');scores[pfx]=parseFloat((scores[pfx]+1).toFixed(2));results[pfx].correct++;}
+  else{btn.classList.add('wrong');allB[ca].classList.add('correct');scores[pfx]=parseFloat((scores[pfx]-1/3).toFixed(2));results[pfx].wrong++;}
+  document.getElementById(`exp-${cid}-${qi}`).classList.add('show');
+  document.getElementById(pfx+'-score').textContent=scores[pfx].toFixed(2);
+  document.getElementById(pfx+'-correct').textContent=results[pfx].correct;
+  document.getElementById(pfx+'-wrong').textContent=results[pfx].wrong;
+}
+function submitQuiz(pfx){
+  const s=scores[pfx],c=results[pfx].correct,w=results[pfx].wrong;
+  const t=pfx==='sc'?25:20;
+  const pct=(c/t)*100;let emoji,grade,title;
+  if(pct>=80){emoji='🏆';grade='शानदार! RAS Topper!';title='उत्कृष्ट';}
+  else if(pct>=60){emoji='🎯';grade='बहुत अच्छा!';title='अच्छा';}
+  else if(pct>=40){emoji='📚';grade='और Revision करो';title='ठीक';}
+  else{emoji='💪';grade='फिर से पढ़ो';title='और मेहनत';}
+  document.getElementById('popup-emoji').textContent=emoji;
+  document.getElementById('popup-title').textContent=title;
+  document.getElementById('popup-score').textContent=s.toFixed(2)+'/'+t;
+  document.getElementById('popup-detail').textContent=`✅ ${c} | ❌ ${w} | ⬜ ${t-c-w}`;
+  document.getElementById('popup-grade').textContent=grade;
+  document.getElementById('result-popup').classList.add('show');
+}
+function closePopup(){document.getElementById('result-popup').classList.remove('show');}
+</script>
+</body>
+</html>

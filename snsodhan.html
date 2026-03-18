@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>संविधान संशोधन | RPSC RAS/PSI Revision</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Hind:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --saffron:#FF6B1A;--deep-saffron:#E55A00;--green:#138808;--deep-green:#0d6b06;
+  --navy:#1a1a4e;--gold:#F5A623;--light-gold:#FFF3DC;--sky:#E8F4FD;
+  --white:#FFFFFF;--gray:#6c757d;--light-gray:#f8f9fa;
+  --card-shadow:0 4px 20px rgba(0,0,0,0.1);--hover-shadow:0 8px 30px rgba(0,0,0,0.18);
+  --radius:14px;--radius-sm:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Hind',sans-serif;background:linear-gradient(135deg,#fff9f0 0%,#f0f7ff 100%);color:var(--navy);min-height:100vh;}
+.header{background:linear-gradient(135deg,var(--navy) 0%,#2a2a7e 50%,#1a4a8e 100%);padding:16px 20px 10px;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+.header-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.header h1{font-family:'Baloo 2',cursive;font-size:clamp(15px,3.5vw,22px);color:var(--gold);font-weight:800;line-height:1.2;}
+.header p{color:#aad4ff;font-size:12px;margin-top:2px;}
+.badge{background:var(--saffron);color:white;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;}
+.tabs-wrapper{display:flex;overflow-x:auto;background:var(--navy);padding:0 8px 8px;gap:4px;scrollbar-width:none;}
+.tabs-wrapper::-webkit-scrollbar{display:none;}
+.tab{padding:8px 14px;border-radius:20px;background:rgba(255,255,255,0.1);color:#ccd;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;border:none;transition:all 0.25s;font-family:'Hind',sans-serif;}
+.tab.active{background:var(--saffron);color:white;box-shadow:0 3px 12px rgba(255,107,26,0.5);}
+.tab:hover:not(.active){background:rgba(255,255,255,0.2);color:white;}
+.content{padding:16px;max-width:960px;margin:0 auto;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.card{background:white;border-radius:var(--radius);padding:16px;margin-bottom:14px;box-shadow:var(--card-shadow);border-left:5px solid var(--saffron);transition:box-shadow 0.2s;}
+.card:hover{box-shadow:var(--hover-shadow);}
+.card.green{border-left-color:var(--green);}
+.card.navy{border-left-color:var(--navy);}
+.card.gold{border-left-color:var(--gold);}
+.card.purple{border-left-color:#9c27b0;}
+.card.teal{border-left-color:#00897b;}
+.card.red{border-left-color:#e53935;}
+.card-title{font-family:'Baloo 2',cursive;font-size:16px;font-weight:800;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.card-title .icon{font-size:20px;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr;}}
+.rev-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;}
+.rev-table th{background:var(--navy);color:var(--gold);padding:8px 10px;text-align:left;font-weight:700;}
+.rev-table td{padding:7px 10px;border-bottom:1px solid #eee;vertical-align:top;}
+.rev-table tr:nth-child(even) td{background:var(--light-gray);}
+.rev-table tr:hover td{background:var(--light-gold);}
+.mnemonic{background:linear-gradient(135deg,#fff8e1,#fff3dc);border:2px dashed var(--gold);border-radius:var(--radius-sm);padding:10px 14px;margin-top:10px;font-size:13px;}
+.mnemonic strong{color:var(--saffron);font-size:14px;display:block;margin-bottom:4px;}
+.highlight{padding:8px 12px;border-radius:var(--radius-sm);font-size:13px;margin:6px 0;font-weight:600;}
+.h-orange{background:#fff0e6;color:#c45000;border-left:3px solid var(--saffron);}
+.h-green{background:#e8f5e9;color:#1b5e20;border-left:3px solid var(--green);}
+.h-blue{background:#e3f2fd;color:#0d47a1;border-left:3px solid #2196f3;}
+.h-red{background:#fce4ec;color:#880e4f;border-left:3px solid #e91e63;}
+.h-purple{background:#f3e5f5;color:#4a148c;border-left:3px solid #9c27b0;}
+.h-teal{background:#e0f2f1;color:#004d40;border-left:3px solid #009688;}
+.amend-num{display:inline-block;background:var(--navy);color:var(--gold);padding:3px 12px;border-radius:12px;font-size:12px;font-weight:700;margin-bottom:8px;}
+ul.point-list{padding-left:16px;}
+ul.point-list li{font-size:13px;padding:3px 0;line-height:1.6;}
+.divider{height:2px;background:linear-gradient(90deg,var(--saffron),transparent);margin:16px 0;border-radius:2px;}
+.sec-head{font-family:'Baloo 2',cursive;font-size:18px;font-weight:800;color:var(--navy);padding:8px 0 12px;border-bottom:3px solid var(--saffron);margin-bottom:14px;}
+.pill{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;margin:2px;}
+.pill-o{background:#fff0e6;color:var(--saffron);}
+.pill-g{background:#e8f5e9;color:var(--deep-green);}
+.pill-b{background:#e3f2fd;color:#1565c0;}
+.pill-r{background:#fce4ec;color:#880e4f;}
+/* MCQ */
+.score-strip{background:var(--navy);color:white;padding:10px 16px;border-radius:var(--radius);display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:13px;flex-wrap:wrap;gap:8px;}
+.score-val{font-family:'Baloo 2',cursive;font-size:20px;color:var(--gold);font-weight:800;}
+.mcq-card{background:white;border-radius:var(--radius);padding:16px;margin-bottom:16px;box-shadow:var(--card-shadow);}
+.q-num{font-size:11px;color:var(--saffron);font-weight:700;margin-bottom:6px;}
+.question{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:12px;line-height:1.6;}
+.options{display:flex;flex-direction:column;gap:8px;}
+.option-btn{padding:9px 14px;border-radius:var(--radius-sm);border:2px solid #e0e0e0;background:var(--light-gray);color:var(--navy);font-family:'Hind',sans-serif;font-size:13px;cursor:pointer;text-align:left;transition:all 0.2s;font-weight:500;}
+.option-btn:hover:not(:disabled){border-color:var(--saffron);background:#fff5ee;}
+.option-btn.correct{background:#e8f5e9;border-color:var(--green);color:#1b5e20;font-weight:700;}
+.option-btn.wrong{background:#fce4ec;border-color:#e91e63;color:#880e4f;font-weight:700;}
+.option-btn:disabled{cursor:default;}
+.explanation{margin-top:10px;padding:10px;background:#f0f7ff;border-radius:var(--radius-sm);font-size:12px;color:#1a3a6e;border-left:3px solid #2196f3;display:none;}
+.explanation.show{display:block;}
+.submit-btn{background:linear-gradient(135deg,var(--saffron),var(--deep-saffron));color:white;border:none;padding:12px 30px;border-radius:25px;font-family:'Baloo 2',cursive;font-size:15px;font-weight:700;cursor:pointer;display:block;margin:20px auto;box-shadow:0 4px 15px rgba(255,107,26,0.4);transition:all 0.2s;}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,107,26,0.5);}
+.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:999;justify-content:center;align-items:center;}
+.popup-overlay.show{display:flex;}
+.popup{background:white;border-radius:20px;padding:30px 24px;max-width:340px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:popIn 0.3s ease;}
+@keyframes popIn{from{transform:scale(0.7);opacity:0;}to{transform:scale(1);opacity:1;}}
+.popup .emoji{font-size:48px;display:block;margin-bottom:10px;}
+.popup h2{font-family:'Baloo 2',cursive;font-size:22px;color:var(--navy);margin-bottom:6px;}
+.popup .score-big{font-family:'Baloo 2',cursive;font-size:42px;font-weight:800;color:var(--saffron);}
+.popup p{font-size:13px;color:var(--gray);margin:6px 0;}
+.popup-close{background:var(--navy);color:white;border:none;padding:10px 24px;border-radius:20px;font-family:'Baloo 2',cursive;font-size:14px;cursor:pointer;margin-top:14px;}
+/* LAST MIN */
+.lm-card{background:linear-gradient(135deg,var(--navy) 0%,#2a2a7e 100%);color:white;border-radius:var(--radius);padding:14px 16px;margin-bottom:10px;}
+.lm-card .lm-title{font-family:'Baloo 2',cursive;font-size:15px;color:var(--gold);margin-bottom:8px;}
+.lm-card .lm-point{font-size:13px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.1);}
+.lm-card .lm-point:last-child{border:none;}
+.lm-card span.tag{background:var(--saffron);color:white;font-size:10px;padding:1px 6px;border-radius:8px;margin-right:5px;font-weight:700;}
+.super-mnemonic{background:linear-gradient(135deg,#FF6B1A,#ff9a4a);color:white;border-radius:var(--radius);padding:14px 16px;margin-bottom:10px;}
+.super-mnemonic .sm-title{font-family:'Baloo 2',cursive;font-size:14px;font-weight:800;margin-bottom:8px;}
+.super-mnemonic .sm-text{font-size:16px;font-weight:700;line-height:1.8;}
+.super-mnemonic .sm-explain{font-size:12px;opacity:0.9;margin-top:6px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>📜 संविधान संशोधन — भारत</h1>
+      <p>RPSC RAS Pre & PSI Exam — Polity Revision Module | अनुच्छेद 368</p>
+    </div>
+    <span class="badge">🎯 Exam Ready</span>
+  </div>
+  <div class="tabs-wrapper" style="margin-top:10px;">
+    <button class="tab active" onclick="switchTab('revision',this)">📖 Revision</button>
+    <button class="tab" onclick="switchTab('summary',this)">📊 Summary Table</button>
+    <button class="tab" onclick="switchTab('rj-pyq',this)">🏆 RJ PYQ (25)</button>
+    <button class="tab" onclick="switchTab('state-pyq',this)">🗺️ States PYQ (25)</button>
+    <button class="tab" onclick="switchTab('lastmin',this)">⚡ Last Minute</button>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ============= REVISION TAB ============= -->
+<div id="tab-revision" class="tab-panel active">
+
+  <div class="sec-head">📖 संविधान संशोधन — मूल अवधारणा</div>
+
+  <div class="grid-2">
+    <div class="card navy">
+      <div class="card-title"><span class="icon">⚖️</span>संशोधन प्रक्रिया</div>
+      <div class="amend-num">भाग-20 | अनुच्छेद-368</div>
+      <ul class="point-list">
+        <li>संसद को संविधान में <strong>संशोधन करने की शक्ति</strong> व प्रक्रिया का उल्लेख</li>
+        <li>संसद मूलभूत ढांचे में संशोधन <strong>नहीं</strong> कर सकती</li>
+        <li>1st संशोधन — <strong>संविधान सभा</strong> द्वारा किया गया</li>
+        <li>बाकी सभी संशोधन — <strong>संसद</strong> द्वारा</li>
+        <li>प्रेरणा: <strong>दक्षिण अफ्रीका</strong> के संविधान से</li>
+      </ul>
+      <div class="mnemonic">
+        <strong>🧠 Trick: "368 = तीन-छह-आठ → तीन प्रकार के संशोधन"</strong>
+        <em>1. सामान्य बहुमत | 2. विशेष बहुमत | 3. विशेष + राज्य अनुमोदन</em>
+      </div>
+    </div>
+    <div class="card green">
+      <div class="card-title"><span class="icon">🏛️</span>महत्वपूर्ण निर्णय</div>
+      <div class="highlight h-orange">केशवानन्द भारती केस (1973)</div>
+      <ul class="point-list">
+        <li>मूलभूत ढांचा सिद्धांत — संसद मूलभूत ढांचा नहीं बदल सकती</li>
+      </ul>
+      <div class="highlight h-blue">गोलकनाथ केस (1967)</div>
+      <ul class="point-list">
+        <li>मौलिक अधिकार नहीं बदले जा सकते</li>
+      </ul>
+      <div class="highlight h-green">मिनर्वा मिल्स केस (1980)</div>
+      <ul class="point-list">
+        <li>42वें संशोधन की कुछ धाराएं रद्द</li>
+      </ul>
+      <div class="mnemonic">
+        <strong>🧠 "के-गो-मि" = केशवानन्द-गोलकनाथ-मिनर्वा</strong>
+        <em>तीनों मूलभूत ढांचे से सम्बन्धित landmark cases</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="sec-head">🔢 प्रमुख संविधान संशोधन</div>
+
+  <!-- 1st and 7th -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="amend-num">1st संशोधन — 1951</div>
+      <div class="card-title"><span class="icon">📋</span>पहला संशोधन</div>
+      <ul class="point-list">
+        <li>9वीं अनुसूची जोड़ी गई</li>
+        <li>भूमि सुधार संरक्षण</li>
+        <li><strong>संविधान सभा</strong> द्वारा किया गया (एकमात्र)</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "1st = 9वीं अनुसूची + संविधान सभा"</strong></div>
+    </div>
+    <div class="card green">
+      <div class="amend-num">7th संशोधन — 1956</div>
+      <div class="card-title"><span class="icon">🗺️</span>राज्यों का पुनर्गठन</div>
+      <ul class="point-list">
+        <li>राज्यपाल के पद का सृजन</li>
+        <li>राज्यों का भाषाई पुनर्गठन</li>
+        <li>A,B,C,D श्रेणी → दो श्रेणी (राज्य + केन्द्र शासित)</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "7th = राज्यपाल + राज्य पुनर्गठन"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card purple">
+      <div class="amend-num">15th संशोधन — 1963</div>
+      <div class="card-title"><span class="icon">⚖️</span>HC न्यायाधीश</div>
+      <ul class="point-list">
+        <li>High Court के जजों की सेवानिवृत्त आयु <strong>60 वर्ष से बढ़ाकर 62 वर्ष</strong></li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "15th = 60→62 | 15 की उम्र में 2 साल बड़े"</strong></div>
+    </div>
+    <div class="card teal">
+      <div class="amend-num">21st संशोधन — 1967</div>
+      <div class="card-title"><span class="icon">🗣️</span>सिन्धी भाषा</div>
+      <ul class="point-list">
+        <li>8वीं अनुसूची में <strong>सिन्धी भाषा</strong> जोड़ी गई</li>
+        <li>अनुसूची भाषाओं की संख्या 14→15 हुई</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "21st = सिन्धी | 21+सिन्ध = एक साथ"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card red">
+      <div class="amend-num">26th संशोधन — 1971</div>
+      <div class="card-title"><span class="icon">👑</span>प्रीवी पर्स समाप्त</div>
+      <ul class="point-list">
+        <li>प्रीवी पर्स (Privy Purse) समाप्त — <strong>इन्दिरा गांधी</strong></li>
+        <li>राजा-महाराजाओं को दी जाने वाली <strong>आर्थिक सहायता समाप्त</strong></li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "26 = इन्दिरा ने 26 को पर्स (purse) छीना"</strong></div>
+    </div>
+    <div class="card" style="border-left-color:#e53935">
+      <div class="amend-num">42वां संशोधन — 1976 ⭐</div>
+      <div class="card-title"><span class="icon">📖</span>लघु संविधान</div>
+      <ul class="point-list">
+        <li><strong>इन्दिरा गांधी</strong> सरकार द्वारा (आपातकाल)</li>
+        <li><strong>लघु संविधान / मिनी संविधान</strong> कहा जाता है</li>
+        <li>सबसे <strong>विवादित</strong> संशोधन</li>
+        <li>लोकसभा व विधानसभा का कार्यकाल <strong>6 वर्ष</strong></li>
+        <li>मंत्रिपरिषद की सलाह राष्ट्रपति व राज्यपाल को <strong>मानना बाध्यकारी</strong></li>
+        <li><strong>मूल कर्तव्य</strong> जोड़े गए</li>
+        <li>प्रस्तावना में <strong>समाजवादी, पंथनिरपेक्षता व अखण्डता</strong> शब्द जोड़े</li>
+      </ul>
+      <div class="mnemonic">
+        <strong>🧠 Trick: "42 = SMILE" — समाजवाद+मूल कर्तव्य+इन्दिरा+लघु संविधान+6वर्ष</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card gold">
+      <div class="amend-num">44वां संशोधन — 1978 ⭐</div>
+      <div class="card-title"><span class="icon">⚖️</span>42वें का जवाब</div>
+      <ul class="point-list">
+        <li><strong>जनता पार्टी</strong> द्वारा (मोरारजी देशाई)</li>
+        <li>लोकसभा व विधानसभा का कार्यकाल <strong>पुनः 5 वर्ष</strong></li>
+        <li>मंत्रिपरिषद की सलाह को एक बार <strong>पुनर्विचार</strong> के लिए लौटा सकना</li>
+        <li><strong>सम्पत्ति का अधिकार</strong> मौलिक अधिकार से हटाया (Art. 300A)</li>
+        <li><strong>मंत्रिमंडल</strong> शब्द शामिल किया (Art. 352)</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "44 = 42 का Antidote | जनता ने 42 की दवा दी"</strong></div>
+    </div>
+    <div class="card navy">
+      <div class="amend-num">52वां संशोधन — 1985</div>
+      <div class="card-title"><span class="icon">🏛️</span>दल-बदल विरोधी</div>
+      <ul class="point-list">
+        <li><strong>10वीं अनुसूची</strong> जोड़ी गई</li>
+        <li>दलबदल व्यासी को <strong>अयोग्य</strong> ठहराना</li>
+        <li>यदि किसी दल के <strong>2/3 सदस्य</strong> दूसरे दल में जाते हैं तो सदस्यता नहीं जाती</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "52 = 10वीं अनुसूची | पाँच-दो = दल-बदल"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card green">
+      <div class="amend-num">61वां संशोधन — 1989</div>
+      <div class="card-title"><span class="icon">🗳️</span>मतदान आयु</div>
+      <ul class="point-list">
+        <li>वयस्क मताधिकार की आयु <strong>21 वर्ष से घटाकर 18 वर्ष</strong></li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "61 = 21 से 18 | 61-21=40, 18+40=58 (याद)"</strong><br><em>या: "61वाँ = वोट के लिए 18"</em></div>
+    </div>
+    <div class="card teal">
+      <div class="amend-num">69वां संशोधन — 1991</div>
+      <div class="card-title"><span class="icon">🏙️</span>दिल्ली NCT</div>
+      <ul class="point-list">
+        <li>दिल्ली को <strong>NCT (राष्ट्रीय राजधानी क्षेत्र)</strong> घोषित</li>
+        <li>राजस्थान के <strong>4 जिले</strong> NCR में: <strong>अलवर, भरतपुर, डीग, खैरतल-तिजारा</strong></li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "69 = दिल्ली NCT | राज. = अलवर-भरतपुर-डीग-खैरतल"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card purple">
+      <div class="amend-num">71वां संशोधन — 1992</div>
+      <div class="card-title"><span class="icon">🗣️</span>तीन नई भाषाएं</div>
+      <ul class="point-list">
+        <li>8वीं अनुसूची में <strong>कोंकणी, मणिपुरी, नेपाली</strong> भाषाएं जोड़ी</li>
+        <li>अनुसूची भाषाओं की संख्या 15→18 हुई</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "71 = को-म-ने (KMN)" = कोंकणी, मणिपुरी, नेपाली</strong></div>
+    </div>
+    <div class="card" style="border-left-color:#e53935">
+      <div class="amend-num">86वां संशोधन — 2002</div>
+      <div class="card-title"><span class="icon">📚</span>शिक्षा का अधिकार</div>
+      <ul class="point-list">
+        <li><strong>अनुच्छेद 21A</strong> → 6-14 वर्ष तक के बच्चों को निःशुल्क व अनिवार्य शिक्षा</li>
+        <li><strong>अनुच्छेद 45</strong> → 0-6 वर्ष के बच्चों का ध्यान रखना राज्य की जिम्मेदारी</li>
+        <li><strong>अनुच्छेद 51A</strong> → माता-पिता का कर्तव्य (6-14)</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "86 = 21A (6-14 वर्ष शिक्षा) | 8+6=14 ✓"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card gold">
+      <div class="amend-num">91वां संशोधन — 2003</div>
+      <div class="card-title"><span class="icon">🏛️</span>मंत्रिपरिषद सीमा</div>
+      <ul class="point-list">
+        <li>मंत्रिपरिषद की संख्या PM व CM को मिलाकर <strong>15% से अधिक नहीं</strong></li>
+        <li>दलबदल अयोग्य व्यासी को <strong>मंत्री नहीं</strong> बनाया जा सकता</li>
+        <li>Note: दिल्ली में <strong>10% की मंत्रिपरिषद</strong> होगी</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "91 = 15% मंत्री | नौ-एक = मंत्री नियन्त्रण"</strong></div>
+    </div>
+    <div class="card navy">
+      <div class="amend-num">92वां संशोधन — 2003</div>
+      <div class="card-title"><span class="icon">🗣️</span>चार नई भाषाएं</div>
+      <ul class="point-list">
+        <li>8वीं अनुसूची में <strong>बोडो, डोगरी, मैथिली, संथाली</strong> जोड़ी</li>
+        <li>भाषाओं की संख्या 18→22 हुई</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "92 = बो-डो-मै-सं (BDMS)" = बोडो, डोगरी, मैथिली, संथाली</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="amend-num">97वां संशोधन — 2011</div>
+      <div class="card-title"><span class="icon">🤝</span>सहकारी समिति</div>
+      <ul class="point-list">
+        <li><strong>सहकारी समितियां</strong> जोड़ी गई</li>
+        <li>Part IX-B जोड़ा गया</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "97 = सहकारी | 9+7=16 (याद)"</strong></div>
+    </div>
+    <div class="card green">
+      <div class="amend-num">99वां संशोधन — 2014</div>
+      <div class="card-title"><span class="icon">⚖️</span>NJAC</div>
+      <ul class="point-list">
+        <li><strong>NJAC</strong> — National Judicial Appointments Commission</li>
+        <li>राष्ट्रीय न्यायिक नियुक्ति आयोग</li>
+        <li>2015 में <strong>रद्द</strong> (Supreme Court ने)</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "99 = NJAC | 99% मुश्किल था, 100% रद्द हुआ"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card teal">
+      <div class="amend-num">100वां संशोधन — 2015</div>
+      <div class="card-title"><span class="icon">🌐</span>भारत-बांग्लादेश</div>
+      <ul class="point-list">
+        <li>भारत-बांग्लादेश के मध्य <strong>सीमा निर्धारण</strong></li>
+        <li>भूमि सीमा समझौता (LBA)</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "100 = सीमा | शताब्दी = सीमा तय"</strong></div>
+    </div>
+    <div class="card red">
+      <div class="amend-num">101वां संशोधन — 2016</div>
+      <div class="card-title"><span class="icon">💰</span>GST</div>
+      <ul class="point-list">
+        <li><strong>GST</strong> — Goods & Services Tax (वस्तु एवं सेवा कर)</li>
+        <li>1 July 2017 से लागू</li>
+        <li>GST Council का गठन</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "101 = GST | एक देश एक कर"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card purple">
+      <div class="amend-num">102वां संशोधन — 2018</div>
+      <div class="card-title"><span class="icon">👥</span>NCBC</div>
+      <ul class="point-list">
+        <li><strong>NCBC</strong> — National Commission for Backward Classes</li>
+        <li>राष्ट्रीय पिछड़ा वर्ग आयोग को <strong>संवैधानिक मान्यता</strong></li>
+        <li>Art. 338B → राज्यों का | Art. 342A → राज्य+केन्द्र शासित OBC</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "102 = NCBC | 1+0+2=3 (तीन अनुच्छेद)"</strong></div>
+    </div>
+    <div class="card gold">
+      <div class="amend-num">103वां संशोधन — 2019</div>
+      <div class="card-title"><span class="icon">📊</span>EWS आरक्षण</div>
+      <ul class="point-list">
+        <li>आर्थिक आधार पर आरक्षण — <strong>EWS 10%</strong></li>
+        <li>EWS क्लॉज जोड़ा</li>
+        <li>अनु. 15(6) व 16(6) जोड़े</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "103 = EWS 10% | 1+0+3=4 (चौथी श्रेणी आरक्षण)"</strong></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card navy">
+      <div class="amend-num">104वां संशोधन — 2019</div>
+      <div class="card-title"><span class="icon">🏛️</span>आरक्षण विस्तार</div>
+      <ul class="point-list">
+        <li>Anglo Indian सदस्यों की नियुक्ति <strong>रद्द</strong></li>
+        <li>विधानसभा व लोकसभा में SC/ST आरक्षण <strong>10 वर्ष और बढ़ाया</strong> (2030 तक)</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "104 = Anglo Indian बाहर + SC/ST 10 साल आगे"</strong></div>
+    </div>
+    <div class="card" style="border-left-color:#e91e63">
+      <div class="amend-num">106वां संशोधन — 2023 ⭐</div>
+      <div class="card-title"><span class="icon">👩</span>नारी शक्ति वन्दन</div>
+      <ul class="point-list">
+        <li><strong>नारी शक्ति वन्दन Act</strong></li>
+        <li>महिलाओं को <strong>33% आरक्षण (1/3)</strong> — विधानसभा + लोकसभा</li>
+        <li>Art. 330A → लोकसभा में महिलाओं को 1/3 आरक्षण</li>
+        <li>Art. 332A → विधानसभा में 1/3 आरक्षण</li>
+        <li>Art. 334A → यह आरक्षण <strong>15 वर्ष</strong> तक (2026 में लागू)</li>
+        <li>Art. 239AA → दिल्ली विधानसभा में 1/3 आरक्षण</li>
+      </ul>
+      <div class="mnemonic"><strong>🧠 "106 = नारी 1/3 | 1+0+6=7 (महिला शक्ति का अंक)"</strong></div>
+    </div>
+  </div>
+
+</div><!-- end revision -->
+
+<!-- ============= SUMMARY TAB ============= -->
+<div id="tab-summary" class="tab-panel">
+
+  <div class="sec-head">📊 Master Table — सभी महत्वपूर्ण संशोधन</div>
+  <div class="card" style="overflow-x:auto;padding:10px;">
+    <table class="rev-table">
+      <tr>
+        <th>संशोधन</th><th>वर्ष</th><th>मुख्य प्रावधान</th><th>Trick</th>
+      </tr>
+      <tr><td><strong>1st</strong></td><td>1951</td><td>9वीं अनुसूची | भूमि सुधार | संविधान सभा</td><td>1=9वीं</td></tr>
+      <tr><td><strong>7th</strong></td><td>1956</td><td>राज्यपाल पद | राज्य पुनर्गठन</td><td>7=राज्यपाल</td></tr>
+      <tr><td><strong>15th</strong></td><td>1963</td><td>HC जज 60→62 वर्ष</td><td>15=+2साल</td></tr>
+      <tr><td><strong>21st</strong></td><td>1967</td><td>सिन्धी भाषा (8वीं अनुसूची)</td><td>21=सिन्धी</td></tr>
+      <tr><td><strong>26th</strong></td><td>1971</td><td>प्रीवी पर्स समाप्त (इन्दिरा)</td><td>26=पर्स गया</td></tr>
+      <tr style="background:#fff0e6"><td><strong>42वां ⭐</strong></td><td>1976</td><td>लघु संविधान | 6 वर्ष LS | मूल कर्तव्य | समाजवादी+पंथनिरपेक्ष+अखण्डता</td><td>42=SMILE</td></tr>
+      <tr style="background:#e8f5e9"><td><strong>44वां ⭐</strong></td><td>1978</td><td>LS 5 वर्ष | सम्पत्ति हटाया | मंत्रिमंडल (352)</td><td>44=42 Antidote</td></tr>
+      <tr><td><strong>52वां</strong></td><td>1985</td><td>10वीं अनुसूची (दलबदल)</td><td>52=10वीं</td></tr>
+      <tr><td><strong>61वां</strong></td><td>1989</td><td>मतदान आयु 21→18</td><td>61=18 वोट</td></tr>
+      <tr><td><strong>69वां</strong></td><td>1991</td><td>दिल्ली = NCT | राज. 4 जिले</td><td>69=NCT</td></tr>
+      <tr><td><strong>71वां</strong></td><td>1992</td><td>कोंकणी, मणिपुरी, नेपाली (8वीं)</td><td>71=KMN</td></tr>
+      <tr style="background:#e3f2fd"><td><strong>86वां</strong></td><td>2002</td><td>Art.21A | 6-14 निःशुल्क शिक्षा</td><td>86=21A</td></tr>
+      <tr><td><strong>91वां</strong></td><td>2003</td><td>मंत्री 15% सीमा</td><td>91=15%</td></tr>
+      <tr><td><strong>92वां</strong></td><td>2003</td><td>बोडो, डोगरी, मैथिली, संथाली</td><td>92=BDMS</td></tr>
+      <tr><td><strong>97वां</strong></td><td>2011</td><td>सहकारी समितियां (Part IX-B)</td><td>97=सहकारी</td></tr>
+      <tr><td><strong>99वां</strong></td><td>2014</td><td>NJAC (2015 में रद्द)</td><td>99=NJAC रद्द</td></tr>
+      <tr><td><strong>100वां</strong></td><td>2015</td><td>भारत-बांग्लादेश सीमा</td><td>100=सीमा</td></tr>
+      <tr style="background:#e8f5e9"><td><strong>101वां</strong></td><td>2016</td><td>GST (1 July 2017 लागू)</td><td>101=GST</td></tr>
+      <tr><td><strong>102वां</strong></td><td>2018</td><td>NCBC संवैधानिक</td><td>102=NCBC</td></tr>
+      <tr><td><strong>103वां</strong></td><td>2019</td><td>EWS 10% आरक्षण</td><td>103=EWS</td></tr>
+      <tr><td><strong>104वां</strong></td><td>2019</td><td>Anglo Indian रद्द | SC/ST +10 वर्ष</td><td>104=Anglo out</td></tr>
+      <tr style="background:#fce4ec"><td><strong>106वां ⭐</strong></td><td>2023</td><td>नारी शक्ति | महिला 33% | 2026</td><td>106=नारी 1/3</td></tr>
+    </table>
+  </div>
+
+  <div class="sec-head" style="margin-top:20px;">⚡ Quick Reference Tables</div>
+  <div class="grid-2">
+    <div class="card navy">
+      <div class="card-title">🗣️ 8वीं अनुसूची — भाषाएं</div>
+      <table class="rev-table">
+        <tr><th>संशोधन</th><th>भाषा जोड़ी</th><th>कुल</th></tr>
+        <tr><td>मूल 1950</td><td>14 भाषाएं</td><td>14</td></tr>
+        <tr><td>21वां 1967</td><td>सिन्धी</td><td>15</td></tr>
+        <tr><td>71वां 1992</td><td>कोंकणी, मणिपुरी, नेपाली</td><td>18</td></tr>
+        <tr><td>92वां 2003</td><td>बोडो, डोगरी, मैथिली, संथाली</td><td>22</td></tr>
+      </table>
+      <div class="mnemonic"><strong>🧠 "14→15→18→22 | +1+3+4"</strong></div>
+    </div>
+    <div class="card green">
+      <div class="card-title">📅 प्रधानमंत्री / सरकार से जुड़े संशोधन</div>
+      <table class="rev-table">
+        <tr><th>PM/सरकार</th><th>संशोधन</th><th>वर्ष</th></tr>
+        <tr><td>इन्दिरा गांधी</td><td>26वां (प्रीवी पर्स)</td><td>1971</td></tr>
+        <tr><td>इन्दिरा गांधी</td><td>42वां (लघु संविधान)</td><td>1976</td></tr>
+        <tr><td>मोरारजी देशाई</td><td>44वां (Anti-42)</td><td>1978</td></tr>
+        <tr><td>राजीव गांधी</td><td>52वां (दलबदल)</td><td>1985</td></tr>
+        <tr><td>राजीव गांधी</td><td>61वां (18 वर्ष वोट)</td><td>1989</td></tr>
+        <tr><td>नरेन्द्र मोदी</td><td>101वां (GST)</td><td>2016</td></tr>
+        <tr><td>नरेन्द्र मोदी</td><td>106वां (नारी शक्ति)</td><td>2023</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card gold">
+      <div class="card-title">🔢 अनुसूचियां जोड़ी गईं</div>
+      <table class="rev-table">
+        <tr><th>अनुसूची</th><th>संशोधन</th><th>विषय</th></tr>
+        <tr><td>9वीं</td><td>1st (1951)</td><td>भूमि सुधार कानून</td></tr>
+        <tr><td>10वीं</td><td>52nd (1985)</td><td>दल-बदल विरोधी</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">🎯 महत्वपूर्ण अनुच्छेद — संशोधन से जुड़े</div>
+      <table class="rev-table">
+        <tr><th>अनुच्छेद</th><th>विषय</th><th>संशोधन</th></tr>
+        <tr><td>Art. 21A</td><td>6-14 शिक्षा</td><td>86वां</td></tr>
+        <tr><td>Art. 300A</td><td>सम्पत्ति अधिकार</td><td>44वां</td></tr>
+        <tr><td>Art. 338B</td><td>NCBC</td><td>102वां</td></tr>
+        <tr><td>Art. 330A</td><td>लोकसभा महिला 1/3</td><td>106वां</td></tr>
+        <tr><td>Art. 334A</td><td>15 वर्ष महिला आरक्षण</td><td>106वां</td></tr>
+        <tr><td>Art. 368</td><td>संशोधन प्रक्रिया</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============= RJ PYQ TAB ============= -->
+<div id="tab-rj-pyq" class="tab-panel">
+  <div class="sec-head">🏆 राजस्थान PYQ — 25 प्रश्न</div>
+  <div class="score-strip">
+    <span>स्कोर: <span class="score-val" id="rj-score">0</span></span>
+    <span>सही: <span id="rj-correct" style="color:#4CAF50;font-weight:700">0</span> | गलत: <span id="rj-wrong" style="color:#f44336;font-weight:700">0</span></span>
+    <span>📌 +1 सही / -⅓ गलत</span>
+  </div>
+  <div id="rj-questions"></div>
+  <button class="submit-btn" onclick="submitQuiz('rj')">📊 Result देखें</button>
+</div>
+
+<!-- ============= STATE PYQ TAB ============= -->
+<div id="tab-state-pyq" class="tab-panel">
+  <div class="sec-head">🗺️ अन्य राज्य PYQ — 25 प्रश्न</div>
+  <div class="score-strip">
+    <span>स्कोर: <span class="score-val" id="state-score">0</span></span>
+    <span>सही: <span id="state-correct" style="color:#4CAF50;font-weight:700">0</span> | गलत: <span id="state-wrong" style="color:#f44336;font-weight:700">0</span></span>
+    <span>📌 +1 सही / -⅓ गलत</span>
+  </div>
+  <div id="state-questions"></div>
+  <button class="submit-btn" onclick="submitQuiz('state')">📊 Result देखें</button>
+</div>
+
+<!-- ============= LAST MINUTE TAB ============= -->
+<div id="tab-lastmin" class="tab-panel">
+
+  <div class="sec-head">⚡ Last Minute — Super Mnemonics</div>
+
+  <div class="super-mnemonic">
+    <div class="sm-title">🧠 Super Mnemonic #1 — 42वां संशोधन "SMILE"</div>
+    <div class="sm-text">S-M-I-L-E</div>
+    <div class="sm-explain">
+      <strong>S</strong>=समाजवादी+पंथनिरपेक्ष+अखण्डता (प्रस्तावना में) |
+      <strong>M</strong>=मूल कर्तव्य जोड़े |
+      <strong>I</strong>=इन्दिरा गांधी (आपातकाल) |
+      <strong>L</strong>=लघु संविधान |
+      <strong>E</strong>=एक्सटेंशन (6 वर्ष LS) + बाध्यकारी मंत्री सलाह
+    </div>
+  </div>
+
+  <div class="super-mnemonic">
+    <div class="sm-title">🧠 Super Mnemonic #2 — 8वीं अनुसूची भाषाएं "14→22"</div>
+    <div class="sm-text">"14 पहले, सिन्धी ने 15 किया, KMN ने 18, BDMS ने 22"</div>
+    <div class="sm-explain">
+      21वां=सिन्धी(1) | 71वां=KMN=कोंकणी-मणिपुरी-नेपाली(3) | 92वां=BDMS=बोडो-डोगरी-मैथिली-संथाली(4)
+    </div>
+  </div>
+
+  <div class="super-mnemonic">
+    <div class="sm-title">🧠 Super Mnemonic #3 — GST-NJAC-NCBC-EWS क्रम</div>
+    <div class="sm-text">"99-100-101-102-103"</div>
+    <div class="sm-explain">
+      99=NJAC(रद्द) | 100=भारत-बांग्लादेश सीमा | 101=GST | 102=NCBC | 103=EWS 10%
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="lm-card">
+      <div class="lm-title">⚡ सबसे ज्यादा पूछे जाने वाले</div>
+      <div class="lm-point"><span class="tag">42</span>लघु संविधान + SMILE</div>
+      <div class="lm-point"><span class="tag">44</span>सम्पत्ति हटाया + 5 वर्ष</div>
+      <div class="lm-point"><span class="tag">52</span>दल-बदल + 10वीं अनुसूची</div>
+      <div class="lm-point"><span class="tag">61</span>18 वर्ष मतदान</div>
+      <div class="lm-point"><span class="tag">86</span>Art.21A — 6-14 शिक्षा</div>
+      <div class="lm-point"><span class="tag">101</span>GST — 2016</div>
+      <div class="lm-point"><span class="tag">106</span>नारी शक्ति — 33% महिला</div>
+      <div class="lm-point"><span class="tag">1st</span>9वीं अनुसूची + संविधान सभा</div>
+    </div>
+    <div class="lm-card">
+      <div class="lm-title">⚡ राजस्थान विशेष</div>
+      <div class="lm-point"><span class="tag">69</span>दिल्ली NCT — 4 RJ जिले</div>
+      <div class="lm-point"><span class="tag">जिले</span>अलवर, भरतपुर, डीग, खैरतल-तिजारा</div>
+      <div class="lm-point"><span class="tag">91</span>15% मंत्री सीमा</div>
+      <div class="lm-point"><span class="tag">Delhi</span>दिल्ली में 10% मंत्री</div>
+      <div class="lm-point"><span class="tag">103</span>EWS — अनु. 15(6) व 16(6)</div>
+      <div class="lm-point"><span class="tag">106</span>Art.334A = 15 वर्ष आरक्षण</div>
+      <div class="lm-point"><span class="tag">104</span>Anglo Indian 2020 में रद्द</div>
+    </div>
+  </div>
+
+  <div class="card gold" style="margin-top:14px;">
+    <div class="card-title">🎯 Number याद करने की Tricks</div>
+    <div class="highlight h-orange">संशोधन नंबर + अनुसूची जोड़ी गई</div>
+    <div style="font-size:13px;padding:4px 0">1st = 9वीं | 52nd = 10वीं (52 → 10 → दो अंक)</div>
+    <div class="highlight h-green">42 vs 44 — परीक्षा का favourite pair</div>
+    <div style="font-size:13px;padding:4px 0">42=इन्दिरा(6 वर्ष, बाध्यकारी, मूल कर्तव्य) | 44=जनता(5 वर्ष, सम्पत्ति हटाई, पुनर्विचार)</div>
+    <div class="highlight h-blue">61वां = 21 से 18 = 21-61 = नहीं, बस याद रखो: "61 में 18 आया"</div>
+    <div class="highlight h-purple">8वीं अनुसूची अभी 22 भाषाएं | 9वीं = भूमि | 10वीं = दल-बदल</div>
+  </div>
+
+</div>
+</div><!-- end content -->
+
+<!-- POPUP -->
+<div class="popup-overlay" id="result-popup">
+  <div class="popup">
+    <span class="emoji" id="popup-emoji">🎉</span>
+    <h2 id="popup-title">परिणाम</h2>
+    <div class="score-big" id="popup-score">0</div>
+    <p id="popup-detail"></p>
+    <p id="popup-grade"></p>
+    <button class="popup-close" onclick="closePopup()">बन्द करें</button>
+  </div>
+</div>
+
+<script>
+function switchTab(name,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+}
+
+const rjQuestions=[
+  {q:"42वें संविधान संशोधन को किस नाम से जाना जाता है?",opts:["लघु संविधान","महा संविधान","मूल संविधान","नया संविधान"],ans:0,exp:"42वें संशोधन 1976 को 'लघु संविधान' या 'मिनी संविधान' कहा जाता है — इन्दिरा गांधी सरकार ने आपातकाल में यह किया।"},
+  {q:"42वें संविधान संशोधन द्वारा प्रस्तावना में कौन-से शब्द जोड़े गए?",opts:["न्याय, स्वतन्त्रता, समता","समाजवादी, पंथनिरपेक्ष, अखण्डता","धर्मनिरपेक्षता, गणतन्त्र","सम्प्रभु, लोकतान्त्रिक, गणराज्य"],ans:1,exp:"42वें संशोधन 1976 में प्रस्तावना में समाजवादी, पंथनिरपेक्षता और अखण्डता तीन शब्द जोड़े गए।"},
+  {q:"44वें संविधान संशोधन द्वारा सम्पत्ति का अधिकार कहाँ से हटाया गया?",opts:["राज्य के नीति निदेशक तत्व से","मौलिक अधिकारों से","मूल कर्तव्यों से","संसद के अधिकारों से"],ans:1,exp:"44वें संशोधन 1978 में सम्पत्ति का अधिकार मौलिक अधिकारों से हटाकर Art.300A में कानूनी अधिकार बनाया।"},
+  {q:"10वीं अनुसूची किस संशोधन द्वारा जोड़ी गई?",opts:["44वें","52वें","61वें","42वें"],ans:1,exp:"52वें संशोधन 1985 द्वारा दल-बदल विरोधी कानून के लिए 10वीं अनुसूची जोड़ी गई।"},
+  {q:"मतदाता की न्यूनतम आयु 21 से घटाकर 18 वर्ष किस संशोधन से हुई?",opts:["52वें","58वें","61वें","64वें"],ans:2,exp:"61वें संशोधन 1989 द्वारा वयस्क मताधिकार की आयु 21 वर्ष से घटाकर 18 वर्ष की गई।"},
+  {q:"दिल्ली को राष्ट्रीय राजधानी क्षेत्र (NCT) का दर्जा किस संशोधन से मिला?",opts:["61वें","69वें","71वें","74वें"],ans:1,exp:"69वें संशोधन 1991 द्वारा दिल्ली को NCT (National Capital Territory) घोषित किया गया।"},
+  {q:"राजस्थान के कौन-से जिले NCR में आते हैं? (2024 के अनुसार)",opts:["अलवर, भरतपुर, डीग, खैरतल-तिजारा","जयपुर, अजमेर, कोटा","अलवर, जयपुर, भरतपुर, धौलपुर","अलवर, भरतपुर, करौली, दौसा"],ans:0,exp:"69वें संशोधन के बाद NCR में राजस्थान के 4 जिले — अलवर, भरतपुर, डीग और खैरतल-तिजारा आते हैं।"},
+  {q:"86वें संविधान संशोधन द्वारा कौन-सा अनुच्छेद जोड़ा गया जो शिक्षा के अधिकार से सम्बन्धित है?",opts:["Art. 19A","Art. 21A","Art. 21B","Art. 22A"],ans:1,exp:"86वें संशोधन 2002 द्वारा Art. 21A जोड़ा — 6 से 14 वर्ष तक के बच्चों को निःशुल्क व अनिवार्य शिक्षा।"},
+  {q:"91वें संशोधन के अनुसार केन्द्र में मंत्रिपरिषद की अधिकतम सीमा क्या है?",opts:["लोकसभा सदस्यों का 10%","लोकसभा सदस्यों का 15%","लोकसभा सदस्यों का 20%","कोई सीमा नहीं"],ans:1,exp:"91वें संशोधन 2003 के अनुसार PM सहित मंत्रिपरिषद की संख्या लोकसभा सदस्यों के 15% से अधिक नहीं होगी।"},
+  {q:"101वें संशोधन द्वारा क्या लागू किया गया?",opts:["GST","सम्पत्ति अधिकार","शिक्षा अधिकार","NJAC"],ans:0,exp:"101वें संशोधन 2016 द्वारा Goods and Services Tax (GST) लागू किया गया जो 1 July 2017 से प्रभावी हुआ।"},
+  {q:"9वीं अनुसूची किस संशोधन द्वारा जोड़ी गई?",opts:["1st","7th","9th","11th"],ans:0,exp:"1st संशोधन 1951 द्वारा भूमि सुधार कानूनों को न्यायिक समीक्षा से बचाने के लिए 9वीं अनुसूची जोड़ी गई।"},
+  {q:"42वें संशोधन ने लोकसभा का कार्यकाल कितना वर्ष किया?",opts:["4 वर्ष","5 वर्ष","6 वर्ष","7 वर्ष"],ans:2,exp:"42वें संशोधन 1976 ने लोकसभा व विधानसभाओं का कार्यकाल 5 वर्ष से बढ़ाकर 6 वर्ष किया। बाद में 44वें ने पुनः 5 किया।"},
+  {q:"44वें संशोधन ने लोकसभा का कार्यकाल पुनः क्या किया?",opts:["4 वर्ष","5 वर्ष","6 वर्ष","3 वर्ष"],ans:1,exp:"44वें संशोधन 1978 (जनता पार्टी-मोरारजी देशाई) ने लोकसभा का कार्यकाल पुनः 5 वर्ष कर दिया।"},
+  {q:"106वें संविधान संशोधन द्वारा महिलाओं को कितना आरक्षण मिला?",opts:["25%","33%","50%","20%"],ans:1,exp:"106वें संशोधन 2023 (नारी शक्ति वन्दन Act) द्वारा लोकसभा व राज्य विधानसभाओं में महिलाओं को 33% (1/3) आरक्षण।"},
+  {q:"106वें संशोधन के तहत महिला आरक्षण Art. 334A के अनुसार कितने वर्ष के लिए है?",opts:["10 वर्ष","15 वर्ष","25 वर्ष","स्थायी"],ans:1,exp:"Art.334A के अनुसार यह आरक्षण 15 वर्ष के लिए है और जनगणना के बाद परिसीमन से 2026 में लागू होगा।"},
+  {q:"52वें संशोधन के दल-बदल विरोधी कानून के अनुसार सदस्यता नहीं जाती यदि:",opts:["2/3 सदस्य दूसरे दल में जाएं","1/2 सदस्य दल छोड़ें","सभी सदस्य जाएं","एक भी न जाए"],ans:0,exp:"यदि किसी दल के 2/3 सदस्य दूसरे दल में जाते हैं तो उनकी सदस्यता नहीं जाती (Merger provision)।"},
+  {q:"8वीं अनुसूची में वर्तमान में कितनी भाषाएं हैं?",opts:["18","20","22","24"],ans:2,exp:"मूल 14, 21वां(+1सिन्धी)=15, 71वां(+3)=18, 92वां(+4 बोडो,डोगरी,मैथिली,संथाली)=22 भाषाएं।"},
+  {q:"प्रीवी पर्स की समाप्ति किस संशोधन से हुई?",opts:["22वें","24वें","26वें","28वें"],ans:2,exp:"26वें संशोधन 1971 (इन्दिरा गांधी) द्वारा राजा-महाराजाओं को दी जाने वाली प्रीवी पर्स व अन्य सुविधाएं समाप्त हुईं।"},
+  {q:"High Court के न्यायाधीशों की सेवानिवृत्ति आयु किस संशोधन से 62 वर्ष हुई?",opts:["13वें","15वें","17वें","19वें"],ans:1,exp:"15वें संशोधन 1963 द्वारा HC जजों की सेवानिवृत्ति आयु 60 से बढ़ाकर 62 वर्ष की गई।"},
+  {q:"103वें संशोधन द्वारा किसे 10% आरक्षण दिया गया?",opts:["SC/ST","OBC","EWS (आर्थिक रूप से कमजोर)","अल्पसंख्यक"],ans:2,exp:"103वें संशोधन 2019 द्वारा Art. 15(6) व 16(6) जोड़कर EWS (Economically Weaker Section) को 10% आरक्षण दिया।"},
+  {q:"NJAC को किस संशोधन ने स्थापित किया और किस वर्ष रद्द हुआ?",opts:["97वें — 2013","99वें — 2015","101वें — 2017","102वें — 2019"],ans:1,exp:"99वें संशोधन 2014 ने NJAC बनाया जो Supreme Court ने 2015 में रद्द कर दिया।"},
+  {q:"102वें संशोधन द्वारा NCBC को क्या दिया गया?",opts:["न्यायिक अधिकार","संवैधानिक दर्जा","वित्तीय अधिकार","कार्यकारी अधिकार"],ans:1,exp:"102वें संशोधन 2018 द्वारा NCBC (National Commission for Backward Classes) को संवैधानिक मान्यता दी गई।"},
+  {q:"42वें संशोधन द्वारा मूल कर्तव्य संविधान में किस अनुच्छेद में जोड़े गए?",opts:["Art. 50A","Art. 51A","Art. 52A","Art. 53A"],ans:1,exp:"42वें संशोधन 1976 द्वारा Art. 51A में मूल कर्तव्य (Fundamental Duties) जोड़े गए — रूस के संविधान से लिए।"},
+  {q:"राजयपाल का पद किस संशोधन द्वारा बनाया गया?",opts:["1st","5th","7th","9th"],ans:2,exp:"7वें संशोधन 1956 द्वारा राज्यपाल का पद सृजित किया गया और राज्यों का पुनर्गठन भाषाई आधार पर हुआ।"},
+  {q:"100वें संशोधन का सम्बन्ध किससे है?",opts:["GST","भारत-बांग्लादेश सीमा","NJAC","EWS आरक्षण"],ans:1,exp:"100वें संशोधन 2015 का सम्बन्ध भारत और बांग्लादेश के बीच भूमि सीमा समझौते (LBA) से है।"}
+];
+
+const stateQuestions=[
+  {q:"संविधान संशोधन की प्रक्रिया किस अनुच्छेद में है? (UPSC)",opts:["Art. 360","Art. 368","Art. 370","Art. 352"],ans:1,exp:"अनुच्छेद 368 में संसद को संविधान में संशोधन करने की शक्ति व प्रक्रिया का उल्लेख है।"},
+  {q:"भारतीय संविधान का संशोधन किस देश के संविधान से प्रेरित है? (MPPSC)",opts:["अमेरिका","ब्रिटेन","दक्षिण अफ्रीका","ऑस्ट्रेलिया"],ans:2,exp:"संविधान संशोधन प्रक्रिया दक्षिण अफ्रीका के संविधान से प्रेरित है।"},
+  {q:"'मूलभूत ढांचे के सिद्धांत' का प्रतिपादन किस केस में हुआ? (UPSC 2015)",opts:["गोलकनाथ केस","केशवानन्द भारती केस","मिनर्वा मिल्स केस","मेनका गांधी केस"],ans:1,exp:"केशवानन्द भारती केस 1973 में Supreme Court ने 'मूलभूत ढांचे के सिद्धांत' का प्रतिपादन किया।"},
+  {q:"42वें संशोधन को किसने 'Mini Constitution' कहा? (UPPSC)",opts:["राजीव गांधी","इन्दिरा गांधी ने लागू किया","विपक्ष ने आलोचना में","Supreme Court ने"],ans:2,exp:"विपक्ष ने आलोचना करते हुए 42वें संशोधन 1976 को 'Mini Constitution' कहा क्योंकि इसमें संविधान का ढांचा बदला।"},
+  {q:"भारतीय संविधान में मूल कर्तव्य किस संशोधन से जोड़े गए? (UPSC Pre)",opts:["40वें","42वें","44वें","46वें"],ans:1,exp:"42वें संशोधन 1976 द्वारा Art. 51A में 10 मूल कर्तव्य जोड़े गए। 86वें से 11वां कर्तव्य जोड़ा गया।"},
+  {q:"सम्पत्ति का अधिकार मौलिक अधिकार से कब हटाया गया? (BPSC)",opts:["1975","1978","1980","1982"],ans:1,exp:"44वें संशोधन 1978 (जनता पार्टी — मोरारजी देशाई) द्वारा सम्पत्ति का अधिकार मौलिक अधिकारों से हटाया गया।"},
+  {q:"दल-बदल विरोधी कानून किस अनुसूची में है? (CGPSC)",opts:["9वीं","10वीं","11वीं","12वीं"],ans:1,exp:"दल-बदल विरोधी कानून 10वीं अनुसूची में है जो 52वें संशोधन 1985 द्वारा जोड़ी गई।"},
+  {q:"शिक्षा का अधिकार (RTE Act) किस वर्ष लागू हुआ? (UPSC)",opts:["2002","2005","2009","2010"],ans:3,exp:"86वें संशोधन 2002 ने Art.21A जोड़ा और RTE Act 2009 में पास हुआ जो 1 April 2010 से लागू हुआ।"},
+  {q:"42वें संशोधन से लोकसभा का कार्यकाल 6 वर्ष होने के बाद किसने इसे 5 वर्ष किया? (UPPSC)",opts:["इन्दिरा गांधी की वापसी","44वें संशोधन ने","46वें संशोधन ने","Supreme Court ने"],ans:1,exp:"44वें संशोधन 1978 (मोरारजी देशाई — जनता पार्टी) ने लोकसभा का कार्यकाल पुनः 5 वर्ष कर दिया।"},
+  {q:"NJAC को Supreme Court ने रद्द क्यों किया? (UPSC 2016)",opts:["संसद का अधिकार नहीं था","न्यायपालिका की स्वतन्त्रता को खतरा","बजट कम था","राज्यों ने विरोध किया"],ans:1,exp:"Supreme Court ने 2015 में 99वें संशोधन से बने NJAC को रद्द किया क्योंकि यह न्यायपालिका की स्वतन्त्रता (मूलभूत ढांचा) को प्रभावित करता था।"},
+  {q:"संविधान का कौन-सा अनुच्छेद 6-14 वर्ष के बच्चों की शिक्षा से सम्बन्धित है? (MPPSC)",opts:["Art. 19","Art. 21","Art. 21A","Art. 22"],ans:2,exp:"86वें संशोधन 2002 द्वारा जोड़ा गया Art. 21A — 6 से 14 वर्ष तक बच्चों को निःशुल्क व अनिवार्य शिक्षा का मौलिक अधिकार।"},
+  {q:"8वीं अनुसूची में मूलतः कितनी भाषाएं थीं? (JPSC)",opts:["12","14","16","18"],ans:1,exp:"1950 में मूल संविधान में 8वीं अनुसूची में 14 भाषाएं थीं। अब 22 हैं।"},
+  {q:"बोडो, डोगरी, मैथिली और संथाली भाषाएं किस संशोधन से जोड़ी गईं? (CGPSC)",opts:["71वें","86वें","92वें","97वें"],ans:2,exp:"92वें संशोधन 2003 द्वारा इन चार भाषाओं को 8वीं अनुसूची में जोड़ा गया।"},
+  {q:"GST को संवैधानिक मान्यता किस संशोधन से मिली? (UPSC)",opts:["99वें","100वें","101वें","102वें"],ans:2,exp:"101वें संशोधन 2016 द्वारा GST को संवैधानिक मान्यता मिली और 1 July 2017 से लागू हुआ।"},
+  {q:"किस संशोधन ने 'समाजवादी' और 'पंथनिरपेक्ष' शब्द प्रस्तावना में जोड़े? (UPPSC)",opts:["40वें","42वें","44वें","52वें"],ans:1,exp:"42वें संशोधन 1976 ने प्रस्तावना में 'समाजवादी', 'पंथनिरपेक्ष' और 'अखण्डता' तीनों शब्द एक साथ जोड़े।"},
+  {q:"EWS के लिए 10% आरक्षण किस अनुच्छेद से दिया गया? (UPSC 2020)",opts:["Art. 14 व 15","Art. 15(6) व 16(6)","Art. 16(4) व 16(5)","Art. 19 व 21"],ans:1,exp:"103वें संशोधन 2019 द्वारा Art. 15(6) व 16(6) जोड़े गए जो EWS को 10% आरक्षण देते हैं।"},
+  {q:"कौन-सा संशोधन 'सबसे विवादित संशोधन' कहलाता है? (BPSC)",opts:["44वां","42वां","52वां","61वां"],ans:1,exp:"42वां संशोधन 1976 (इन्दिरा गांधी — आपातकाल) सबसे विवादित संशोधन माना जाता है।"},
+  {q:"1st संशोधन की विशेष बात क्या है? (UPSC)",opts:["यह संसद ने किया","यह न्यायालय ने किया","यह संविधान सभा ने किया","यह राज्यों ने किया"],ans:2,exp:"1st संशोधन 1951 एकमात्र ऐसा संशोधन है जो संविधान सभा ने किया। बाकी सभी संसद ने।"},
+  {q:"National Commission for Backward Classes को संवैधानिक दर्जा किस संशोधन से मिला? (UPSC 2019)",opts:["100वें","101वें","102वें","103वें"],ans:2,exp:"102वें संशोधन 2018 द्वारा NCBC को संवैधानिक दर्जा मिला। Art.338B (राज्य OBC) और Art.342A जोड़े गए।"},
+  {q:"मंत्रिपरिषद में PM सहित 15% की सीमा किस संशोधन से आई? (JPSC)",opts:["86वें","88वें","91वें","93वें"],ans:2,exp:"91वें संशोधन 2003 द्वारा यह व्यवस्था की गई कि केन्द्र में PM सहित मंत्रिपरिषद की संख्या लोकसभा के 15% से अधिक नहीं होगी।"},
+  {q:"44वें संशोधन ने Art. 352 में कौन-सा शब्द जोड़ा? (MPPSC)",opts:["मंत्रिपरिषद","मंत्रिमंडल","प्रधानमंत्री","राष्ट्रपति"],ans:1,exp:"44वें संशोधन 1978 ने Art. 352 (राष्ट्रीय आपात) में 'मंत्रिमंडल' शब्द जोड़ा — अब आपात की सिफारिश मंत्रिमंडल करे।"},
+  {q:"106वें संशोधन के अनुसार Art.330A किससे सम्बन्धित है? (CGPSC)",opts:["SC/ST आरक्षण","लोकसभा में महिला 1/3 आरक्षण","OBC आरक्षण","EWS आरक्षण"],ans:1,exp:"106वें संशोधन 2023 से जोड़ा Art.330A लोकसभा में महिलाओं को 1/3 (33%) आरक्षण देता है।"},
+  {q:"97वें संशोधन द्वारा संविधान में क्या जोड़ा गया? (UPPSC)",opts:["Part IX-A (पंचायत)","Part IX-B (सहकारी समिति)","Part IX-C (नगर निकाय)","Part X"],ans:1,exp:"97वें संशोधन 2011 द्वारा Part IX-B — सहकारी समितियां जोड़ी गई।"},
+  {q:"सिन्धी भाषा को 8वीं अनुसूची में किस संशोधन से जोड़ा गया? (BPSC)",opts:["18वें","19वें","21वें","23वें"],ans:2,exp:"21वें संशोधन 1967 द्वारा सिन्धी भाषा को 8वीं अनुसूची में जोड़ा गया — अनुसूची 14 से 15 हुई।"},
+  {q:"104वें संशोधन में क्या परिवर्तन हुआ? (UPSC 2020)",opts:["GST लागू","Anglo Indian नामांकन रद्द + SC/ST+10 वर्ष","EWS आरक्षण","महिला 33%"],ans:1,exp:"104वें संशोधन 2019 ने लोकसभा व राज्य विधानसभाओं में Anglo Indian के नामांकन को रद्द किया और SC/ST आरक्षण 10 वर्ष और बढ़ाया (2030 तक)।"}
+];
+
+function renderQuiz(questions,containerId){
+  const c=document.getElementById(containerId);
+  c.innerHTML='';
+  questions.forEach((q,i)=>{
+    const d=document.createElement('div');
+    d.className='mcq-card';
+    d.innerHTML=`<div class="q-num">प्रश्न ${i+1} / ${questions.length}</div>
+      <div class="question">${q.q}</div>
+      <div class="options">${q.opts.map((o,j)=>`<button class="option-btn" onclick="selectAns(this,${i},${j},'${containerId}')">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>
+      <div class="explanation" id="exp-${containerId}-${i}">💡 ${q.exp}</div>`;
+    c.appendChild(d);
+  });
+}
+renderQuiz(rjQuestions,'rj-questions');
+renderQuiz(stateQuestions,'state-questions');
+
+const scores={rj:0,state:0};
+const answered={rj:new Set(),state:new Set()};
+const results={rj:{correct:0,wrong:0},state:{correct:0,wrong:0}};
+
+function getQ(cid){return cid==='rj-questions'?rjQuestions:stateQuestions;}
+function getPfx(cid){return cid==='rj-questions'?'rj':'state';}
+
+function selectAns(btn,qi,oi,cid){
+  const pfx=getPfx(cid);
+  if(answered[pfx].has(qi))return;
+  answered[pfx].add(qi);
+  const qs=getQ(cid);
+  const ca=qs[qi].ans;
+  const allB=btn.closest('.options').querySelectorAll('.option-btn');
+  allB.forEach(b=>b.disabled=true);
+  if(oi===ca){btn.classList.add('correct');scores[pfx]=parseFloat((scores[pfx]+1).toFixed(2));results[pfx].correct++;}
+  else{btn.classList.add('wrong');allB[ca].classList.add('correct');scores[pfx]=parseFloat((scores[pfx]-1/3).toFixed(2));results[pfx].wrong++;}
+  document.getElementById(`exp-${cid}-${qi}`).classList.add('show');
+  document.getElementById(pfx+'-score').textContent=scores[pfx].toFixed(2);
+  document.getElementById(pfx+'-correct').textContent=results[pfx].correct;
+  document.getElementById(pfx+'-wrong').textContent=results[pfx].wrong;
+}
+
+function submitQuiz(pfx){
+  const s=scores[pfx];const c=results[pfx].correct;const w=results[pfx].wrong;
+  const t=25;let emoji,grade,title;const pct=(c/t)*100;
+  if(pct>=80){emoji='🏆';grade='शानदार! RAS Topper!';title='उत्कृष्ट';}
+  else if(pct>=60){emoji='🎯';grade='अच्छा! थोड़ा और करो';title='अच्छा';}
+  else if(pct>=40){emoji='📚';grade='ठीक है, फिर से पढ़ो';title='औसत';}
+  else{emoji='💪';grade='हिम्मत रखो! Revision करो';title='और मेहनत करो';}
+  document.getElementById('popup-emoji').textContent=emoji;
+  document.getElementById('popup-title').textContent=title;
+  document.getElementById('popup-score').textContent=s.toFixed(2)+' / '+t;
+  document.getElementById('popup-detail').textContent=`✅ सही: ${c} | ❌ गलत: ${w} | ⬜ छोड़े: ${t-c-w}`;
+  document.getElementById('popup-grade').textContent=grade;
+  document.getElementById('result-popup').classList.add('show');
+}
+function closePopup(){document.getElementById('result-popup').classList.remove('show');}
+</script>
+</body>
+</html>

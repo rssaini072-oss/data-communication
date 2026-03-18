@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>राष्ट्रीय आपातकाल + राजनीतिक दल — Revision File | RPSC PSI & RAS</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--saffron:#E8440A;--saffron-l:#FF6B2B;--saffron-bg:#FFF3ED;--green:#1A7A4A;--green-l:#2EAD69;--green-bg:#EDFAF3;--blue:#1A5FA8;--blue-l:#2E82D4;--blue-bg:#EDF4FF;--purple:#6B3FA0;--purple-bg:#F5EEFF;--amber:#C67C0A;--amber-bg:#FFF8E6;--teal:#0F7A7A;--teal-bg:#E6FAFA;--coral:#C0392B;--coral-bg:#FDECEA;--pink:#A0296B;--pink-bg:#FDEEF6;--navy:#0D2137;--bg:#F5F1EC;--surface:#FFFFFF;--text:#1A1208;--text2:#5A4A35;--text3:#9A8A75;--border:#E0D5C8;--bstrong:#C0B0A0;--r:12px;--rsm:8px;--sh:0 2px 10px rgba(0,0,0,.07);--shh:0 6px 22px rgba(0,0,0,.13)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Baloo 2',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;min-height:100vh}
+/* HEADER */
+.hdr{background:linear-gradient(135deg,#0D1A2D 0%,#1A2D0D 60%,#2D0D1A 100%);padding:16px 20px 12px;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--saffron)}
+.hdr-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.hbadge{background:var(--saffron);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.hbadge.g{background:var(--green)}
+.hdr h1{font-size:18px;font-weight:800;color:#fff;flex:1}
+.hdr h1 span{color:var(--saffron-l)}
+/* SEARCH */
+.srch-w{position:relative;margin-bottom:10px}
+.srch-w input{width:100%;padding:9px 16px 9px 38px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:28px;color:#fff;font-family:'Baloo 2',sans-serif;font-size:13px;outline:none;transition:.2s}
+.srch-w input::placeholder{color:rgba(255,255,255,.45)}
+.srch-w input:focus{background:rgba(255,255,255,.17);border-color:var(--saffron-l)}
+.srch-ico{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:15px;pointer-events:none}
+.srch-drop{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shh);z-index:200;max-height:210px;overflow-y:auto}
+.srch-drop.show{display:block}
+.sd-it{padding:8px 13px;cursor:pointer;font-size:12.5px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px;transition:.15s}
+.sd-it:last-child{border:none}
+.sd-it:hover{background:var(--saffron-bg)}
+.sd-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+/* TABS */
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tbtn{padding:6px 13px;border:1.5px solid rgba(255,255,255,.15);border-radius:20px;background:transparent;color:rgba(255,255,255,.55);cursor:pointer;font-family:'Baloo 2',sans-serif;font-size:12px;font-weight:600;transition:.2s;white-space:nowrap}
+.tbtn:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.tbtn.active{background:var(--saffron);border-color:var(--saffron);color:#fff}
+/* MAIN */
+.main{padding:14px 16px;max-width:960px;margin:0 auto}
+.panel{display:none;animation:fadeIn .3s ease}
+.panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+/* SECTION */
+.stitle{font-size:14.5px;font-weight:700;margin:16px 0 9px;padding-bottom:5px;border-bottom:2px solid var(--saffron);display:flex;align-items:center;gap:7px}
+.stitle::before{content:'';display:inline-block;width:4px;height:17px;background:var(--saffron);border-radius:2px}
+/* GRID */
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:11px;margin-bottom:13px}
+/* CARDS */
+.card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:13px;box-shadow:var(--sh);transition:box-shadow .2s}
+.card:hover{box-shadow:var(--shh)}
+.card.cb{border-top:3px solid var(--blue)}
+.card.cg{border-top:3px solid var(--green)}
+.card.ca{border-top:3px solid var(--amber)}
+.card.cp{border-top:3px solid var(--purple)}
+.card.cc{border-top:3px solid var(--coral)}
+.card.ct{border-top:3px solid var(--teal)}
+.card.cs{border-top:3px solid var(--saffron)}
+.card.cpk{border-top:3px solid var(--pink)}
+.card.cn{border-top:3px solid var(--navy)}
+.card h3{font-size:13px;font-weight:700;margin-bottom:7px}
+.card h3.blue{color:var(--blue)}.card h3.green{color:var(--green)}.card h3.amber{color:var(--amber)}.card h3.purple{color:var(--purple)}.card h3.coral{color:var(--coral)}.card h3.teal{color:var(--teal)}.card h3.saffron{color:var(--saffron)}.card h3.pink{color:var(--pink)}.card h3.navy{color:var(--navy)}
+.card ul{padding-left:15px}.card ul li{font-size:12.5px;line-height:1.85;color:var(--text)}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.tag{display:inline-block;padding:2px 9px;border-radius:11px;font-size:11px;font-weight:600}
+.tb{background:var(--blue-bg);color:var(--blue)}.tg{background:var(--green-bg);color:var(--green)}.ta{background:var(--amber-bg);color:var(--amber)}.tr{background:var(--coral-bg);color:var(--coral)}.tp{background:var(--purple-bg);color:var(--purple)}.tt{background:var(--teal-bg);color:var(--teal)}.ts{background:var(--saffron-bg);color:var(--saffron)}
+/* HIGHLIGHT */
+.hl{background:var(--amber-bg);border-radius:3px;padding:1px 5px;color:var(--amber);font-weight:600;font-size:11.5px}
+.hlr{background:var(--coral-bg);border-radius:3px;padding:1px 5px;color:var(--coral);font-weight:600;font-size:11.5px}
+.hlg{background:var(--green-bg);border-radius:3px;padding:1px 5px;color:var(--green);font-weight:600;font-size:11.5px}
+/* MNEMONIC */
+.mne{background:linear-gradient(135deg,var(--purple-bg),var(--teal-bg));border:1px solid #C8B5E8;border-radius:var(--rsm);padding:8px 11px;font-size:12px;margin-top:8px;color:var(--purple);font-weight:500}
+.mne strong{color:var(--teal)}
+/* TABLE */
+.tw{overflow-x:auto;margin:7px 0;border-radius:var(--rsm);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#EDE5D8;padding:8px 10px;text-align:left;font-weight:700;color:var(--text);border-bottom:1px solid var(--bstrong);white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#FAFAF6}
+tr:hover td{background:var(--saffron-bg)}
+td.imp{color:var(--saffron);font-weight:700}
+td.gv{color:var(--green);font-weight:700}
+td.bv{color:var(--blue);font-weight:700}
+/* MCQ */
+.sbar{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:11px 15px;margin-bottom:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:7px;box-shadow:var(--sh)}
+.slabel{font-size:13px;font-weight:700}.snums{display:flex;gap:11px;font-size:13px}
+.sv{font-weight:700;color:var(--blue)}.sc{font-weight:700;color:var(--green)}.sw{font-weight:700;color:var(--coral)}
+.mq{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:13px;margin-bottom:9px;box-shadow:var(--sh)}
+.mqq{font-size:13px;font-weight:600;margin-bottom:9px;line-height:1.6}
+.mqq .qn{color:var(--saffron);font-weight:800;margin-right:4px}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ob{padding:8px 10px;border:1.5px solid var(--bstrong);border-radius:var(--rsm);background:var(--bg);color:var(--text);cursor:pointer;font-family:'Baloo 2',sans-serif;font-size:12px;text-align:left;transition:.15s;line-height:1.4}
+.ob:hover:not(:disabled){background:var(--blue-bg);border-color:var(--blue)}
+.ob.correct{background:var(--green-bg)!important;border-color:var(--green)!important;color:var(--green)!important;font-weight:700}
+.ob.wrong{background:var(--coral-bg)!important;border-color:var(--coral)!important;color:var(--coral)!important}
+.ob.show-correct{background:var(--green-bg)!important;border-color:var(--green)!important;color:var(--green)!important}
+.ob:disabled{cursor:default}
+.exp{display:none;margin-top:7px;padding:7px 10px;background:var(--blue-bg);border-radius:var(--rsm);font-size:11.5px;color:var(--blue);border-left:3px solid var(--blue-l)}
+.exp.show{display:block}
+.sub-btn{display:block;margin:18px auto 0;padding:11px 30px;background:linear-gradient(135deg,var(--saffron),#FF8C2B);color:#fff;border:none;border-radius:28px;font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 4px 15px rgba(232,68,10,.28);transition:.2s}
+.sub-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(232,68,10,.38)}
+/* MODAL */
+.ovl{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;align-items:center;justify-content:center}
+.ovl.show{display:flex}
+.modal{background:var(--surface);border-radius:18px;padding:28px;max-width:340px;width:90%;text-align:center;box-shadow:0 20px 55px rgba(0,0,0,.22);animation:popIn .3s cubic-bezier(.34,1.56,.64,1)}
+@keyframes popIn{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+.m-grade{font-size:46px;margin-bottom:7px}
+.m-title{font-size:19px;font-weight:800;margin-bottom:11px}
+.m-stats{background:var(--bg);border-radius:var(--r);padding:13px;margin-bottom:14px;text-align:left}
+.m-stat{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:1px solid var(--border)}
+.m-stat:last-child{border:none}
+.m-stat b{color:var(--saffron)}
+.m-close{padding:9px 26px;background:var(--saffron);color:#fff;border:none;border-radius:18px;font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+/* LAST MINUTE */
+.lmc{background:var(--surface);border-radius:var(--r);border-left:4px solid var(--purple);border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:9px 13px;box-shadow:var(--sh)}
+.lmc h4{font-size:12.5px;font-weight:700;color:var(--purple);margin-bottom:4px}
+.lmc p{font-size:12px;color:var(--text2);line-height:1.6}
+.smcard{background:linear-gradient(135deg,#0D1A2D,#1A2D0D);border-radius:var(--r);padding:15px;color:#fff}
+.smcard h3{font-size:13.5px;font-weight:700;color:var(--saffron-l);margin-bottom:9px}
+.sm-row{font-size:12.5px;line-height:1.85;margin-bottom:5px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:5px}
+.sm-row:last-child{border:none;margin:0}
+.sm-row .k{color:var(--saffron-l);font-weight:700}
+.sm-row .v{color:rgba(255,255,255,.8)}
+@media(max-width:600px){.og{grid-template-columns:1fr}.g2{grid-template-columns:1fr}.hdr h1{font-size:15px}.snums{flex-wrap:wrap;gap:6px}}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-thumb{background:var(--bstrong);border-radius:3px}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-top">
+    <span class="hbadge">RPSC PSI 2025</span>
+    <h1>राष्ट्रीय <span>आपातकाल</span> + राजनीतिक दल — Complete Revision</h1>
+    <span class="hbadge g">RAS Pre</span>
+  </div>
+  <div class="srch-w">
+    <span class="srch-ico">🔍</span>
+    <input type="text" id="sInp" placeholder="हिंदी में topic खोजें... जैसे: अनुच्छेद 352, राष्ट्रपति शासन, INC, BJP, आपातकाल 1975" autocomplete="off">
+    <div class="srch-drop" id="sDrop"></div>
+  </div>
+  <div class="tabs">
+    <button class="tbtn active" onclick="showTab('revision',this)">📚 Revision</button>
+    <button class="tbtn" onclick="showTab('summary',this)">📊 Summary Table</button>
+    <button class="tbtn" onclick="showTab('rjpyq',this)">🏜 RJ PYQ (30)</button>
+    <button class="tbtn" onclick="showTab('stpyq',this)">🇮🇳 States PYQ (30)</button>
+    <button class="tbtn" onclick="showTab('lastmin',this)">⚡ Last Minute</button>
+  </div>
+</div>
+
+<div class="main">
+<!-- ==================== REVISION ==================== -->
+<div id="revision" class="panel active">
+
+  <div class="stitle" id="s-aapat">🚨 आपातकाल — Overview (अनुच्छेद 352-360)</div>
+  <div class="g2">
+    <div class="card cs" id="overview">
+      <h3 class="saffron">तीन प्रकार के आपातकाल</h3>
+      <div class="tw"><table>
+        <tr><th>प्रकार</th><th>Article</th><th>कारण</th><th>उद्गम</th></tr>
+        <tr><td class="imp">राष्ट्रीय आपातकाल</td><td class="bv">352</td><td>युद्ध/बाहरी आक्रमण/सशस्त्र विद्रोह</td><td>जर्मनी + भारत शासन Act 1935</td></tr>
+        <tr><td class="imp">राष्ट्रपति शासन</td><td class="bv">356</td><td>संवैधानिक तंत्र विफल</td><td>जर्मनी + भारत शासन अधिनियम 1935</td></tr>
+        <tr><td class="imp">वित्तीय आपातकाल</td><td class="bv">360</td><td>वित्तीय स्थिरता खतरे में</td><td>USA से लिया</td></tr>
+      </table></div>
+      <div class="mne">🧠 Trick: <strong>"352=युद्ध, 356=राज्य, 360=रुपया"</strong> — 3 आपातकाल = 3 अलग अनुच्छेद</div>
+    </div>
+    <div class="card cb" id="art352">
+      <h3 class="blue">अनुच्छेद 352 — राष्ट्रीय आपातकाल</h3>
+      <div class="tags"><span class="tag tb">भाग 18</span><span class="tag tr">अनु. 352-360</span></div>
+      <ul>
+        <li>उद्घोषणा → <span class="hl">राष्ट्रपति</span> करता है</li>
+        <li>44वां CA 1978 → <span class="hl">मंत्रिमंडल</span> द्वारा राष्ट्रपति को लिखित सलाह देना अनिवार्य</li>
+        <li>मूल संविधान में "मंत्रिमंडल" शब्द नहीं था</li>
+        <li>44वें CA के तहत अनु. 352 में "मंत्रिमंडल" जोड़ा</li>
+        <li>कारण: <span class="hl">युद्ध</span> / <span class="hl">बाहरी आक्रमण</span> / <span class="hl">सशस्त्र विद्रोह</span></li>
+        <li>मूल में "आंतरिक अशान्ति" शब्द था — 44वें CA से <span class="hlr">"सशस्त्र विद्रोह"</span> किया गया</li>
+        <li>44वां CA 1978 → संपूर्ण भारत या किसी विशेष स्थान पर भी लगाया जा सकता है</li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"44वां CA = 4 बदलाव"</strong> — मंत्रिमंडल/लिखित/सशस्त्र विद्रोह/विशेष क्षेत्र</div>
+    </div>
+    <div class="card cg" id="anumoden">
+      <h3 class="green">अनुमोदन एवं अवधि (Art 352)</h3>
+      <ul>
+        <li>अनुमोदन → राष्ट्रीय आपातकाल लगाने के <span class="hl">1 माह के भीतर</span> संसद के दोनों सदनों का अनुमोदन अनिवार्य</li>
+        <li>अवधि → एक बार में <span class="hl">6 माह</span> (6-6 माह के अनुमोदन पर अनिश्चितकाल तक)</li>
+        <li>समाप्त → लोकसभा के <span class="hl">1/10 सदस्यों</span> द्वारा लिखित प्रस्ताव पर</li>
+        <li>विशेष बहुमत → कुल सदस्यों का बहुमत + उपस्थित एवं मत देने वाले सदस्यों का 2/3</li>
+        <li>अनुमोदन विधि → <span class="hl">साधारण बहुमत से नहीं — विशेष बहुमत</span> चाहिए</li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"1 माह में अनुमोदन, 6 माह अवधि, 1/10 से समाप्त"</strong></div>
+    </div>
+    <div class="card ca" id="prabhav">
+      <h3 class="amber">Art 352 के प्रभाव — Art 358 & 359</h3>
+      <ul>
+        <li><span class="hl">Art 358</span> → जब युद्ध या बाहरी आक्रमण के आधार पर आपातकाल लगे → <span class="hlg">अनु. 19 स्वतः निलंबित</span></li>
+        <li>सशस्त्र विद्रोह के आधार पर → <span class="hlr">अनु. 19 निलंबित नहीं होगा</span></li>
+        <li><span class="hl">Art 359</span> → राष्ट्रपति आपातकाल के दौरान <span class="hl">अनु. 20 व 21 को छोड़कर</span> मूल अधिकारी को निलंबित कर सकता है</li>
+        <li>अनु. 20 व 21 (जीवन जीने का अधिकार) → <span class="hlg">कभी निलंबित नहीं</span></li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"358 = 19 (युद्ध पर) | 359 = 20-21 छोड़कर सब"</strong></div>
+    </div>
+    <div class="card cc" id="tinhaar">
+      <h3 class="coral">भारत में तीन बार राष्ट्रीय आपातकाल</h3>
+      <div class="tw"><table>
+        <tr><th>बार</th><th>अवधि</th><th>कारण</th><th>राष्ट्रपति</th><th>PM</th></tr>
+        <tr><td class="gv">पहली बार</td><td class="imp">1962-68</td><td>भारत-चीन युद्ध</td><td>डॉ. सर्वपल्ली राधाकृष्णन</td><td>जवाहर लाल नेहरू</td></tr>
+        <tr><td class="gv">दूसरी बार</td><td class="imp">1971-77</td><td>भारत-पाक युद्ध</td><td>V.V. गिरी</td><td>इंदिरा गांधी</td></tr>
+        <tr><td class="gv">तीसरी बार</td><td class="imp">25/26 Jun 1975</td><td>आंतरिक अशान्ति/सशस्त्र विद्रोह</td><td>फखरुद्दीन अली अहमद</td><td>इंदिरा गांधी</td></tr>
+      </table></div>
+      <div class="mne">🧠 Trick: <strong>"62 चीन-नेहरू | 71 पाक-इंदिरा | 75 आंतरिक-इंदिरा"</strong></div>
+    </div>
+    <div class="card ct" id="1975">
+      <h3 class="teal">1975 का आपातकाल — विशेष तथ्य</h3>
+      <ul>
+        <li>तिथि: <span class="hl">25/26 जून 1975</span></li>
+        <li>कारण: आंतरिक अशान्ति / सशस्त्र विद्रोह</li>
+        <li>राष्ट्रपति: <span class="hl">फखरुद्दीन अली अहमद</span></li>
+        <li>PM: इंदिरा गांधी</li>
+        <li>यह <span class="hlr">सर्वाधिक विवादास्पद आपातकाल</span> था</li>
+        <li>इलाहाबाद HC ने इंदिरा गांधी का चुनाव रद्द किया था</li>
+        <li>जनता पार्टी सरकार के आने पर समाप्त हुआ</li>
+        <li>44वां CA 1978 इसी के बाद की प्रतिक्रिया में लाया गया</li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"25 Jun 1975 = काली रात" | फखरुद्दीन = 3rd Emergency</strong></div>
+    </div>
+  </div>
+
+  <div class="stitle" id="s-356">🏛 अनुच्छेद 356 — राष्ट्रपति शासन</div>
+  <div class="g2">
+    <div class="card cb" id="art356">
+      <h3 class="blue">Art 356 — राष्ट्रपति शासन (राज्य आपातकाल)</h3>
+      <div class="tags"><span class="tag tb">राष्ट्रपति शासन</span><span class="tag tr">संवैधानिक तंत्र विफल</span></div>
+      <ul>
+        <li>कारण → <span class="hl">राज्य का संवैधानिक तंत्र विफल होना</span></li>
+        <li>अनुमोदन → संसद द्वारा <span class="hl">2 माह के भीतर</span></li>
+        <li>अवधि → एक बार अनुमोदन पर <span class="hl">6 माह</span></li>
+        <li>अधिकतम → 6-6 माह के अनुमोदन पर <span class="hl">3 साल तक</span></li>
+        <li>अपवाद → <span class="hlr">पंजाब (5 साल तक)</span></li>
+        <li>राज्य की मंत्री शक्तियां → <span class="hl">संसद के पास चली जाती हैं</span></li>
+        <li>समाप्ति → <span class="hl">लोकसभा के प्रस्ताव</span> द्वारा</li>
+        <li><span class="hlg">मूल अधिकारों पर कोई प्रभाव नहीं पड़ेगा</span></li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"356 = 2 माह अनुमोदन, 3 साल max | पंजाब=5 साल"</strong></div>
+    </div>
+    <div class="card cg" id="rashtrapatishashan">
+      <h3 class="green">राष्ट्रपति शासन — महत्वपूर्ण रिकॉर्ड</h3>
+      <ul>
+        <li>सर्वाधिक बार राष्ट्रपति शासन: <span class="hl">मणिपुर + उत्तरप्रदेश → 10 बार</span></li>
+        <li>न्यूनतम → <span class="hlg">कर्नाटक = 7 दिन</span></li>
+        <li>न्यूनतम → पश्चिम बंगाल = 7 दिन</li>
+        <li>न्यूनतम → बिहार = 8 दिन</li>
+        <li><span class="hlr">छत्तीसगढ़ व तेलंगाना में आज तक राष्ट्रपति शासन लागू नहीं</span></li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"मणिपुर-UP = सर्वाधिक (10), कर्नाटक = सबसे कम (7 दिन)"</strong></div>
+    </div>
+    <div class="card ca" id="art360">
+      <h3 class="amber">Art 360 — वित्तीय आपातकाल</h3>
+      <div class="tags"><span class="tag ta">USA से लिया</span><span class="tag tr">कभी लागू नहीं</span></div>
+      <ul>
+        <li>कब → <span class="hl">जब देश में वित्तीय स्थिरता उत्पन्न हो</span></li>
+        <li>प्रभाव → सरकारी कर्मचारियों व पदाधिकारियों के वेतन में कटौती</li>
+        <li>अनुमोदन → संसद द्वारा <span class="hl">2 माह के भीतर</span></li>
+        <li>समाप्ति → <span class="hl">लोकसभा के प्रस्ताव</span> द्वारा</li>
+        <li>मूल अधिकारों पर → <span class="hlg">कोई प्रभाव नहीं</span></li>
+        <li><span class="hlr">भारत में अब तक एक बार भी वित्तीय आपातकाल नहीं लगा</span></li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"360 = रुपया = कभी नहीं लगा | USA से लिया"</strong></div>
+    </div>
+    <div class="card cp" id="comparel">
+      <h3 class="purple">तीनों आपातकाल — अनुमोदन तुलना</h3>
+      <div class="tw"><table>
+        <tr><th>आपातकाल</th><th>अनुच्छेद</th><th>अनुमोदन समय</th><th>अवधि</th><th>समाप्ति</th></tr>
+        <tr><td>राष्ट्रीय</td><td class="imp">352</td><td class="bv">1 माह</td><td>6 माह</td><td>LS के 1/10 सदस्य</td></tr>
+        <tr><td>राष्ट्रपति शासन</td><td class="imp">356</td><td class="bv">2 माह</td><td>6 माह (max 3 yr)</td><td>LS प्रस्ताव</td></tr>
+        <tr><td>वित्तीय</td><td class="imp">360</td><td class="bv">2 माह</td><td>अनिश्चित</td><td>LS प्रस्ताव</td></tr>
+      </table></div>
+      <div class="mne">🧠 Trick: <strong>"352=1 माह | 356+360=2 माह"</strong></div>
+    </div>
+  </div>
+
+  <div class="stitle" id="s-dal">🗳 राजनीतिक दल — व्यवस्था</div>
+  <div class="g2">
+    <div class="card cs" id="dalvyavastha">
+      <h3 class="saffron">दलीय व्यवस्था के प्रकार</h3>
+      <div class="tw"><table>
+        <tr><th>प्रकार</th><th>देश</th><th>दल</th></tr>
+        <tr><td>एक दलीय</td><td>चीन, रूस</td><td>साम्यवादी दल</td></tr>
+        <tr><td>द्विदलीय</td><td>USA</td><td>रिपब्लिकन + डेमोक्रेटिक</td></tr>
+        <tr><td>द्विदलीय</td><td>ब्रिटेन</td><td>कंजरवेटिव + लेबर पार्टी</td></tr>
+        <tr><td>बहुदलीय</td><td>भारत, पाक, बांग्लादेश, फ्रांस</td><td>अनेक</td></tr>
+      </table></div>
+      <div class="mne">🧠 Trick: <strong>"USA-UK = 2 दल | चीन-रूस = 1 | भारत = बहुदल"</strong></div>
+    </div>
+    <div class="card cb" id="rashtriyidal">
+      <h3 class="blue">राष्ट्रीय दल की शर्तें (कोई भी एक)</h3>
+      <ul>
+        <li>① LS चुनावों में कम से कम <span class="hl">4 राज्यों में कुल वैध मतों का 6% मत प्राप्त</span> + <span class="hl">4 सीट जीत</span></li>
+        <li>② LS चुनाव में कम से कम <span class="hl">2% सीट</span> (न्यूनतम 11 सीट) पर विजयी हो</li>
+        <li>③ कम से कम <span class="hl">4 राज्यों में राज्यस्तरीय पार्टी का दर्जा</span></li>
+        <li>वर्तमान में भारत में → <span class="hl">6 राष्ट्रीय दल</span></li>
+        <li>राज्य स्तरीय दल → <span class="hl">72</span></li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"4 राज्य + 6% = राष्ट्रीय | 2% LS या 4 राज्यों में State Party"</strong></div>
+    </div>
+    <div class="card cg" id="rajyaidal">
+      <h3 class="green">राज्य स्तरीय पार्टी की शर्तें (कोई एक)</h3>
+      <ul>
+        <li>① LS चुनाव में कुल वैध मतों का <span class="hl">6% मत + 1 सीट</span></li>
+        <li>② पार्टी 25 सीटों में से <span class="hl">1/6 (एक बटा छः) प्राप्त</span></li>
+        <li>③ विधानसभा चुनाव में <span class="hl">6% मत + 2 सीट</span></li>
+        <li>④ 3 सीट या 3% सीट प्राप्त (जो भी ज्यादा हो)</li>
+        <li>⑤ LS+विधानसभा के कुल वैध मतों का <span class="hl">8% मत</span></li>
+      </ul>
+    </div>
+    <div class="card ca" id="mandalprapt">
+      <h3 class="amber">मान्यता प्राप्त दल का वर्गीकरण</h3>
+      <ul>
+        <li>मान्यता प्राप्त → राष्ट्रीय दल + राज्य स्तरीय दल</li>
+        <li>गैर मान्यता प्राप्त → जो आवश्यक शर्तें पूरी नहीं करते</li>
+        <li>राजनीतिक दल → 52वां CA 1985 → 10वीं अनुसूची (दलबदल)</li>
+        <li>जनप्रतिनिधित्व अधिनियम: <span class="hl">1951</span> के तहत</li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"52वां CA 1985 = 10वीं अनुसूची = दलबदल विरोधी"</strong></div>
+    </div>
+  </div>
+
+  <div class="stitle" id="s-rastdal">🏛 भारत के राष्ट्रीय दल</div>
+  <div class="g2">
+    <div class="card cs" id="inc">
+      <h3 class="saffron">① INC — भारतीय राष्ट्रीय कांग्रेस</h3>
+      <div class="tags"><span class="tag ts">स्थापना: 28 Dec 1885</span></div>
+      <ul>
+        <li>संस्थापक → <span class="hl">A.O. ह्यूम</span></li>
+        <li>स्थान → गोकुलदास तेजपाल संस्कृत विश्वविद्यालय (मुंबई)</li>
+        <li>प्रथम अध्यक्ष → <span class="hl">व्योमेश चन्द्र बनर्जी (W.C. बनर्जी)</span></li>
+        <li>महात्मा गांधी → 1924 में अध्यक्ष (बेलगांव)</li>
+        <li>वर्तमान अध्यक्ष → <span class="hlg">मल्लिकार्जुन खड़गे</span></li>
+        <li>2024 LS चुनाव → <span class="hl">99 सीट</span></li>
+        <li>चुनाव चिह्न: 1951-71 → दो बैलों की जोड़ी | 1971-79 → गाय व दूध पीता बछड़ा | 1979 → हाथ</li>
+        <li>विचारधारा → <span class="hl">उदारवादी</span></li>
+        <li>वायसराय → लॉर्ड डफरिन | PM → ग्लेक स्टोन (ब्रिटेन)</li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"1885 = A.O. ह्यूम ने बनाई | WC बनर्जी = 1st अध्यक्ष"</strong></div>
+    </div>
+    <div class="card cg" id="bjp">
+      <h3 class="green">② BJP — भारतीय जनता पार्टी</h3>
+      <div class="tags"><span class="tag tg">स्थापना: 6 Apr 1980</span></div>
+      <ul>
+        <li>मूल: भारतीय जनसंघ + जनता पार्टी</li>
+        <li>संस्थापक → <span class="hl">अटल बिहारी वाजपेयी</span>, लाल कृष्ण आडवाणी, मुरली मनोहर जोशी</li>
+        <li>वर्तमान अध्यक्ष → <span class="hlg">J.P. नड्डा</span></li>
+        <li>2024 LS में सीट → <span class="hl">240</span></li>
+        <li>चुनाव चिह्न → <span class="hl">कमल का फूल</span></li>
+        <li>विचारधारा → <span class="hl">हिन्दुत्ववादी / दक्षिणपंथी</span></li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"BJP = 1980 = कमल = वाजपेयी-आडवाणी"</strong></div>
+    </div>
+    <div class="card cb" id="bsp">
+      <h3 class="blue">③ BSP — बहुजन समाज पार्टी</h3>
+      <div class="tags"><span class="tag tb">स्थापना: 14 Apr 1984</span></div>
+      <ul>
+        <li>संस्थापक → <span class="hl">काशीराम</span></li>
+        <li>वर्तमान अध्यक्ष → <span class="hl">मायावती</span></li>
+        <li>चुनाव चिह्न → <span class="hl">हाथी</span></li>
+        <li>2024 LS में सीट → <span class="hlr">0</span></li>
+        <li>विचारधारा → <span class="hl">दलित व पिछड़े वर्गों का उत्थान/कल्याण</span></li>
+        <li>असम जनगण पार्टी का चुनाव चिह्न भी हाथी है</li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"14 Apr 1984 = काशीराम = हाथी = दलित दल"</strong></div>
+    </div>
+    <div class="card ca" id="npp">
+      <h3 class="amber">④ NPP — नेशनल पिपुल्स पार्टी</h3>
+      <div class="tags"><span class="tag ta">स्थापना: 6 Jan 2013</span></div>
+      <ul>
+        <li>संस्थापक → <span class="hl">P.A. संगमा</span></li>
+        <li>चुनाव चिह्न → <span class="hl">पुस्तक (Book)</span></li>
+        <li>वर्तमान अध्यक्ष → <span class="hl">कोनरोड संगमा</span></li>
+        <li>मुख्यतः <b>पूर्वोत्तर</b> भारत में प्रभावी</li>
+      </ul>
+    </div>
+    <div class="card ct" id="cpim">
+      <h3 class="teal">⑤ CPI(M) — मार्क्सवादी कम्युनिस्ट पार्टी</h3>
+      <div class="tags"><span class="tag tt">स्थापना: 7 Nov 1964</span></div>
+      <ul>
+        <li>संस्थापक → <span class="hl">EMS नंबूदरीपाड</span></li>
+        <li>वर्तमान अध्यक्ष → <span class="hl">सीताराम येचुरी</span></li>
+        <li>चुनाव चिह्न → <span class="hl">दराँती, हथौड़ा व तारा</span></li>
+        <li>2024 LS में सीट → 4</li>
+      </ul>
+    </div>
+    <div class="card cc" id="aap">
+      <h3 class="coral">⑥ AAP — आम आदमी पार्टी</h3>
+      <div class="tags"><span class="tag tr">स्थापना: 26 Nov 2012</span></div>
+      <ul>
+        <li>संस्थापक → <span class="hl">अरविन्द केजरीवाल</span></li>
+        <li>राष्ट्रीय दल का दर्जा → <span class="hl">2022</span></li>
+        <li>2024 LS में सीट → <span class="hl">3</span></li>
+        <li>चुनाव चिह्न → <span class="hl">झाड़ू</span></li>
+        <li>विचारधारा → <span class="hl">भ्रष्टाचार मुक्त भारत</span></li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"26 Nov 2012 = AAP = झाड़ू = 2022 में राष्ट्रीय दल"</strong></div>
+    </div>
+    <div class="card cpk" id="2023">
+      <h3 class="pink">2023 में राष्ट्रीय दर्जा समाप्त</h3>
+      <ul>
+        <li>TMC (तृणमूल कांग्रेस) → 1998 → ममता बनर्जी</li>
+        <li>CPI (भारतीय कम्युनिस्ट पार्टी) → <span class="hl">1925</span> → MN. राय</li>
+        <li>NCP (नेशनल कांग्रेस पार्टी) → 1999</li>
+      </ul>
+      <div class="mne">🧠 Trick: <strong>"2023 में तीन दलों का राष्ट्रीय दर्जा गया — TMC, CPI, NCP"</strong></div>
+    </div>
+    <div class="card cb" id="gathbandhan">
+      <h3 class="blue">गठबंधन (Political Alliances)</h3>
+      <div class="tw"><table>
+        <tr><th>गठबंधन</th><th>गठन</th><th>नेतृत्व</th><th>वर्तमान</th></tr>
+        <tr><td class="imp">NDA</td><td>1998</td><td>BJP</td><td>37 पार्टी</td></tr>
+        <tr><td class="imp">UPA</td><td>2004</td><td>कांग्रेस</td><td>सक्रिय नहीं</td></tr>
+        <tr><td class="imp">INDIA</td><td>18 Jul 2023</td><td>कांग्रेस</td><td>26 पार्टी</td></tr>
+      </table></div>
+      <div class="mne">🧠 Trick: <strong>"NDA(1998) BJP | UPA(2004) Congress | INDIA(2023) = 26 पार्टी"</strong></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== SUMMARY ==================== -->
+<div id="summary" class="panel">
+
+  <div class="stitle">📊 Master Table — तीनों आपातकाल तुलना</div>
+  <div class="tw"><table>
+    <tr><th>विषय</th><th>Art 352 (राष्ट्रीय)</th><th>Art 356 (राज्य/राष्ट्रपति शासन)</th><th>Art 360 (वित्तीय)</th></tr>
+    <tr><td>कारण</td><td>युद्ध/बाह्य आक्रमण/सशस्त्र विद्रोह</td><td>संवैधानिक तंत्र विफल</td><td>वित्तीय स्थिरता का संकट</td></tr>
+    <tr><td>उद्घोषणा</td><td class="imp">राष्ट्रपति (मंत्रिमंडल की लिखित सलाह पर)</td><td class="imp">राष्ट्रपति</td><td class="imp">राष्ट्रपति</td></tr>
+    <tr><td>अनुमोदन समय</td><td class="bv">1 माह</td><td class="bv">2 माह</td><td class="bv">2 माह</td></tr>
+    <tr><td>एक बार अवधि</td><td>6 माह</td><td>6 माह</td><td>अनिश्चित</td></tr>
+    <tr><td>अधिकतम अवधि</td><td>अनिश्चित</td><td>3 साल (पंजाब 5 साल)</td><td>अनिश्चित</td></tr>
+    <tr><td>अनु. 19 का प्रभाव</td><td class="imp">युद्ध/बाह्य→ स्वतः निलंबित (Art 358)</td><td>कोई प्रभाव नहीं</td><td>कोई प्रभाव नहीं</td></tr>
+    <tr><td>अनु. 20/21</td><td class="gv">कभी निलंबित नहीं</td><td class="gv">कभी निलंबित नहीं</td><td class="gv">कभी निलंबित नहीं</td></tr>
+    <tr><td>समाप्ति</td><td>LS के 1/10 सदस्य</td><td>LS प्रस्ताव</td><td>LS प्रस्ताव</td></tr>
+    <tr><td>उद्गम</td><td>जर्मनी + 1935 Act</td><td>जर्मनी + 1935 Act</td><td>USA</td></tr>
+    <tr><td>भारत में लागू</td><td class="imp">3 बार (1962, 1971, 1975)</td><td class="imp">100+ बार</td><td class="gv">एक बार भी नहीं</td></tr>
+  </table></div>
+
+  <div class="stitle">🗳 राष्ट्रीय दल — Master Table</div>
+  <div class="tw"><table>
+    <tr><th>दल</th><th>स्थापना</th><th>संस्थापक</th><th>चुनाव चिह्न</th><th>वर्तमान अध्यक्ष</th><th>2024 LS सीट</th><th>विचारधारा</th></tr>
+    <tr><td class="imp">INC</td><td>28 Dec 1885</td><td>A.O. ह्यूम</td><td>हाथ</td><td class="gv">मल्लिकार्जुन खड़गे</td><td class="bv">99</td><td>उदारवादी</td></tr>
+    <tr><td class="imp">BJP</td><td>6 Apr 1980</td><td>वाजपेयी, आडवाणी, जोशी</td><td>कमल</td><td class="gv">J.P. नड्डा</td><td class="bv">240</td><td>हिन्दुत्ववादी/दक्षिणपंथी</td></tr>
+    <tr><td class="imp">BSP</td><td>14 Apr 1984</td><td>काशीराम</td><td>हाथी</td><td class="gv">मायावती</td><td class="bv">0</td><td>दलित/पिछड़ा वर्ग</td></tr>
+    <tr><td class="imp">NPP</td><td>6 Jan 2013</td><td>P.A. संगमा</td><td>पुस्तक</td><td class="gv">कोनरोड संगमा</td><td>—</td><td>क्षेत्रीय</td></tr>
+    <tr><td class="imp">CPI(M)</td><td>7 Nov 1964</td><td>EMS नंबूदरीपाड</td><td>दराँती-हथौड़ा-तारा</td><td class="gv">सीताराम येचुरी</td><td class="bv">4</td><td>वामपंथी</td></tr>
+    <tr><td class="imp">AAP</td><td>26 Nov 2012</td><td>अरविन्द केजरीवाल</td><td>झाड़ू</td><td class="gv">—</td><td class="bv">3</td><td>भ्रष्टाचार विरोधी</td></tr>
+  </table></div>
+
+  <div class="stitle">⚡ Quick Reference — महत्वपूर्ण तथ्य</div>
+  <div class="tw"><table>
+    <tr><th>विषय</th><th>मुख्य तथ्य</th></tr>
+    <tr><td>44वां CA 1978 — बड़े बदलाव</td><td class="imp">मंत्रिमंडल लिखित सलाह + सशस्त्र विद्रोह शब्द + विशेष क्षेत्र में आपातकाल</td></tr>
+    <tr><td>तीसरे आपातकाल की तिथि</td><td class="imp">25/26 Jun 1975 | राष्ट्रपति: फखरुद्दीन अली अहमद</td></tr>
+    <tr><td>Art 20-21</td><td class="gv">किसी भी आपातकाल में निलंबित नहीं</td></tr>
+    <tr><td>Art 19</td><td class="imp">Art 352 (युद्ध/बाह्य) → Art 358 से स्वतः निलंबित</td></tr>
+    <tr><td>सर्वाधिक राष्ट्रपति शासन</td><td>मणिपुर + उत्तरप्रदेश (10 बार)</td></tr>
+    <tr><td>न्यूनतम राष्ट्रपति शासन</td><td>कर्नाटक (7 दिन), पश्चिम बंगाल (7 दिन)</td></tr>
+    <tr><td>वित्तीय आपातकाल</td><td class="gv">भारत में एक बार भी नहीं लगा</td></tr>
+    <tr><td>INC स्थापना</td><td class="imp">28 Dec 1885 | A.O. ह्यूम | WC बनर्जी (1st अध्यक्ष)</td></tr>
+    <tr><td>BJP स्थापना</td><td class="imp">6 Apr 1980 | वाजपेयी | कमल</td></tr>
+    <tr><td>BSP स्थापना</td><td class="imp">14 Apr 1984 | काशीराम | हाथी</td></tr>
+    <tr><td>AAP राष्ट्रीय दल</td><td class="imp">2022 में राष्ट्रीय दल का दर्जा</td></tr>
+    <tr><td>NDA गठन</td><td>1998 | नेतृत्व: BJP | 37 पार्टी</td></tr>
+    <tr><td>INDIA गठबंधन</td><td class="imp">18 Jul 2023 | कांग्रेस | 26 पार्टी</td></tr>
+    <tr><td>दलबदल विरोधी कानून</td><td class="imp">52वां CA 1985 → 10वीं अनुसूची</td></tr>
+    <tr><td>राष्ट्रीय दल वर्तमान संख्या</td><td class="imp">6</td></tr>
+    <tr><td>राज्य स्तरीय दल वर्तमान</td><td>72</td></tr>
+    <tr><td>CPI स्थापना</td><td>1925 | MN. राय</td></tr>
+    <tr><td>CPI(M) स्थापना</td><td>7 Nov 1964 | EMS नंबूदरीपाड</td></tr>
+  </table></div>
+
+</div>
+
+<!-- ==================== RJ PYQ ==================== -->
+<div id="rjpyq" class="panel">
+  <div class="sbar">
+    <span class="slabel">🏜 राजस्थान PYQ — 30 प्रश्न | +1 सही / -⅓ गलत</span>
+    <div class="snums"><span>स्कोर: <span class="sv" id="rj-s">0</span></span><span>✅ <span class="sc" id="rj-c">0</span></span><span>❌ <span class="sw" id="rj-w">0</span></span></div>
+  </div>
+  <div id="rj-cont"></div>
+  <button class="sub-btn" onclick="submitMCQ('rj')">परिणाम देखें →</button>
+</div>
+
+<!-- ==================== STATES PYQ ==================== -->
+<div id="stpyq" class="panel">
+  <div class="sbar">
+    <span class="slabel">🇮🇳 अन्य राज्य PYQ — 30 प्रश्न | +1 सही / -⅓ गलत</span>
+    <div class="snums"><span>स्कोर: <span class="sv" id="st-s">0</span></span><span>✅ <span class="sc" id="st-c">0</span></span><span>❌ <span class="sw" id="st-w">0</span></span></div>
+  </div>
+  <div id="st-cont"></div>
+  <button class="sub-btn" onclick="submitMCQ('st')">परिणाम देखें →</button>
+</div>
+
+<!-- ==================== LAST MINUTE ==================== -->
+<div id="lastmin" class="panel">
+  <div class="stitle">⚡ Last Minute Compact Cards</div>
+  <div class="g2">
+    <div class="lmc"><h4>तीन आपातकाल</h4><p>352=राष्ट्रीय(युद्ध) | 356=राज्य(संवैधानिक) | 360=वित्तीय | <b>360 कभी नहीं लगा</b></p></div>
+    <div class="lmc"><h4>अनुमोदन समय</h4><p>352 = <b>1 माह</b> | 356 = <b>2 माह</b> | 360 = <b>2 माह</b></p></div>
+    <div class="lmc"><h4>Art 358 vs 359</h4><p>358 = अनु. 19 (युद्ध पर स्वतः) | 359 = 20-21 छोड़कर सब | <b>20-21 कभी नहीं</b></p></div>
+    <div class="lmc"><h4>44वां CA 1978 — 4 बदलाव</h4><p>① मंत्रिमंडल लिखित ② सशस्त्र विद्रोह ③ विशेष क्षेत्र ④ साधारण बहुमत हटाया</p></div>
+    <div class="lmc"><h4>तीन आपातकाल भारत में</h4><p>1962 चीन(नेहरू) | 1971 पाक(इंदिरा) | <b>25Jun1975 इंदिरा(फखरुद्दीन)</b></p></div>
+    <div class="lmc"><h4>राष्ट्रपति शासन रिकॉर्ड</h4><p>सर्वाधिक = मणिपुर+UP(10) | न्यूनतम = कर्नाटक(7 दिन) | छत्तीसगढ़-तेलंगाना = कभी नहीं</p></div>
+    <div class="lmc"><h4>INC</h4><p>28 Dec 1885 | A.O. ह्यूम | WC बनर्जी(1st) | गांधी 1924 | हाथ चिह्न | वर्तमान: खड़गे</p></div>
+    <div class="lmc"><h4>BJP</h4><p>6 Apr 1980 | वाजपेयी+आडवाणी | कमल | J.P. नड्डा | 240 सीट 2024</p></div>
+    <div class="lmc"><h4>BSP</h4><p>14 Apr 1984 | काशीराम | हाथी | मायावती | 0 सीट 2024</p></div>
+    <div class="lmc"><h4>AAP+NPP</h4><p>AAP: 26 Nov 2012, झाड़ू, 2022 राष्ट्रीय | NPP: 6 Jan 2013, PA संगमा, पुस्तक</p></div>
+    <div class="lmc"><h4>गठबंधन</h4><p>NDA(1998,BJP,37) | UPA(2004,Congress) | INDIA(18Jul2023,Congress,26)</p></div>
+    <div class="lmc"><h4>2023 में दर्जा गया</h4><p>TMC(1998,ममता) + CPI(1925,MN राय) + NCP(1999) का राष्ट्रीय दर्जा समाप्त</p></div>
+  </div>
+
+  <div class="stitle">🧠 Super Mnemonics</div>
+  <div class="g2">
+    <div class="smcard">
+      <h3>आपातकाल Mnemonic</h3>
+      <div class="sm-row"><span class="k">"352 = युद्ध, 356 = राज्य, 360 = रुपया"</span></div>
+      <div class="sm-row"><span class="k">1 माह:</span><span class="v"> 352 | </span><span class="k">2 माह:</span><span class="v"> 356, 360</span></div>
+      <div class="sm-row"><span class="k">Art 19:</span><span class="v"> 358 से (युद्ध पर) स्वतः | Art 20-21 = कभी नहीं</span></div>
+      <div class="sm-row"><span class="k">3 बार:</span><span class="v"> 62(चीन)+71(पाक)+75(इंदिरा)</span></div>
+      <div class="sm-row"><span class="k">44वां CA:</span><span class="v"> मंत्रिमंडल+सशस्त्र+विशेष क्षेत्र</span></div>
+    </div>
+    <div class="smcard">
+      <h3>राष्ट्रीय दल Mnemonic</h3>
+      <div class="sm-row"><span class="k">"INC BJP BSP NPP CPI(M) AAP"</span></div>
+      <div class="sm-row"><span class="k">INC:</span><span class="v"> 1885, A.O. ह्यूम, WC बनर्जी = हाथ</span></div>
+      <div class="sm-row"><span class="k">BJP:</span><span class="v"> 1980, वाजपेयी = कमल</span></div>
+      <div class="sm-row"><span class="k">BSP:</span><span class="v"> 1984, काशीराम = हाथी (14 Apr)</span></div>
+      <div class="sm-row"><span class="k">AAP:</span><span class="v"> 2012, केजरीवाल = झाड़ू</span></div>
+      <div class="sm-row"><span class="k">2023 में गए:</span><span class="v"> TMC + CPI + NCP</span></div>
+    </div>
+    <div class="smcard">
+      <h3>1975 आपातकाल Key Facts</h3>
+      <div class="sm-row"><span class="k">तिथि:</span><span class="v"> 25/26 Jun 1975</span></div>
+      <div class="sm-row"><span class="k">राष्ट्रपति:</span><span class="v"> फखरुद्दीन अली अहमद</span></div>
+      <div class="sm-row"><span class="k">PM:</span><span class="v"> इंदिरा गांधी</span></div>
+      <div class="sm-row"><span class="k">कारण:</span><span class="v"> आंतरिक अशान्ति/सशस्त्र विद्रोह</span></div>
+      <div class="sm-row"><span class="k">प्रतिक्रिया:</span><span class="v"> 44वां CA 1978</span></div>
+    </div>
+    <div class="smcard">
+      <h3>Art Series Trick</h3>
+      <div class="sm-row"><span class="k">352:</span><span class="v"> घोषणा (मंत्रिमंडल लिखित)</span></div>
+      <div class="sm-row"><span class="k">356:</span><span class="v"> राज्य में (राज्यपाल रिपोर्ट पर)</span></div>
+      <div class="sm-row"><span class="k">358:</span><span class="v"> अनु.19 निलंबन (युद्ध पर)</span></div>
+      <div class="sm-row"><span class="k">359:</span><span class="v"> मूल अधिकार निलंबन (20-21 छोड़कर)</span></div>
+      <div class="sm-row"><span class="k">360:</span><span class="v"> वित्तीय (USA से, भारत में कभी नहीं)</span></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<!-- MODAL -->
+<div class="ovl" id="ovl" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="m-grade" id="m-grade">🏆</div>
+    <div class="m-title" id="m-title">परिणाम</div>
+    <div class="m-stats" id="m-stats"></div>
+    <button class="m-close" onclick="closeModal()">बंद करें</button>
+  </div>
+</div>
+
+<script>
+const rjQ=[
+  {q:"राष्ट्रीय आपातकाल किस अनुच्छेद के तहत लगाया जाता है?",opts:["अनुच्छेद 352","अनुच्छेद 356","अनुच्छेद 360","अनुच्छेद 370"],ans:0,exp:"Art 352 = राष्ट्रीय आपातकाल | Art 356 = राष्ट्रपति शासन | Art 360 = वित्तीय आपातकाल।"},
+  {q:"44वें संविधान संशोधन 1978 के तहत राष्ट्रीय आपातकाल में क्या परिवर्तन किया गया?",opts:["मंत्रिमंडल की लिखित सलाह अनिवार्य","राज्यपाल की सलाह अनिवार्य","संसद की पूर्व अनुमति अनिवार्य","न्यायालय की अनुमति अनिवार्य"],ans:0,exp:"44वां CA 1978 → मंत्रिमंडल द्वारा राष्ट्रपति को लिखित सलाह देना अनिवार्य किया गया।"},
+  {q:"भारत में तीसरा राष्ट्रीय आपातकाल कब लगाया गया था?",opts:["1962","1971","1975","1977"],ans:2,exp:"तीसरा राष्ट्रीय आपातकाल 25/26 जून 1975 को लगाया गया था।"},
+  {q:"1975 के आपातकाल के समय भारत के राष्ट्रपति कौन थे?",opts:["V.V. गिरी","डॉ. राजेंद्र प्रसाद","फखरुद्दीन अली अहमद","डॉ. राधाकृष्णन"],ans:2,exp:"1975 के आपातकाल में राष्ट्रपति फखरुद्दीन अली अहमद थे।"},
+  {q:"राष्ट्रीय आपातकाल के अनुमोदन के लिए संसद को कितने समय में मत देना होता है?",opts:["15 दिन","1 माह","2 माह","6 माह"],ans:1,exp:"Art 352 के तहत राष्ट्रीय आपातकाल का अनुमोदन 1 माह के भीतर अनिवार्य है।"},
+  {q:"44वें CA 1978 से पहले अनुच्छेद 352 में 'सशस्त्र विद्रोह' के स्थान पर कौनसा शब्द था?",opts:["नागरिक अशान्ति","आंतरिक अशान्ति","क्रांति","विद्रोह"],ans:1,exp:"मूल संविधान में 'आंतरिक अशान्ति' शब्द था जिसे 44वें CA ने बदलकर 'सशस्त्र विद्रोह' किया।"},
+  {q:"अनुच्छेद 358 के तहत आपातकाल में कौनसा अधिकार स्वतः निलंबित हो जाता है?",opts:["अनुच्छेद 14","अनुच्छेद 19","अनुच्छेद 21","अनुच्छेद 32"],ans:1,exp:"Art 358: युद्ध/बाहरी आक्रमण पर Art 19 (स्वतंत्रता का अधिकार) स्वतः निलंबित।"},
+  {q:"राष्ट्रीय आपातकाल में अनुच्छेद 20 और 21 का क्या होता है?",opts:["दोनों निलंबित हो जाते हैं","केवल 20 निलंबित","केवल 21 निलंबित","दोनों कभी निलंबित नहीं होते"],ans:3,exp:"Art 20 (अभियोजन से संरक्षण) और Art 21 (जीवन का अधिकार) किसी भी आपातकाल में निलंबित नहीं होते।"},
+  {q:"अनुच्छेद 356 (राष्ट्रपति शासन) का अनुमोदन कितने समय में होना चाहिए?",opts:["1 माह","2 माह","3 माह","6 माह"],ans:1,exp:"Art 356 के तहत संसद को 2 माह के भीतर अनुमोदन देना होता है।"},
+  {q:"राज्य में राष्ट्रपति शासन की अधिकतम अवधि कितनी होती है?",opts:["1 वर्ष","2 वर्ष","3 वर्ष","5 वर्ष"],ans:2,exp:"सामान्यतः अधिकतम 3 वर्ष (6-6 माह पर अनुमोदन के साथ)। अपवाद: पंजाब में 5 वर्ष।"},
+  {q:"भारत में सर्वाधिक बार राष्ट्रपति शासन किन राज्यों में लगाया गया है?",opts:["UP और बिहार","मणिपुर और उत्तरप्रदेश","राजस्थान और MP","केरल और पश्चिम बंगाल"],ans:1,exp:"मणिपुर और उत्तरप्रदेश — दोनों में 10-10 बार राष्ट्रपति शासन लगाया गया।"},
+  {q:"वित्तीय आपातकाल (Art 360) का उद्गम किस देश से है?",opts:["जर्मनी","ब्रिटेन","USA","फ्रांस"],ans:2,exp:"वित्तीय आपातकाल Art 360 का उद्गम USA से हुआ है।"},
+  {q:"भारत में आज तक वित्तीय आपातकाल कितनी बार लगाया गया है?",opts:["एक बार","दो बार","तीन बार","एक बार भी नहीं"],ans:3,exp:"भारत में अब तक एक बार भी वित्तीय आपातकाल (Art 360) नहीं लगाया गया है।"},
+  {q:"भारतीय राष्ट्रीय कांग्रेस की स्थापना कब हुई?",opts:["28 Dec 1885","15 Aug 1947","26 Jan 1950","28 Dec 1906"],ans:0,exp:"INC की स्थापना 28 दिसंबर 1885 को मुंबई में हुई थी।"},
+  {q:"INC के संस्थापक कौन थे?",opts:["महात्मा गांधी","जवाहरलाल नेहरू","A.O. ह्यूम","W.C. बनर्जी"],ans:2,exp:"INC के संस्थापक A.O. ह्यूम (Allan Octavian Hume) थे।"},
+  {q:"कांग्रेस के प्रथम अध्यक्ष कौन थे?",opts:["A.O. ह्यूम","महात्मा गांधी","डब्ल्यू.सी. बनर्जी","दादाभाई नौरोजी"],ans:2,exp:"INC के प्रथम अध्यक्ष व्योमेश चन्द्र बनर्जी (W.C. Banerjee) थे।"},
+  {q:"भारतीय जनता पार्टी की स्थापना कब हुई?",opts:["6 Apr 1977","6 Apr 1980","1 Jan 1980","15 Aug 1980"],ans:1,exp:"BJP की स्थापना 6 अप्रैल 1980 को हुई थी।"},
+  {q:"BJP का चुनाव चिह्न क्या है?",opts:["हाथ","कमल का फूल","हाथी","तीर-धनुष"],ans:1,exp:"BJP का चुनाव चिह्न कमल का फूल है।"},
+  {q:"BSP की स्थापना किसने और कब की?",opts:["मायावती, 1986","काशीराम, 14 Apr 1984","अंबेडकर, 1956","काशीराम, 1980"],ans:1,exp:"BSP की स्थापना काशीराम ने 14 अप्रैल 1984 को की थी।"},
+  {q:"आम आदमी पार्टी को राष्ट्रीय दल का दर्जा कब मिला?",opts:["2012","2015","2020","2022"],ans:3,exp:"AAP को 2022 में राष्ट्रीय दल का दर्जा मिला।"},
+  {q:"राजनीतिक दलों का पंजीकरण किस अधिनियम के तहत होता है?",opts:["जनप्रतिनिधित्व अधिनियम 1951","संविधान","52वां CA 1985","निर्वाचन आयोग अधिनियम"],ans:0,exp:"राजनीतिक दलों का पंजीकरण जनप्रतिनिधित्व अधिनियम 1951 के तहत होता है।"},
+  {q:"दलबदल विरोधी कानून किस संशोधन के तहत लाया गया?",opts:["42वां CA","44वां CA","52वां CA 1985","61वां CA"],ans:2,exp:"दलबदल विरोधी कानून 52वें CA 1985 के तहत 10वीं अनुसूची में जोड़ा गया।"},
+  {q:"राष्ट्रीय जनतांत्रिक गठबंधन (NDA) का गठन कब हुआ?",opts:["1996","1998","2000","2004"],ans:1,exp:"NDA का गठन 1998 में हुआ था, नेतृत्व BJP का है।"},
+  {q:"INDIA गठबंधन का गठन कब हुआ?",opts:["2019","2021","2022","18 Jul 2023"],ans:3,exp:"INDIA (Indian National Developmental Inclusive Alliance) का गठन 18 July 2023 को हुआ।"},
+  {q:"1975 के आपातकाल के समय प्रधानमंत्री कौन थे?",opts:["राजीव गांधी","जवाहरलाल नेहरू","इंदिरा गांधी","मोरारजी देसाई"],ans:2,exp:"1975 के आपातकाल के समय इंदिरा गांधी प्रधानमंत्री थीं।"},
+  {q:"पहला राष्ट्रीय आपातकाल कब और क्यों लगाया गया था?",opts:["1962, भारत-चीन युद्ध","1965, भारत-पाक युद्ध","1971, भारत-पाक युद्ध","1975, आंतरिक अशान्ति"],ans:0,exp:"पहला राष्ट्रीय आपातकाल 1962 में भारत-चीन युद्ध के कारण लगाया गया था।"},
+  {q:"राष्ट्रीय आपातकाल को समाप्त करने के लिए कितने सदस्यों की आवश्यकता होती है?",opts:["LS के 1/4 सदस्य","LS के 1/10 सदस्य","RS के 1/3 सदस्य","दोनों सदनों का बहुमत"],ans:1,exp:"LS के 1/10 सदस्यों द्वारा लिखित प्रस्ताव पर आपातकाल समाप्त किया जा सकता है।"},
+  {q:"2024 के लोकसभा चुनाव में BJP को कितनी सीटें मिलीं?",opts:["272","240","303","282"],ans:1,exp:"2024 के लोकसभा चुनाव में BJP को 240 सीटें मिलीं।"},
+  {q:"2023 में किन तीन दलों का राष्ट्रीय दर्जा समाप्त हुआ?",opts:["BSP, SP, NCP","TMC, CPI, NCP","BJP, TMC, CPI","AAP, TMC, NCP"],ans:1,exp:"2023 में TMC (तृणमूल कांग्रेस), CPI (भारतीय कम्युनिस्ट पार्टी) और NCP (नेशनल कांग्रेस पार्टी) का राष्ट्रीय दर्जा समाप्त हुआ।"},
+  {q:"CPI(M) का चुनाव चिह्न क्या है?",opts:["हथौड़ा और दराँती","दराँती, हथौड़ा व तारा","लाल झंडा","मुट्ठी"],ans:1,exp:"CPI(M) का चुनाव चिह्न दराँती, हथौड़ा व तारा है।"},
+];
+
+const stQ=[
+  {q:"भारत में राष्ट्रीय आपातकाल की उद्घोषणा का अधिकार किसे है?",opts:["प्रधानमंत्री","राष्ट्रपति","संसद","उच्चतम न्यायालय"],ans:1,exp:"राष्ट्रीय आपातकाल (Art 352) की उद्घोषणा राष्ट्रपति करता है।"},
+  {q:"राष्ट्रीय आपातकाल के दौरान अनुच्छेद 19 किस आधार पर स्वतः निलंबित होता है?",opts:["सशस्त्र विद्रोह","युद्ध या बाहरी आक्रमण","आंतरिक अशान्ति","वित्तीय संकट"],ans:1,exp:"Art 358: केवल युद्ध या बाहरी आक्रमण के आधार पर Art 19 स्वतः निलंबित।"},
+  {q:"Art 359 के तहत राष्ट्रपति किन अनुच्छेदों को निलंबित नहीं कर सकता?",opts:["Art 14 व 15","Art 19 व 20","Art 20 व 21","Art 32 व 226"],ans:2,exp:"Art 20 (अभियोजन संरक्षण) और Art 21 (जीवन का अधिकार) कभी निलंबित नहीं।"},
+  {q:"राष्ट्रीय आपातकाल की उद्घोषणा के कितने दिनों के भीतर संसद का अनुमोदन आवश्यक है?",opts:["15 दिन","1 महीना","2 महीने","6 महीने"],ans:1,exp:"Art 352: 1 माह के भीतर संसद के दोनों सदनों का अनुमोदन अनिवार्य।"},
+  {q:"राज्य में राष्ट्रपति शासन लागू होने पर राज्य की कार्यकारी शक्तियां किसे हस्तांतरित हो जाती हैं?",opts:["राष्ट्रपति को","राज्यपाल को","संसद को","केंद्रीय मंत्रिमंडल को"],ans:2,exp:"Art 356: राज्य की मंत्री शक्तियां संसद के पास चली जाती हैं।"},
+  {q:"वित्तीय आपातकाल (Art 360) का प्रावधान किस देश के संविधान से लिया गया है?",opts:["ब्रिटेन","USA","जर्मनी","ऑस्ट्रेलिया"],ans:1,exp:"वित्तीय आपातकाल का प्रावधान USA से लिया गया है।"},
+  {q:"INC की स्थापना किस स्थान पर हुई थी?",opts:["कलकत्ता","दिल्ली","मुंबई (बॉम्बे)","लाहौर"],ans:2,exp:"INC की स्थापना मुंबई (तत्कालीन बॉम्बे) में गोकुलदास तेजपाल संस्कृत विश्वविद्यालय में हुई।"},
+  {q:"'राष्ट्रीय दल' की मान्यता के लिए कम से कम कितने राज्यों में 6% मत आवश्यक हैं?",opts:["2","3","4","5"],ans:2,exp:"राष्ट्रीय दल बनने के लिए कम से कम 4 राज्यों में 6% मत + 4 सीट आवश्यक।"},
+  {q:"दलबदल विरोधी कानून भारतीय संविधान की किस अनुसूची में है?",opts:["8वीं","9वीं","10वीं","11वीं"],ans:2,exp:"दलबदल विरोधी कानून 10वीं अनुसूची में है (52वां CA 1985)।"},
+  {q:"भारत में प्रथम राष्ट्रीय आपातकाल के समय प्रधानमंत्री कौन थे?",opts:["लाल बहादुर शास्त्री","जवाहरलाल नेहरू","इंदिरा गांधी","मोरारजी देसाई"],ans:1,exp:"प्रथम आपातकाल (1962) के समय जवाहर लाल नेहरू प्रधानमंत्री थे।"},
+  {q:"44वां संविधान संशोधन 1978 का मुख्य उद्देश्य क्या था?",opts:["मौलिक अधिकार बढ़ाना","आपातकाल प्रावधानों में सुधार","पंचायतीराज को मजबूत बनाना","राज्यों को अधिक शक्ति देना"],ans:1,exp:"44वां CA 1978 मुख्यतः 1975 के आपातकाल के दुरुपयोग को रोकने के लिए आया था।"},
+  {q:"भारत में राष्ट्रीय आपातकाल कुल कितनी बार लगाया जा चुका है?",opts:["दो","तीन","चार","पाँच"],ans:1,exp:"भारत में तीन बार राष्ट्रीय आपातकाल लगाया गया — 1962, 1971, 1975।"},
+  {q:"राष्ट्रपति शासन (Art 356) का उद्गम किस देश/Act से है?",opts:["USA","जर्मनी + भारत शासन Act 1935","ब्रिटेन","फ्रांस"],ans:1,exp:"Art 356 का उद्गम जर्मनी के संविधान और भारत शासन अधिनियम 1935 से है।"},
+  {q:"BJP का गठन किन दो संगठनों के विलय से हुआ?",opts:["जनसंघ + CPI","भारतीय जनसंघ + जनता पार्टी","RSS + भारतीय जनसंघ","RSS + जनता पार्टी"],ans:1,exp:"BJP का गठन भारतीय जनसंघ और जनता पार्टी के विलय से 6 April 1980 को हुआ।"},
+  {q:"2024 के लोकसभा चुनाव में INC को कितनी सीटें मिलीं?",opts:["52","76","99","121"],ans:2,exp:"2024 लोकसभा चुनाव में INC को 99 सीटें मिलीं।"},
+  {q:"AAP की स्थापना किस तिथि को हुई?",opts:["26 Jan 2012","26 Nov 2012","15 Aug 2013","26 Nov 2013"],ans:1,exp:"AAP की स्थापना 26 November 2012 को अरविंद केजरीवाल ने की थी।"},
+  {q:"भारत में एकदलीय, द्विदलीय और बहुदलीय में से कौनसी व्यवस्था है?",opts:["एकदलीय","द्विदलीय","बहुदलीय","मिश्रित"],ans:2,exp:"भारत में बहुदलीय व्यवस्था है।"},
+  {q:"CPI(M) की स्थापना कब हुई?",opts:["1920","1925","1964","1984"],ans:2,exp:"CPI(M) की स्थापना 7 November 1964 को EMS नंबूदरीपाड ने की थी।"},
+  {q:"NDA गठबंधन का नेतृत्व कौनसा दल करता है?",opts:["INC","BSP","BJP","CPI(M)"],ans:2,exp:"NDA (National Democratic Alliance) का नेतृत्व BJP करती है। गठन 1998।"},
+  {q:"राज्य स्तरीय पार्टी की मान्यता के लिए विधानसभा चुनाव में कितने % मत आवश्यक हैं?",opts:["4%","6%","8%","10%"],ans:1,exp:"राज्य स्तरीय पार्टी के लिए विधानसभा चुनाव में 6% मत + 2 सीट आवश्यक।"},
+  {q:"भारत में वर्तमान में कितने राष्ट्रीय दल हैं?",opts:["4","5","6","8"],ans:2,exp:"वर्तमान में भारत में 6 राष्ट्रीय दल हैं।"},
+  {q:"महात्मा गांधी कांग्रेस के अध्यक्ष किस अधिवेशन में बने?",opts:["लाहौर 1929","बेलगांव 1924","कलकत्ता 1920","नागपुर 1920"],ans:1,exp:"महात्मा गांधी 1924 के बेलगांव अधिवेशन में INC के अध्यक्ष बने।"},
+  {q:"राष्ट्रपति शासन को कैसे समाप्त किया जाता है?",opts:["राज्यपाल के प्रस्ताव से","लोकसभा के प्रस्ताव से","राज्यसभा के प्रस्ताव से","उच्चतम न्यायालय द्वारा"],ans:1,exp:"Art 356 → समाप्ति लोकसभा के प्रस्ताव द्वारा होती है।"},
+  {q:"1971 के राष्ट्रीय आपातकाल के समय राष्ट्रपति कौन थे?",opts:["डॉ. राधाकृष्णन","V.V. गिरी","फखरुद्दीन अली अहमद","नीलम संजीव रेड्डी"],ans:1,exp:"1971 के आपातकाल के समय V.V. गिरी राष्ट्रपति थे।"},
+  {q:"NPP (National People's Party) के संस्थापक कौन थे?",opts:["P.A. संगमा","कोनरोड संगमा","अरविंद केजरीवाल","काशीराम"],ans:0,exp:"NPP के संस्थापक P.A. संगमा (पूर्णो ए. संगमा) थे। स्थापना 6 Jan 2013।"},
+  {q:"52वें संविधान संशोधन 1985 का संबंध किससे है?",opts:["मतदान आयु","दलबदल विरोधी","पंचायतीराज","मौलिक कर्तव्य"],ans:1,exp:"52वां CA 1985 दलबदल विरोधी कानून (10वीं अनुसूची) से संबंधित है।"},
+  {q:"BSP का चुनाव चिह्न क्या है?",opts:["हाथ","कमल","हाथी","झाड़ू"],ans:2,exp:"BSP (Bahujan Samaj Party) का चुनाव चिह्न हाथी है।"},
+  {q:"INC के वर्तमान अध्यक्ष कौन हैं?",opts:["राहुल गांधी","सोनिया गांधी","मल्लिकार्जुन खड़गे","पी. चिदंबरम"],ans:2,exp:"INC के वर्तमान अध्यक्ष मल्लिकार्जुन खड़गे हैं।"},
+  {q:"वित्तीय आपातकाल (Art 360) में सरकारी कर्मचारियों पर क्या प्रभाव पड़ता है?",opts:["नौकरी से निकाला जाता है","वेतन में कटौती होती है","पेंशन बंद हो जाती है","वेतन दोगुना होता है"],ans:1,exp:"Art 360: वित्तीय आपातकाल में सरकारी कर्मचारियों और पदाधिकारियों के वेतन में कटौती की जा सकती है।"},
+  {q:"राष्ट्रीय आपातकाल (Art 352) का उद्गम किस देश/दस्तावेज़ से है?",opts:["USA","ब्रिटेन","जर्मनी + भारत शासन Act 1935","फ्रांस + 1935 Act"],ans:2,exp:"Art 352 का उद्गम जर्मनी के संविधान और भारत शासन अधिनियम 1935 दोनों से है।"},
+];
+
+let state={rj:{ans:{},score:0,c:0,w:0},st:{ans:{},score:0,c:0,w:0}};
+
+function buildQ(qs,cid,px){
+  document.getElementById(cid).innerHTML=qs.map((q,i)=>`
+    <div class="mq" id="${px}-q${i}">
+      <div class="mqq"><span class="qn">${i+1}.</span>${q.q}</div>
+      <div class="og">${q.opts.map((o,j)=>`<button class="ob" id="${px}-o${i}-${j}" onclick="ans('${px}',${i},${j})">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>
+      <div class="exp" id="${px}-e${i}">${q.exp}</div>
+    </div>`).join('');
+}
+
+function ans(px,qi,oi){
+  const s=state[px], qs=px==='rj'?rjQ:stQ;
+  if(s.ans[qi]!==undefined)return;
+  s.ans[qi]=oi;
+  const ca=qs[qi].ans;
+  document.querySelectorAll(`#${px}-q${qi} .ob`).forEach(b=>b.disabled=true);
+  document.getElementById(`${px}-o${qi}-${oi}`).classList.add(oi===ca?'correct':'wrong');
+  if(oi!==ca)document.getElementById(`${px}-o${qi}-${ca}`).classList.add('show-correct');
+  if(oi===ca){s.score+=1;s.c++}else{s.score-=1/3;s.w++}
+  document.getElementById(`${px}-s`).textContent=s.score.toFixed(2);
+  document.getElementById(`${px}-c`).textContent=s.c;
+  document.getElementById(`${px}-w`).textContent=s.w;
+  document.getElementById(`${px}-e${qi}`).classList.add('show');
+}
+
+function submitMCQ(px){
+  const s=state[px],qs=px==='rj'?rjQ:stQ,total=qs.length;
+  const attempted=Object.keys(s.ans).length;
+  const pct=Math.round((s.c/total)*100);
+  const g=pct>=80?['🏆','शानदार! Exam Ready!']:pct>=60?['👍','अच्छा प्रयास']:pct>=40?['📚','और revision करें']:['⚠️','पूरी revision जरूरी'];
+  document.getElementById('m-grade').textContent=g[0];
+  document.getElementById('m-title').textContent=g[1];
+  document.getElementById('m-stats').innerHTML=[['कुल प्रश्न',total],['प्रयास',attempted],['सही ✅',s.c],['गलत ❌',s.w],['स्कोर',s.score.toFixed(2)],['प्रतिशत',pct+'%']].map(([k,v])=>`<div class="m-stat"><span>${k}</span><b>${v}</b></div>`).join('');
+  document.getElementById('ovl').classList.add('show');
+}
+
+function closeModal(){document.getElementById('ovl').classList.remove('show')}
+
+function showTab(name,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(name).classList.add('active');
+  btn.classList.add('active');
+}
+
+const searchData=[
+  {term:'राष्ट्रीय आपातकाल overview',tab:'revision',el:'overview',c:'#E8440A'},
+  {term:'अनुच्छेद 352',tab:'revision',el:'art352',c:'#1A5FA8'},
+  {term:'अनुमोदन अवधि',tab:'revision',el:'anumoden',c:'#1A7A4A'},
+  {term:'Art 358 359 प्रभाव',tab:'revision',el:'prabhav',c:'#C67C0A'},
+  {term:'भारत में तीन आपातकाल',tab:'revision',el:'tinhaar',c:'#C0392B'},
+  {term:'1975 आपातकाल',tab:'revision',el:'1975',c:'#0F7A7A'},
+  {term:'अनुच्छेद 356 राष्ट्रपति शासन',tab:'revision',el:'art356',c:'#1A5FA8'},
+  {term:'राष्ट्रपति शासन रिकॉर्ड',tab:'revision',el:'rashtrapatishashan',c:'#1A7A4A'},
+  {term:'वित्तीय आपातकाल 360',tab:'revision',el:'art360',c:'#C67C0A'},
+  {term:'तीनों आपातकाल तुलना',tab:'revision',el:'comparel',c:'#6B3FA0'},
+  {term:'राजनीतिक दल व्यवस्था',tab:'revision',el:'dalvyavastha',c:'#E8440A'},
+  {term:'राष्ट्रीय दल शर्तें',tab:'revision',el:'rashtriyidal',c:'#1A5FA8'},
+  {term:'राज्य स्तरीय पार्टी',tab:'revision',el:'rajyaidal',c:'#1A7A4A'},
+  {term:'INC कांग्रेस',tab:'revision',el:'inc',c:'#E8440A'},
+  {term:'BJP भाजपा',tab:'revision',el:'bjp',c:'#1A7A4A'},
+  {term:'BSP बहुजन',tab:'revision',el:'bsp',c:'#1A5FA8'},
+  {term:'NPP नेशनल पिपुल्स',tab:'revision',el:'npp',c:'#C67C0A'},
+  {term:'CPI(M) मार्क्सवादी',tab:'revision',el:'cpim',c:'#0F7A7A'},
+  {term:'AAP आम आदमी',tab:'revision',el:'aap',c:'#C0392B'},
+  {term:'2023 दर्जा समाप्त TMC CPI NCP',tab:'revision',el:'2023',c:'#A0296B'},
+  {term:'NDA UPA INDIA गठबंधन',tab:'revision',el:'gathbandhan',c:'#1A5FA8'},
+];
+
+const sInp=document.getElementById('sInp'),sDrop=document.getElementById('sDrop');
+sInp.addEventListener('input',function(){
+  const v=this.value.trim();
+  if(!v){sDrop.classList.remove('show');return}
+  const m=searchData.filter(d=>d.term.toLowerCase().includes(v.toLowerCase())||v.split('').slice(0,3).some(c=>d.term.includes(c)));
+  if(!m.length){sDrop.innerHTML='<div class="sd-it" style="color:#888">कोई परिणाम नहीं</div>';}
+  else{sDrop.innerHTML=m.slice(0,8).map(x=>`<div class="sd-it" onclick="goTo('${x.tab}','${x.el}')"><span class="sd-dot" style="background:${x.c}"></span>${x.term}</div>`).join('');}
+  sDrop.classList.add('show');
+});
+
+function goTo(tab,elId){
+  const tbns=document.querySelectorAll('.tbtn');
+  const tm={revision:0,summary:1,rjpyq:2,stpyq:3,lastmin:4};
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  tbns.forEach(b=>b.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  if(tbns[tm[tab]])tbns[tm[tab]].classList.add('active');
+  sDrop.classList.remove('show');sInp.value='';
+  if(elId){setTimeout(()=>{const e=document.getElementById(elId);if(e){e.scrollIntoView({behavior:'smooth',block:'center'});e.style.outline='2.5px solid #E8440A';setTimeout(()=>e.style.outline='',2200);}},150);}
+}
+
+document.addEventListener('click',e=>{if(!e.target.closest('.srch-w'))sDrop.classList.remove('show');});
+
+buildQ(rjQ,'rj-cont','rj');
+buildQ(stQ,'st-cont','st');
+</script>
+</body>
+</html>

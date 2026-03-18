@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>प्रमुख आयोग – RPSC/PSI Revision</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --saffron:#FF6B2B;--saffron-light:#FFE8DC;
+  --green:#2E7D32;--green-light:#E8F5E9;
+  --blue:#1565C0;--blue-light:#E3F2FD;
+  --purple:#6A1B9A;--purple-light:#F3E5F5;
+  --gold:#F9A825;--gold-light:#FFFDE7;
+  --red:#C62828;--red-light:#FFEBEE;
+  --teal:#00695C;--teal-light:#E0F2F1;
+  --bg:#0F1923;--surface:#16232F;--surface2:#1E2F3E;
+  --card:#1A2B3A;--border:rgba(255,255,255,0.08);
+  --text:#F0F4F8;--muted:#8BA5BD;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans Devanagari',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+h1,h2,h3,.tab-btn{font-family:'Baloo 2',sans-serif}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#1a0a00 0%,#2d1000 40%,#0a1a2d 100%);padding:20px 16px 16px;text-align:center;border-bottom:2px solid var(--saffron);position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF6B2B' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.header h1{font-size:clamp(18px,4vw,26px);font-weight:800;color:var(--saffron);letter-spacing:1px}
+.header p{font-size:12px;color:var(--muted);margin-top:4px}
+.badge{display:inline-block;background:var(--saffron);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin:6px 3px}
+
+/* TABS */
+.tabs{display:flex;overflow-x:auto;background:var(--surface);border-bottom:1px solid var(--border);scrollbar-width:none;position:sticky;top:0;z-index:100}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{flex:0 0 auto;padding:11px 14px;font-size:12px;font-weight:700;border:none;background:transparent;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .25s;letter-spacing:.3px}
+.tab-btn.active{color:var(--saffron);border-bottom-color:var(--saffron)}
+.tab-btn:hover{color:var(--text)}
+
+.tab-content{display:none;padding:14px;max-width:900px;margin:0 auto}
+.tab-content.active{display:block}
+
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:14px;border-left:4px solid var(--saffron)}
+.card-saffron{border-left-color:var(--saffron)}
+.card-green{border-left-color:var(--green)}
+.card-blue{border-left-color:var(--blue)}
+.card-purple{border-left-color:var(--purple)}
+.card-gold{border-left-color:var(--gold)}
+.card-red{border-left-color:var(--red)}
+.card-teal{border-left-color:var(--teal)}
+
+.card-title{font-family:'Baloo 2',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;margin:2px}
+.tag-s{background:rgba(255,107,43,.2);color:#FF8C5A}
+.tag-g{background:rgba(46,125,50,.2);color:#66BB6A}
+.tag-b{background:rgba(21,101,192,.2);color:#64B5F6}
+.tag-p{background:rgba(106,27,154,.2);color:#CE93D8}
+.tag-gold{background:rgba(249,168,37,.2);color:#FFD54F}
+.tag-r{background:rgba(198,40,40,.2);color:#EF9A9A}
+.tag-t{background:rgba(0,105,92,.2);color:#4DB6AC}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}}
+
+/* MNEMONIC BOX */
+.mnemonic{background:linear-gradient(135deg,rgba(249,168,37,.1),rgba(255,107,43,.1));border:1px dashed var(--gold);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:12.5px}
+.mnemonic::before{content:'🧠 Trick: ';font-weight:700;color:var(--gold)}
+
+/* KEY-VALUE */
+.kv{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.kv-item{background:var(--surface2);border-radius:6px;padding:5px 10px;font-size:12px}
+.kv-item strong{color:var(--saffron)}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+th{background:var(--surface2);color:var(--gold);font-family:'Baloo 2',sans-serif;padding:7px 8px;text-align:left;border-bottom:2px solid var(--border)}
+td{padding:6px 8px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:hover td{background:rgba(255,255,255,.03)}
+.highlight-row td{background:rgba(255,107,43,.08)}
+
+/* SECTION HEADER */
+.section-head{font-family:'Baloo 2',sans-serif;font-size:16px;font-weight:800;color:var(--saffron);margin:18px 0 10px;padding-left:10px;border-left:4px solid var(--saffron)}
+
+/* MCQ */
+.mcq-wrap{margin-bottom:18px}
+.mcq-q{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px;margin-bottom:10px}
+.mcq-num{font-size:11px;color:var(--gold);font-weight:700;margin-bottom:5px}
+.mcq-text{font-size:13.5px;font-weight:600;margin-bottom:10px;line-height:1.5}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+@media(max-width:480px){.options{grid-template-columns:1fr}}
+.opt{padding:8px 11px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;font-size:12.5px;transition:all .2s;text-align:left}
+.opt:hover{border-color:var(--saffron);background:rgba(255,107,43,.1)}
+.opt.correct{background:rgba(46,125,50,.25);border-color:var(--green);color:#A5D6A7}
+.opt.wrong{background:rgba(198,40,40,.25);border-color:var(--red);color:#EF9A9A}
+.opt.reveal-correct{background:rgba(46,125,50,.15);border-color:var(--green)}
+.opt:disabled{cursor:not-allowed}
+.explanation{font-size:12px;color:var(--muted);margin-top:7px;padding:7px 10px;background:var(--surface2);border-radius:6px;display:none}
+.explanation.show{display:block}
+.mcq-score-bar{display:flex;align-items:center;gap:10px;background:var(--surface2);border-radius:8px;padding:8px 12px;margin-bottom:14px;font-size:13px;flex-wrap:wrap}
+.score-chip{padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700}
+
+/* SUBMIT BTN */
+.submit-btn{display:block;width:100%;padding:13px;background:var(--saffron);color:#fff;border:none;border-radius:10px;font-family:'Baloo 2',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:14px;transition:transform .15s,opacity .15s}
+.submit-btn:hover{opacity:.9;transform:scale(1.01)}
+
+/* POPUP */
+.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center;padding:16px}
+.popup-overlay.show{display:flex}
+.popup{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;max-width:360px;width:100%;text-align:center}
+.popup h2{font-family:'Baloo 2',sans-serif;font-size:22px;font-weight:800;margin-bottom:6px}
+.popup-score{font-size:42px;font-weight:800;font-family:'Baloo 2',sans-serif;margin:10px 0}
+.popup-details{font-size:13px;color:var(--muted);margin-bottom:16px}
+.close-popup{padding:10px 28px;background:var(--saffron);color:#fff;border:none;border-radius:8px;font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+
+/* LAST MINUTE */
+.lm-card{background:var(--card);border-radius:10px;padding:11px 14px;margin-bottom:10px;border-top:3px solid var(--gold)}
+.lm-title{font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:700;color:var(--gold);margin-bottom:6px}
+.lm-item{font-size:12.5px;padding:3px 0;border-bottom:1px solid var(--border);display:flex;gap:6px}
+.lm-item:last-child{border-bottom:none}
+.lm-item::before{content:'▸';color:var(--saffron);flex-shrink:0}
+.super-mnemonic{background:linear-gradient(135deg,rgba(106,27,154,.2),rgba(255,107,43,.2));border:1px solid var(--purple);border-radius:10px;padding:12px 14px;margin-bottom:12px}
+.super-mnemonic h3{font-family:'Baloo 2',sans-serif;font-size:14px;color:var(--purple-light);margin-bottom:8px}
+.sm-line{font-size:13px;margin:4px 0;padding:4px 8px;background:rgba(255,255,255,.04);border-radius:5px}
+
+/* QUICK FACTS */
+.fact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:8px;margin:8px 0}
+.fact-box{background:var(--surface2);border-radius:8px;padding:8px 10px;text-align:center}
+.fact-box .num{font-family:'Baloo 2',sans-serif;font-size:20px;font-weight:800;color:var(--saffron)}
+.fact-box .label{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* COMPARE TABLE */
+.compare-scroll{overflow-x:auto}
+
+/* PILL */
+.pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600}
+.pill-s{background:rgba(255,107,43,.2);color:var(--saffron)}
+.pill-g{background:rgba(46,125,50,.2);color:#66BB6A}
+.pill-b{background:rgba(21,101,192,.2);color:#64B5F6}
+.pill-r{background:rgba(198,40,40,.2);color:#EF9A9A}
+
+/* ICON CIRCLES */
+.ic{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📋 प्रमुख आयोग – Revision Hub</h1>
+  <p>RPSC RAS Pre | Rajasthan PSI | State Exams</p>
+  <div>
+    <span class="badge">निर्वाचन आयोग</span>
+    <span class="badge">CAG</span>
+    <span class="badge">CVC</span>
+    <span class="badge">CIC</span>
+    <span class="badge">NHRC</span>
+    <span class="badge">RPSC</span>
+    <span class="badge">RHRC</span>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('revision')">📖 Revision</button>
+  <button class="tab-btn" onclick="showTab('summary')">📊 Summary Table</button>
+  <button class="tab-btn" onclick="showTab('rjpyq')">🏆 RJ PYQ (25)</button>
+  <button class="tab-btn" onclick="showTab('statepyq')">🗺️ State PYQ (25)</button>
+  <button class="tab-btn" onclick="showTab('lastminute')">⚡ Last Minute</button>
+</div>
+
+<!-- ===================== TAB 1: REVISION ===================== -->
+<div id="revision" class="tab-content active">
+
+<div class="section-head">🗳️ 1. राष्ट्रीय निर्वाचन आयोग (Election Commission)</div>
+<div class="grid-2">
+<div class="card card-saffron">
+  <div class="card-title"><span class="ic" style="background:rgba(255,107,43,.2)">🗳️</span> स्थापना व अनुच्छेद</div>
+  <div class="kv">
+    <div class="kv-item"><strong>स्थापना:</strong> 25 जनवरी 1950</div>
+    <div class="kv-item"><strong>भाग:</strong> XV (अनु. 324-329)</div>
+    <div class="kv-item"><strong>अनु. 324(ii):</strong> सदस्य संख्या अनिश्चित</div>
+    <div class="kv-item"><strong>वर्तमान:</strong> 3 सदस्य (1+2)</div>
+    <div class="kv-item"><strong>नियुक्ति:</strong> राष्ट्रपति द्वारा</div>
+    <div class="kv-item"><strong>राष्ट्रीय मतदाता दिवस:</strong> 25 जनवरी</div>
+  </div>
+  <div class="mnemonic">निर्वाचन = <b>25 जनवरी 1950</b> → "पच्चीस जनवरी = पचास की शुरुआत"</div>
+</div>
+<div class="card card-saffron">
+  <div class="card-title">📜 अनुच्छेद सारांश</div>
+  <table>
+    <tr><th>अनु.</th><th>विषय</th></tr>
+    <tr><td><span class="pill pill-s">324</span></td><td>निर्वाचन का अधीक्षण, निर्देशन, नियंत्रण</td></tr>
+    <tr><td><span class="pill pill-s">325</span></td><td>एक सामान्य निर्वाचक नामावली</td></tr>
+    <tr><td><span class="pill pill-s">326</span></td><td>वयस्क मताधिकार</td></tr>
+    <tr><td><span class="pill pill-s">327</span></td><td>संसद द्वारा कानून बनाने की शक्ति</td></tr>
+    <tr><td><span class="pill pill-s">328</span></td><td>राज्य विधानमंडल की शक्ति</td></tr>
+    <tr><td><span class="pill pill-s">329</span></td><td>निर्वाचन मामलों में न्यायालय का हस्तक्षेप नहीं</td></tr>
+  </table>
+</div>
+</div>
+
+<div class="card card-saffron">
+  <div class="card-title">⚙️ कार्यकाल, वेतन व हटाना</div>
+  <div class="grid-2">
+    <div>
+      <div class="kv">
+        <div class="kv-item"><strong>कार्यकाल:</strong> 6 वर्ष या 65 वर्ष (जो पहले)</div>
+        <div class="kv-item"><strong>वेतन:</strong> उच्चतम न्यायालय के न्यायाधीश के समान</div>
+        <div class="kv-item"><strong>योग्यता:</strong> संविधान मौन है</div>
+        <div class="kv-item"><strong>त्यागपत्र:</strong> राष्ट्रपति को</div>
+      </div>
+    </div>
+    <div>
+      <div class="kv">
+        <div class="kv-item"><strong>मुख्य चुनाव आयुक्त को हटाना:</strong> सुप्रीम कोर्ट के जज की तरह (विशेष बहुमत – अनु. 124(4))</div>
+        <div class="kv-item"><strong>आधार:</strong> कदाचार + असमर्थता</div>
+      </div>
+    </div>
+  </div>
+  <div class="mnemonic">आयुक्त का 3 सदस्यीय सफर: 1950→1, 1989→3, 1990→1 (Congress), 1993→3 (वर्तमान)</div>
+</div>
+
+<div class="grid-2">
+<div class="card card-saffron">
+  <div class="card-title">🎯 निर्वाचन आयोग के कार्य</div>
+  <ul style="font-size:12.5px;padding-left:16px;line-height:2">
+    <li>राष्ट्रपति, उपराष्ट्रपति, लोकसभा, राज्यसभा, विधानसभा चुनाव करवाना</li>
+    <li>मतदाता सूचियाँ तैयार करना</li>
+    <li>राजनीतिक दलों का पंजीकरण / रद्द करना (जनप्रतिनिधि अधिनियम 1951)</li>
+    <li>परिसीमन आयोग का पदेन सदस्य</li>
+    <li>दलों को राष्ट्रीय/राज्य दल की मान्यता देना</li>
+    <li>चुनाव चिह्न वितरित करना (1968 आदेश अनुसार)</li>
+    <li><strong>Note:</strong> चुनाव चिह्न विवाद में अंतिम निर्णय = न्यायपालिका की भूमिका</li>
+  </ul>
+</div>
+<div class="card card-gold">
+  <div class="card-title">📅 सदस्य संख्या इतिहास</div>
+  <table>
+    <tr><th>वर्ष</th><th>स्थिति</th></tr>
+    <tr class="highlight-row"><td>1950</td><td>1 सदस्य (एकल)</td></tr>
+    <tr><td>16 Oct 1989</td><td>1+2 = 3 सदस्य</td></tr>
+    <tr class="highlight-row"><td>1 Jan 1990</td><td>पुनः 1 (Congress)</td></tr>
+    <tr><td>1 Oct 1993</td><td>अध्यादेश → पुनः 3</td></tr>
+    <tr class="highlight-row"><td>वर्तमान</td><td>3 सदस्य</td></tr>
+  </table>
+</div>
+</div>
+
+<!-- CAG -->
+<div class="section-head">💼 2. नियंत्रक एवं महालेखा परीक्षक (CAG)</div>
+<div class="grid-2">
+<div class="card card-green">
+  <div class="card-title"><span class="ic" style="background:rgba(46,125,50,.2)">📊</span> CAG – मूल जानकारी</div>
+  <div class="kv">
+    <div class="kv-item"><strong>अनुच्छेद:</strong> 148–151</div>
+    <div class="kv-item"><strong>भाग:</strong> V (संघ सरकार)</div>
+    <div class="kv-item"><strong>प्रकार:</strong> स्वतंत्र प्राधिकरण</div>
+    <div class="kv-item"><strong>नियुक्ति:</strong> राष्ट्रपति</div>
+    <div class="kv-item"><strong>शपथ:</strong> राष्ट्रपति के समक्ष (तीसरी अनुसूची)</div>
+    <div class="kv-item"><strong>कार्यकाल:</strong> 6 वर्ष या 65 वर्ष</div>
+    <div class="kv-item"><strong>हटाना:</strong> सुप्रीम कोर्ट जज की तरह</div>
+    <div class="kv-item"><strong>1858:</strong> महालेखाकार कार्यालय स्थापित</div>
+    <div class="kv-item"><strong>1976:</strong> लेखांकन से मुक्त</div>
+  </div>
+  <div class="mnemonic">CAG = संसद का एजेंट → केवल <b>संसद के प्रति जिम्मेदार</b></div>
+</div>
+<div class="card card-green">
+  <div class="card-title">📜 CAG से संबंधित अनुच्छेद</div>
+  <table>
+    <tr><th>अनु.</th><th>विषय</th></tr>
+    <tr><td><span class="pill pill-g">148</span></td><td>नियुक्ति, शपथ, सेवा-शर्तें</td></tr>
+    <tr><td><span class="pill pill-g">149</span></td><td>शक्तियाँ और कर्तव्य</td></tr>
+    <tr><td><span class="pill pill-g">150</span></td><td>राष्ट्रपति की सलाह से लेखाओं का प्रारूप</td></tr>
+    <tr><td><span class="pill pill-g">151</span></td><td>CAG का प्रतिवेदन</td></tr>
+    <tr><td><span class="pill pill-g">279</span></td><td>शुद्ध आय की गणना CAG द्वारा प्रमाणित</td></tr>
+  </table>
+  <div class="mnemonic">CAG के अनुच्छेद → <b>"148 में आया, 151 में गया" (नियुक्ति से प्रतिवेदन)</b></div>
+</div>
+</div>
+
+<div class="card card-green">
+  <div class="card-title">🏛️ ऐतिहासिक पृष्ठभूमि</div>
+  <div class="kv">
+    <div class="kv-item"><strong>1858:</strong> महालेखाकार कार्यालय</div>
+    <div class="kv-item"><strong>1860:</strong> Sir Edward Drummond – प्रथम ऑडिटर जनरल</div>
+    <div class="kv-item"><strong>1884:</strong> CAG नाम दिया गया</div>
+    <div class="kv-item"><strong>1919 अधिनियम:</strong> वैधानिक दर्जा</div>
+    <div class="kv-item"><strong>1935 अधिनियम:</strong> प्रांतीय लेखा परीक्षक</div>
+    <div class="kv-item"><strong>1958:</strong> J&K का क्षेत्राधिकार में</div>
+    <div class="kv-item"><strong>1971:</strong> CAG कर्तव्य अधिनियम लागू</div>
+    <div class="kv-item"><strong>1976:</strong> लेखांकन से मुक्त (केवल लेखा परीक्षक)</div>
+  </div>
+</div>
+
+<!-- CVC -->
+<div class="section-head">🔍 3. केन्द्रीय सतर्कता आयोग (CVC)</div>
+<div class="grid-2">
+<div class="card card-blue">
+  <div class="card-title"><span class="ic" style="background:rgba(21,101,192,.2)">👁️</span> CVC – मूल जानकारी</div>
+  <div class="kv">
+    <div class="kv-item"><strong>स्थापना:</strong> फरवरी 1964 (K. Santhanam समिति)</div>
+    <div class="kv-item"><strong>सांविधिक दर्जा:</strong> 25 अगस्त 1988 (अध्यादेश)</div>
+    <div class="kv-item"><strong>CVC अधिनियम:</strong> 2003</div>
+    <div class="kv-item"><strong>मुख्यालय:</strong> नई दिल्ली</div>
+    <div class="kv-item"><strong>प्रकार:</strong> सांविधिक निकाय (सांविधानिक नहीं)</div>
+    <div class="kv-item"><strong>अंतर्गत:</strong> कार्मिक मंत्रालय (नोट: यह गलत है, यह स्वतंत्र है)</div>
+  </div>
+  <div class="mnemonic">CVC = <b>1964 में जन्म, 1988 में साँविधिक, 2003 में कानून</b> → "64-88-2003"</div>
+</div>
+<div class="card card-blue">
+  <div class="card-title">🔧 संरचना व नियुक्ति</div>
+  <div class="kv">
+    <div class="kv-item"><strong>संरचना:</strong> 1 केन्द्रीय सतर्कता आयुक्त + 2 से कम सतर्कता आयुक्त</div>
+    <div class="kv-item"><strong>नियुक्ति:</strong> राष्ट्रपति (समिति की सिफारिश पर)</div>
+    <div class="kv-item"><strong>समिति:</strong> PM (अध्यक्ष) + गृहमंत्री + LoP (लोकसभा)</div>
+    <div class="kv-item"><strong>कार्यकाल:</strong> 4 वर्ष या 65 वर्ष (जो पहले)</div>
+    <div class="kv-item"><strong>वेतन:</strong> UPSC अध्यक्ष के समान (₹2.50 लाख/माह)</div>
+  </div>
+</div>
+</div>
+
+<div class="card card-blue">
+  <div class="card-title">⚡ CVC – पद से हटाना व कार्य</div>
+  <div class="grid-2">
+    <div>
+      <p style="font-size:12.5px;margin-bottom:6px"><strong>हटाना:</strong> उच्चतम न्यायालय की जाँच के बाद राष्ट्रपति द्वारा। अन्य आधार:</p>
+      <ul style="font-size:12px;padding-left:16px;line-height:1.9">
+        <li>दिवालिया घोषित होने पर</li>
+        <li>अपराध हेतु सिद्धदोष</li>
+        <li>पदावधि में सवेतन रोजगार</li>
+        <li>मानसिक/शारीरिक अक्षमता</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:12.5px;margin-bottom:6px"><strong>प्रमुख कार्य (ED):</strong></p>
+      <ul style="font-size:12px;padding-left:16px;line-height:1.9">
+        <li>CBI निदेशक नियुक्ति में समिति अध्यक्ष</li>
+        <li>DSPE (CBI) के कार्यों की निगरानी</li>
+        <li>भ्रष्टाचार की शिकायतें प्राप्त करना</li>
+        <li>2004 – Whistleblower Protection में "नामित एजेंसी"</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- CIC -->
+<div class="section-head">📂 4. केन्द्रीय सूचना आयोग (CIC)</div>
+<div class="grid-2">
+<div class="card card-teal">
+  <div class="card-title"><span class="ic" style="background:rgba(0,105,92,.2)">📁</span> CIC – मूल जानकारी</div>
+  <div class="kv">
+    <div class="kv-item"><strong>गठन:</strong> 12 अक्टूबर 2005 (RTI Act 2005)</div>
+    <div class="kv-item"><strong>संरचना:</strong> 1 मुख्य सूचना आयुक्त + ≤10 सूचना आयुक्त</div>
+    <div class="kv-item"><strong>नियुक्ति:</strong> राष्ट्रपति (समिति: PM + LoP + 1 कैबिनेट मंत्री)</div>
+    <div class="kv-item"><strong>निर्णय:</strong> अंतिम और बाध्यकारी</div>
+    <div class="kv-item"><strong>अधिकारिता:</strong> सभी केन्द्रीय लोक प्राधिकारी</div>
+  </div>
+  <div class="mnemonic">CIC = <b>2005 में RTI से जन्म, 1+10 = 11 सदस्य</b>; नियुक्ति समिति: <b>PM + LoP + Cabinet</b></div>
+</div>
+<div class="card card-teal">
+  <div class="card-title">⏱️ कार्यकाल व हटाना</div>
+  <div class="kv">
+    <div class="kv-item"><strong>कार्यकाल (2019 के बाद):</strong> केंद्र सरकार निर्धारित / 65 वर्ष</div>
+    <div class="kv-item"><strong>मूल:</strong> 5 वर्ष था</div>
+    <div class="kv-item"><strong>मुख्य CIC की पुनर्नियुक्ति:</strong> नहीं</div>
+    <div class="kv-item"><strong>CIC से SIC:</strong> पुनर्नियुक्ति पात्र</div>
+    <div class="kv-item"><strong>हटाना:</strong> सुप्रीम कोर्ट जाँच + राष्ट्रपति</div>
+    <div class="kv-item"><strong>आधार:</strong> दिवालिया, अपराध, सवेतन नियोजन, अक्षमता</div>
+  </div>
+</div>
+</div>
+
+<div class="card card-teal">
+  <div class="card-title">📋 RTI के अंतर्गत CIC की शिकायत सुनने के आधार</div>
+  <ul style="font-size:12.5px;padding-left:16px;line-height:2">
+    <li>जन-सूचना अधिकारी की नियुक्ति न होना</li>
+    <li>जानकारी देने से इनकार</li>
+    <li>निर्धारित समय में जानकारी न मिलना</li>
+    <li>सूचना के बदले गलत फीस</li>
+    <li>मांगी गई सूचना अपर्याप्त/झूठी लगे</li>
+    <li><strong>स्व-प्रेरणा शक्ति</strong> – स्वतः संज्ञान</li>
+  </ul>
+  <div class="mnemonic">RTI चेन: <b>30 दिन → 2501 शिकायत → 25000 उच्चतम जुर्माना → Total दंड</b></div>
+</div>
+
+<!-- NHRC -->
+<div class="section-head">🧡 5. राष्ट्रीय मानवाधिकार आयोग (NHRC)</div>
+<div class="grid-2">
+<div class="card card-red">
+  <div class="card-title"><span class="ic" style="background:rgba(198,40,40,.2)">⚖️</span> NHRC – मूल जानकारी</div>
+  <div class="kv">
+    <div class="kv-item"><strong>अधिनियम:</strong> मानव अधिकार संरक्षण अधिनियम 1993</div>
+    <div class="kv-item"><strong>गठन:</strong> 12 अक्टूबर 1993</div>
+    <div class="kv-item"><strong>प्रकार:</strong> सांविधिक निकाय</div>
+    <div class="kv-item"><strong>2019 संशोधन:</strong> संरचना में बदलाव</div>
+    <div class="kv-item"><strong>UDHR:</strong> 10 दिसम्बर 1948 → अंतर्राष्ट्रीय मानवाधिकार दिवस</div>
+    <div class="kv-item"><strong>Paris Declaration:</strong> अक्टूबर 1991</div>
+  </div>
+  <div class="mnemonic">NHRC = <b>"12 अक्टूबर 1993"</b> → "बारह तारीख को तिरानवे में आयोग"</div>
+</div>
+<div class="card card-red">
+  <div class="card-title">🏛️ संरचना (2019 के बाद)</div>
+  <div style="font-size:12.5px">
+    <p style="margin-bottom:8px"><strong>1 अध्यक्ष + 5 सदस्य:</strong></p>
+    <table>
+      <tr><th>पद</th><th>योग्यता</th></tr>
+      <tr><td>अध्यक्ष</td><td>SC का सेवानिवृत्त मुख्य न्यायाधीश या न्यायाधीश</td></tr>
+      <tr><td>सदस्य 1</td><td>SC में कार्यरत/सेवानिवृत्त न्यायाधीश</td></tr>
+      <tr><td>सदस्य 2</td><td>HC का मुख्य न्यायाधीश</td></tr>
+      <tr><td>सदस्य 3+</td><td>मानवाधिकार के ज्ञाता (≥1 महिला)</td></tr>
+    </table>
+  </div>
+</div>
+</div>
+
+<div class="card card-red">
+  <div class="card-title">👥 नियुक्ति समिति, कार्यकाल व हटाना</div>
+  <div class="grid-2">
+    <div>
+      <p style="font-size:12px;margin-bottom:6px"><strong>नियुक्ति समिति (6 सदस्य):</strong></p>
+      <ol style="font-size:12px;padding-left:16px;line-height:2">
+        <li>PM (अध्यक्ष)</li>
+        <li>लोकसभा अध्यक्ष</li>
+        <li>केन्द्रीय गृहमंत्री</li>
+        <li>LoP लोकसभा</li>
+        <li>LoP राज्यसभा</li>
+        <li>राज्यसभा उपसभापति</li>
+      </ol>
+    </div>
+    <div>
+      <div class="kv">
+        <div class="kv-item"><strong>कार्यकाल:</strong> 3 वर्ष या 70 वर्ष (2019 से)</div>
+        <div class="kv-item"><strong>मूल:</strong> 5 वर्ष/70 वर्ष</div>
+        <div class="kv-item"><strong>पुनर्नियुक्ति:</strong> उम्र 70 से कम हो तो पात्र</div>
+        <div class="kv-item"><strong>हटाना:</strong> SC जाँच + राष्ट्रपति</td></div>
+        <div class="kv-item"><strong>Note:</strong> जाँच करता है, सजा नहीं दे सकता</div>
+      </div>
+    </div>
+  </div>
+  <div class="mnemonic">NHRC = जाँच करो, सज़ा नहीं दो; आर्मी के मामले = नहीं सुनता</div>
+</div>
+
+<!-- RPSC -->
+<div class="section-head">📚 6. राजस्थान लोक सेवा आयोग (RPSC)</div>
+<div class="grid-2">
+<div class="card card-purple">
+  <div class="card-title"><span class="ic" style="background:rgba(106,27,154,.2)">📝</span> RPSC – इतिहास</div>
+  <div class="kv">
+    <div class="kv-item"><strong>अनुच्छेद:</strong> 315–323 (भाग-XIV)</div>
+    <div class="kv-item"><strong>प्रकार:</strong> संवैधानिक आयोग</div>
+    <div class="kv-item"><strong>अध्यादेश:</strong> 16 Aug 1949 (सवाई मानसिंह)</div>
+    <div class="kv-item"><strong>स्थापना:</strong> 20 Aug 1949 (जयपुर में)</div>
+    <div class="kv-item"><strong>कार्यशील:</strong> 22 Dec 1949</div>
+    <div class="kv-item"><strong>मुख्यालय:</strong> 1957 से अजमेर (जयपुर से स्थानांतरित – Satyanarayan Rao समिति)</div>
+    <div class="kv-item"><strong>प्रथम अध्यक्ष:</strong> S.K. Gosh</div>
+  </div>
+  <div class="mnemonic">RPSC का जन्म: <b>16 Aug → 20 Aug → 22 Dec 1949</b> → "अध्यादेश-स्थापना-कार्य"</div>
+</div>
+<div class="card card-purple">
+  <div class="card-title">📋 RPSC – संरचना व नियुक्ति</div>
+  <div class="kv">
+    <div class="kv-item"><strong>नियुक्ति:</strong> राज्यपाल</div>
+    <div class="kv-item"><strong>हटाना:</strong> राष्ट्रपति (SC जाँच)</div>
+    <div class="kv-item"><strong>निलम्बन:</strong> राज्यपाल</div>
+    <div class="kv-item"><strong>कार्यकाल:</strong> 6 वर्ष या 62 वर्ष</div>
+    <div class="kv-item"><strong>मूल (1976 से पहले):</strong> 6/60 वर्ष</div>
+    <div class="kv-item"><strong>त्यागपत्र:</strong> राज्यपाल को</div>
+    <div class="kv-item"><strong>सदस्य संख्या:</strong> राज्यपाल तय करता है</div>
+    <div class="kv-item"><strong>आधे सदस्य:</strong> 10 वर्ष सरकारी सेवा</div>
+    <div class="kv-item"><strong>2025 में:</strong> 1+10 = 11 सदस्य</div>
+  </div>
+</div>
+</div>
+
+<div class="grid-2">
+<div class="card card-purple">
+  <div class="card-title">🏛️ पूर्व की रियासतें (RPSC से पहले)</div>
+  <table>
+    <tr><th>रियासत</th><th>वर्ष</th></tr>
+    <tr class="highlight-row"><td>जोधपुर</td><td>1939</td></tr>
+    <tr><td>जयपुर</td><td>1940</td></tr>
+    <tr class="highlight-row"><td>बीकानेर</td><td>1946</td></tr>
+  </table>
+  <div class="mnemonic">3 रियासतें → <b>जो-जय-बी</b> (1939, 40, 46)</div>
+</div>
+<div class="card card-purple">
+  <div class="card-title">🔒 RPSC के अनुच्छेद</div>
+  <table>
+    <tr><th>अनु.</th><th>विषय</th></tr>
+    <tr><td>315</td><td>प्रत्येक राज्य का 1 लोक सेवा आयोग</td></tr>
+    <tr><td>315(2)</td><td>JPSC (संयुक्त) का प्रावधान</td></tr>
+    <tr><td>316</td><td>RPSC की संरचना</td></tr>
+    <tr><td>317</td><td>हटाने की प्रक्रिया</td></tr>
+    <tr><td>318</td><td>सेवा शर्तें → राज्यपाल</td></tr>
+    <tr><td>319</td><td>सेवानिवृत्ति के बाद पद का प्रतिषेध</td></tr>
+    <tr><td>320</td><td>RPSC के कार्य</td></tr>
+    <tr><td>321</td><td>कार्यों का विस्तार</td></tr>
+    <tr><td>322</td><td>व्यय → संचित निधि से</td></tr>
+    <tr><td>323</td><td>वार्षिक प्रतिवेदन → राज्यपाल</td></tr>
+  </table>
+</div>
+</div>
+
+<div class="card card-purple">
+  <div class="card-title">📌 RPSC – सेवानिवृत्ति के बाद पद (Art. 319)</div>
+  <div class="kv">
+    <div class="kv-item"><strong>RPSC अध्यक्ष:</strong> UPSC का अध्यक्ष/सदस्य बन सकते हैं</div>
+    <div class="kv-item"><strong>RPSC सदस्य:</strong> UPSC सदस्य / अन्य राज्य RPSC अध्यक्ष / RPSC अध्यक्ष</div>
+    <div class="kv-item"><strong>Note:</strong> RPSC से बाहर केंद्र/राज्य में कोई पद नहीं</div>
+    <div class="kv-item"><strong>RPSC → UPSC बने:</strong> कांता खतुरिया, प्रकाशवती शर्मा</div>
+    <div class="kv-item"><strong>सर्वाधिक कार्यकाल अध्यक्ष:</strong> D.S. तिवारी (1951-58)</div>
+  </div>
+</div>
+
+<!-- RHRC -->
+<div class="section-head">🔵 7. राजस्थान मानवाधिकार आयोग (RHRC)</div>
+<div class="grid-2">
+<div class="card card-blue">
+  <div class="card-title">📋 RHRC – मूल जानकारी</div>
+  <div class="kv">
+    <div class="kv-item"><strong>स्थापना:</strong> 18 Jan 1999</div>
+    <div class="kv-item"><strong>क्रियाशील:</strong> मार्च 2000</div>
+    <div class="kv-item"><strong>अधिनियम:</strong> PHRA 1993</div>
+    <div class="kv-item"><strong>संरचना:</strong> 1 अध्यक्ष + 2 सदस्य (2006 से)</div>
+    <div class="kv-item"><strong>मूल:</strong> 1+4 सदस्य</div>
+    <div class="kv-item"><strong>कार्यकाल:</strong> 3 वर्ष / 70 वर्ष (2019 से)</div>
+    <div class="kv-item"><strong>नियुक्ति:</strong> राज्यपाल (चयन समिति की सिफारिश)</div>
+    <div class="kv-item"><strong>हटाना:</strong> राष्ट्रपति (SC जाँच)</div>
+    <div class="kv-item"><strong>निलम्बन:</strong> राज्यपाल</div>
+  </div>
+  <div class="mnemonic">RHRC में <b>नियुक्ति = राज्यपाल, हटाना = राष्ट्रपति</b> (RPSC जैसा)</div>
+</div>
+<div class="card card-blue">
+  <div class="card-title">👥 RHRC – चयन समिति</div>
+  <ol style="font-size:12.5px;padding-left:16px;line-height:2.1">
+    <li>मुख्यमंत्री</li>
+    <li>विधानसभा अध्यक्ष</li>
+    <li>गृहमंत्री</li>
+    <li>विधानसभा में नेता प्रतिपक्ष</li>
+    <li>(यदि विधानपरिषद हो) विधानपरिषद अध्यक्ष व नेता प्रतिपक्ष</li>
+  </ol>
+  <div style="margin-top:8px">
+    <p style="font-size:12px"><strong>प्रथम अध्यक्ष:</strong> कांता भट्टनागर (मार्च-अगस्त 2000)</p>
+    <p style="font-size:12px"><strong>वर्तमान अध्यक्ष:</strong> जंगाराम चुलचेरानी (6वें)</p>
+    <p style="font-size:12px"><strong>1 वर्ष से पुराने मामले:</strong> जाँच नहीं</p>
+    <p style="font-size:12px"><strong>केन्द्रीय सूची के मामले:</strong> जाँच नहीं</p>
+  </div>
+</div>
+</div>
+
+</div>
+<!-- ===================== TAB 2: SUMMARY ===================== -->
+<div id="summary" class="tab-content">
+
+<div class="section-head">📊 Master Comparison Table</div>
+<div class="compare-scroll">
+<table>
+  <tr style="background:var(--surface)">
+    <th>आयोग</th><th>स्थापना</th><th>प्रकार</th><th>नियुक्ति</th><th>हटाना</th><th>कार्यकाल</th><th>अनुच्छेद/अधिनियम</th>
+  </tr>
+  <tr class="highlight-row">
+    <td><span class="pill pill-s">निर्वाचन आयोग</span></td>
+    <td>25 Jan 1950</td>
+    <td>संवैधानिक</td>
+    <td>राष्ट्रपति</td>
+    <td>राष्ट्रपति (SC जज की तरह)</td>
+    <td>6 वर्ष/65 वर्ष</td>
+    <td>अनु. 324-329</td>
+  </tr>
+  <tr>
+    <td><span class="pill pill-g">CAG</span></td>
+    <td>संवैधानिक (1950)</td>
+    <td>संवैधानिक</td>
+    <td>राष्ट्रपति</td>
+    <td>SC जज की तरह</td>
+    <td>6 वर्ष/65 वर्ष</td>
+    <td>अनु. 148-151</td>
+  </tr>
+  <tr class="highlight-row">
+    <td><span class="pill pill-b">CVC</span></td>
+    <td>Feb 1964</td>
+    <td>सांविधिक (1988/2003)</td>
+    <td>राष्ट्रपति</td>
+    <td>SC जाँच + राष्ट्रपति</td>
+    <td>4 वर्ष/65 वर्ष</td>
+    <td>CVC Act 2003</td>
+  </tr>
+  <tr>
+    <td><span class="pill pill-b">CIC</span></td>
+    <td>12 Oct 2005</td>
+    <td>सांविधिक</td>
+    <td>राष्ट्रपति</td>
+    <td>SC जाँच + राष्ट्रपति</td>
+    <td>केंद्र सरकार/65 वर्ष</td>
+    <td>RTI Act 2005</td>
+  </tr>
+  <tr class="highlight-row">
+    <td><span class="pill pill-r">NHRC</span></td>
+    <td>12 Oct 1993</td>
+    <td>सांविधिक</td>
+    <td>राष्ट्रपति</td>
+    <td>SC जाँच + राष्ट्रपति</td>
+    <td>3 वर्ष/70 वर्ष</td>
+    <td>PHRA 1993</td>
+  </tr>
+  <tr>
+    <td><span class="pill" style="background:rgba(106,27,154,.2);color:#CE93D8">RPSC</span></td>
+    <td>20 Aug 1949</td>
+    <td>संवैधानिक</td>
+    <td>राज्यपाल</td>
+    <td>राष्ट्रपति (SC जाँच)</td>
+    <td>6 वर्ष/62 वर्ष</td>
+    <td>अनु. 315-323</td>
+  </tr>
+  <tr class="highlight-row">
+    <td><span class="pill pill-b">RHRC</span></td>
+    <td>18 Jan 1999</td>
+    <td>सांविधिक</td>
+    <td>राज्यपाल</td>
+    <td>राष्ट्रपति (SC जाँच)</td>
+    <td>3 वर्ष/70 वर्ष</td>
+    <td>PHRA 1993</td>
+  </tr>
+</table>
+</div>
+
+<div class="section-head" style="margin-top:20px">⚡ Quick Reference: नियुक्ति समितियाँ</div>
+<div class="compare-scroll">
+<table>
+  <tr><th>आयोग</th><th>नियुक्ति समिति के सदस्य</th></tr>
+  <tr><td><span class="pill pill-b">CVC</span></td><td>PM + गृहमंत्री + LoP (लोकसभा) = 3 सदस्य</td></tr>
+  <tr class="highlight-row"><td><span class="pill pill-b">CIC</span></td><td>PM + LoP (लोकसभा) + 1 कैबिनेट मंत्री = 3 सदस्य</td></tr>
+  <tr><td><span class="pill pill-r">NHRC</span></td><td>PM + लोकसभा अध्यक्ष + गृहमंत्री + LoP (LS) + LoP (RS) + उपसभापति RS = 6 सदस्य</td></tr>
+  <tr class="highlight-row"><td><span class="pill" style="background:rgba(106,27,154,.2);color:#CE93D8">RHRC</span></td><td>CM + विधानसभा अध्यक्ष + गृहमंत्री + नेता प्रतिपक्ष</td></tr>
+</table>
+</div>
+
+<div class="section-head" style="margin-top:20px">📅 Quick Reference: महत्वपूर्ण तिथियाँ</div>
+<div class="fact-grid">
+  <div class="fact-box"><div class="num">25 Jan</div><div class="label">राष्ट्रीय मतदाता दिवस</div></div>
+  <div class="fact-box"><div class="num">10 Dec</div><div class="label">अंतर्राष्ट्रीय मानवाधिकार दिवस</div></div>
+  <div class="fact-box"><div class="num">12 Oct 1993</div><div class="label">NHRC गठन</div></div>
+  <div class="fact-box"><div class="num">12 Oct 2005</div><div class="label">CIC गठन</div></div>
+  <div class="fact-box"><div class="num">20 Aug 1949</div><div class="label">RPSC स्थापना</div></div>
+  <div class="fact-box"><div class="num">Feb 1964</div><div class="label">CVC स्थापना</div></div>
+  <div class="fact-box"><div class="num">18 Jan 1999</div><div class="label">RHRC स्थापना</div></div>
+  <div class="fact-box"><div class="num">25 Jan 1950</div><div class="label">EC स्थापना</div></div>
+</div>
+
+<div class="section-head" style="margin-top:20px">🔄 कार्यकाल तुलना</div>
+<div class="compare-scroll">
+<table>
+  <tr><th>आयोग</th><th>वर्ष</th><th>आयु सीमा</th><th>विशेष</th></tr>
+  <tr><td>निर्वाचन आयुक्त</td><td class="highlight-row">6 वर्ष</td><td>65 वर्ष</td><td>–</td></tr>
+  <tr><td>CAG</td><td class="highlight-row">6 वर्ष</td><td>65 वर्ष</td><td>पुनर्नियुक्ति नहीं</td></tr>
+  <tr><td>CVC आयुक्त</td><td class="highlight-row">4 वर्ष</td><td>65 वर्ष</td><td>CVC → कोई पद नहीं</td></tr>
+  <tr><td>RPSC</td><td class="highlight-row">6 वर्ष</td><td>62 वर्ष</td><td>41वें संशोधन से 62</td></tr>
+  <tr><td>NHRC/RHRC</td><td class="highlight-row">3 वर्ष</td><td>70 वर्ष</td><td>2019 में 5→3 बदला</td></tr>
+  <tr><td>CIC</td><td class="highlight-row">केंद्र तय</td><td>65 वर्ष</td><td>मूल था 5 वर्ष</td></tr>
+</table>
+</div>
+
+</div>
+
+<!-- ===================== TAB 3: RJ PYQ ===================== -->
+<div id="rjpyq" class="tab-content">
+<div class="mcq-score-bar">
+  <span>📊 स्कोर:</span>
+  <span class="score-chip" style="background:rgba(46,125,50,.3);color:#A5D6A7" id="rj-correct">✅ 0</span>
+  <span class="score-chip" style="background:rgba(198,40,40,.3);color:#EF9A9A" id="rj-wrong">❌ 0</span>
+  <span class="score-chip" style="background:rgba(249,168,37,.3);color:#FFD54F" id="rj-skip">⏭️ 0</span>
+  <span style="color:var(--muted);font-size:11px;margin-left:auto">+1 सही | -⅓ गलत</span>
+</div>
+<div id="rj-mcq-container"></div>
+<button class="submit-btn" onclick="submitMCQ('rj')">📊 Result देखें</button>
+</div>
+
+<!-- ===================== TAB 4: STATE PYQ ===================== -->
+<div id="statepyq" class="tab-content">
+<div class="mcq-score-bar">
+  <span>📊 स्कोर:</span>
+  <span class="score-chip" style="background:rgba(46,125,50,.3);color:#A5D6A7" id="state-correct">✅ 0</span>
+  <span class="score-chip" style="background:rgba(198,40,40,.3);color:#EF9A9A" id="state-wrong">❌ 0</span>
+  <span class="score-chip" style="background:rgba(249,168,37,.3);color:#FFD54F" id="state-skip">⏭️ 0</span>
+  <span style="color:var(--muted);font-size:11px;margin-left:auto">+1 सही | -⅓ गलत</span>
+</div>
+<div id="state-mcq-container"></div>
+<button class="submit-btn" onclick="submitMCQ('state')">📊 Result देखें</button>
+</div>
+
+<!-- ===================== TAB 5: LAST MINUTE ===================== -->
+<div id="lastminute" class="tab-content">
+
+<div class="super-mnemonic">
+  <h3>🧠 Super Mnemonic: सभी आयोगों का कार्यकाल</h3>
+  <div class="sm-line">🗳️ <strong>EC/CAG</strong> = "छह-पैंसठ" (6/65)</div>
+  <div class="sm-line">🔍 <strong>CVC</strong> = "चार-पैंसठ" (4/65)</div>
+  <div class="sm-line">📚 <strong>RPSC</strong> = "छह-बासठ" (6/62)</div>
+  <div class="sm-line">⚖️ <strong>NHRC/RHRC</strong> = "तीन-सत्तर" (3/70)</div>
+  <div class="sm-line">📁 <strong>CIC</strong> = "सरकार-पैंसठ" (Govt./65)</div>
+</div>
+
+<div class="super-mnemonic">
+  <h3>🧠 Super Mnemonic: नियुक्ति = कौन करता है?</h3>
+  <div class="sm-line">🔴 <strong>राष्ट्रपति नियुक्त करता है:</strong> EC, CAG, CVC, CIC, NHRC</div>
+  <div class="sm-line">🟣 <strong>राज्यपाल नियुक्त करता है:</strong> RPSC, RHRC</div>
+  <div class="sm-line">🔴 <strong>राष्ट्रपति हटाता है:</strong> सभी (EC के मुख्य आयुक्त = SC जज की तरह; RPSC, RHRC = SC जाँच के बाद)</div>
+</div>
+
+<div class="super-mnemonic">
+  <h3>🧠 Super Mnemonic: स्थापना तिथियाँ</h3>
+  <div class="sm-line">1950 → EC (25 Jan)</div>
+  <div class="sm-line">1964 → CVC (Feb) = "चौसठ में सतर्कता"</div>
+  <div class="sm-line">1993 → NHRC (12 Oct) = "तिरानवे में मानवाधिकार"</div>
+  <div class="sm-line">1999 → RHRC (18 Jan) = "निन्यानवे में राज. मानवाधिकार"</div>
+  <div class="sm-line">2005 → CIC (12 Oct) = "पाँच में सूचना"</div>
+  <div class="sm-line">1949 → RPSC (20 Aug) = "उनपचास में राज. आयोग"</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ निर्वाचन आयोग – फटाफट तथ्य</div>
+  <div class="lm-item">1950: 1 सदस्य, 1989: +2, 1990: वापस 1, 1993: फिर 3</div>
+  <div class="lm-item">अनु. 324 = निर्वाचनों का अधीक्षण, निर्देशन, नियंत्रण</div>
+  <div class="lm-item">अनु. 326 = वयस्क मताधिकार (18 वर्ष)</div>
+  <div class="lm-item">चुनाव चिह्न विवाद = निर्वाचन आयोग का अंतिम निर्णय</div>
+  <div class="lm-item">परिसीमन आयोग = CEC पदेन सदस्य + SC के 2 सेवानिवृत्त/कार्यरत जज</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ CAG – फटाफट तथ्य</div>
+  <div class="lm-item">1858: कार्यालय, 1860: Drummond (प्रथम ऑडिटर), 1884: CAG नाम</div>
+  <div class="lm-item">1976 में लेखांकन से मुक्त = केवल लेखा परीक्षक</div>
+  <div class="lm-item">CAG = संसद का एजेंट, संसद के प्रति जिम्मेदार</div>
+  <div class="lm-item">शपथ: तीसरी अनुसूची</div>
+  <div class="lm-item">अनु. 279: शुद्ध आय की गणना CAG प्रमाणित</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ RPSC – फटाफट तथ्य</div>
+  <div class="lm-item">16 Aug 1949: अध्यादेश → 20 Aug: स्थापना → 22 Dec: कार्यशील</div>
+  <div class="lm-item">अनु. 315-323 (भाग XIV)</div>
+  <div class="lm-item">अनु. 317: नियुक्ति-राज्यपाल, हटाना-राष्ट्रपति (SC Art. 195)</div>
+  <div class="lm-item">अनु. 319: RPSC अध्यक्ष → UPSC अध्यक्ष/सदस्य बन सकते हैं</div>
+  <div class="lm-item">अनु. 323: RPSC का वार्षिक प्रतिवेदन राज्यपाल को</div>
+  <div class="lm-item">RPSC = सलाहकारी/परामर्शकारी निकाय</div>
+  <div class="lm-item">महिला सदस्य: 7 (प्रथम: कांता खतुरिया)</div>
+</div>
+
+<div class="lm-card">
+  <div class="lm-title">⚡ NHRC/RHRC – फटाफट तथ्य</div>
+  <div class="lm-item">दोनों = PHRA 1993 के तहत, सांविधिक निकाय</div>
+  <div class="lm-item">NHRC = जाँच कर सकता है, सजा नहीं दे सकता</div>
+  <div class="lm-item">NHRC = सेना मामले नहीं देखता</div>
+  <div class="lm-item">RHRC = राज्य + समवर्ती सूची के मामले; केंद्रीय नहीं</div>
+  <div class="lm-item">RHRC = 1 वर्ष से पुराने मामले नहीं</div>
+  <div class="lm-item">अनु. 2(1)(ङ) = मानव अधिकार की परिभाषा (प्राण, स्वतंत्रता, समानता, गरिमा)</div>
+</div>
+
+<div class="super-mnemonic">
+  <h3>🧠 Magic Formula: कौन से आयोग = सांविधानिक vs सांविधिक</h3>
+  <div class="sm-line">✅ <strong>सांविधानिक (Constitutional):</strong> EC, CAG, RPSC, UPSC</div>
+  <div class="sm-line">📋 <strong>सांविधिक (Statutory):</strong> CVC, CIC, NHRC, RHRC, CBI</div>
+</div>
+
+</div>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+  <div class="popup">
+    <h2 id="popup-title">परिणाम 🎉</h2>
+    <div class="popup-score" id="popup-score">0</div>
+    <div class="popup-details" id="popup-details"></div>
+    <button class="close-popup" onclick="document.getElementById('popup').classList.remove('show')">बंद करें</button>
+  </div>
+</div>
+
+<script>
+// ===================== DATA =====================
+const rjQuestions = [
+  {q:"भारत के निर्वाचन आयोग की स्थापना कब हुई थी?",opts:["25 जनवरी 1949","25 जनवरी 1950","26 जनवरी 1950","15 अगस्त 1947"],ans:1,exp:"निर्वाचन आयोग की स्थापना 25 जनवरी 1950 को हुई, इसीलिए 25 जनवरी को राष्ट्रीय मतदाता दिवस मनाते हैं।"},
+  {q:"भारतीय संविधान के किस अनुच्छेद में निर्वाचनों के अधीक्षण, निर्देशन और नियंत्रण का उल्लेख है?",opts:["अनु. 316","अनु. 320","अनु. 324","अनु. 326"],ans:2,exp:"अनु. 324 में निर्वाचनों का अधीक्षण, निर्देशन व नियंत्रण निर्वाचन आयोग में निहित है।"},
+  {q:"RPSC की स्थापना कब की गई?",opts:["16 अगस्त 1949","20 अगस्त 1949","22 दिसम्बर 1949","26 जनवरी 1950"],ans:1,exp:"RPSC की स्थापना 20 अगस्त 1949 को जयपुर में हुई। 16 Aug को अध्यादेश जारी हुआ था।"},
+  {q:"RPSC का मुख्यालय वर्तमान में कहाँ है?",opts:["जयपुर","उदयपुर","अजमेर","जोधपुर"],ans:2,exp:"सत्यनारायण राव समिति की सिफारिश पर 1957 में RPSC का मुख्यालय जयपुर से अजमेर स्थानांतरित किया गया।"},
+  {q:"RPSC के अध्यक्ष और सदस्यों का कार्यकाल क्या है?",opts:["5 वर्ष / 62 वर्ष","6 वर्ष / 60 वर्ष","6 वर्ष / 62 वर्ष","4 वर्ष / 60 वर्ष"],ans:2,exp:"41वें संशोधन (1976) द्वारा 6/60 से बढ़ाकर 6/62 वर्ष किया गया।"},
+  {q:"RPSC के अध्यक्ष व सदस्यों को पद से कौन हटाता है?",opts:["राज्यपाल","मुख्यमंत्री","राष्ट्रपति","उच्च न्यायालय"],ans:2,exp:"हालांकि नियुक्ति राज्यपाल करता है, हटाना राष्ट्रपति करता है (उच्चतम न्यायालय में जाँच के बाद)।"},
+  {q:"राजस्थान मानवाधिकार आयोग की स्थापना कब हुई?",opts:["12 अक्टूबर 1993","18 जनवरी 1999","1 मार्च 2000","25 जनवरी 2001"],ans:1,exp:"RHRC की स्थापना 18 जनवरी 1999 को हुई और मार्च 2000 में यह क्रियाशील हुआ।"},
+  {q:"RPSC के प्रथम अध्यक्ष कौन थे?",opts:["D.S. तिवारी","S.K. Gosh","नंदकिशोर बैखा","L.L. जोशी"],ans:1,exp:"RPSC के प्रथम अध्यक्ष S.K. Gosh थे, जो राजस्थान उच्च न्यायालय के मुख्य न्यायाधीश भी रहे।"},
+  {q:"RPSC का उल्लेख भारतीय संविधान के किस भाग में है?",opts:["भाग XII","भाग XIII","भाग XIV","भाग XV"],ans:2,exp:"RPSC का उल्लेख भाग XIV में अनुच्छेद 315-323 के मध्य है।"},
+  {q:"RPSC के कार्यों का उल्लेख किस अनुच्छेद में है?",opts:["अनु. 316","अनु. 317","अनु. 319","अनु. 320"],ans:3,exp:"अनुच्छेद 320 RPSC के कार्यों का उल्लेख करता है।"},
+  {q:"RPSC अपना वार्षिक प्रतिवेदन किसको सौंपती है?",opts:["राष्ट्रपति को","मुख्यमंत्री को","राज्यपाल को","विधानसभा को"],ans:2,exp:"अनुच्छेद 323 के अनुसार RPSC अपना वार्षिक प्रतिवेदन राज्यपाल को सौंपती है, जो इसे विधानमंडल के समक्ष रखवाता है।"},
+  {q:"RPSC के सदस्यों की संख्या का निर्धारण कौन करता है?",opts:["राष्ट्रपति","संसद","राज्यपाल","मुख्यमंत्री"],ans:2,exp:"संविधान में सदस्य संख्या का उल्लेख नहीं है; इसका निर्धारण राज्यपाल करता है।"},
+  {q:"राजस्थान में RHRC के अध्यक्ष व सदस्यों का कार्यकाल (2019 संशोधन के बाद) है:",opts:["5 वर्ष / 70 वर्ष","3 वर्ष / 65 वर्ष","3 वर्ष / 70 वर्ष","2 वर्ष / 65 वर्ष"],ans:2,exp:"2019 के संशोधन से RHRC का कार्यकाल 5/70 से बदलकर 3/70 वर्ष कर दिया गया।"},
+  {q:"RPSC में अब तक महिला सदस्यों की कुल संख्या कितनी रही है?",opts:["5","6","7","8"],ans:2,exp:"RPSC में अब तक 7 महिला सदस्य रही हैं, जिनमें प्रथम कांता खतुरिया हैं।"},
+  {q:"राजस्थान की 3 रियासतों में स्वतंत्र लोक सेवा आयोग थे, कौन सा सही क्रम है?",opts:["जोधपुर 1939, जयपुर 1940, बीकानेर 1946","जयपुर 1939, जोधपुर 1940, बीकानेर 1946","बीकानेर 1939, जोधपुर 1940, जयपुर 1946","जोधपुर 1938, जयपुर 1939, बीकानेर 1945"],ans:0,exp:"जोधपुर 1939, जयपुर 1940, बीकानेर 1946 में अपने लोक सेवा आयोग थे।"},
+  {q:"RPSC के कौन से सदस्य UPSC के सदस्य बने?",opts:["S.D. उज्जवल","कांता खतुरिया","प्रकाशवती शर्मा","a और b दोनों"],ans:2,exp:"RPSC के सदस्य जो UPSC के सदस्य बने: कांता खतुरिया और प्रकाशवती शर्मा दोनों।"},
+  {q:"RPSC को संविधान किस रूप में देखता है?",opts:["कार्यकारी निकाय","विधायी निकाय","मेरिट पद्धति का वॉच डॉग","न्यायिक निकाय"],ans:2,exp:"संविधान राज्य लोक सेवा आयोग को राज्य में मेरिट पद्धति के 'वॉच डॉग' (प्रहरी) के रूप में देखता है।"},
+  {q:"RHRC के अध्यक्ष का वेतन किसके समान होता है?",opts:["उच्चतम न्यायालय के न्यायाधीश","उच्च न्यायालय के मुख्य न्यायाधीश","उच्च न्यायालय के न्यायाधीश","CAG"],ans:1,exp:"RHRC के अध्यक्ष का वेतन उच्च न्यायालय के मुख्य न्यायाधीश (₹2,50,000) के समान होता है।"},
+  {q:"RPSC का सचिव कौन होता है?",opts:["IPS अधिकारी","IAS अधिकारी","IFS अधिकारी","राज्यपाल नामित व्यक्ति"],ans:1,exp:"RPSC का सचिव (IAS) होता है, जिसकी नियुक्ति राज्यपाल द्वारा की जाती है।"},
+  {q:"RPSC के सदस्यों की योग्यता के संदर्भ में संविधान क्या कहता है?",opts:["10 वर्ष की न्यायिक सेवा","स्नातक","संविधान मौन है","IAS अनुभव आवश्यक"],ans:2,exp:"अध्यक्ष पद के लिए संविधान में कोई योग्यता नहीं बताई। आधे सदस्य 10 वर्ष सरकारी सेवा वाले होने चाहिए।"},
+  {q:"RPSC के सर्वाधिक लम्बे कार्यकाल वाले अध्यक्ष कौन थे?",opts:["S.K. Gosh","D.S. तिवारी (1951-58)","भूपेंद्र यादव","C.R. चौधरी"],ans:1,exp:"D.S. तिवारी 1951 से 1958 तक RPSC के अध्यक्ष रहे – सबसे लंबा कार्यकाल।"},
+  {q:"निर्वाचन आयोग को 3 सदस्यीय कब बनाया गया?",opts:["16 अक्टूबर 1989","1 जनवरी 1990","1 अक्टूबर 1993","25 जनवरी 1950"],ans:2,exp:"1 अक्टूबर 1993 को राष्ट्रपति ने अध्यादेश जारी करके निर्वाचन आयोग को पुनः 3 सदस्यीय बनाया।"},
+  {q:"RHRC के प्रथम अध्यक्ष कौन थे?",opts:["s. सगीर अहमद","कांता भट्टनागर","जंगाराम चुलचेरानी","प्रकाश टाँटिया"],ans:1,exp:"RHRC के प्रथम अध्यक्ष कांता भट्टनागर (मार्च-अगस्त 2000) थे, जिनका न्यूनतम कार्यकाल रहा।"},
+  {q:"RPSC प्रथम अल्पसंख्यक अध्यक्ष कौन थे?",opts:["मोहम्मद याकूब (1975-79)","S.K. Gosh","भूपेंद्र यादव","घुलेश्वर मीणा"],ans:0,exp:"RPSC के प्रथम अल्पसंख्यक अध्यक्ष मोहम्मद याकूब (1975-79) थे।"},
+  {q:"हरगोविन्द पंत v/s रघुकुल तिलक विवाद (1979) का निर्णय क्या था?",opts:["RPSC संवैधानिक नहीं है","राज्यपाल का पद राज्य के अधीन नहीं है","राज्यपाल की शक्तियाँ सीमित हैं","RPSC सलाहकारी निकाय है"],ans:1,exp:"1979 में न्यायालय ने फैसला दिया कि राज्यपाल का पद राज्य के अधीन नियोजन का पद नहीं है।"}
+];
+
+const stateQuestions = [
+  {q:"भारत के नियंत्रक एवं महालेखा परीक्षक (CAG) की नियुक्ति कौन करता है?",opts:["प्रधानमंत्री","लोकसभा अध्यक्ष","राष्ट्रपति","मुख्य न्यायाधीश"],ans:2,exp:"CAG की नियुक्ति राष्ट्रपति द्वारा की जाती है (अनु. 148)।"},
+  {q:"भारत के CAG का कार्यकाल क्या है?",opts:["5 वर्ष / 60 वर्ष","6 वर्ष / 65 वर्ष","4 वर्ष / 62 वर्ष","6 वर्ष / 62 वर्ष"],ans:1,exp:"CAG का कार्यकाल 6 वर्ष या 65 वर्ष की आयु (जो पहले हो)।"},
+  {q:"CAG को किस प्रकार हटाया जा सकता है?",opts:["राष्ट्रपति के आदेश से","संसद के विशेष बहुमत से (उच्चतम न्यायालय के न्यायाधीश की तरह)","प्रधानमंत्री की सिफारिश पर","लोकसभा के साधारण बहुमत से"],ans:1,exp:"CAG को उच्चतम न्यायालय के न्यायाधीश की तरह संसद के दोनों सदनों में विशेष बहुमत से हटाया जा सकता है।"},
+  {q:"भारत में केन्द्रीय सतर्कता आयोग (CVC) की स्थापना किस वर्ष हुई?",opts:["1960","1962","1964","1966"],ans:2,exp:"CVC की स्थापना K. Santhanam समिति की सिफारिश पर फरवरी 1964 में हुई।"},
+  {q:"CVC अधिनियम कब पारित हुआ?",opts:["1997","2001","2003","2005"],ans:2,exp:"केन्द्रीय सतर्कता आयोग अधिनियम 2003 में संसद द्वारा पारित हुआ।"},
+  {q:"केन्द्रीय सूचना आयोग (CIC) के मुख्य सूचना आयुक्त की नियुक्ति समिति में कौन अध्यक्ष होता है?",opts:["राष्ट्रपति","प्रधानमंत्री","लोकसभा अध्यक्ष","मुख्य न्यायाधीश"],ans:1,exp:"CIC नियुक्ति समिति में PM अध्यक्ष, LoP और एक कैबिनेट मंत्री सदस्य होते हैं।"},
+  {q:"CIC के निर्णय की प्रकृति क्या है?",opts:["सलाहकारी","अंतिम और बाध्यकारी","न्यायिक समीक्षा योग्य नहीं","केवल सुझाव"],ans:1,exp:"CIC के निर्णय अंतिम और बाध्यकारी होते हैं।"},
+  {q:"राष्ट्रीय मानवाधिकार आयोग (NHRC) के अध्यक्ष की योग्यता क्या है?",opts:["उच्च न्यायालय का मुख्य न्यायाधीश","उच्चतम न्यायालय का सेवानिवृत्त मुख्य न्यायाधीश या न्यायाधीश","IAS अधिकारी","संसद सदस्य"],ans:1,exp:"NHRC अध्यक्ष के लिए योग्यता: भारतीय SC का सेवानिवृत्त मुख्य न्यायाधीश या न्यायाधीश (2019 से)।"},
+  {q:"NHRC की नियुक्ति समिति में कितने सदस्य होते हैं?",opts:["3","4","5","6"],ans:3,exp:"NHRC नियुक्ति समिति में 6 सदस्य: PM, लोकसभा अध्यक्ष, गृहमंत्री, LoP (LS), LoP (RS), उपसभापति RS।"},
+  {q:"NHRC किसकी शिकायतों की जाँच नहीं करता?",opts:["पुलिस","जेल","सेना","न्यायालय"],ans:2,exp:"NHRC सेना से संबंधित मामलों की जाँच नहीं करता।"},
+  {q:"NHRC का कार्यकाल (2019 संशोधन के बाद) क्या है?",opts:["5 वर्ष / 70 वर्ष","3 वर्ष / 70 वर्ष","3 वर्ष / 65 वर्ष","5 वर्ष / 65 वर्ष"],ans:1,exp:"2019 के संशोधन से NHRC का कार्यकाल 5/70 से घटाकर 3/70 वर्ष किया गया।"},
+  {q:"भारतीय संविधान के किस अनुच्छेद में CAG की नियुक्ति का उल्लेख है?",opts:["अनु. 148","अनु. 149","अनु. 150","अनु. 151"],ans:0,exp:"अनु. 148 में CAG की नियुक्ति, शपथ और सेवा-शर्तों का उल्लेख है।"},
+  {q:"CVC के Central Vigilance Commissioner का कार्यकाल है:",opts:["4 वर्ष / 65 वर्ष","5 वर्ष / 65 वर्ष","4 वर्ष / 62 वर्ष","6 वर्ष / 65 वर्ष"],ans:0,exp:"CVC के Central Vigilance Commissioner का कार्यकाल 4 वर्ष या 65 वर्ष की आयु है।"},
+  {q:"CAG के कार्यों व शक्तियों का उल्लेख किस अनुच्छेद में है?",opts:["अनु. 148","अनु. 149","अनु. 150","अनु. 151"],ans:1,exp:"अनु. 149 CAG की शक्तियों और कर्तव्यों का उल्लेख करता है।"},
+  {q:"राष्ट्रीय मतदाता दिवस कब मनाया जाता है?",opts:["26 जनवरी","25 जनवरी","15 अगस्त","2 अक्टूबर"],ans:1,exp:"25 जनवरी को राष्ट्रीय मतदाता दिवस मनाया जाता है, क्योंकि 25 जनवरी 1950 को निर्वाचन आयोग की स्थापना हुई थी।"},
+  {q:"भारत का निर्वाचन आयोग किस प्रकार का निकाय है?",opts:["संवैधानिक","सांविधिक","प्रशासनिक","न्यायिक"],ans:0,exp:"निर्वाचन आयोग एक स्वायत्त संवैधानिक प्राधिकरण है (अनु. 324 द्वारा स्थापित)।"},
+  {q:"भारत में वयस्क मताधिकार का उल्लेख किस अनुच्छेद में है?",opts:["अनु. 324","अनु. 325","अनु. 326","अनु. 327"],ans:2,exp:"अनु. 326 में लोकसभा और राज्य विधानसभाओं के लिए वयस्क मताधिकार का उल्लेख है।"},
+  {q:"CAG का प्रतिवेदन संबंधी अनुच्छेद कौन सा है?",opts:["अनु. 148","अनु. 149","अनु. 150","अनु. 151"],ans:3,exp:"अनु. 151 CAG के प्रतिवेदन के बारे में है।"},
+  {q:"किस वर्ष CAG को लेखांकन के कार्यों से मुक्त किया गया?",opts:["1971","1973","1976","1979"],ans:2,exp:"वर्ष 1976 में CAG को लेखांकन के कार्यों से मुक्त कर दिया गया।"},
+  {q:"CVC नियुक्ति समिति में कौन नहीं होता?",opts:["प्रधानमंत्री","गृहमंत्री","लोकसभा में विपक्ष का नेता","राज्यसभा में विपक्ष का नेता"],ans:3,exp:"CVC नियुक्ति समिति: PM + गृहमंत्री + LoP (लोकसभा) = तीन सदस्य। राज्यसभा का LoP इसमें नहीं होता।"},
+  {q:"अंतर्राष्ट्रीय मानवाधिकार दिवस कब मनाया जाता है?",opts:["12 अक्टूबर","10 दिसम्बर","25 जनवरी","1 मई"],ans:1,exp:"10 दिसम्बर 1948 को UNGA ने UDHR घोषित की, इसलिए 10 दिसम्बर को अंतर्राष्ट्रीय मानवाधिकार दिवस मनाते हैं।"},
+  {q:"NHRC किस प्रकार का निकाय है?",opts:["संवैधानिक","सांविधिक","प्रशासनिक","न्यायिक"],ans:1,exp:"NHRC मानव अधिकार संरक्षण अधिनियम 1993 के तहत गठित एक सांविधिक निकाय है।"},
+  {q:"भारत में केन्द्रीय सूचना आयोग का गठन किस अधिनियम के तहत हुआ?",opts:["CVC Act 2003","RTI Act 2005","NHRC Act 1993","CAG Act 1971"],ans:1,exp:"CIC का गठन सूचना का अधिकार अधिनियम 2005 के तहत 12 अक्टूबर 2005 को हुआ।"},
+  {q:"भारत में महालेखाकार का कार्यालय कब स्थापित किया गया?",opts:["1850","1857","1858","1884"],ans:2,exp:"भारत में महालेखाकार का कार्यालय वर्ष 1858 में स्थापित किया गया।"},
+  {q:"CAG को 'महालेखा परीक्षक एवं नियंत्रक' नाम कब दिया गया?",opts:["1858","1860","1884","1919"],ans:2,exp:"सन् 1884 में इस पद को 'भारत के नियंत्रक और महालेखा परीक्षक' के रूप में नामित किया गया।"}
+];
+
+// ===================== RENDER MCQ =====================
+function renderMCQ(questions, containerId, prefix) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  questions.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'mcq-q';
+    div.id = `${prefix}-q${i}`;
+    div.innerHTML = `
+      <div class="mcq-num">${prefix === 'rj' ? '🏆 RJ' : '🗺️ State'} Q${i+1}</div>
+      <div class="mcq-text">${q.q}</div>
+      <div class="options">
+        ${q.opts.map((o,j)=>`<button class="opt" onclick="selectOpt(this,'${prefix}',${i},${j})">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}
+      </div>
+      <div class="explanation" id="${prefix}-exp${i}">💡 ${q.exp}</div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+renderMCQ(rjQuestions, 'rj-mcq-container', 'rj');
+renderMCQ(stateQuestions, 'state-mcq-container', 'state');
+
+const answers = {rj:{}, state:{}};
+
+function selectOpt(btn, prefix, qIdx, optIdx) {
+  const questions = prefix === 'rj' ? rjQuestions : stateQuestions;
+  const q = questions[qIdx];
+  const container = document.getElementById(`${prefix}-q${qIdx}`);
+  const btns = container.querySelectorAll('.opt');
+  btns.forEach(b => b.disabled = true);
+  if (answers[prefix][qIdx] !== undefined) return;
+  answers[prefix][qIdx] = optIdx;
+  if (optIdx === q.ans) {
+    btn.classList.add('correct');
+  } else {
+    btn.classList.add('wrong');
+    btns[q.ans].classList.add('reveal-correct');
+  }
+  document.getElementById(`${prefix}-exp${qIdx}`).classList.add('show');
+  updateLiveScore(prefix);
+}
+
+function updateLiveScore(prefix) {
+  const questions = prefix === 'rj' ? rjQuestions : stateQuestions;
+  let c=0, w=0, s=0;
+  questions.forEach((_,i) => {
+    if (answers[prefix][i] === undefined) s++;
+    else if (answers[prefix][i] === questions[i].ans) c++;
+    else w++;
+  });
+  document.getElementById(`${prefix}-correct`).textContent = `✅ ${c}`;
+  document.getElementById(`${prefix}-wrong`).textContent = `❌ ${w}`;
+  document.getElementById(`${prefix}-skip`).textContent = `⏭️ ${s}`;
+}
+
+function submitMCQ(prefix) {
+  const questions = prefix === 'rj' ? rjQuestions : stateQuestions;
+  let c=0, w=0, s=0;
+  questions.forEach((_,i) => {
+    if (answers[prefix][i] === undefined) s++;
+    else if (answers[prefix][i] === questions[i].ans) c++;
+    else w++;
+  });
+  const score = (c - w/3).toFixed(2);
+  const percent = Math.round((c/questions.length)*100);
+  let emoji = percent >= 80 ? '🎉' : percent >= 60 ? '👍' : percent >= 40 ? '😐' : '📖';
+  document.getElementById('popup-title').textContent = `${emoji} परिणाम`;
+  document.getElementById('popup-score').textContent = score;
+  document.getElementById('popup-score').style.color = score >= 0 ? '#66BB6A' : '#EF9A9A';
+  document.getElementById('popup-details').innerHTML = `
+    ✅ सही: ${c} &nbsp;|&nbsp; ❌ गलत: ${w} &nbsp;|&nbsp; ⏭️ छोड़े: ${s}<br>
+    कुल: ${questions.length} प्रश्न | सटीकता: ${percent}%<br>
+    <small style="color:var(--muted)">+1 सही, -⅓ गलत पर आधारित</small>
+  `;
+  document.getElementById('popup').classList.add('show');
+}
+
+// ===================== TABS =====================
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

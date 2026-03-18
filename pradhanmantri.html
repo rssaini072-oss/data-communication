@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>प्रधानमंत्री — Complete Revision</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f0f0f; color: #f0f0f0; font-family: 'Noto Sans Devanagari', sans-serif; }
+
+/* TABS */
+.nav { display: flex; background: #1a1a1a; overflow-x: auto; border-bottom: 2px solid #333; position: sticky; top: 0; z-index: 99; }
+.nav button {
+  padding: 0.9rem 1.2rem;
+  background: none; border: none; color: #888;
+  font-family: 'Baloo 2', cursive; font-size: 0.95rem; font-weight: 600;
+  cursor: pointer; white-space: nowrap; border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+.nav button.on { color: #ff7700; border-bottom-color: #ff7700; }
+
+.page { display: none; padding: 1.5rem 1rem; max-width: 860px; margin: 0 auto; }
+.page.on { display: block; }
+
+h2 { font-family: 'Baloo 2', cursive; font-size: 1.6rem; font-weight: 800;
+  background: linear-gradient(135deg, #ff7700, #ffd700);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 1.2rem; }
+
+/* FACT CARDS */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.9rem; margin-bottom: 1.5rem; }
+.card {
+  background: #1e1e1e; border-radius: 14px; padding: 1.1rem 1.3rem;
+  border-left: 4px solid #ff7700;
+}
+.card.blue { border-left-color: #4da6ff; }
+.card.green { border-left-color: #3fb950; }
+.card.gold { border-left-color: #ffd700; }
+.card.red { border-left-color: #f85149; }
+.card.purple { border-left-color: #bc8cff; }
+.card h3 { font-family: 'Baloo 2', cursive; font-size: 1rem; margin-bottom: 0.5rem; color: #ff7700; }
+.card.blue h3 { color: #4da6ff; }
+.card.green h3 { color: #3fb950; }
+.card.gold h3 { color: #ffd700; }
+.card.red h3 { color: #f85149; }
+.card.purple h3 { color: #bc8cff; }
+.card p, .card li { font-size: 0.9rem; color: #bbb; line-height: 1.8; }
+.card ul { padding-left: 1.1rem; }
+.hl { color: #fff; font-weight: 700; }
+
+/* AMENDMENT TABLE */
+.tbl { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+.tbl th { background: #ff770022; color: #ff7700; padding: 0.7rem 1rem; border: 1px solid #333; text-align: left; font-family: 'Baloo 2', cursive; }
+.tbl td { padding: 0.7rem 1rem; border: 1px solid #333; color: #bbb; font-size: 0.9rem; vertical-align: top; }
+.tbl tr:nth-child(even) td { background: #1a1a1a; }
+.tbl td strong { color: #fff; }
+
+/* PM TIMELINE */
+.pm-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+.pm-item {
+  background: #1e1e1e;
+  border-radius: 12px; padding: 0.9rem 1.2rem;
+  display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start;
+  border-left: 4px solid #333; cursor: pointer;
+  transition: border-color 0.2s;
+}
+.pm-item:hover { border-left-color: #ff7700; }
+.pm-num { font-family: 'Baloo 2', cursive; font-size: 1.2rem; font-weight: 800; color: #ff7700; min-width: 30px; }
+.pm-name { font-weight: 700; font-size: 1rem; color: #fff; flex: 1; min-width: 150px; }
+.pm-date { font-size: 0.8rem; color: #888; background: #111; padding: 0.2rem 0.5rem; border-radius: 6px; }
+.pm-facts { width: 100%; margin-top: 0.4rem; font-size: 0.85rem; color: #aaa; line-height: 1.7; padding-left: 0.5rem; border-left: 2px solid #333; display: none; }
+.pm-facts.show { display: block; }
+.pm-tag { display: inline-block; background: #ff770020; border: 1px solid #ff770044; border-radius: 5px; padding: 0.1rem 0.5rem; font-size: 0.75rem; color: #ff7700; margin: 0.1rem; }
+.pm-tag.blue { background: #4da6ff20; border-color: #4da6ff44; color: #4da6ff; }
+.pm-tag.green { background: #3fb95020; border-color: #3fb95044; color: #3fb950; }
+.pm-tag.gold { background: #ffd70020; border-color: #ffd70044; color: #ffd700; }
+.pm-tag.red { background: #f8514920; border-color: #f8514944; color: #f85149; }
+
+/* SPECIALS TABLE */
+.spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.9rem; margin-bottom: 1.5rem; }
+.spec-card { background: #1e1e1e; border-radius: 12px; padding: 1rem 1.2rem; }
+.spec-card h4 { font-family: 'Baloo 2', cursive; color: #ffd700; margin-bottom: 0.6rem; font-size: 0.95rem; }
+.spec-card li { font-size: 0.88rem; color: #bbb; line-height: 1.8; list-style: none; padding-left: 0.2rem; }
+.spec-card li::before { content: "→ "; color: #ff7700; }
+
+/* QUIZ */
+.qbox { background: #1e1e1e; border-radius: 14px; padding: 1.3rem; margin-bottom: 1rem; }
+.qbox .qtxt { font-weight: 600; margin-bottom: 0.8rem; font-size: 0.97rem; }
+.qbox .qn { font-size: 0.75rem; color: #ff7700; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: 1px; }
+.opt { display: block; width: 100%; background: #111; border: 1px solid #333; border-radius: 9px; padding: 0.6rem 0.9rem; margin-bottom: 0.4rem; cursor: pointer; text-align: left; color: #ccc; font-size: 0.92rem; transition: all 0.15s; }
+.opt:hover:not(:disabled) { border-color: #ff7700; background: #ff770010; }
+.opt.ok { border-color: #3fb950 !important; background: #3fb95015 !important; color: #3fb950 !important; }
+.opt.no { border-color: #f85149 !important; background: #f8514915 !important; color: #f85149 !important; }
+.exp { margin-top: 0.7rem; padding: 0.6rem 0.9rem; background: #ffffff08; border-left: 3px solid #ffd700; border-radius: 0 8px 8px 0; font-size: 0.85rem; color: #999; display: none; }
+.exp.on { display: block; }
+
+/* HERO */
+.hero { text-align: center; padding: 2rem 1rem 1rem; }
+.hero h1 { font-family: 'Baloo 2', cursive; font-size: clamp(1.6rem, 5vw, 2.5rem); font-weight: 800;
+  background: linear-gradient(135deg, #ffd700, #ff7700);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.3rem; }
+.hero p { color: #666; font-size: 0.9rem; }
+.chips { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-top: 0.6rem; }
+.chip { background: #ffffff10; border: 1px solid #333; border-radius: 20px; padding: 0.2rem 0.7rem; font-size: 0.78rem; color: #888; }
+
+/* TRICK BOX */
+.trick { background: linear-gradient(135deg, #1e1500, #1e1e1e); border: 1px solid #ffd70033; border-radius: 14px; padding: 1.1rem 1.3rem; margin-bottom: 0.9rem; }
+.trick h4 { color: #ffd700; font-family: 'Baloo 2', cursive; margin-bottom: 0.4rem; }
+.trick p { font-size: 0.9rem; color: #bbb; line-height: 1.7; }
+.trick strong { color: #fff; }
+
+.section-sub { font-family: 'Baloo 2', cursive; font-size: 1.1rem; color: #ffd700; margin: 1.2rem 0 0.7rem; border-bottom: 1px solid #333; padding-bottom: 0.3rem; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div style="font-size:2.2rem">🏛️</div>
+  <h1>प्रधानमंत्री एवं मंत्रिपरिषद</h1>
+  <p>Ranjeet Sir — Part 1 to 5 | Rajasthan Police SI 2025</p>
+  <div class="chips">
+    <span class="chip">📖 Part 5</span>
+    <span class="chip">📜 Art 74-75</span>
+    <span class="chip">👆 Click करके खोलें</span>
+  </div>
+</div>
+
+<div class="nav">
+  <button class="on" onclick="go('p1',this)">📋 मूल बातें</button>
+  <button onclick="go('p2',this)">📜 Art 75</button>
+  <button onclick="go('p3',this)">🧠 Tricks</button>
+  <button onclick="go('p4',this)">👑 सभी PM</button>
+  <button onclick="go('p5',this)">🌟 Special Facts</button>
+  <button onclick="go('p6',this)">✍️ Quiz</button>
+</div>
+
+<!-- ===== PAGE 1: मूल बातें ===== -->
+<div id="p1" class="page on">
+  <h2>📋 मूल बातें — एक नजर में</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>📌 संविधान में कहाँ है?</h3>
+      <p><span class="hl">भाग 5</span> — अनुच्छेद <span class="hl">74 और 75</span></p>
+    </div>
+    <div class="card blue">
+      <h3>👥 मंत्रिपरिषद vs मंत्रिमंडल</h3>
+      <ul>
+        <li><span class="hl">मंत्रिपरिषद</span> = सभी मंत्री</li>
+        <li><span class="hl">मंत्रिमंडल</span> = केवल Cabinet मंत्री</li>
+        <li>मंत्रिमंडल शब्द = <span class="hl">44वाँ CA 1978</span></li>
+      </ul>
+    </div>
+    <div class="card green">
+      <h3>⚠️ याद रखो!</h3>
+      <ul>
+        <li><span class="hl">उपमंत्री</span> = संविधान में नहीं!</li>
+        <li>न्यूनतम मंत्रिपरिषद = संविधान में नहीं</li>
+        <li>केंद्र में <span class="hl">न्यूनतम का उल्लेख नहीं</span></li>
+      </ul>
+    </div>
+    <div class="card gold">
+      <h3>🏅 मंत्रियों के प्रकार</h3>
+      <ul>
+        <li>कैबिनेट मंत्री (सबसे वरिष्ठ)</li>
+        <li>राज्य मंत्री (स्वतंत्र प्रभार)</li>
+        <li>राज्य मंत्री (सहायक)</li>
+        <li>सहायक/Deputy मंत्री</li>
+      </ul>
+    </div>
+    <div class="card red">
+      <h3>🏛️ अनुच्छेद 74 — Key</h3>
+      <ul>
+        <li>राष्ट्रपति को सहायता = मंत्रिपरिषद</li>
+        <li><span class="hl">42वाँ CA 1976</span> = सलाह बाध्यकारी</li>
+        <li><span class="hl">44वाँ CA 1978</span> = एक बार पुनर्विचार</li>
+        <li>सलाह को <span class="hl">Court में चुनौती नहीं</span></li>
+      </ul>
+    </div>
+    <div class="card purple">
+      <h3>🏛️ संसदीय सचिव</h3>
+      <p>सब कुछ <span class="hl">प्रधानमंत्री</span> से:</p>
+      <p>नियुक्ति • शपथ • कार्यकाल • त्यागपत्र • हटाना</p>
+    </div>
+  </div>
+
+  <div class="section-sub">📊 संशोधन — एक नजर में</div>
+  <table class="tbl">
+    <tr><th>संशोधन</th><th>वर्ष</th><th>क्या हुआ</th></tr>
+    <tr><td><strong>42वाँ CA</strong></td><td>1976</td><td>मंत्रिपरिषद की सलाह <strong>बाध्यकारी</strong> बनी</td></tr>
+    <tr><td><strong>44वाँ CA</strong></td><td>1978</td><td><strong>मंत्रिमंडल</strong> शब्द जोड़ा + राष्ट्रपति को <strong>एक बार पुनर्विचार</strong></td></tr>
+    <tr><td><strong>91वाँ CA</strong></td><td>2003</td><td>मंत्रिपरिषद = लोकसभा के <strong>15%</strong> से अधिक नहीं (~81 मंत्री)</td></tr>
+  </table>
+
+  <div class="section-sub">⚙️ PM के कार्य</div>
+  <div class="grid">
+    <div class="card blue">
+      <h3>PM क्या है?</h3>
+      <ul>
+        <li>तीनों सेनाओं का <span class="hl">राजनैतिक प्रमुख</span></li>
+        <li>कार्यपालिका का <span class="hl">वास्तविक प्रमुख</span></li>
+        <li>मंत्रिपरिषद व राष्ट्रपति के बीच <span class="hl">कड़ी</span></li>
+      </ul>
+    </div>
+    <div class="card green">
+      <h3>PM निम्न का अध्यक्ष</h3>
+      <ul>
+        <li>अंतर्राज्यीय परिषद</li>
+        <li>नीति आयोग</li>
+        <li>राष्ट्रीय विकास परिषद</li>
+        <li>राष्ट्रीय सुरक्षा परिषद</li>
+        <li>विश्वभारती विश्वविद्यालय कुलपति</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 2: ART 75 ===== -->
+<div id="p2" class="page">
+  <h2>📜 अनुच्छेद 75 — पूरा विस्तार</h2>
+  <table class="tbl">
+    <tr><th>अनुच्छेद</th><th>विषय</th><th>क्या कहता है</th></tr>
+    <tr><td><strong>75(1)</strong></td><td>नियुक्ति</td><td>राष्ट्रपति PM नियुक्त करेगा + PM की सलाह पर अन्य मंत्री</td></tr>
+    <tr><td><strong>75(1-A)</strong></td><td>91वाँ CA 2003</td><td>PM सहित मंत्री = लोकसभा की <strong>15%</strong> सीटों से अधिक नहीं</td></tr>
+    <tr><td><strong>75(1-B)</strong></td><td>91वाँ CA 2003</td><td>10वीं अनुसूची — दलबदल के अयोग्य को <strong>मंत्री नहीं</strong> बनाया जा सकता</td></tr>
+    <tr><td><strong>75(2)</strong></td><td>कार्यकाल</td><td>मंत्रिपरिषद = <strong>राष्ट्रपति के प्रसादपर्यंत</strong></td></tr>
+    <tr><td><strong>75(3)</strong></td><td>उत्तरदायित्व</td><td>मंत्रिपरिषद = <strong>सामूहिक रूप से लोकसभा के प्रति</strong> उत्तरदायी</td></tr>
+    <tr><td><strong>75(4)</strong></td><td>शपथ</td><td>3री अनुसूची के अनुसार <strong>राष्ट्रपति शपथ दिलाता है</strong></td></tr>
+    <tr><td><strong>75(5)</strong></td><td>योग्यता</td><td>मंत्री = <strong>संसद का सदस्य</strong> होना जरूरी (6 माह में)</td></tr>
+    <tr><td><strong>75(6)</strong></td><td>वेतन</td><td>मंत्रिपरिषद का वेतन = <strong>संसद तय</strong> करेगी</td></tr>
+  </table>
+
+  <div class="section-sub">💡 अतिरिक्त Facts</div>
+  <div class="grid">
+    <div class="card">
+      <h3>किचन Cabinet</h3>
+      <p>PM + कुछ मंत्री + दोस्त/रिश्तेदार<br>
+      <span class="hl">ब्रिटेन से लिया गया</span></p>
+    </div>
+    <div class="card blue">
+      <h3>छाया मंत्रिमंडल</h3>
+      <p><span class="hl">विपक्ष</span> द्वारा बनाया जाता है<br>ब्रिटेन की अवधारणा</p>
+    </div>
+    <div class="card green">
+      <h3>व्यक्तिगत उत्तरदायित्व</h3>
+      <p>मंत्री <span class="hl">व्यक्तिगत रूप से</span> राष्ट्रपति के प्रति भी उत्तरदायी होते हैं</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 3: TRICKS ===== -->
+<div id="p3" class="page">
+  <h2>🧠 Magic Tricks — एक बार पढ़ो, याद रहे</h2>
+
+  <div class="trick">
+    <h4>🔢 Trick 1 — 42 vs 44 CA याद करो</h4>
+    <p><strong>"42 में बांधा (बाध्यकारी), 44 में थोड़ी छूट दी (पुनर्विचार)"</strong><br>
+    42वाँ CA 1976 → सलाह <strong>बाध्यकारी</strong> बनी<br>
+    44वाँ CA 1978 → <strong>मंत्रिमंडल</strong> शब्द + राष्ट्रपति को <strong>एक बार वापस भेजने</strong> का अधिकार</p>
+  </div>
+
+  <div class="trick">
+    <h4>📏 Trick 2 — 15% Formula</h4>
+    <p>91वाँ CA 2003 → <strong>543 × 15/100 = 81 मंत्री</strong> (लगभग)<br>
+    <strong>याद करो: "91 में 15% की छत आई"</strong></p>
+  </div>
+
+  <div class="trick">
+    <h4>🔤 Trick 3 — Art 74 vs 75</h4>
+    <p><strong>74 = "सलाह"</strong> — राष्ट्रपति को मंत्रिपरिषद सलाह देती है<br>
+    <strong>75 = "बुलाह" (नियुक्ति)</strong> — PM और मंत्रियों की नियुक्ति<br>
+    <strong>"74 में सलाह, 75 में बुलाह"</strong></p>
+  </div>
+
+  <div class="trick">
+    <h4>🏛️ Trick 4 — संसदीय सचिव = सब PM</h4>
+    <p><strong>SNTKH</strong> → सब PM से:<br>
+    <strong>S</strong> = शपथ (PM दिलाता है)<br>
+    <strong>N</strong> = नियुक्ति (PM करता है)<br>
+    <strong>T</strong> = त्यागपत्र (PM को देते हैं)<br>
+    <strong>K</strong> = कार्यकाल (PM की इच्छा)<br>
+    <strong>H</strong> = हटाना (PM हटाता है)</p>
+  </div>
+
+  <div class="trick">
+    <h4>⚠️ Trick 5 — संविधान में नहीं है</h4>
+    <p>❌ <strong>उपमंत्री</strong> — आज भी संविधान में उल्लेख नहीं<br>
+    ❌ <strong>मंत्रिमंडल</strong> — मूल संविधान में नहीं था (44वाँ CA से आया)<br>
+    ❌ <strong>न्यूनतम मंत्रिपरिषद</strong> — केंद्र में इसका उल्लेख नहीं<br>
+    <strong>याद करो: "उम-म-न" तीनों संविधान में नहीं थे</strong></p>
+  </div>
+
+  <div class="trick">
+    <h4>👑 Trick 6 — 3 बार PM बनने वाले</h4>
+    <p><strong>नेहरू, इंदिरा, मोदी, वाजपेयी</strong> — चारों 3 बार<br>
+    <strong>याद करो: "नेहरू-इंदिरा-मोदी-वाजपेयी = 3-3-3-3"</strong><br>
+    डॉ. मनमोहन सिंह = 2 बार</p>
+  </div>
+
+  <div class="trick">
+    <h4>📅 Trick 7 — बहुमत Formula</h4>
+    <p><strong>बहुमत = (कुल सीट ÷ 2) + 1</strong><br>
+    543 ÷ 2 = 271.5 → 271+1 = <strong>272 सीट</strong><br>
+    <strong>याद करो: "आधे से एक ज्यादा"</strong></p>
+  </div>
+</div>
+
+<!-- ===== PAGE 4: सभी PM ===== -->
+<div id="p4" class="page">
+  <h2>👑 भारत के सभी प्रधानमंत्री <span style="font-size:0.8rem;color:#888">(click करके details देखें)</span></h2>
+  <div class="pm-list" id="pmList"></div>
+</div>
+
+<!-- ===== PAGE 5: SPECIAL FACTS ===== -->
+<div id="p5" class="page">
+  <h2>🌟 Special Facts — परीक्षा में बार-बार आते हैं</h2>
+  <div class="spec-grid" id="specGrid"></div>
+</div>
+
+<!-- ===== PAGE 6: QUIZ ===== -->
+<div id="p6" class="page">
+  <h2>✍️ Self-Test Quiz</h2>
+  <div id="scoreBox" style="display:none; text-align:center; background:#1e1e1e; border:2px solid #ffd700; border-radius:14px; padding:1.5rem; margin-bottom:1.5rem;">
+    <div style="font-family:'Baloo 2',cursive; font-size:3rem; color:#ffd700;" id="sc"></div>
+    <div style="color:#888; margin-top:0.3rem;" id="sm"></div>
+    <button onclick="resetQ()" style="margin-top:1rem; background:#ff7700; border:none; border-radius:10px; padding:0.6rem 1.4rem; color:#fff; font-family:'Baloo 2',cursive; font-weight:700; cursor:pointer; font-size:1rem;">🔄 फिर से</button>
+  </div>
+  <div id="qWrap"></div>
+  <button id="subBtn" onclick="submitQ()" style="width:100%; background:linear-gradient(135deg,#ff7700,#e65c00); border:none; border-radius:12px; padding:1rem; color:#fff; font-family:'Baloo 2',cursive; font-weight:700; font-size:1.1rem; cursor:pointer; margin-top:0.5rem;">📊 Score देखें</button>
+</div>
+
+<script>
+// TAB
+function go(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+}
+
+// PM DATA
+const pms = [
+  { n:1, name:"जवाहर लाल नेहरू", date:"15 Aug 1947 – 27 May 1964", tags:["प्रथम PM","सर्वाधिक कार्यकाल","3 बार PM","पद पर निधन"], color:"gold",
+    facts:"• भारत के प्रथम PM\n• सर्वाधिक कार्यकाल वाले PM\n• एकमात्र जो निर्वाचित + मनोनीत दोनों\n• जन्म: इलाहाबाद | लोकसभा सीट: फूलपुर (UP)\n• उपनाम: 10 राजनीतिज्ञ\n• शपथ: Lady Mountbatten ने दिलाई\n• 1954: पंचशील समझौता (भारत+चीन)\n• 1960: सिंधु जल समझौता\n• 1962: भारत-चीन युद्ध\n• भारत रत्न: 1955 | 27 May 1964: निधन" },
+  { n:"*", name:"गुलजारी लाल नंदा (कार्यवाहक)", date:"27 May – 9 Jun 1964", tags:["प्रथम कार्यवाहक PM"], color:"",
+    facts:"• भारत के प्रथम कार्यवाहक PM\n• दूसरी बार: 9 Jan 1966 – 24 Jan 1966 (दूसरे कार्यवाहक PM)" },
+  { n:2, name:"लाल बहादुर शास्त्री", date:"9 Jun 1964 – 11 Jan 1966", tags:["पद पर निधन","जय जवान जय किसान"], color:"",
+    facts:"• नारा: जय जवान जय किसान\n• 1965: भारत-पाक युद्ध\n• ताशकंद समझौता (10 Jan 1966)\n• विदेश में निधन (ताशकंद)\n• भारत रत्न: 1966\n• पद पर निधन होने वाले दूसरे PM" },
+  { n:3, name:"इंदिरा गांधी (पहला कार्यकाल)", date:"24 Jan 1966 – 24 Mar 1977", tags:["3 बार PM","गूंगी गुड़िया","Iron Lady"], color:"red",
+    facts:"• उपनाम: गूंगी गुड़िया, Iron Lady, Durga\n• 1969: कांग्रेस विभाजन (Congress-O: मोरारजी, Congress-I: इंदिरा)\n• 1969: 14 बैंकों का राष्ट्रीयकरण\n• 1971: भारत-पाक युद्ध, बांग्लादेश बना\n• 26वाँ CA 1971: जीवी प्रर्थ समाप्त\n• 18 May 1974: पहला परमाणु परीक्षण (पोखरण)\n• 25 Jun 1975: आपातकाल (आंतरिक अशांति)\n• 42वाँ CA 1976: सलाह बाध्यकारी\n• लोकसभा कार्यकाल 6-6 माह बढ़ाया" },
+  { n:4, name:"मोरारजी देसाई", date:"24 Mar 1977 – 28 Jul 1979", tags:["पहले गैर-कांग्रेसी PM","सबसे बुजुर्ग PM"], color:"blue",
+    facts:"• पहले गैर-कांग्रेसी PM\n• सबसे बुजुर्ग PM (जन्म: 29 फरवरी)\n• पहली गठबंधन सरकार\n• शपथ: B.D. जत्ती (कार्यवाहक राष्ट्रपति)\n• Jan 1978: नोटबंदी\n• उप-PM: चौधरी चरण सिंह + बाबू जगजीवन राम\n• PMO (प्रधानमंत्री कार्यालय) नाम बदला\n• मुख्यमंत्री: बॉम्बे प्रांत" },
+  { n:5, name:"चौधरी चरण सिंह", date:"28 Jul 1979 – 14 Jan 1980", tags:["कभी लोकसभा नहीं गए"], color:"",
+    facts:"• PM रहते कभी लोकसभा नहीं गए\n• विश्वास प्रस्ताव से सरकार गिरी\n• मुख्यमंत्री: उत्तरप्रदेश\n• भारत रत्न: 2023" },
+  { n:6, name:"इंदिरा गांधी (दूसरा कार्यकाल)", date:"14 Jan 1980 – 31 Oct 1984", tags:["Operation Blue Star","पद पर हत्या"], color:"red",
+    facts:"• Operation Blue Star\n• 31 Oct 1984: हत्या\n• पद पर हत्या होने वाले PM" },
+  { n:7, name:"राजीव गांधी", date:"31 Oct 1984 – 2 Dec 1989", tags:["सबसे युवा PM","400+ सीट","शाहबानो"], color:"green",
+    facts:"• भारत के सबसे युवा PM\n• पहली बार 400+ सीट कांग्रेस\n• पंचायतीराज का स्वर्णकाल\n• शाहबानो वाद 1986\n• कोलंबो समझौता 1987\n• भारत रत्न: 1991 (मरणोपरांत)" },
+  { n:8, name:"विश्वनाथ प्रताप सिंह", date:"2 Dec 1989 – 10 Nov 1990", tags:["विश्वास प्रस्ताव से गिरे"], color:"",
+    facts:"• विश्वास प्रस्ताव से सरकार गिरी\n• मुख्यमंत्री: उत्तरप्रदेश" },
+  { n:9, name:"चंद्रशेखर", date:"10 Nov 1990 – 21 Jun 1991", tags:["बिना मंत्री PM बने"], color:"",
+    facts:"• बिना मंत्री PM बने\n• कभी लाल किले पर तिरंगा नहीं फहराया" },
+  { n:10, name:"P.V. नरसिम्हा राव", date:"21 Jun 1991 – 16 May 1996", tags:["शपथ के समय संसद सदस्य नहीं","LPG"], color:"purple",
+    facts:"• शपथ ली तब संसद के सदस्य नहीं थे\n• LPG (उदारीकरण, वैश्वीकरण, निजीकरण)\n• वित्त मंत्री: डॉ. मनमोहन सिंह\n• सर्वाधिक भाषाओं के जानकार\n• 73वाँ और 74वाँ CA\n• मुख्यमंत्री: आंध्रप्रदेश\n• भारत रत्न: 2024" },
+  { n:11, name:"अटल बिहारी वाजपेयी (1st)", date:"16 May – 1 Jun 1996", tags:["न्यूनतम कार्यकाल","विश्वास प्रस्ताव हारे"], color:"",
+    facts:"• न्यूनतम कार्यकाल वाले PM\n• विश्वास प्रस्ताव हारे" },
+  { n:12, name:"H.D. देवगौड़ा", date:"1 Jun 1996 – 21 Apr 1997", tags:["CTBT हस्ताक्षर नहीं"], color:"",
+    facts:"• CTBT (व्यापक परमाणु परिषंधित संधि) पर हस्ताक्षर नहीं किए\n• मुख्यमंत्री: कर्नाटक\n• राज्यसभा सदस्य: कर्नाटक" },
+  { n:13, name:"इंद्र कुमार गुजराल", date:"21 Apr 1997 – 19 Mar 1998", tags:["पड़ोसियों से अच्छे संबंध","गुजराल सिद्धांत"], color:"",
+    facts:"• पड़ोसियों से अच्छे संबंध\n• गुजराल सिद्धांत\n• इराक-कुवैत युद्ध में 17000 भारतीयों को निकाला\n• राज्यसभा सदस्य: बिहार" },
+  { n:14, name:"अटल बिहारी वाजपेयी (2nd & 3rd)", date:"19 Mar 1998 – 22 May 2004", tags:["3 बार PM","पोखरण-2","कारगिल"], color:"blue",
+    facts:"• 25 दिसंबर: सुशासन दिवस (जन्मदिन)\n• 11-13 May 1998: दूसरा पोखरण परमाणु परीक्षण\n• 1999: कारगिल युद्ध\n• 1999: लाहौर घोषणा\n• 2000: संविधान समीक्षा आयोग\n• 13 दिसं 2001: संसद पर हमला\n• भारत रत्न: 2015" },
+  { n:15, name:"डॉ. मनमोहन सिंह", date:"22 May 2004 – 26 May 2014", tags:["2 बार PM","RTI 2005","MGNREGA"], color:"green",
+    facts:"• पहले वित्त मंत्री थे (PV राव के समय)\n• 2005: RTI (सूचना का अधिकार)\n• MGNREGA (1 Apr 2010 लागू)\n• RTE: Right to Education 2009\n• RBI के गवर्नर भी रहे\n• राज्यसभा सदस्य: असम" },
+  { n:16, name:"नरेंद्र मोदी", date:"26 May 2014 – अब तक", tags:["3 बार PM","नोटबंदी","GST","धारा 370"], color:"gold",
+    facts:"• 26 May 2014 से अब तक\n• दूसरा सर्वाधिक कार्यकाल\n• तीसरी बार PM (2024)\n• नोटबंदी\n• GST\n• धारा 370 हटाई\n• रामभांड समर्पण\n• मुख्यमंत्री: गुजरात" },
+];
+
+function buildPM() {
+  const c = document.getElementById('pmList');
+  pms.forEach((p,i) => {
+    const colMap = { gold: '#ffd700', blue: '#4da6ff', green: '#3fb950', red: '#f85149', purple: '#bc8cff', '': '#888' };
+    const cl = colMap[p.color] || '#888';
+    const tags = p.tags.map(t => `<span class="pm-tag" style="background:${cl}15;border-color:${cl}44;color:${cl}">${t}</span>`).join('');
+    const facts = p.facts.split('\n').map(f => f ? `<span style="display:block">${f}</span>` : '').join('');
+    c.innerHTML += `
+      <div class="pm-item" onclick="togglePM(${i})" style="border-left-color:${cl}">
+        <span class="pm-num" style="color:${cl}">${p.n}</span>
+        <span class="pm-name">${p.name}</span>
+        <span class="pm-date">${p.date}</span>
+        <div style="width:100%;margin-top:0.3rem">${tags}</div>
+        <div class="pm-facts" id="pmf${i}">${facts}</div>
+      </div>`;
+  });
+}
+function togglePM(i) {
+  const el = document.getElementById('pmf'+i);
+  el.classList.toggle('show');
+}
+
+// SPECIAL FACTS
+const specs = [
+  { title:"🏆 सर्वाधिक बार PM", items:["नेहरू — 3 बार","इंदिरा गांधी — 3 बार","मोदी — 3 बार (2024 से)","वाजपेयी — 3 बार","मनमोहन सिंह — 2 बार"] },
+  { title:"⚰️ पद पर निधन", items:["नेहरू (1964)","लाल बहादुर शास्त्री (1966 — विदेश में)","इंदिरा गांधी (1984 — हत्या)"] },
+  { title:"🗳️ कभी लोकसभा नहीं गए", items:["चौधरी चरण सिंह (विश्वास प्रस्ताव से पहले इस्तीफा)","चंद्रशेखर (कभी लाल किले पर झंडा नहीं फहराया)"] },
+  { title:"📜 राज्यसभा सदस्य PM", items:["इंदिरा गांधी → UP","H.D. देवगौड़ा → कर्नाटक","इंद्र कुमार गुजराल → बिहार","डॉ. मनमोहन सिंह → असम"] },
+  { title:"💰 वित्त मंत्री रहे PM", items:["मोरारजी देसाई","चौधरी चरण सिंह","डॉ. मनमोहन सिंह","जवाहरलाल नेहरू (PM के साथ)","इंदिरा गांधी (PM के साथ)"] },
+  { title:"🏛️ पूर्व CM से PM", items:["मोरारजी देसाई (बॉम्बे)","V.P. Singh (UP)","चौधरी चरण सिंह (UP)","P.V. नरसिम्हा राव (आंध्रप्रदेश)","H.D. देवगौड़ा (कर्नाटक)","नरेंद्र मोदी (गुजरात)"] },
+  { title:"🇮🇳 भारत रत्न पाने वाले PM", items:["नेहरू (1955)","शास्त्री (1966)","इंदिरा (1972)","राजीव गांधी","मोरारजी देसाई (1991)","गुलजारी लाल नंदा (1997—कार्यवाहक)","वाजपेयी (2015)","P.V. नरसिम्हा राव (2024)","चौधरी चरण सिंह (2023)"] },
+  { title:"🔥 परमाणु परीक्षण", items:["पहला — 18 May 1974 — इंदिरा गांधी — पोखरण-1","दूसरा — 11-13 May 1998 — वाजपेयी — पोखरण-2"] },
+];
+
+function buildSpec() {
+  const c = document.getElementById('specGrid');
+  specs.forEach(s => {
+    c.innerHTML += `<div class="spec-card"><h4>${s.title}</h4><ul>${s.items.map(i=>`<li>${i}</li>`).join('')}</ul></div>`;
+  });
+}
+
+// QUIZ
+const qs = [
+  { q:"42वाँ संविधान संशोधन किस वर्ष हुआ और इसने क्या किया?", o:["1976 — सलाह बाध्यकारी","1978 — मंत्रिमंडल शब्द जोड़ा","2003 — 15% सीमा","1971 — बांग्लादेश"], a:0, e:"42वाँ CA 1976 — मंत्रिपरिषद की सलाह राष्ट्रपति के लिए बाध्यकारी बनी।" },
+  { q:"उपमंत्री का संविधान में उल्लेख है?", o:["हाँ, Art 75 में","हाँ, 44वें CA में","नहीं, कोई उल्लेख नहीं","हाँ, 3री अनुसूची में"], a:2, e:"उपमंत्री का संविधान में कोई उल्लेख नहीं है — यह परीक्षाओं में बार-बार पूछा जाता है!" },
+  { q:"भारत के पहले गैर-कांग्रेसी प्रधानमंत्री कौन थे?", o:["चौधरी चरण सिंह","मोरारजी देसाई","वाजपेयी","V.P. Singh"], a:1, e:"मोरारजी देसाई पहले गैर-कांग्रेसी PM थे (1977-1979)।" },
+  { q:"91वाँ CA 2003 के अनुसार मंत्रिपरिषद की अधिकतम संख्या?", o:["लोकसभा के 10%","लोकसभा के 15%","लोकसभा के 20%","कोई सीमा नहीं"], a:1, e:"91वाँ CA 2003 — मंत्रिपरिषद = PM सहित लोकसभा की 15% सीटों से अधिक नहीं।" },
+  { q:"PM के रहते पद पर निधन होने वाले PM कौन थे?", o:["नेहरू, राजीव","नेहरू, शास्त्री, इंदिरा","केवल इंदिरा","नेहरू, शास्त्री"], a:1, e:"नेहरू (1964), शास्त्री (1966 — विदेश में), इंदिरा गांधी (1984 — हत्या) — तीनों पद पर थे।" },
+  { q:"कौन से PM ने शपथ लेते समय लोकसभा/राज्यसभा की सदस्यता नहीं ली थी?", o:["चंद्रशेखर","मोरारजी देसाई","P.V. नरसिम्हा राव","V.P. Singh"], a:2, e:"P.V. नरसिम्हा राव ने PM की शपथ ली तब संसद के सदस्य नहीं थे।" },
+  { q:"'25 दिसंबर' किस PM के जन्मदिन पर सुशासन दिवस मनाया जाता है?", o:["नेहरू","वाजपेयी","मोदी","राजीव गांधी"], a:1, e:"अटल बिहारी वाजपेयी का जन्मदिन 25 दिसंबर = सुशासन दिवस।" },
+  { q:"RTI (सूचना का अधिकार) किसके कार्यकाल में आया?", o:["नेहरू","इंदिरा गांधी","डॉ. मनमोहन सिंह","राजीव गांधी"], a:2, e:"RTI 2005 — डॉ. मनमोहन सिंह के पहले कार्यकाल में।" },
+  { q:"मंत्रिपरिषद की शपथ किस अनुसूची के अनुसार होती है?", o:["पहली","दूसरी","तीसरी","चौथी"], a:2, e:"Art 75(4) — तीसरी अनुसूची के अनुसार राष्ट्रपति मंत्रिपरिषद को शपथ दिलाता है।" },
+  { q:"MGNREGA कब लागू हुआ?", o:["1 April 2005","1 April 2008","1 April 2010","26 January 2010"], a:2, e:"MGNREGA 1 April 2010 से लागू हुआ, डॉ. मनमोहन सिंह के कार्यकाल में।" },
+  { q:"भारत का पहला परमाणु परीक्षण कब और किसके समय हुआ?", o:["1974, इंदिरा गांधी","1998, वाजपेयी","1971, इंदिरा गांधी","1977, मोरारजी देसाई"], a:0, e:"18 May 1974, पोखरण-1, इंदिरा गांधी के कार्यकाल में।" },
+  { q:"Art 75(3) किससे संबंधित है?", o:["PM की नियुक्ति","मंत्रियों की शपथ","मंत्रिपरिषद का सामूहिक उत्तरदायित्व","मंत्रियों की योग्यता"], a:2, e:"Art 75(3) — मंत्रिपरिषद सामूहिक रूप से लोकसभा के प्रति उत्तरदायी होती है।" },
+];
+
+let ans = new Array(qs.length).fill(null);
+
+function buildQuiz() {
+  const c = document.getElementById('qWrap');
+  c.innerHTML = qs.map((q,i) => `
+    <div class="qbox">
+      <div class="qn">Q${i+1} / ${qs.length}</div>
+      <div class="qtxt">${q.q}</div>
+      ${q.o.map((o,j) => `<button class="opt" id="o${i}_${j}" onclick="pick(${i},${j})">${o}</button>`).join('')}
+      <div class="exp" id="e${i}">💡 ${q.e}</div>
+    </div>`).join('');
+}
+
+function pick(i, j) {
+  if (ans[i] !== null) return;
+  ans[i] = j;
+  const q = qs[i];
+  for(let k=0; k<q.o.length; k++) {
+    const b = document.getElementById(`o${i}_${k}`);
+    b.disabled = true;
+    if(k === q.a) b.classList.add('ok');
+    else if(k === j) b.classList.add('no');
+  }
+  document.getElementById('e'+i).classList.add('on');
+}
+
+function submitQ() {
+  let sc = 0;
+  qs.forEach((q,i) => { if(ans[i] === q.a) sc++; });
+  const done = ans.filter(a => a !== null).length;
+  document.getElementById('scoreBox').style.display = 'block';
+  document.getElementById('sc').textContent = `${sc} / ${done}`;
+  const p = done ? Math.round(sc/done*100) : 0;
+  document.getElementById('sm').textContent = p>=90 ? "🏆 शानदार!" : p>=70 ? "🌟 बहुत अच्छा!" : "📚 और पढ़ाई करें";
+  document.getElementById('scoreBox').scrollIntoView({behavior:'smooth'});
+}
+
+function resetQ() {
+  ans = new Array(qs.length).fill(null);
+  document.getElementById('scoreBox').style.display = 'none';
+  buildQuiz();
+  window.scrollTo({top:0});
+}
+
+buildPM();
+buildSpec();
+buildQuiz();
+</script>
+</body>
+</html>

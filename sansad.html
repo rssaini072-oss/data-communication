@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>संसद - RPSC RAS/PSI Revision | Ranjeet Sir Notes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans Devanagari',Arial,sans-serif;background:#f0f4f8;color:#1a1a2e;font-size:14px}
+.header{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;padding:12px 16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.header h1{font-size:17px;font-weight:700;text-align:center}
+.header p{text-align:center;font-size:11px;opacity:.85;margin-top:2px}
+.search-bar{display:flex;gap:8px;margin-top:8px}
+.search-bar input{flex:1;padding:7px 12px;border-radius:20px;border:none;font-size:13px;font-family:inherit;outline:none;color:#333}
+.search-bar button{background:#ff6f00;color:#fff;border:none;border-radius:20px;padding:7px 14px;cursor:pointer;font-size:12px;font-family:inherit}
+#searchResults{background:#fff;border-radius:8px;margin-top:6px;max-height:180px;overflow-y:auto;display:none;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.searchItem{padding:8px 12px;cursor:pointer;border-bottom:1px solid #eee;font-size:13px;color:#333}
+.searchItem:hover{background:#e8eaf6}
+.tabs{display:flex;overflow-x:auto;background:#1a237e;gap:2px;padding:0 4px}
+.tab{padding:9px 12px;color:rgba(255,255,255,.7);cursor:pointer;font-size:12px;white-space:nowrap;border-bottom:3px solid transparent;font-family:inherit;background:none;border-left:none;border-right:none;border-top:none;font-weight:700}
+.tab.active{color:#fff;border-bottom-color:#ff6f00;background:rgba(255,255,255,.1)}
+.tab:hover{color:#fff;background:rgba(255,255,255,.08)}
+.content{display:none;padding:12px}
+.content.active{display:block}
+.card{background:#fff;border-radius:10px;padding:12px;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,.08);border-left:4px solid #1a237e}
+.card.green{border-left-color:#2e7d32}.card.orange{border-left-color:#e65100}.card.red{border-left-color:#b71c1c}
+.card.teal{border-left-color:#00695c}.card.purple{border-left-color:#6a1b9a}.card.amber{border-left-color:#f57f17}
+.card h3{font-size:14px;font-weight:700;margin-bottom:8px;color:#1a237e}
+.card.green h3{color:#1b5e20}.card.orange h3{color:#bf360c}.card.red h3{color:#7f0000}
+.card.teal h3{color:#004d40}.card.purple h3{color:#4a148c}.card.amber h3{color:#e65100}
+.mnemonic{background:#fff9c4;border:1px solid #f9a825;border-radius:6px;padding:6px 10px;margin-top:8px;font-size:12px;color:#5d4037}
+.mnemonic strong{color:#e65100}
+.art-num{background:#1a237e;color:#fff;border-radius:4px;padding:2px 6px;font-size:11px;font-weight:700;margin-right:4px}
+.art-num.g{background:#2e7d32}.art-num.o{background:#e65100}.art-num.r{background:#b71c1c}
+.art-num.t{background:#00695c}.art-num.p{background:#6a1b9a}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:580px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+th{background:#1a237e;color:#fff;padding:6px 8px;text-align:left;font-weight:600}
+td{padding:5px 8px;border-bottom:1px solid #e3e8f0}
+tr:nth-child(even) td{background:#f5f7ff}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;margin:2px}
+.b-blue{background:#e3f2fd;color:#0d47a1}.b-green{background:#e8f5e9;color:#1b5e20}
+.b-orange{background:#fff3e0;color:#e65100}.b-red{background:#ffebee;color:#b71c1c}
+.b-purple{background:#f3e5f5;color:#4a148c}.b-teal{background:#e0f2f1;color:#004d40}
+.mcq-section{max-width:860px;margin:0 auto}
+.q-card{background:#fff;border-radius:10px;padding:14px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.q-num{font-size:11px;color:#888;margin-bottom:6px;font-weight:600}
+.q-text{font-size:14px;font-weight:700;margin-bottom:10px;color:#1a237e;line-height:1.5}
+.options label{display:block;padding:7px 10px;margin:4px 0;border-radius:6px;cursor:pointer;border:1px solid #ddd;font-size:13px}
+.options label:hover{background:#e8eaf6}
+.opt-correct{background:#e8f5e9!important;border-color:#2e7d32!important;color:#1b5e20;font-weight:700}
+.opt-wrong{background:#ffebee!important;border-color:#b71c1c!important;color:#b71c1c}
+.explanation{background:#e8f5e9;border-left:3px solid #2e7d32;padding:8px 10px;border-radius:0 6px 6px 0;font-size:12px;margin-top:8px;display:none;color:#1b5e20}
+.btn{padding:8px 20px;border-radius:20px;border:none;cursor:pointer;font-size:13px;font-family:inherit;font-weight:700}
+.btn-primary{background:#1a237e;color:#fff}.btn-orange{background:#e65100;color:#fff}
+.score-bar{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.score-chip{background:#fff;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;box-shadow:0 1px 4px rgba(0,0,0,.1);text-align:center}
+.score-chip span{font-size:20px;display:block}
+.sc-blue span{color:#1a237e}.sc-green span{color:#2e7d32}.sc-red span{color:#b71c1c}
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center}
+.modal-overlay.show{display:flex}
+.modal{background:#fff;border-radius:14px;padding:24px;max-width:360px;width:90%;text-align:center}
+.modal h2{font-size:20px;margin-bottom:8px}.modal p{font-size:13px;margin-bottom:5px;color:#555}
+.modal .big-score{font-size:52px;font-weight:900;color:#1a237e;margin:8px 0}
+.last-min-card{background:#fff;border-radius:10px;padding:10px 14px;margin-bottom:8px;border-left:4px solid #e65100;box-shadow:0 2px 5px rgba(0,0,0,.07)}
+.last-min-card h4{font-size:13px;color:#bf360c;font-weight:700;margin-bottom:4px}
+.last-min-card p{font-size:12px;line-height:1.6;color:#333}
+.super-mn{background:linear-gradient(135deg,#1a237e,#4a148c);color:#fff;border-radius:10px;padding:12px;margin-bottom:10px}
+.super-mn h4{font-size:13px;font-weight:700;margin-bottom:5px;color:#ffd740}
+.super-mn p{font-size:12px;line-height:1.7}
+.hl{background:#fff176;padding:1px 3px;border-radius:3px;color:#333}
+.tag-row{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0}
+.sec-title{font-size:15px;font-weight:700;color:#1a237e;border-bottom:2px solid #1a237e;padding-bottom:4px;margin:14px 0 10px}
+.sec-title.g{color:#1b5e20;border-color:#2e7d32}.sec-title.o{color:#bf360c;border-color:#e65100}
+li{margin-left:16px;margin-bottom:3px;font-size:13px;line-height:1.5}
+ul{list-style:disc}
+.info-box{background:#e3f2fd;border-radius:8px;padding:10px;font-size:12px;color:#0d47a1;margin:8px 0;border-left:3px solid #1565c0}
+.warn-box{background:#fff8e1;border-radius:8px;padding:10px;font-size:12px;color:#e65100;margin:8px 0;border-left:3px solid #ff8f00}
+.submit-row{text-align:center;padding:16px 0}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏛️ संसद (Parliament) — RPSC RAS/PSI Revision | Ranjeet Sir Notes</h1>
+  <p>अनुच्छेद 79–122 | भाग-5 | Westminster Model | All 7 PDFs Covered</p>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="हिंदी में topic खोजें... जैसे: लोकसभा, धन विधेयक, बजट, समिति..." oninput="doSearch(this.value)">
+    <button onclick="clearSearch()">✕</button>
+  </div>
+  <div id="searchResults"></div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('revision',this)">📖 Revision</button>
+  <button class="tab" onclick="showTab('summary',this)">📊 Summary</button>
+  <button class="tab" onclick="showTab('rjpyq',this)">🏜️ RJ PYQ (30)</button>
+  <button class="tab" onclick="showTab('statepyq',this)">🗺️ States PYQ (30)</button>
+  <button class="tab" onclick="showTab('lastmin',this)">⚡ Last Minute</button>
+</div>
+
+<!-- TAB 1: REVISION -->
+<div id="revision" class="content active">
+
+<div class="sec-title">🏛️ संसद — परिचय</div>
+
+<div class="card">
+  <h3><span class="art-num">अनु. 79</span> संसद की संरचना</h3>
+  <p>संसद = <strong>लोकसभा + राज्यसभा + राष्ट्रपति</strong></p>
+  <div class="tag-row">
+    <span class="badge b-blue">भाग-5</span><span class="badge b-green">अनु. 79-122</span>
+    <span class="badge b-orange">Westminster Model</span><span class="badge b-purple">देश की सर्वोच्च विधायिका</span>
+  </div>
+  <ul>
+    <li>पुरानी संसद → <strong>रायसीना हिल्स</strong></li>
+    <li>नई संसद → <strong>Central Vista Project</strong></li>
+    <li>शिलान्यास: 10 Dec 2020 | उद्घाटन: <strong>28 May 2023</strong> | पहली बैठक: 19 Sep 2023</li>
+    <li>वास्तुकार → <strong>बिमल पटेल</strong> | आकार → <strong>त्रिभुजाकार</strong> | निर्माण → <strong>TATA Project</strong></li>
+    <li>नई संसद: लोकसभा → 888 सीट | राज्यसभा → 384 सीट</li>
+    <li>पहला कानून → <strong>नारी शक्ति वंदन Act 2023</strong></li>
+    <li>अन्य नाम → देश की सर्वोच्च विधायिका, सर्वोच्च पंचायत, देश का हृदय/दिल</li>
+  </ul>
+  <div class="mnemonic"><strong>Trick:</strong> "राजा लोक" = <u>रा</u>ष्ट्रपति + <u>जा</u>यसभा + <u>लोक</u>सभा = संसद के 3 अंग</div>
+</div>
+
+<div class="grid2">
+<div class="card green">
+  <h3><span class="art-num g">अनु. 80</span> राज्यसभा की संरचना</h3>
+  <ul>
+    <li>अधिकतम → <strong>250</strong> (238 निर्वाचित + 12 मनोनीत)</li>
+    <li>वर्तमान → <strong>245</strong> (233 + 12)</li>
+    <li>गठन: 3 Apr 1952 | पहली बैठक: 13 May 1952</li>
+    <li>1954 तक → "राज्य परिषद" नाम, बाद में राज्यसभा</li>
+    <li>सर्वाधिक → <strong>UP-31</strong>, MH-19, TN-18, Bihar/WB-16-16</li>
+    <li>MP/Gujarat-11-11 | <strong>Rajasthan-10</strong>, Odisha-10</li>
+    <li>12 मनोनीत → साहित्य/कला/विज्ञान/समाजसेवा</li>
+    <li>सीट निर्धारण → <strong>4th अनुसूची</strong></li>
+    <li>चुनाव → आनुपातिक प्रतिनिधित्व + एकल संक्रमणीय + <strong>अप्रत्यक्ष मतदान</strong></li>
+  </ul>
+  <div class="mnemonic"><strong>Trick:</strong> "250 में 12 को राष्ट्रपति का ताज" = 12 मनोनीत</div>
+</div>
+
+<div class="card orange">
+  <h3><span class="art-num o">अनु. 81</span> लोकसभा की संरचना</h3>
+  <ul>
+    <li>अधिकतम → <strong>552</strong> (550 elected + 2 Anglo Indian)</li>
+    <li>वर्तमान → <strong>543</strong> (524 राज्यों + 19 UTs)</li>
+    <li>गठन: 17 Apr 1952 | पहली बैठक: 13 May 1952</li>
+    <li>सर्वाधिक → <strong>UP-80</strong>, MH-48, WB-42, Bihar-40</li>
+    <li>AP/Rajasthan → 25-25 | <strong>Rajasthan = 25</strong></li>
+    <li>सीट निर्धारण → <strong>जनसंख्या</strong> के आधार पर</li>
+    <li>104वाँ CA 2019 → Anglo Indian मनोनयन <strong>रद्द</strong></li>
+    <li>पहली LS → 1952-57 | चुनाव: 26Oct1951-21Feb1952</li>
+    <li>1st LS: 500 सीट | 7वाँ CA 1956 → 525 | 31वाँ → 1973 → 545</li>
+    <li>Goa Daman Diu Reorganisation Act 1987 → 552</li>
+  </ul>
+  <div class="mnemonic"><strong>Trick:</strong> "UP 80 — सबसे बड़ा प्रदेश, सबसे ज्यादा सीट"</div>
+</div>
+</div>
+
+<div class="grid2">
+<div class="card teal">
+  <h3><span class="art-num t">अनु. 82</span> परिसीमन/पुनः समायोजन</h3>
+  <ul>
+    <li><strong>84वाँ CA 2001</strong> → 2026 तक सीटों का निर्धारण freeze</li>
+    <li>2026 में पुनः समायोजन के बाद सीटें बदलेंगी</li>
+  </ul>
+  <div class="mnemonic"><strong>Trick:</strong> "84 ने 2026 तक रोका"</div>
+</div>
+
+<div class="card purple">
+  <h3><span class="art-num p">अनु. 83</span> कार्यकाल</h3>
+  <ul>
+    <li><strong>राज्यसभा</strong> → सदस्य कार्यकाल <strong>6 वर्ष</strong> | कभी भंग नहीं | हर 2 वर्ष 1/3 चुनाव</li>
+    <li><strong>लोकसभा</strong> → <strong>5 वर्ष</strong> (भंग हो सकती)</li>
+    <li>आपातकाल में 1 बार 1 वर्ष बढ़ाया जा सकता</li>
+    <li>आपातकाल समाप्त → 6 माह में चुनाव अनिवार्य</li>
+  </ul>
+  <div class="mnemonic"><strong>Trick:</strong> "राज्य=6 (स्थायी), लोक=5 (अस्थायी)"</div>
+</div>
+</div>
+
+<div class="card amber">
+  <h3><span class="art-num" style="background:#f57f17">अनु. 84</span> संसद सदस्यता — योग्यता</h3>
+  <div class="grid2">
+    <div>
+      <ul>
+        <li>भारत का नागरिक हो</li>
+        <li><strong>लोकसभा</strong> → न्यूनतम आयु <strong>25 वर्ष</strong></li>
+        <li><strong>राज्यसभा</strong> → न्यूनतम आयु <strong>30 वर्ष</strong></li>
+        <li>संसद द्वारा विधि बनाकर अन्य योग्यता</li>
+      </ul>
+    </div>
+    <div>
+      <strong>अनु. 102 — अयोग्यता:</strong>
+      <ul>
+        <li>पागल हो जाए</li>
+        <li>दिवालिया हो जाए</li>
+        <li>दूसरे देश की नागरिकता</li>
+        <li>लाभ का पद धारण</li>
+        <li><strong>10वीं अनुसूची</strong> (दल-बदल)</li>
+        <li>2 वर्ष कारावास → सदस्यता समाप्त</li>
+      </ul>
+    </div>
+  </div>
+  <div class="mnemonic"><strong>Trick — अयोग्यता:</strong> "पद-दिव-पाग-नाग-10वीं" | LS=25, RS=30: "जवान=25, बुजुर्ग=30"</div>
+</div>
+
+<div class="sec-title o">🎙️ पीठासीन अधिकारी</div>
+
+<div class="grid2">
+<div class="card green">
+  <h3><span class="art-num g">अनु. 89-92</span> राज्यसभा पीठासीन</h3>
+  <ul>
+    <li>उपराष्ट्रपति → राज्यसभा का <strong>पदेन सभापति</strong></li>
+    <li>उपसभापति → सदस्यों में से चुनाव</li>
+    <li>अनु. 90 — उपसभापति हटाना: <strong>15 दिन</strong> पूर्व सूचना + साधारण बहुमत | त्यागपत्र → सभापति को</li>
+    <li>अनु. 91 — दोनों अनुपस्थित/पद रिक्त → राज्यसभा तय करेगी</li>
+    <li>अनु. 92 — हटाने का प्रस्ताव → पीठासीन नहीं रहेंगे</li>
+  </ul>
+  <div class="mnemonic"><strong>Trick:</strong> "VP = RS का मालिक (पदेन)"</div>
+</div>
+
+<div class="card orange">
+  <h3><span class="art-num o">अनु. 93-94</span> लोकसभा पीठासीन</h3>
+  <ul>
+    <li>अध्यक्ष (Speaker) + उपाध्यक्ष → LS सदस्यों में से चुनाव</li>
+    <li>अनु. 94 — हटाना: <strong>15 दिन</strong> पूर्व सूचना + साधारण बहुमत</li>
+    <li>त्यागपत्र: Speaker → Deputy | Deputy → Speaker</li>
+    <li>अनु. 97 → वेतन-भत्ते → <strong>संसद</strong> द्वारा निर्धारित</li>
+    <li>अनु. 99 → प्रोटेम स्पीकर: नियुक्ति+शपथ → राष्ट्रपति; कार्य → नए सदस्यों को शपथ; कार्यकाल → Speaker चुनाव तक</li>
+    <li>17वीं LS प्रोटेम → <strong>मुलहरी मेहताब (Odisha)</strong></li>
+  </ul>
+  <div class="mnemonic"><strong>Trick:</strong> "15+50%+1 = Speaker हटाने का फॉर्मूला"</div>
+</div>
+</div>
+
+<div class="card red">
+  <h3>लोकसभा के पदाधिकारी — तुलना</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <tr><th>पद</th><th>प्रथम</th><th>वर्तमान (18वीं LS)</th></tr>
+    <tr><td>अध्यक्ष</td><td>G.V. मावलंकर</td><td><strong>ओम बिरला</strong> (कोटा-बूंदी, RJ)</td></tr>
+    <tr><td>उपाध्यक्ष</td><td>M. अनन्त शयनम अयंगर</td><td>रिक्त</td></tr>
+    <tr><td>प्रोटेम स्पीकर</td><td>H.V. मावलंकर</td><td>सुनहरी मेहताब</td></tr>
+    <tr><td>सदन नेता</td><td>JLN (नेहरू)</td><td>नरेंद्र मोदी</td></tr>
+    <tr><td>महासचिव</td><td>M.N. कौल</td><td>उत्तम कुमार सिंह</td></tr>
+    <tr><td>विपक्ष नेता</td><td>राम सुभग सिंह (1969)</td><td>राहुल गांधी</td></tr>
+  </table>
+  </div>
+  <div class="info-box">18वीं LS → 7 चरण [19Apr-1Jun 2024] | BJP-240, TDP-16, JDU-12, Congress-99, SP-37, TMC-29 | निर्दलीय-7, महिला-75</div>
+  <div class="info-box">जो उपाध्यक्ष → अध्यक्ष बने: M. अनन्त शयनम + हुकुम सिंह | पद पर रहते हुए मृत्यु: G.V. मावलंकर + H.M.C. बालयोगी | दो बार अध्यक्ष: M. अनन्त शयनम, नीलम संजीव रेड्डी, बलराम जाखड़ (RJ), गुरुदास सिंह ढिल्लों</div>
+</div>
+
+<div class="card teal">
+  <h3>राज्यसभा के पदाधिकारी — तुलना</h3>
+  <div style="overflow-x:auto">
+  <table>
+    <tr><th>पद</th><th>प्रथम</th><th>वर्तमान</th></tr>
+    <tr><td>सभापति (VP)</td><td>डॉ. सर्वपल्ली राधाकृष्णन</td><td>जगदीप धनखड़</td></tr>
+    <tr><td>उपसभापति</td><td>V.R. कृष्णमूर्तिराव</td><td>हरिवंश नारायण</td></tr>
+    <tr><td>सदन नेता</td><td>N. गोपालस्वामी</td><td>J.P. नड्डा</td></tr>
+    <tr><td>महासचिव</td><td>S.N. मुखर्जी</td><td>प्रमोद चंद्र मोदी</td></tr>
+    <tr><td>विपक्ष नेता</td><td>श्याम नंदन मिश्र (1969)</td><td>मल्लिकार्जुन खड़गे</td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="sec-title">👥 सदस्यता, शपथ, विशेषाधिकार</div>
+
+<div class="grid2">
+<div class="card amber">
+  <h3><span class="art-num" style="background:#f57f17">अनु. 100</span> Casting Vote + Quorum</h3>
+  <ul>
+    <li>बराबर मत → <strong>Speaker = Casting Vote</strong></li>
+    <li><strong>Quorum (कोरम)</strong> = कुल का <strong>1/10</strong></li>
+    <li>60 दिन बिना सदन आए → सदस्यता समाप्त</li>
+  </ul>
+  <div class="mnemonic"><strong>Trick:</strong> "1/10 = कोरम" | "60 दिन गैर-हाजिर = bye bye"</div>
+</div>
+
+<div class="card purple">
+  <h3><span class="art-num p">अनु. 103, 105</span> अयोग्यता निर्धारण + विशेषाधिकार</h3>
+  <ul>
+    <li>अनु. 103 → अयोग्यता: राष्ट्रपति + <strong>चुनाव आयोग की सलाह</strong></li>
+    <li>अनु. 105 → बोलने का अधिकार; संसद में भाषण पर <strong>न्यायालय में कार्यवाही नहीं</strong></li>
+    <li>अनु. 106 → सांसदों का वेतन → <strong>संसद</strong> द्वारा निर्धारित</li>
+  </ul>
+</div>
+</div>
+
+<div class="sec-title g">💰 धन विधेयक — अनु. 109-114</div>
+
+<div class="card green">
+  <h3><span class="art-num g">अनु. 109-110</span> धन विधेयक</h3>
+  <div class="grid2">
+    <div>
+      <strong>प्रक्रिया (अनु. 109):</strong>
+      <ul>
+        <li>राष्ट्रपति की <strong>पूर्वानुमति</strong> से लोकसभा में पेश</li>
+        <li>राष्ट्रपति पुनर्विचार के लिए <strong>नहीं</strong> लौटा सकता</li>
+        <li>राज्यसभा → केवल <strong>14 दिन</strong> रोक सकती</li>
+        <li>संयुक्त बैठक <strong>नहीं</strong></li>
+        <li>धन/वित्त विधेयक? → <strong>LS Speaker</strong> तय करेगा</li>
+      </ul>
+    </div>
+    <div>
+      <strong>परिभाषा (अनु. 110) — निम्न विषय धन विधेयक:</strong>
+      <ul>
+        <li>कर लगाना/घटाना/बढ़ाना/बदलना</li>
+        <li>धन उधार लेना</li>
+        <li>संचित/आकस्मिक निधि की आभिरक्षा</li>
+        <li>कोई व्यय संचित निधि पर भारित</li>
+      </ul>
+    </div>
+  </div>
+  <div class="warn-box">⚠️ सभी धन विधेयक वित्त विधेयक होते हैं, परंतु सभी वित्त विधेयक धन विधेयक नहीं!</div>
+  <div class="mnemonic"><strong>Trick:</strong> "धन = पूरा LS का अधिकार | RS = 14 दिन का दर्शक"</div>
+</div>
+
+<div class="grid2">
+<div class="card teal">
+  <h3><span class="art-num t">अनु. 111</span> राष्ट्रपति की स्वीकृति</h3>
+  <ul>
+    <li>संसद पारित विधेयक → राष्ट्रपति</li>
+    <li>(i) सहमति दे | (ii) मना कर | (iii) पुनर्विचार के लिए लौटाए</li>
+  </ul>
+</div>
+
+<div class="card purple">
+  <h3><span class="art-num p">अनु. 113-114</span> बजट प्रक्रिया</h3>
+  <ul>
+    <li>अनु. 113 → अनुदान की मांग</li>
+    <li>अनु. 114 → विनियोग विधेयक</li>
+    <li>बजट LS में → 25 विभाग समितियाँ → अनुदान मांग → विपक्ष कटौती प्रस्ताव → पारित → विनियोग विधेयक</li>
+  </ul>
+</div>
+</div>
+
+<div class="sec-title o">📋 बजट (अनु. 112)</div>
+
+<div class="card orange">
+  <h3><span class="art-num o">अनु. 112</span> वार्षिक वित्तीय विवरण = बजट</h3>
+  <div class="grid2">
+    <div>
+      <ul>
+        <li>संविधान में <strong>"बजट"</strong> शब्द का उल्लेख <strong>नहीं</strong></li>
+        <li>Budget → Latin <strong>"Bougette"</strong> = चमड़े का थैला</li>
+        <li>भारत में पहला बजट → <strong>1860</strong> (लॉर्ड कैनिंग काल, James Wilson)</li>
+        <li>1925 → पृथक सामान्य + रेलवे बजट</li>
+        <li>2016 → <strong>बिबेक देबरॉय</strong> → दोनों मिले → <strong>सामान्य बजट</strong></li>
+        <li>स्वतंत्र भारत पहला बजट → <strong>1947 → शणमुखम शेट्टी</strong></li>
+        <li>गणतंत्र भारत पहला → <strong>1950 → जॉन मथाई</strong></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><strong>काला बजट</strong> → 1973-74</li>
+        <li><strong>पहला पेपरलेस बजट</strong> → 2021-22</li>
+        <li>सर्वाधिक बार बजट → <strong>मोरारजी देसाई (10 बार)</strong></li>
+        <li>पहली महिला वित्त मंत्री → <strong>डॉ. निर्मला सीतारमण</strong></li>
+        <li>बजट सत्र → Feb-May | मानसून → Jul-Sep | शीतकाल → Nov-Dec</li>
+      </ul>
+      <div class="warn-box" style="margin-top:6px">🏜️ Rajasthan: पहला जेंडर बजट: 2012-13 | पेपरलेस: 2021-22 | कृषि बजट: 2022-23</div>
+    </div>
+  </div>
+  <div class="mnemonic"><strong>Trick:</strong> "James Wilson 1860 में थैले में बजट लाया" | "शेट्टी→1947, मथाई→1950, मोरारजी→10 बार"</div>
+</div>
+
+<div class="sec-title">🔄 संसदीय कार्यवाही</div>
+
+<div class="card">
+  <h3>समय — प्रश्न काल, शून्य काल</h3>
+  <div class="grid2">
+    <div>
+      <ul>
+        <li><strong>प्रश्न काल</strong> → 11am-12pm | भारत में 1892 (India Councils Act) | इंग्लैंड में 1721</li>
+        <li><strong>शून्य काल</strong> → 12pm-1pm | शुरू: <strong>1963</strong> | जनक: <strong>डॉ. राधाकृष्णन</strong> | बिना पूर्व सूचना</li>
+        <li>Lunch Time → 1-2pm</li>
+        <li>कानून पर चर्चा → 2pm-5pm</li>
+        <li>साढ़े घंटे चर्चा → 5:00-5:30pm (लोक हित)</li>
+        <li>अल्पकालीन चर्चा → 1953</li>
+      </ul>
+    </div>
+    <div>
+      <strong>तीन प्रकार के प्रश्न:</strong>
+      <ul>
+        <li><strong>तारांकित</strong> → ★ अंकित, मौखिक उत्तर, Speaker तय, 15 दिन पूर्व सूचना, 1 सांसद→20 प्रश्न/दिन</li>
+        <li><strong>अतारांकित</strong> → तारा नहीं, लिखित उत्तर, 15 दिन पूर्व, पूरक प्रश्न नहीं</li>
+        <li><strong>अल्पसूचना</strong> → 15 दिन से कम, लोक महत्व</li>
+      </ul>
+    </div>
+  </div>
+  <div class="mnemonic"><strong>Trick:</strong> "11-प्र | 12-शून्य | 1-lunch | 2-5 कानून | 5-5.30 घंटे"</div>
+</div>
+
+<div class="card teal">
+  <h3>प्रस्तावों के प्रकार</h3>
+  <table>
+    <tr><th>प्रस्ताव</th><th>विवरण</th></tr>
+    <tr><td><strong>स्थगन प्रस्ताव</strong></td><td>देश में घटना → सदस्य, Speaker अनुमति, LS में = "काम रोको"</td></tr>
+    <tr><td><strong>ध्यान आकर्षण</strong></td><td>सार्वजनिक हित → सरकार का ध्यान; दोनों सदनों में</td></tr>
+    <tr><td><strong>विशेषाधिकार</strong></td><td>मंत्री द्वारा गलत जानकारी पर</td></tr>
+    <tr><td><strong>धन्यवाद</strong></td><td>राष्ट्रपति अभिभाषण के बाद; LS में पास न हो → सरकार गिरे</td></tr>
+    <tr><td><strong>निंदा</strong></td><td>किसी मंत्री/पूरी मंत्रिपरिषद के खिलाफ</td></tr>
+    <tr><td><strong>अविश्वास</strong></td><td>विपक्ष द्वारा; पास → सरकार गिरे</td></tr>
+    <tr><td><strong>विश्वास</strong></td><td>सत्तारूढ़ दल; बहुमत साबित करना</td></tr>
+  </table>
+  <div class="mnemonic"><strong>Trick:</strong> "स-ध-वि-ध-नि-अवि-विश" = 7 प्रस्ताव</div>
+</div>
+
+<div class="sec-title o">🏦 संसदीय समितियाँ</div>
+
+<div class="grid2">
+<div class="card orange">
+  <h3>लोक लेखा समिति — PAC</h3>
+  <ul>
+    <li>भारत की <strong>प्रथम</strong> संसदीय समिति (<strong>1921</strong>)</li>
+    <li>सदस्य → <strong>22</strong> (15 LS + 7 RS) | कार्यकाल → 1 वर्ष</li>
+    <li>अध्यक्ष → सामान्यतः <strong>विपक्ष नेता</strong></li>
+    <li>वर्तमान → <strong>K.C. वेणुगोपाल</strong></li>
+    <li>कार्य → <strong>CAG की रिपोर्ट</strong> की जाँच</li>
+    <li><strong>मंत्री सदस्य नहीं</strong> हो सकता</li>
+  </ul>
+</div>
+
+<div class="card teal">
+  <h3>प्राक्कलन समिति (Estimate Committee)</h3>
+  <ul>
+    <li>गठन → <strong>1950</strong></li>
+    <li>सदस्य → <strong>30</strong> (सभी <strong>LS</strong> से)</li>
+    <li><strong>सबसे बड़ी</strong> संसदीय समिति</li>
+    <li>PAC + प्राक्कलन = <strong>"जुड़वाँ बहनें"</strong></li>
+    <li>कार्यकाल → 1 वर्ष | मंत्री नहीं</li>
+    <li>कार्य → बजट अनुमानों की जाँच</li>
+    <li>वर्तमान → <strong>डॉ. सरम जायसवाल</strong></li>
+  </ul>
+</div>
+</div>
+
+<div class="card purple">
+  <h3>लोक उपक्रम समिति</h3>
+  <ul>
+    <li>गठन → <strong>1964</strong> | <strong>कृष्ण कुमार मेनन</strong> द्वारा</li>
+    <li>सदस्य → <strong>22</strong> (15 LS + 7 RS) | कार्यकाल 1 वर्ष | मंत्री नहीं</li>
+    <li>वर्तमान अध्यक्ष → <strong>बेजपन्त पण्डा</strong></li>
+    <li>कार्य → सरकारी उपक्रमों की वार्षिक रिपोर्ट</li>
+  </ul>
+  <div class="mnemonic"><strong>Trick — 3 समितियाँ:</strong> "PAC(1921)=22 | प्राक(1950)=30 | उपक्रम(1964)=22" | तीनों में <strong>मंत्री नहीं</strong></div>
+</div>
+
+<div class="sec-title">🗳️ राज्यसभा के विशेषाधिकार + AIS</div>
+<div class="grid2">
+<div class="card amber">
+  <h3><span class="art-num" style="background:#f57f17">अनु. 249</span> RS विशेषाधिकार</h3>
+  <p>राज्य सूची + <strong>राष्ट्रीय महत्व</strong> → संसद में नियम/कानून बनवाने का अधिकार</p>
+</div>
+<div class="card green">
+  <h3><span class="art-num g">अनु. 312</span> अखिल भारतीय सेवाएँ</h3>
+  <p>RS → IAS/IPS/IFS का <strong>सृजन व उत्सादन</strong> कर सकती है<br>IFS → 1966 में स्थापना</p>
+</div>
+</div>
+
+<div class="sec-title">📦 आरक्षण — अनु. 330-334</div>
+<div class="card red">
+  <h3>लोकसभा में SC/ST आरक्षण</h3>
+  <div class="grid2">
+    <div>
+      <ul>
+        <li>SC → <strong>84 सीट</strong> | सर्वाधिक → <strong>UP-17</strong></li>
+        <li>ST → <strong>47 सीट</strong> | सर्वाधिक → <strong>MP-6</strong></li>
+        <li>अनु. 334 → <strong>105वाँ CA 2019</strong> → 10 वर्ष बढ़ाया</li>
+        <li><strong>106वाँ CA 2023</strong> = नारी शक्ति वंदन → महिला <strong>1/3</strong> आरक्षण (2027 परिसीमन के बाद 15 वर्ष)</li>
+      </ul>
+    </div>
+    <div>
+      <strong>राजस्थान LS (25 सीट):</strong>
+      <ul>
+        <li>SC (4) → गंगानगर, बीकानेर, भरतपुर, करौली-धौलपुर</li>
+        <li>ST (3) → दौसा, उदयपुर, डूंगरपुर-बाँसवाड़ा</li>
+      </ul>
+      <div class="info-box" style="margin-top:6px">पहले LS में 2 Anglo Indian → 104वाँ CA 2019 → रद्द</div>
+    </div>
+  </div>
+  <div class="mnemonic"><strong>Trick — RJ SC:</strong> "गबी भर क" = <u>ग</u>ंगानगर, <u>बी</u>कानेर, <u>भ</u>रतपुर, <u>क</u>रौली | RJ ST: "दौ-उदय-डूंग"</div>
+</div>
+
+<div class="sec-title">📏 निर्वाचन क्षेत्र — क्षेत्रफल / जनसंख्या</div>
+<div class="card">
+  <div class="grid2">
+    <div>
+      <strong>क्षेत्रफल से सबसे बड़ा:</strong>
+      <ul>
+        <li>लद्दाख</li>
+        <li>बाड़मेर-जैसलमेर (RJ)</li>
+        <li>कच्छ</li>
+        <li>पूर्वी अरुणाचल प्रदेश</li>
+        <li>पश्चिमी अरुणाचल प्रदेश</li>
+      </ul>
+      <strong>क्षेत्रफल से सबसे छोटा:</strong>
+      <ul><li>चांदनी चौक (नई दिल्ली)</li></ul>
+    </div>
+    <div>
+      <strong>जनसंख्या से सबसे बड़ा:</strong>
+      <ul>
+        <li>मलकाजगिरी (तेलंगाना)</li>
+        <li>बेंगलोर (कर्नाटक)</li>
+        <li>गाजियाबाद (UP)</li>
+      </ul>
+      <strong>जनसंख्या से सबसे छोटा:</strong>
+      <ul>
+        <li>लक्षद्वीप</li>
+        <li>लद्दाख</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="sec-title">📜 महत्वपूर्ण अनुच्छेद — Quick Reference</div>
+<div class="card" style="overflow-x:auto">
+  <table>
+    <tr><th>अनु.</th><th>विषय</th></tr>
+    <tr><td>79</td><td>संसद की संरचना = LS+RS+President</td></tr>
+    <tr><td>80</td><td>राज्यसभा (250/245)</td></tr>
+    <tr><td>81</td><td>लोकसभा (552/543)</td></tr>
+    <tr><td>82</td><td>परिसीमन (84वाँ CA → 2026 freeze)</td></tr>
+    <tr><td>83</td><td>कार्यकाल (RS=6, LS=5)</td></tr>
+    <tr><td>84</td><td>योग्यता (LS=25, RS=30)</td></tr>
+    <tr><td>89</td><td>RS पीठासीन (VP = पदेन सभापति)</td></tr>
+    <tr><td>90</td><td>RS उपसभापति (15 दिन + साधारण बहुमत)</td></tr>
+    <tr><td>93</td><td>LS पीठासीन (Speaker + Deputy)</td></tr>
+    <tr><td>94</td><td>LS Speaker/Deputy हटाना (15 दिन + साधारण बहुमत)</td></tr>
+    <tr><td>99</td><td>सदस्यों की शपथ (राष्ट्रपति दिलाता)</td></tr>
+    <tr><td>100</td><td>Casting Vote (Speaker) + Quorum (1/10)</td></tr>
+    <tr><td>102</td><td>सांसद अयोग्यता (5 कारण)</td></tr>
+    <tr><td>103</td><td>अयोग्यता निर्धारण (President+ECI)</td></tr>
+    <tr><td>105</td><td>सांसद विशेषाधिकार</td></tr>
+    <tr><td>106</td><td>सांसद वेतन (संसद तय करे)</td></tr>
+    <tr><td>108</td><td>संयुक्त बैठक (अध्यक्षता = LS Speaker)</td></tr>
+    <tr><td>109</td><td>धन विधेयक — विशेष प्रक्रिया (LS में, 14 दिन RS)</td></tr>
+    <tr><td>110</td><td>धन विधेयक परिभाषा</td></tr>
+    <tr><td>111</td><td>राष्ट्रपति की स्वीकृति</td></tr>
+    <tr><td>112</td><td>बजट (वार्षिक वित्तीय विवरण)</td></tr>
+    <tr><td>113</td><td>अनुदान की मांग</td></tr>
+    <tr><td>114</td><td>विनियोग विधेयक</td></tr>
+    <tr><td>117</td><td>वित्त विधेयक (Art.110 ⊂ Art.117)</td></tr>
+    <tr><td>118</td><td>संसद कार्य संचालन प्रक्रिया</td></tr>
+    <tr><td>120</td><td>संसद की भाषा (हिंदी+अंग्रेजी)</td></tr>
+    <tr><td>121</td><td>जजों के आचरण पर चर्चा नहीं</td></tr>
+    <tr><td>122</td><td>संसदीय कार्यवाही पर न्यायिक रोक नहीं</td></tr>
+    <tr><td>249</td><td>RS → राज्य सूची पर कानून</td></tr>
+    <tr><td>312</td><td>RS → AIS सृजन/उत्सादन</td></tr>
+    <tr><td>330</td><td>LS में SC/ST आरक्षण</td></tr>
+    <tr><td>334</td><td>आरक्षण की अवधि (105वाँ CA 2019)</td></tr>
+  </table>
+</div>
+
+</div><!-- /revision -->
+
+<!-- TAB 2: SUMMARY -->
+<div id="summary" class="content">
+<div class="sec-title">📊 Master Comparison: लोकसभा vs राज्यसभा</div>
+<div class="card" style="overflow-x:auto">
+<table>
+  <tr><th>विषय</th><th>लोकसभा</th><th>राज्यसभा</th></tr>
+  <tr><td>अन्य नाम</td><td>लोकप्रिय सदन, जनता का सदन, निम्न सदन, अस्थाई सदन</td><td>अलोकप्रिय सदन, उच्च सदन, स्थायी सदन, विद्वानों का सदन</td></tr>
+  <tr><td>अधिकतम सीट</td><td>552</td><td>250</td></tr>
+  <tr><td>वर्तमान सीट</td><td>543</td><td>245</td></tr>
+  <tr><td>गठन</td><td>17 Apr 1952</td><td>3 Apr 1952</td></tr>
+  <tr><td>पहली बैठक</td><td>13 May 1952</td><td>13 May 1952</td></tr>
+  <tr><td>कार्यकाल</td><td>5 वर्ष (भंग हो सकती)</td><td>6 वर्ष (कभी भंग नहीं)</td></tr>
+  <tr><td>न्यूनतम आयु</td><td>25 वर्ष</td><td>30 वर्ष</td></tr>
+  <tr><td>सर्वाधिक सीट</td><td>UP-80</td><td>UP-31</td></tr>
+  <tr><td>राजस्थान सीट</td><td>25</td><td>10</td></tr>
+  <tr><td>अनुच्छेद</td><td>81</td><td>80</td></tr>
+  <tr><td>अध्यक्ष/सभापति</td><td>ओम बिरला (18वीं)</td><td>जगदीप धनखड़ (VP)</td></tr>
+  <tr><td>विपक्ष नेता</td><td>राहुल गांधी</td><td>मल्लिकार्जुन खड़गे</td></tr>
+  <tr><td>प्रथम अध्यक्ष</td><td>G.V. मावलंकर</td><td>डॉ. राधाकृष्णन</td></tr>
+  <tr><td>चुनाव पद्धति</td><td>प्रत्यक्ष (जनता)</td><td>अप्रत्यक्ष (विधानसभा)</td></tr>
+  <tr><td>धन विधेयक</td><td>LS में पेश होता है</td><td>14 दिन रोक सकती</td></tr>
+  <tr><td>संयुक्त बैठक</td><td>LS Speaker अध्यक्षता</td><td>—</td></tr>
+  <tr><td>विशेष शक्ति</td><td>अविश्वास प्रस्ताव, धन विधेयक</td><td>अनु. 249, 312</td></tr>
+  <tr><td>सीट निर्धारण</td><td>जनसंख्या आधार</td><td>4th अनुसूची</td></tr>
+</table>
+</div>
+
+<div class="sec-title g">🔢 Quick Numbers Reference</div>
+<div class="grid2">
+<div class="card">
+<table>
+  <tr><th colspan="2">सीट संख्याएँ</th></tr>
+  <tr><td>LS max/current</td><td>552 / 543</td></tr>
+  <tr><td>RS max/current</td><td>250 / 245</td></tr>
+  <tr><td>RS मनोनीत</td><td>12</td></tr>
+  <tr><td>Quorum</td><td>1/10</td></tr>
+  <tr><td>LS न्यूनतम आयु</td><td>25 वर्ष</td></tr>
+  <tr><td>RS न्यूनतम आयु</td><td>30 वर्ष</td></tr>
+  <tr><td>LS कार्यकाल</td><td>5 वर्ष</td></tr>
+  <tr><td>RS सदस्य कार्यकाल</td><td>6 वर्ष</td></tr>
+  <tr><td>RS में हर X वर्ष चुनाव</td><td>2 वर्ष (1/3 सदस्य)</td></tr>
+  <tr><td>धन विधेयक RS में</td><td>14 दिन max</td></tr>
+  <tr><td>Speaker/उपसभापति हटाने नोटिस</td><td>15 दिन</td></tr>
+  <tr><td>60 दिन गैर-हाजिर</td><td>सदस्यता समाप्त</td></tr>
+</table>
+</div>
+<div class="card">
+<table>
+  <tr><th colspan="2">राजस्थान विशेष</th></tr>
+  <tr><td>RJ LS सीटें</td><td>25</td></tr>
+  <tr><td>RJ RS सीटें</td><td>10</td></tr>
+  <tr><td>RJ SC सीटें (LS)</td><td>4</td></tr>
+  <tr><td>RJ ST सीटें (LS)</td><td>3</td></tr>
+  <tr><td>LS SC कुल</td><td>84</td></tr>
+  <tr><td>LS ST कुल</td><td>47</td></tr>
+  <tr><td>SC सर्वाधिक राज्य</td><td>UP-17</td></tr>
+  <tr><td>ST सर्वाधिक राज्य</td><td>MP-6</td></tr>
+  <tr><th colspan="2">बजट</th></tr>
+  <tr><td>पहला भारत बजट</td><td>1860 James Wilson</td></tr>
+  <tr><td>स्वतंत्र भारत</td><td>1947 शणमुखम शेट्टी</td></tr>
+  <tr><td>गणतंत्र भारत</td><td>1950 जॉन मथाई</td></tr>
+  <tr><td>सर्वाधिक बार</td><td>मोरारजी देसाई (10)</td></tr>
+</table>
+</div>
+</div>
+
+<div class="sec-title o">📑 धन/वित्त/साधारण विधेयक — तुलना</div>
+<div class="card" style="overflow-x:auto">
+<table>
+  <tr><th>विषय</th><th>धन विधेयक (अनु.110)</th><th>वित्त विधेयक (अनु.117)</th><th>साधारण विधेयक</th></tr>
+  <tr><td>पेश</td><td>केवल LS</td><td>किसी भी सदन</td><td>किसी भी सदन</td></tr>
+  <tr><td>RS शक्ति</td><td>केवल 14 दिन</td><td>संशोधन कर सकती</td><td>बराबर शक्ति</td></tr>
+  <tr><td>संयुक्त बैठक</td><td>नहीं</td><td>नहीं</td><td>हो सकती (अनु.108)</td></tr>
+  <tr><td>राष्ट्रपति वापस</td><td>नहीं</td><td>हो सकता</td><td>हो सकता</td></tr>
+  <tr><td>तय कौन करे?</td><td>LS Speaker</td><td>LS Speaker</td><td>—</td></tr>
+  <tr><td>पूर्वानुमति</td><td>राष्ट्रपति आवश्यक</td><td>नहीं</td><td>नहीं</td></tr>
+</table>
+<div class="warn-box">⚠️ सभी धन विधेयक ⊂ वित्त विधेयक | लेकिन सभी वित्त विधेयक ≠ धन विधेयक</div>
+</div>
+
+<div class="sec-title">🏦 संसदीय समितियाँ — Master Table</div>
+<div class="card" style="overflow-x:auto">
+<table>
+  <tr><th>समिति</th><th>स्थापना</th><th>सदस्य</th><th>स्रोत</th><th>कार्यकाल</th><th>अध्यक्ष</th><th>कार्य</th></tr>
+  <tr><td>PAC (लोक लेखा)</td><td>1921 (प्रथम)</td><td>22</td><td>15LS+7RS</td><td>1 वर्ष</td><td>विपक्ष नेता</td><td>CAG रिपोर्ट</td></tr>
+  <tr><td>प्राक्कलन</td><td>1950 (सबसे बड़ी)</td><td>30</td><td>केवल LS</td><td>1 वर्ष</td><td>—</td><td>बजट अनुमान</td></tr>
+  <tr><td>लोक उपक्रम</td><td>1964</td><td>22</td><td>15LS+7RS</td><td>1 वर्ष</td><td>—</td><td>PSU रिपोर्ट</td></tr>
+</table>
+<div class="warn-box">⚠️ तीनों में मंत्री सदस्य नहीं हो सकते!</div>
+</div>
+
+</div><!-- /summary -->
+
+<!-- TAB 3: RJ PYQ -->
+<div id="rjpyq" class="content">
+<div class="mcq-section">
+  <div class="info-box">📌 RPSC RAS/PSI Latest Pattern | Rajasthan Most Asking PYQ Style | +1 सही / -1/3 गलत</div>
+  <div class="score-bar">
+    <div class="score-chip sc-blue"><span id="rj-score">0</span>Score</div>
+    <div class="score-chip sc-green"><span id="rj-correct">0</span>सही</div>
+    <div class="score-chip sc-red"><span id="rj-wrong">0</span>गलत</div>
+    <div class="score-chip"><span id="rj-attempt">0/30</span>Attempt</div>
+  </div>
+  <div id="rj-questions"></div>
+  <div class="submit-row">
+    <button class="btn btn-primary" onclick="submitQuiz('rj')">📊 परिणाम देखें</button>
+    <button class="btn btn-orange" style="margin-left:10px" onclick="resetQuiz('rj')">🔄 Reset</button>
+  </div>
+</div>
+</div>
+
+<!-- TAB 4: STATES PYQ -->
+<div id="statepyq" class="content">
+<div class="mcq-section">
+  <div class="info-box">📌 Other States PYQ (MP, UP, Bihar, CG, Haryana, UPSC Pattern) | +1 / -1/3</div>
+  <div class="score-bar">
+    <div class="score-chip sc-blue"><span id="st-score">0</span>Score</div>
+    <div class="score-chip sc-green"><span id="st-correct">0</span>सही</div>
+    <div class="score-chip sc-red"><span id="st-wrong">0</span>गलत</div>
+    <div class="score-chip"><span id="st-attempt">0/30</span>Attempt</div>
+  </div>
+  <div id="st-questions"></div>
+  <div class="submit-row">
+    <button class="btn btn-primary" onclick="submitQuiz('st')">📊 परिणाम देखें</button>
+    <button class="btn btn-orange" style="margin-left:10px" onclick="resetQuiz('st')">🔄 Reset</button>
+  </div>
+</div>
+</div>
+
+<!-- TAB 5: LAST MINUTE -->
+<div id="lastmin" class="content">
+
+<div class="super-mn">
+  <h4>🔥 SUPER MNEMONIC #1 — संसद के 3 अंग</h4>
+  <p>"<strong>राजा लोक</strong>" = <u>रा</u>ष्ट्रपति + <u>जा</u>यसभा + <u>लोक</u>सभा</p>
+</div>
+<div class="super-mn">
+  <h4>🔥 SUPER MNEMONIC #2 — आयु</h4>
+  <p>LS=<strong>25</strong> (जवान) | RS=<strong>30</strong> (बुजुर्ग) | राष्ट्रपति=35 | PM = कोई न्यूनतम नहीं (LS सदस्य हो)</p>
+</div>
+<div class="super-mn">
+  <h4>🔥 SUPER MNEMONIC #3 — सीटें</h4>
+  <p>LS: <strong>552→543 | UP=80 | RJ=25</strong> | RS: <strong>250→245 | UP=31 | RJ=10</strong><br>Trick: <strong>"LS बड़ी RS छोटी, UP दोनों में पहला"</strong></p>
+</div>
+<div class="super-mn">
+  <h4>🔥 SUPER MNEMONIC #4 — तीन समितियाँ</h4>
+  <p><strong>PAC(1921)=22 | प्राक(1950)=30 | उपक्रम(1964)=22</strong><br>तीनों में <strong>मंत्री नहीं</strong> | PAC अध्यक्ष = विपक्ष नेता</p>
+</div>
+<div class="super-mn">
+  <h4>🔥 SUPER MNEMONIC #5 — धन विधेयक</h4>
+  <p>"<strong>धन = लोक का |</strong> RS = 14 दिन | संयुक्त बैठक नहीं | Speaker तय करे | राष्ट्रपति वापस नहीं"</p>
+</div>
+<div class="super-mn">
+  <h4>🔥 SUPER MNEMONIC #6 — बजट</h4>
+  <p>"<strong>James Wilson 1860 → शेट्टी 1947 → मथाई 1950 → मोरारजी 10 बार → निर्मला = पहली महिला</strong>"</p>
+</div>
+<div class="super-mn">
+  <h4>🔥 SUPER MNEMONIC #7 — RJ आरक्षण</h4>
+  <p>SC: <strong>"गबी भर क"</strong> = <u>ग</u>ंगानगर, <u>बी</u>कानेर, <u>भ</u>रतपुर, <u>क</u>रौली-धौलपुर<br>ST: <strong>"दौ-उदय-डूंग"</strong> = दौसा, उदयपुर, डूंगरपुर-बाँसवाड़ा</p>
+</div>
+
+<div class="sec-title">⚡ Compact Last Minute Cards</div>
+<div class="grid2">
+
+<div class="last-min-card"><h4>कोरम / Quorum</h4><p>प्रत्येक सदन = कुल का <span class="hl">1/10</span> (अनु. 100)</p></div>
+<div class="last-min-card"><h4>Casting Vote</h4><p>बराबर मत → <span class="hl">Speaker</span> casting vote (अनु. 100)</p></div>
+<div class="last-min-card"><h4>शून्य काल</h4><p><span class="hl">1963</span>, जनक: डॉ. राधाकृष्णन | 12pm-1pm | बिना पूर्व सूचना</p></div>
+<div class="last-min-card"><h4>प्रश्न काल</h4><p><span class="hl">11am-12pm</span> | भारत में 1892 | इंग्लैंड में 1721</p></div>
+<div class="last-min-card"><h4>अविश्वास vs विश्वास</h4><p>अविश्वास = <span class="hl">विपक्ष</span> | विश्वास = <span class="hl">सत्ता पक्ष</span></p></div>
+<div class="last-min-card"><h4>धन्यवाद प्रस्ताव</h4><p>राष्ट्रपति अभिभाषण के बाद | LS में पास न हो → <span class="hl">सरकार गिरे</span></p></div>
+<div class="last-min-card"><h4>स्थगन प्रस्ताव</h4><p>LS में = <span class="hl">"काम रोको"</span> | देश में घटना होने पर</p></div>
+<div class="last-min-card"><h4>अनु. 108 — संयुक्त बैठक</h4><p>अध्यक्षता → <span class="hl">LS Speaker</span> | धन विधेयक में नहीं</p></div>
+<div class="last-min-card"><h4>अनु. 120 — संसद भाषा</h4><p>हिंदी + अंग्रेजी | Speaker अनुमति से क्षेत्रीय</p></div>
+<div class="last-min-card"><h4>अनु. 122</h4><p>संसदीय कार्यवाही पर <span class="hl">न्यायालय का कोई आदेश नहीं</span></p></div>
+<div class="last-min-card"><h4>अनु. 249 — RS</h4><p>राज्य सूची + राष्ट्रीय महत्व → <span class="hl">RS = संसद को कानून बनाने दे</span></p></div>
+<div class="last-min-card"><h4>अनु. 312 — AIS</h4><p><span class="hl">RS</span> → IAS/IPS/IFS सृजन/उत्सादन</p></div>
+<div class="last-min-card"><h4>104वाँ CA 2019</h4><p>Anglo Indian मनोनयन <span class="hl">रद्द</span> | SC/ST आरक्षण 10 वर्ष बढ़ाया</p></div>
+<div class="last-min-card"><h4>106वाँ CA 2023</h4><p>नारी शक्ति वंदन → <span class="hl">महिला 1/3 आरक्षण</span> (2027 के बाद)</p></div>
+<div class="last-min-card"><h4>नई संसद</h4><p>उद्घाटन: <span class="hl">28 May 2023</span> | वास्तुकार: बिमल पटेल | TATA Project</p></div>
+<div class="last-min-card"><h4>प्रोटेम स्पीकर</h4><p>नियुक्ति+शपथ → <span class="hl">राष्ट्रपति</span> | काम = नए सांसदों को शपथ | 17वीं LS → मुलहरी मेहताब</p></div>
+</div>
+
+</div><!-- /lastmin -->
+
+<!-- MODAL -->
+<div class="modal-overlay" id="resultModal">
+  <div class="modal">
+    <h2>📊 परिणाम</h2>
+    <div class="big-score" id="finalScore">0</div>
+    <p id="finalCorrect">सही: 0</p>
+    <p id="finalWrong">गलत: 0</p>
+    <p id="finalSkipped">छोड़े: 0</p>
+    <p id="finalPercent" style="font-weight:700;color:#2e7d32;font-size:16px;margin-top:8px"></p>
+    <br><button class="btn btn-primary" onclick="closeModal()">बंद करें</button>
+  </div>
+</div>
+
+<script>
+var searchData=[
+  {t:"लोकसभा संरचना",tab:"revision"},{t:"राज्यसभा संरचना",tab:"revision"},
+  {t:"संसद अनु 79",tab:"revision"},{t:"अनु 80 राज्यसभा",tab:"revision"},
+  {t:"अनु 81 लोकसभा",tab:"revision"},{t:"अनु 82 परिसीमन",tab:"revision"},
+  {t:"अनु 83 कार्यकाल",tab:"revision"},{t:"अनु 84 योग्यता",tab:"revision"},
+  {t:"धन विधेयक अनु 109 110",tab:"revision"},{t:"बजट अनु 112",tab:"revision"},
+  {t:"संसदीय समितियाँ PAC",tab:"revision"},{t:"प्राक्कलन समिति",tab:"revision"},
+  {t:"लोक उपक्रम समिति",tab:"revision"},{t:"Speaker अध्यक्ष अनु 93",tab:"revision"},
+  {t:"शून्य काल",tab:"revision"},{t:"प्रश्न काल",tab:"revision"},
+  {t:"अविश्वास प्रस्ताव",tab:"revision"},{t:"विश्वास प्रस्ताव",tab:"revision"},
+  {t:"अयोग्यता अनु 102",tab:"revision"},{t:"विशेषाधिकार अनु 105",tab:"revision"},
+  {t:"कोरम Quorum",tab:"revision"},{t:"Casting Vote",tab:"revision"},
+  {t:"SC ST आरक्षण",tab:"revision"},{t:"नारी शक्ति वंदन",tab:"revision"},
+  {t:"नई संसद Central Vista",tab:"revision"},{t:"राजस्थान लोकसभा सीट",tab:"revision"},
+  {t:"Master Table तुलना",tab:"summary"},{t:"Quick Numbers",tab:"summary"},
+  {t:"RJ PYQ प्रश्न",tab:"rjpyq"},{t:"States PYQ प्रश्न",tab:"statepyq"},
+  {t:"Mnemonic Trick याद",tab:"lastmin"},{t:"Last Minute Cards",tab:"lastmin"}
+];
+
+function doSearch(v){
+  var r=document.getElementById('searchResults');
+  if(!v||v.length<1){r.style.display='none';return;}
+  var res=searchData.filter(function(d){return d.t.toLowerCase().indexOf(v.toLowerCase())>=0;});
+  if(res.length===0){r.style.display='none';return;}
+  r.style.display='block';
+  r.innerHTML=res.slice(0,7).map(function(d){
+    return '<div class="searchItem" onclick="goToTopic(\''+d.tab+'\',\''+d.t+'\')">🔍 '+d.t+'</div>';
+  }).join('');
+}
+function goToTopic(tab,term){
+  var tabs=['revision','summary','rjpyq','statepyq','lastmin'];
+  var ti=tabs.indexOf(tab);
+  document.querySelectorAll('.content').forEach(function(c){c.classList.remove('active');});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
+  if(ti>=0){
+    document.getElementById(tab).classList.add('active');
+    document.querySelectorAll('.tab')[ti].classList.add('active');
+  }
+  document.getElementById('searchResults').style.display='none';
+  document.getElementById('searchInput').value=term;
+}
+function clearSearch(){document.getElementById('searchInput').value='';document.getElementById('searchResults').style.display='none';}
+function showTab(id,el){
+  document.querySelectorAll('.content').forEach(function(c){c.classList.remove('active');});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
+  document.getElementById(id).classList.add('active');el.classList.add('active');
+}
+
+var rjQs=[
+  {q:"भारतीय संसद में कितने अंग हैं? (अनु. 79)",opts:["2","3","4","5"],ans:1,exp:"संसद = लोकसभा + राज्यसभा + राष्ट्रपति = 3 अंग"},
+  {q:"राज्यसभा में राष्ट्रपति द्वारा कितने सदस्य मनोनीत किए जाते हैं?",opts:["10","12","14","16"],ans:1,exp:"राष्ट्रपति 12 सदस्य साहित्य/कला/विज्ञान/समाजसेवा से मनोनीत करता है"},
+  {q:"लोकसभा की वर्तमान सदस्य संख्या कितनी है?",opts:["525","530","543","552"],ans:2,exp:"लोकसभा की वर्तमान सदस्य संख्या 543 है (अनु. 81)"},
+  {q:"राजस्थान से लोकसभा में कितनी सीटें हैं?",opts:["20","22","25","30"],ans:2,exp:"राजस्थान से लोकसभा में 25 सीटें हैं"},
+  {q:"राजस्थान से राज्यसभा में कितनी सीटें हैं?",opts:["8","10","12","14"],ans:1,exp:"राजस्थान से राज्यसभा में 10 सीटें हैं"},
+  {q:"84वाँ संविधान संशोधन 2001 किससे संबंधित है?",opts:["OBC आरक्षण","परिसीमन 2026 तक freeze","लोकसभा सीट वृद्धि","बजट प्रक्रिया"],ans:1,exp:"84वाँ CA 2001 ने परिसीमन को 2026 तक freeze किया"},
+  {q:"धन विधेयक को कौन प्रमाणित करता है?",opts:["राष्ट्रपति","उपराष्ट्रपति","लोकसभा अध्यक्ष","प्रधानमंत्री"],ans:2,exp:"अनु. 110 — लोकसभा अध्यक्ष तय करता है कि कोई विधेयक धन विधेयक है या नहीं"},
+  {q:"धन विधेयक को राज्यसभा अधिकतम कितने दिन रोक सकती है?",opts:["7","14","21","30"],ans:1,exp:"राज्यसभा धन विधेयक को अधिकतम 14 दिन रोक सकती है"},
+  {q:"नई संसद का उद्घाटन कब हुआ?",opts:["10 Dec 2020","28 May 2023","19 Sep 2023","15 Aug 2022"],ans:1,exp:"नई संसद का उद्घाटन 28 May 2023 को प्रधानमंत्री ने किया"},
+  {q:"भारत का पहला बजट किसने पेश किया?",opts:["शणमुखम शेट्टी","James Wilson","जॉन मथाई","मोरारजी देसाई"],ans:1,exp:"1860 में लॉर्ड कैनिंग काल में James Wilson ने पहला बजट पेश किया"},
+  {q:"राजस्थान में ST आरक्षित लोकसभा सीटें कौन सी हैं?",opts:["दौसा, उदयपुर, डूंगरपुर-बाँसवाड़ा","गंगानगर, बीकानेर, भरतपुर","चित्तौड़, कोटा, जोधपुर","जयपुर, अजमेर, झुंझुनू"],ans:0,exp:"राजस्थान में ST आरक्षित सीटें: दौसा, उदयपुर, डूंगरपुर-बाँसवाड़ा (3 सीटें)"},
+  {q:"106वाँ संविधान संशोधन 2023 किससे संबंधित है?",opts:["OBC आरक्षण","नारी शक्ति वंदन (महिला 1/3 आरक्षण)","SC/ST बढ़ाना","AIS"},ans:1,exp:"106वाँ CA 2023 = नारी शक्ति वंदन → लोकसभा+विधानसभा में महिलाओं को 1/3 आरक्षण"},
+  {q:"प्राक्कलन समिति में कितने सदस्य होते हैं?",opts:["22","25","30","45"],ans:2,exp:"प्राक्कलन समिति में 30 सदस्य (सभी LS से) — यह सबसे बड़ी समिति है"},
+  {q:"लोक लेखा समिति का अध्यक्ष सामान्यतः कौन होता है?",opts:["सत्ता पक्ष नेता","विपक्ष नेता","वित्त मंत्री","PM"],ans:1,exp:"PAC का अध्यक्ष सामान्यतः विपक्ष का नेता होता है"},
+  {q:"लोकसभा का प्रथम अध्यक्ष कौन था?",opts:["N. संजीव रेड्डी","G.V. मावलंकर","H.V. मावलंकर","बलराम जाखड़"],ans:1,exp:"लोकसभा के प्रथम अध्यक्ष गणेश वासुदेव (G.V.) मावलंकर थे"},
+  {q:"राज्यसभा की प्रथम सभापति कौन थे?",opts:["V.V. गिरि","डॉ. राधाकृष्णन","जाकिर हुसैन","लाल बहादुर शास्त्री"],ans:1,exp:"राज्यसभा के प्रथम सभापति डॉ. सर्वपल्ली राधाकृष्णन (VP) थे"},
+  {q:"शून्य काल किस वर्ष शुरू हुआ?",opts:["1951","1956","1963","1969"],ans:2,exp:"शून्य काल 1963 में शुरू हुआ, जनक: डॉ. राधाकृष्णन, समय: 12pm-1pm"},
+  {q:"राज्यसभा में उत्तर प्रदेश की कितनी सीटें हैं?",opts:["24","27","31","34"],ans:2,exp:"राज्यसभा में UP की 31 सीटें हैं जो सर्वाधिक हैं"},
+  {q:"नई संसद का वास्तुकार कौन है?",opts:["चार्ल्स कोरिया","बिमल पटेल","Raj Rewal","Laurie Baker"],ans:1,exp:"नई संसद के वास्तुकार बिमल पटेल हैं, इसका निर्माण TATA Project ने किया"},
+  {q:"सर्वाधिक बार बजट प्रस्तुत करने वाले कौन हैं?",opts:["मनमोहन सिंह","यशवंत सिन्हा","मोरारजी देसाई","P. चिदंबरम"],ans:2,exp:"मोरारजी देसाई ने सर्वाधिक 10 बार बजट पेश किया"},
+  {q:"लोकसभा सदस्य का कार्यकाल कितना होता है?",opts:["3 वर्ष","4 वर्ष","5 वर्ष","6 वर्ष"],ans:2,exp:"लोकसभा का कार्यकाल 5 वर्ष होता है (अनु. 83), आपातकाल में 1 वर्ष बढ़ाया जा सकता"},
+  {q:"राजस्थान में SC आरक्षित सीट नहीं है?",opts:["गंगानगर","बीकानेर","जोधपुर","भरतपुर"],ans:2,exp:"जोधपुर SC आरक्षित नहीं। SC: गंगानगर, बीकानेर, भरतपुर, करौली-धौलपुर"},
+  {q:"104वाँ संविधान संशोधन 2019 किससे संबंधित है?",opts:["OBC आरक्षण","Anglo Indian मनोनयन रद्द","RTI","संसद सीट वृद्धि"],ans:1,exp:"104वाँ CA 2019 ने Anglo Indian मनोनयन रद्द किया और SC/ST आरक्षण 10 वर्ष बढ़ाया"},
+  {q:"संसद में 'बजट' शब्द का उल्लेख कहाँ है?",opts:["अनु. 112 में","अनु. 113 में","कहीं नहीं","अनु. 110 में"],ans:2,exp:"भारतीय संविधान में 'बजट' शब्द कहीं नहीं है, इसे 'वार्षिक वित्तीय विवरण' कहा गया है"},
+  {q:"लोकसभा में किसे Casting Vote का अधिकार है?",opts:["राष्ट्रपति","PM","Speaker","वित्त मंत्री"],ans:2,exp:"अनु. 100 — बराबर मत होने पर Speaker Casting Vote देता है"},
+  {q:"वर्तमान में 18वीं लोकसभा के अध्यक्ष कौन हैं?",opts:["सुमित्रा महाजन","मीरा कुमार","ओम बिरला","राजनाथ सिंह"],ans:2,exp:"18वीं लोकसभा के अध्यक्ष ओम बिरला हैं (कोटा-बूंदी, राजस्थान)"},
+  {q:"राजस्थान का पहला जेंडर बजट किस वर्ष था?",opts:["2009-10","2010-11","2012-13","2015-16"],ans:2,exp:"राजस्थान का पहला जेंडर बजट 2012-13 में प्रस्तुत किया गया"},
+  {q:"अनुच्छेद 103 के अनुसार अयोग्यता का निर्धारण कौन करता है?",opts:["SC","राष्ट्रपति+ECI","संसद","LS Speaker"],ans:1,exp:"अनु. 103 — राष्ट्रपति चुनाव आयोग की सलाह पर अयोग्यता निर्धारण करता है"},
+  {q:"लोक उपक्रम समिति की स्थापना किस वर्ष हुई?",opts:["1950","1956","1964","1970"],ans:2,exp:"लोक उपक्रम समिति 1964 में कृष्ण कुमार मेनन द्वारा स्थापित हुई"},
+  {q:"राजस्थान का पहला कृषि बजट किस वर्ष था?",opts:["2018-19","2020-21","2021-22","2022-23"],ans:3,exp:"राजस्थान का पहला कृषि बजट 2022-23 में प्रस्तुत किया गया"}
+];
+
+var stQs=[
+  {q:"किस अनुच्छेद में संसद की संरचना का उल्लेख है?",opts:["अनु. 75","अनु. 79","अनु. 81","अनु. 85"],ans:1,exp:"अनु. 79 — संसद की संरचना = राष्ट्रपति + लोकसभा + राज्यसभा"},
+  {q:"राज्यसभा का पदेन सभापति कौन होता है?",opts:["राष्ट्रपति","PM","उपराष्ट्रपति","LS Speaker"],ans:2,exp:"उपराष्ट्रपति राज्यसभा का पदेन सभापति होता है (अनु. 89)"},
+  {q:"लोकसभा में किस राज्य की सर्वाधिक सीटें हैं?",opts:["महाराष्ट्र","बिहार","उत्तर प्रदेश","पश्चिम बंगाल"],ans:2,exp:"UP में लोकसभा की 80 सीटें हैं जो सर्वाधिक हैं"},
+  {q:"राज्यसभा में सीटों का निर्धारण किसके अनुसार होता है?",opts:["1st अनुसूची","4th अनुसूची","7th अनुसूची","9th अनुसूची"],ans:1,exp:"राज्यसभा में सीटों का निर्धारण 4th अनुसूची के अनुसार होता है"},
+  {q:"राज्यसभा की चुनाव प्रणाली क्या है?",opts:["प्रत्यक्ष","आनुपातिक+एकल संक्रमणीय+अप्रत्यक्ष","केवल अप्रत्यक्ष","NOTA"],ans:1,exp:"आनुपातिक प्रतिनिधित्व + एकल संक्रमणीय प्रणाली + अप्रत्यक्ष मतदान"},
+  {q:"धन विधेयक को राज्यसभा अधिकतम कितने दिन रोक सकती है?",opts:["7","14","21","30"],ans:1,exp:"राज्यसभा धन विधेयक को 14 दिन रोक सकती है (अनु. 109)"},
+  {q:"संसद की 'जुड़वाँ बहनें' कौन सी समितियाँ हैं?",opts:["LS+RS","PAC+प्राक्कलन","PAC+उपक्रम","प्राक्कलन+उपक्रम"],ans:1,exp:"लोक लेखा समिति (PAC) और प्राक्कलन समिति को 'जुड़वाँ बहनें' कहते हैं"},
+  {q:"अनुच्छेद 312 किससे संबंधित है?",opts:["बजट","अखिल भारतीय सेवाएँ (AIS)","धन विधेयक","संयुक्त बैठक"],ans:1,exp:"अनु. 312 — राज्यसभा AIS (IAS/IPS/IFS) का सृजन/उत्सादन कर सकती है"},
+  {q:"लोकसभा का सामान्य कार्यकाल कितना है?",opts:["3 वर्ष","4 वर्ष","5 वर्ष","6 वर्ष"],ans:2,exp:"लोकसभा का सामान्य कार्यकाल 5 वर्ष है (अनु. 83)"},
+  {q:"लोकसभा में सर्वाधिक SC सीटें किस राज्य में हैं?",opts:["MP","Bihar","UP","Maharashtra"],ans:2,exp:"लोकसभा में SC सीटें सर्वाधिक UP में हैं (17 सीटें)"},
+  {q:"लोक उपक्रम समिति की स्थापना कब हुई?",opts:["1945","1952","1956","1964"],ans:3,exp:"लोक उपक्रम समिति 1964 में कृष्ण कुमार मेनन द्वारा स्थापित हुई"},
+  {q:"Casting Vote (निर्णायक मत) का अधिकार किसे है?",opts:["राष्ट्रपति","PM","Speaker","VP"],ans:2,exp:"अनु. 100 — बराबर मत होने पर Speaker Casting Vote देता है"},
+  {q:"भारत में पहला बजट किस वर्ष प्रस्तुत हुआ?",opts:["1858","1860","1865","1870"],ans:1,exp:"1860 में लॉर्ड कैनिंग काल में James Wilson ने पहला बजट पेश किया"},
+  {q:"अनुच्छेद 102 में सांसद अयोग्यता का आधार नहीं है?",opts:["दिवालिया होना","10वीं अनुसूची","विदेश यात्रा","लाभ का पद"],ans:2,exp:"विदेश यात्रा अयोग्यता का आधार नहीं। अयोग्यता: पागल/दिवालिया/विदेशी नागरिकता/लाभ पद/10वीं अनुसूची"},
+  {q:"'विद्वानों का सदन' किसे कहते हैं?",opts:["लोकसभा","राज्यसभा","दोनों","कोई नहीं"],ans:1,exp:"राज्यसभा को 'विद्वानों का सदन', 'House of Elders' भी कहते हैं"},
+  {q:"भारत की प्रथम संसदीय समिति कौन सी है?",opts:["प्राक्कलन","PAC (लोक लेखा)","लोक उपक्रम","विशेषाधिकार"],ans:1,exp:"PAC (लोक लेखा समिति) 1921 में स्थापित — यह भारत की प्रथम संसदीय समिति है"},
+  {q:"अनुच्छेद 103 के तहत अयोग्यता निर्धारण का अधिकार किसे है?",opts:["SC","राष्ट्रपति+ECI","संसद","LS Speaker"],ans:1,exp:"अनु. 103 — राष्ट्रपति चुनाव आयोग की सलाह पर अयोग्यता का निर्धारण करता है"},
+  {q:"नई संसद का निर्माण किस कंपनी ने किया?",opts:["L&T","TATA Project","Shapoorji","Adani"],ans:1,exp:"नई संसद का निर्माण TATA Project ने किया, वास्तुकार: बिमल पटेल"},
+  {q:"स्वतंत्र भारत का पहला बजट किसने पेश किया?",opts:["नेहरू","शणमुखम शेट्टी","जॉन मथाई","मोरारजी देसाई"],ans:1,exp:"स्वतंत्र भारत का पहला बजट 1947 में R.K. शणमुखम शेट्टी ने पेश किया"},
+  {q:"अनुच्छेद 120 संसद की भाषा के बारे में क्या कहता है?",opts:["केवल हिंदी","केवल अंग्रेजी","हिंदी और अंग्रेजी","केवल क्षेत्रीय"],ans:2,exp:"अनु. 120 — संसद में हिंदी और अंग्रेजी; Speaker अनुमति से क्षेत्रीय भाषा भी"},
+  {q:"शून्य काल (Zero Hour) कितने बजे से होता है?",opts:["10am-11am","11am-12pm","12pm-1pm","1pm-2pm"],ans:2,exp:"शून्य काल 12pm-1pm तक होता है (1963 से शुरू)"},
+  {q:"अविश्वास प्रस्ताव कौन लाता है?",opts:["सत्ता पक्ष","विपक्ष","राष्ट्रपति","LS Speaker"],ans:1,exp:"अविश्वास प्रस्ताव विपक्ष लाता है; पास होने पर सरकार गिरती है"},
+  {q:"प्राक्कलन समिति में राज्यसभा के कितने सदस्य हैं?",opts:["7","10","0 (केवल LS)","15"],ans:2,exp:"प्राक्कलन समिति के 30 सदस्य सभी लोकसभा से होते हैं — RS से कोई नहीं"},
+  {q:"संयुक्त बैठक (Joint Session) की अध्यक्षता कौन करता है?",opts:["राष्ट्रपति","VP","LS Speaker","PM"],ans:2,exp:"अनु. 108 — संयुक्त बैठक की अध्यक्षता लोकसभा अध्यक्ष करता है"},
+  {q:"राज्यसभा की अधिकतम सदस्य संख्या कितनी हो सकती है?",opts:["238","240","250","260"],ans:2,exp:"राज्यसभा की अधिकतम 250 सीटें (238 निर्वाचित + 12 मनोनीत)"},
+  {q:"'Budget' शब्द किस भाषा से आया है?",opts:["फ्रेंच","लैटिन","ग्रीक","अरबी"],ans:1,exp:"'Budget' लैटिन 'Bougette' (चमड़े का थैला) से बना है"},
+  {q:"राज्यसभा सदस्य के लिए न्यूनतम आयु कितनी है?",opts:["21","25","30","35"],ans:2,exp:"राज्यसभा सदस्यता के लिए न्यूनतम आयु 30 वर्ष (अनु. 84)"},
+  {q:"लोकसभा की अधिकतम सीट संख्या कितनी हो सकती है?",opts:["543","545","550","552"],ans:3,exp:"लोकसभा की अधिकतम 552 (550 निर्वाचित + 2 Anglo Indian)"},
+  {q:"'काला बजट' किस वर्ष प्रस्तुत हुआ?",opts:["1970-71","1973-74","1975-76","1979-80"],ans:1,exp:"1973-74 का बजट 'काला बजट' के नाम से जाना जाता है"},
+  {q:"अनुच्छेद 249 राज्यसभा को कौन सा अधिकार देता है?",opts:["धन विधेयक पेश करना","राज्य सूची पर राष्ट्रीय हित में कानून","AIS सृजन","Speaker हटाना"],ans:1,exp:"अनु. 249 — RS राज्य सूची के विषय जो राष्ट्रीय महत्व के हों, उन पर संसद को कानून बनाने का अधिकार दे सकती है"},
+  {q:"गणतंत्र भारत का पहला बजट किसने पेश किया?",opts:["शणमुखम शेट्टी","जॉन मथाई","मोरारजी देसाई","TT कृष्णमाचारी"],ans:1,exp:"गणतंत्र भारत का पहला बजट 1950 में जॉन मथाई ने पेश किया"}
+];
+
+var quizState={
+  rj:{score:0,correct:0,wrong:0,attempt:0,answered:{}},
+  st:{score:0,correct:0,wrong:0,attempt:0,answered:{}}
+};
+
+function buildQuiz(prefix,qs){
+  var html='';
+  qs.forEach(function(q,i){
+    html+='<div class="q-card" id="'+prefix+'q'+i+'">';
+    html+='<div class="q-num">Q.'+(i+1)+' &nbsp;|&nbsp; +1 / -1/3</div>';
+    html+='<div class="q-text">'+q.q+'</div><div class="options">';
+    q.opts.forEach(function(o,j){
+      html+='<label id="'+prefix+'lbl'+i+'_'+j+'"><input type="radio" name="'+prefix+'q'+i+'" value="'+j+'" onchange="markAns(\''+prefix+'\','+i+','+j+','+q.ans+')"> '+String.fromCharCode(65+j)+'. '+o+'</label>';
+    });
+    html+='</div><div class="explanation" id="'+prefix+'exp'+i+'">✅ '+q.exp+'</div></div>';
+  });
+  return html;
+}
+
+function markAns(prefix,qi,selected,correct){
+  var s=quizState[prefix];
+  if(s.answered[qi]!==undefined)return;
+  s.answered[qi]=selected;
+  s.attempt++;
+  var lblC=document.getElementById(prefix+'lbl'+qi+'_'+correct);
+  var lblS=document.getElementById(prefix+'lbl'+qi+'_'+selected);
+  if(selected===correct){
+    s.correct++;s.score++;
+    if(lblC)lblC.classList.add('opt-correct');
+  } else {
+    s.wrong++;
+    s.score=parseFloat((s.score-1/3).toFixed(2));
+    if(lblS)lblS.classList.add('opt-wrong');
+    if(lblC)lblC.classList.add('opt-correct');
+  }
+  var exp=document.getElementById(prefix+'exp'+qi);
+  if(exp)exp.style.display='block';
+  updateScore(prefix);
+}
+
+function updateScore(prefix){
+  var s=quizState[prefix];
+  var qs=prefix==='rj'?rjQs:stQs;
+  document.getElementById(prefix+'-score').textContent=s.score;
+  document.getElementById(prefix+'-correct').textContent=s.correct;
+  document.getElementById(prefix+'-wrong').textContent=s.wrong;
+  document.getElementById(prefix+'-attempt').textContent=s.attempt+'/'+qs.length;
+}
+
+function submitQuiz(prefix){
+  var s=quizState[prefix];
+  var qs=prefix==='rj'?rjQs:stQs;
+  var skipped=qs.length-s.attempt;
+  var pct=((s.score/qs.length)*100).toFixed(1);
+  document.getElementById('finalScore').textContent=s.score;
+  document.getElementById('finalCorrect').textContent='✅ सही: '+s.correct;
+  document.getElementById('finalWrong').textContent='❌ गलत: '+s.wrong;
+  document.getElementById('finalSkipped').textContent='⬛ छोड़े: '+skipped;
+  document.getElementById('finalPercent').textContent='प्रतिशत: '+pct+'%';
+  document.getElementById('resultModal').classList.add('show');
+}
+
+function resetQuiz(prefix){
+  quizState[prefix]={score:0,correct:0,wrong:0,attempt:0,answered:{}};
+  updateScore(prefix);
+  var qs=prefix==='rj'?rjQs:stQs;
+  document.getElementById(prefix==='rj'?'rj-questions':'st-questions').innerHTML=buildQuiz(prefix,qs);
+}
+
+function closeModal(){document.getElementById('resultModal').classList.remove('show');}
+
+window.onload=function(){
+  document.getElementById('rj-questions').innerHTML=buildQuiz('rj',rjQs);
+  document.getElementById('st-questions').innerHTML=buildQuiz('st',stQs);
+};
+</script>
+</body>
+</html>

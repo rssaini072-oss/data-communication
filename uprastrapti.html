@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>उपराष्ट्रपति - Complete Revision | RAS & PSI 2025</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Baloo+2:wght@400;600;700;800&display=swap');
+  :root {
+    --saffron:#FF6B00; --saffron-light:#FFF0E0;
+    --green:#1a7a35; --green-light:#E8F5EC;
+    --blue:#1a4fa0; --blue-light:#E8EFFE;
+    --red:#c0392b; --red-light:#FDEDEC;
+    --purple:#6c3483; --purple-light:#F5EEF8;
+    --teal:#0e7c7b; --teal-light:#E0F5F5;
+    --gold:#b7860b; --gold-light:#FFFDE7;
+    --dark:#1a1a2e; --gray:#f5f6fa; --border:#dee2e6;
+    --shadow:0 4px 20px rgba(0,0,0,0.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Baloo 2','Tiro Devanagari Hindi',sans-serif;background:#f0f2f8;color:var(--dark);}
+
+  .header{background:linear-gradient(135deg,#1a4fa0 0%,#6c3483 50%,#c0392b 100%);color:white;padding:18px 20px 14px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,0.2);}
+  .header h1{font-size:1.5rem;font-weight:800;}
+  .header p{font-size:0.8rem;opacity:0.9;margin-top:2px;}
+  .badges{display:flex;justify-content:center;gap:8px;margin-top:8px;flex-wrap:wrap;}
+  .badge{background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:3px 12px;font-size:0.75rem;font-weight:600;}
+
+  .tabs{display:flex;background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);overflow-x:auto;position:sticky;top:88px;z-index:99;}
+  .tab-btn{flex:1;min-width:100px;padding:12px 8px;border:none;background:transparent;font-family:'Baloo 2',sans-serif;font-size:0.8rem;font-weight:700;color:#666;cursor:pointer;border-bottom:3px solid transparent;transition:all 0.25s;white-space:nowrap;}
+  .tab-btn:hover{background:var(--gray);color:var(--blue);}
+  .tab-btn.active{color:var(--blue);border-bottom-color:var(--blue);background:var(--blue-light);}
+
+  .tab-content{display:none;padding:20px;max-width:1200px;margin:0 auto;}
+  .tab-content.active{display:block;}
+
+  .section-title{font-size:1.1rem;font-weight:800;margin:20px 0 12px;padding:10px 16px;border-radius:10px;display:flex;align-items:center;gap:8px;}
+  .st-blue{background:var(--blue-light);color:var(--blue);border-left:5px solid var(--blue);}
+  .st-orange{background:var(--saffron-light);color:var(--saffron);border-left:5px solid var(--saffron);}
+  .st-green{background:var(--green-light);color:var(--green);border-left:5px solid var(--green);}
+  .st-red{background:var(--red-light);color:var(--red);border-left:5px solid var(--red);}
+  .st-purple{background:var(--purple-light);color:var(--purple);border-left:5px solid var(--purple);}
+  .st-teal{background:var(--teal-light);color:var(--teal);border-left:5px solid var(--teal);}
+
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:700px){.grid-2{grid-template-columns:1fr;}}
+
+  .card{background:white;border-radius:14px;padding:16px;box-shadow:var(--shadow);border-top:4px solid var(--blue);}
+  .card.orange-top{border-top-color:var(--saffron);}
+  .card.green-top{border-top-color:var(--green);}
+  .card.red-top{border-top-color:var(--red);}
+  .card.purple-top{border-top-color:var(--purple);}
+  .card.teal-top{border-top-color:var(--teal);}
+  .card.gold-top{border-top-color:var(--gold);}
+  .card h3{font-size:1rem;font-weight:800;margin-bottom:10px;padding-bottom:8px;border-bottom:2px dashed var(--border);}
+
+  .art-tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:0.75rem;font-weight:700;margin-bottom:8px;background:var(--blue);color:white;}
+  .art-tag.orange{background:var(--saffron);}
+  .art-tag.green{background:var(--green);}
+  .art-tag.red{background:var(--red);}
+  .art-tag.purple{background:var(--purple);}
+
+  .info-list{list-style:none;padding:0;}
+  .info-list li{padding:5px 0 5px 20px;position:relative;font-size:0.88rem;border-bottom:1px solid #f0f0f0;line-height:1.5;}
+  .info-list li:last-child{border-bottom:none;}
+  .info-list li::before{content:'→';position:absolute;left:0;color:var(--blue);font-weight:bold;}
+
+  .highlight-box{background:var(--blue-light);border:1.5px solid #a8bfe0;border-radius:10px;padding:10px 14px;margin:8px 0;font-size:0.88rem;}
+  .highlight-box.orange{background:var(--saffron-light);border-color:#FFCBA4;}
+  .highlight-box.green{background:var(--green-light);border-color:#a8d5b5;}
+  .highlight-box.red{background:var(--red-light);border-color:#f0a8a8;}
+  .highlight-box.purple{background:var(--purple-light);border-color:#cba8e0;}
+  .highlight-box.gold{background:var(--gold-light);border-color:#e0d08a;}
+
+  .mnemonic{background:linear-gradient(135deg,#FFF9C4,#FFF3E0);border:2px solid #FFD700;border-radius:12px;padding:10px 14px;margin-top:10px;font-size:0.85rem;}
+  .mnemonic-title{font-weight:800;color:var(--gold);font-size:0.8rem;margin-bottom:4px;}
+
+  .rev-table{width:100%;border-collapse:collapse;font-size:0.82rem;margin:8px 0;}
+  .rev-table th{background:var(--dark);color:white;padding:8px 10px;text-align:left;font-weight:700;}
+  .rev-table td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+  .rev-table tr:nth-child(even){background:var(--gray);}
+  .rev-table tr:hover{background:var(--blue-light);}
+
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0;font-size:0.85rem;}
+  .flow-item{background:var(--blue-light);border:1.5px solid var(--blue);padding:5px 12px;border-radius:8px;font-weight:700;color:var(--blue);}
+  .flow-arrow{color:var(--saffron);font-weight:bold;font-size:1.2rem;}
+
+  /* MCQ */
+  .mcq-header{background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;border-radius:14px;padding:16px 20px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .score-display{font-size:1.1rem;font-weight:800;}
+  .score-rule{font-size:0.78rem;opacity:0.8;margin-top:4px;}
+  .live-score{font-weight:800;color:#FFD700;font-size:1rem;}
+
+  .mcq-card{background:white;border-radius:14px;padding:18px;margin-bottom:16px;box-shadow:var(--shadow);border-left:5px solid var(--blue);}
+  .mcq-card.rj{border-left-color:var(--saffron);}
+  .mcq-card.state{border-left-color:var(--green);}
+  .mcq-num{font-size:0.75rem;font-weight:800;color:var(--blue);margin-bottom:8px;}
+  .mcq-num.rj{color:var(--saffron);}
+  .mcq-num.state{color:var(--green);}
+  .mcq-q{font-size:0.92rem;font-weight:700;margin-bottom:12px;line-height:1.6;}
+  .mcq-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  @media(max-width:600px){.mcq-options{grid-template-columns:1fr;}}
+  .mcq-opt{padding:9px 14px;border:2px solid var(--border);border-radius:8px;cursor:pointer;font-size:0.85rem;transition:all 0.2s;background:white;text-align:left;font-family:'Baloo 2',sans-serif;}
+  .mcq-opt:hover:not(:disabled){background:var(--blue-light);border-color:var(--blue);}
+  .mcq-opt.correct{background:var(--green-light);border-color:var(--green);color:var(--green);font-weight:700;}
+  .mcq-opt.wrong{background:var(--red-light);border-color:var(--red);color:var(--red);}
+  .mcq-opt.reveal{background:var(--green-light);border-color:var(--green);}
+  .mcq-opt:disabled{cursor:default;}
+  .mcq-explanation{margin-top:10px;padding:10px 14px;background:var(--gold-light);border-radius:8px;font-size:0.82rem;display:none;border-left:3px solid var(--gold);}
+  .mcq-explanation.show{display:block;}
+
+  .submit-btn{background:linear-gradient(135deg,var(--blue),var(--purple));color:white;border:none;padding:14px 40px;border-radius:25px;font-size:1rem;font-weight:800;cursor:pointer;display:block;margin:20px auto;box-shadow:var(--shadow);font-family:'Baloo 2',sans-serif;transition:transform 0.2s;}
+  .submit-btn:hover{transform:scale(1.04);}
+
+  .attempt-counter{background:var(--dark);color:white;border-radius:10px;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:0.85rem;}
+
+  .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;justify-content:center;align-items:center;}
+  .overlay.show{display:flex;}
+  .result-box{background:white;border-radius:20px;padding:30px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.15);animation:popIn 0.3s ease;}
+  @keyframes popIn{from{transform:scale(0.7);opacity:0;}to{transform:scale(1);opacity:1;}}
+  .result-emoji{font-size:3.5rem;margin-bottom:10px;}
+  .result-score{font-size:2.5rem;font-weight:800;color:var(--blue);}
+  .result-msg{font-size:1.1rem;font-weight:700;margin:10px 0;}
+  .result-detail{font-size:0.85rem;color:#666;margin:4px 0;}
+  .close-btn{background:var(--dark);color:white;border:none;padding:10px 30px;border-radius:20px;font-size:0.9rem;font-weight:700;cursor:pointer;margin-top:16px;font-family:'Baloo 2',sans-serif;}
+
+  /* LAST MINUTE */
+  .lm-card{background:white;border-radius:12px;padding:14px;box-shadow:var(--shadow);border:2px solid var(--border);margin-bottom:14px;}
+  .lm-title{font-size:0.95rem;font-weight:800;color:white;background:var(--dark);padding:6px 14px;border-radius:20px;display:inline-block;margin-bottom:10px;}
+  .lm-point{font-size:0.83rem;padding:4px 0;display:flex;gap:8px;align-items:flex-start;border-bottom:1px solid #f0f0f0;}
+  .lm-point:last-child{border-bottom:none;}
+
+  .super-mnemonic{background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:14px;padding:18px;color:white;margin:14px 0;}
+  .sm-title{font-size:1rem;font-weight:800;color:#FFD700;margin-bottom:10px;}
+  .sm-item{padding:5px 0;font-size:0.88rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .sm-item:last-child{border-bottom:none;}
+  .sm-key{color:#FFD700;font-weight:800;}
+
+  .imp-num{font-size:2rem;font-weight:800;color:var(--blue);display:block;}
+  .imp-label{font-size:0.78rem;color:#666;}
+  .stats-row{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0;}
+  .stat-box{flex:1;min-width:80px;background:var(--gray);border-radius:10px;padding:10px;text-align:center;border-top:3px solid var(--blue);}
+  .stat-box.orange{border-top-color:var(--saffron);}
+  .stat-box.green{border-top-color:var(--green);}
+  .stat-box.red{border-top-color:var(--red);}
+
+  .vp-table{width:100%;border-collapse:collapse;font-size:0.8rem;}
+  .vp-table th{background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;padding:8px;text-align:center;}
+  .vp-table td{padding:7px 8px;border-bottom:1px solid var(--border);text-align:center;}
+  .vp-table tr:nth-child(even){background:var(--gray);}
+  .vp-table tr:hover{background:var(--blue-light);}
+
+  .compare-box{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+  .compare-col{border-radius:10px;padding:12px;font-size:0.83rem;}
+  .compare-col h4{font-weight:800;margin-bottom:8px;font-size:0.9rem;}
+  .diff-item{padding:3px 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏛️ उपराष्ट्रपति (Vice President) — Complete Revision</h1>
+  <p>Ranjeet Sir Notes | भाग-V | अनु. 63–71 | RAS & PSI 2025</p>
+  <div class="badges">
+    <span class="badge">📋 RAS Pre 2025</span>
+    <span class="badge">👮 PSI 2025</span>
+    <span class="badge">🏛️ Art. 63-71</span>
+    <span class="badge">✅ PYQ MCQs</span>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('revision')">📚 Revision</button>
+  <button class="tab-btn" onclick="showTab('summary')">📊 Summary Table</button>
+  <button class="tab-btn" onclick="showTab('rjpyq')">🔴 RJ PYQ (25)</button>
+  <button class="tab-btn" onclick="showTab('statepyq')">🟢 States PYQ (25)</button>
+  <button class="tab-btn" onclick="showTab('lastminute')">⚡ Last Minute</button>
+</div>
+
+<!-- ========== TAB 1: REVISION ========== -->
+<div id="tab-revision" class="tab-content active">
+
+  <div class="section-title st-blue">🏛️ उपराष्ट्रपति — परिचय</div>
+  <div class="card">
+    <div class="grid-2">
+      <div>
+        <span class="art-tag">परिचय</span>
+        <ul class="info-list">
+          <li>भाग → <strong>5 (भाग-V)</strong></li>
+          <li>अनुच्छेद → <strong>63 से 71</strong></li>
+          <li>प्रावधान → <strong>USA</strong> से लिया गया</li>
+          <li>वरीयता क्रम में → <strong>दूसरे नंबर पर</strong></li>
+          <li>वर्तमान उपराष्ट्रपति → <strong>जगदीप धनखड़</strong></li>
+        </ul>
+      </div>
+      <div class="highlight-box orange" style="font-size:0.85rem;">
+        <strong>📌 Key Roles:</strong><br>
+        1️⃣ राज्यसभा का <strong>पदेन सभापति</strong> (Art.64)<br>
+        2️⃣ राष्ट्रपति की <strong>अनुपस्थिति/रिक्तता</strong> में कार्यकारी राष्ट्रपति (Art.65)<br>
+        3️⃣ वरीयता क्रम में <strong>दूसरे नंबर</strong> पर
+      </div>
+    </div>
+    <div class="mnemonic">
+      <div class="mnemonic-title">💡 Trick: "5-63-USA-2"</div>
+      भाग <strong>5</strong> | Art. <strong>63</strong>-71 | प्रावधान <strong>USA</strong> से | वरीयता <strong>2</strong>रे नंबर पर
+    </div>
+  </div>
+
+  <div class="section-title st-orange">📜 अनुच्छेद 63 — एक उपराष्ट्रपति होगा</div>
+  <div class="card orange-top">
+    <span class="art-tag orange">Art. 63</span>
+    <h3>भारत का एक उपराष्ट्रपति होगा</h3>
+    <ul class="info-list">
+      <li>Art.63 → <strong>भारत का एक उपराष्ट्रपति होगा</strong></li>
+      <li>Art.64 → उपराष्ट्रपति <strong>राज्यसभा का पदेन सभापति</strong> होता है</li>
+      <li>जब उपराष्ट्रपति राष्ट्रपति के कार्य करे → तब <strong>राज्यसभा के सभापति के रूप में कार्य नहीं</strong> करेगा</li>
+    </ul>
+    <div class="highlight-box" style="font-size:0.82rem; margin-top:8px;">
+      ⭐ <strong>तुलनात्मक तथ्य:</strong> USA में Vice President → Senate का अध्यक्ष होता है | भारत में उपराष्ट्रपति → राज्यसभा का <strong>पदेन सभापति</strong> होता है (यह USA से लिया गया)
+    </div>
+  </div>
+
+  <div class="section-title st-green">🗳️ उपराष्ट्रपति का चुनाव (Art. 66)</div>
+  <div class="grid-2">
+    <div class="card green-top">
+      <span class="art-tag green">Art. 66</span>
+      <h3>निर्वाचन — निर्वाचक मंडल</h3>
+      <div class="highlight-box green" style="font-size:0.85rem; margin-bottom:10px;">
+        <strong>उपराष्ट्रपति का निर्वाचक मंडल = संसद के सदस्य</strong><br>
+        लोकसभा (निर्वाचित + मनोनीत) ✅<br>
+        राज्यसभा (निर्वाचित + मनोनीत) ✅
+      </div>
+      <ul class="info-list">
+        <li>चुनाव विधि → <strong>एकल संक्रमणीय मत प्रणाली</strong></li>
+        <li>नामांकन के लिए <strong>20 अनुमोदक + 20 प्रस्तावक</strong> आवश्यक</li>
+        <li>जमानत राशि → <strong>₹15,000</strong></li>
+        <li>1/6 मत न मिले → <strong>जमानत जब्त</strong></li>
+        <li>चुनाव विवाद → <strong>सर्वोच्च न्यायालय</strong> (Art.71)</li>
+      </ul>
+      <div class="mnemonic">
+        <div class="mnemonic-title">💡 Trick: राष्ट्रपति vs उपराष्ट्रपति चुनाव का अंतर</div>
+        राष्ट्रपति → LS+RS(निर्वाचित) + <strong>विधायक</strong> ✅<br>
+        उपराष्ट्रपति → LS+RS (<strong>सभी</strong> = निर्वाचित + मनोनीत) | <strong>विधायक ❌</strong>
+      </div>
+    </div>
+    <div class="card">
+      <h3>⚠️ सबसे Tricky तुलना</h3>
+      <div class="compare-box">
+        <div class="compare-col" style="background:var(--saffron-light);">
+          <h4 style="color:var(--saffron);">🟠 राष्ट्रपति चुनाव</h4>
+          <div class="diff-item">LS के <strong>निर्वाचित</strong> ✅</div>
+          <div class="diff-item">RS के <strong>निर्वाचित</strong> ✅</div>
+          <div class="diff-item">LS के <strong>मनोनीत</strong> ❌</div>
+          <div class="diff-item">RS के <strong>मनोनीत</strong> ❌</div>
+          <div class="diff-item">विधानसभा सदस्य ✅</div>
+          <div class="diff-item">विधान परिषद ❌</div>
+          <div class="diff-item">50 प्रस्तावक+50 अनुमोदक</div>
+        </div>
+        <div class="compare-col" style="background:var(--blue-light);">
+          <h4 style="color:var(--blue);">🔵 उपराष्ट्रपति चुनाव</h4>
+          <div class="diff-item">LS के <strong>निर्वाचित</strong> ✅</div>
+          <div class="diff-item">RS के <strong>निर्वाचित</strong> ✅</div>
+          <div class="diff-item">LS के <strong>मनोनीत</strong> ✅</div>
+          <div class="diff-item">RS के <strong>मनोनीत</strong> ✅</div>
+          <div class="diff-item">विधानसभा सदस्य ❌</div>
+          <div class="diff-item">विधान परिषद ❌</div>
+          <div class="diff-item">20 प्रस्तावक+20 अनुमोदक</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title st-blue">📋 योग्यता (Art. 66)</div>
+  <div class="card">
+    <div class="grid-2">
+      <div>
+        <span class="art-tag">योग्यता</span>
+        <ul class="info-list">
+          <li>भारत का <strong>नागरिक</strong> होना</li>
+          <li><strong>35 वर्ष</strong> की आयु पूर्ण</li>
+          <li><strong>राज्यसभा का सदस्य</strong> बनने की योग्यता रखता हो</li>
+          <li>संसद व विधानमंडल का <strong>सदस्य नहीं</strong> होगा</li>
+          <li>कोई <strong>लाभ का पद</strong> धारण न करे</li>
+        </ul>
+      </div>
+      <div>
+        <div class="highlight-box green" style="font-size:0.82rem;">
+          📌 <strong>राष्ट्रपति vs उपराष्ट्रपति योग्यता अंतर:</strong><br><br>
+          राष्ट्रपति → <strong>लोकसभा</strong> सदस्य की योग्यता<br>
+          उपराष्ट्रपति → <strong>राज्यसभा</strong> सदस्य की योग्यता<br><br>
+          🔑 दोनों के लिए आयु = <strong>35 वर्ष</strong>
+        </div>
+        <div class="mnemonic">
+          <div class="mnemonic-title">💡 Trick: "रा-35-रा-स"</div>
+          <strong>रा</strong>ष्ट्रीय नागरिक + <strong>35</strong> वर्ष + <strong>रा</strong>ज्यसभा योग्यता + <strong>स</strong>दस्य नहीं होगा
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title st-red">📅 कार्यकाल, त्यागपत्र और हटाना (Art. 67-68)</div>
+  <div class="grid-2">
+    <div class="card red-top">
+      <span class="art-tag red">Art. 67</span>
+      <h3>कार्यकाल</h3>
+      <ul class="info-list">
+        <li>पद ग्रहण से <strong>5 वर्ष</strong></li>
+        <li>त्यागपत्र → <strong>राष्ट्रपति</strong> को (राष्ट्रपति नहीं → उपराष्ट्रपति को)</li>
+        <li>हटाना → <strong>राज्यसभा द्वारा प्रस्ताव</strong> पास करके + लोकसभा की सहमति</li>
+        <li>हटाने के लिए <strong>14 दिन</strong> पूर्व सूचना</li>
+        <li>कितनी भी बार पुनः निर्वाचित हो सकता है</li>
+      </ul>
+      <div class="highlight-box red" style="font-size:0.82rem; margin-top:8px;">
+        ⚠️ <strong>ध्यान दो!</strong><br>
+        राष्ट्रपति को हटाना → <strong>महाभियोग</strong> (दोनों सदन 2/3 से)<br>
+        उपराष्ट्रपति को हटाना → <strong>राज्यसभा का प्रस्ताव</strong> + लोकसभा की सहमति (कोई विशेष नाम नहीं)
+      </div>
+    </div>
+    <div class="card">
+      <span class="art-tag green">Art. 68</span>
+      <h3>पद रिक्तता पर चुनाव</h3>
+      <ul class="info-list">
+        <li>उपराष्ट्रपति का कार्यकाल <strong>समाप्त होने से पहले ही</strong> उत्तराधिकारी का चुनाव</li>
+        <li>त्यागपत्र/निधन/पद रिक्त → <strong>यथाशीघ्र</strong> चुनाव होगा</li>
+        <li>राष्ट्रपति रिक्तता पर → <strong>6 माह के भीतर</strong> चुनाव</li>
+        <li>उपराष्ट्रपति रिक्तता पर → <strong>यथाशीघ्र</strong> (कोई निश्चित समय नहीं)</li>
+      </ul>
+      <div class="mnemonic">
+        <div class="mnemonic-title">💡 Trick: "रा-6, उप-यथाशीघ्र"</div>
+        <strong>रा</strong>ष्ट्रपति → 6 माह की सीमा | <strong>उप</strong>राष्ट्रपति → यथाशीघ्र (कोई सीमा नहीं)
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title st-purple">🙏 शपथ (Art. 69)</div>
+  <div class="card purple-top">
+    <span class="art-tag purple">Art. 69</span>
+    <h3>उपराष्ट्रपति की शपथ</h3>
+    <div class="grid-2">
+      <ul class="info-list">
+        <li>उपराष्ट्रपति की शपथ → <strong>राष्ट्रपति</strong> दिलाता है</li>
+        <li>राष्ट्रपति की शपथ → <strong>CJI</strong> दिलाता है</li>
+        <li>Art.71 → चुनाव विवाद → <strong>सर्वोच्च न्यायालय</strong></li>
+      </ul>
+      <div>
+        <div class="highlight-box purple" style="font-size:0.82rem;">
+          📌 <strong>शपथ कौन दिलाता है — याद रखो:</strong><br>
+          राष्ट्रपति → CJI<br>
+          उपराष्ट्रपति → <strong>राष्ट्रपति</strong><br>
+          राज्यपाल → <strong>HC का मुख्य न्यायाधीश</strong><br>
+          PM + मंत्री → <strong>राष्ट्रपति</strong>
+        </div>
+        <div class="mnemonic">
+          <div class="mnemonic-title">💡 Trick: "उप → रा → CJI"</div>
+          <strong>उप</strong>राष्ट्रपति = <strong>रा</strong>ष्ट्रपति शपथ दिलाता | <strong>रा</strong>ष्ट्रपति = <strong>CJI</strong> शपथ दिलाता
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title st-teal">💰 वेतन और वर्तमान उपराष्ट्रपति</div>
+  <div class="card teal-top">
+    <div class="grid-2">
+      <div>
+        <h3>वेतन व सुविधाएं</h3>
+        <div class="stats-row">
+          <div class="stat-box">
+            <span class="imp-num">₹4 लाख</span>
+            <span class="imp-label">मासिक वेतन</span>
+          </div>
+          <div class="stat-box orange">
+            <span class="imp-num">₹5 लाख</span>
+            <span class="imp-label">जब राष्ट्रपति का कार्य करे</span>
+          </div>
+        </div>
+        <ul class="info-list">
+          <li>वेतन → <strong>राज्यसभा सभापति</strong> के रूप में</li>
+          <li>राष्ट्रपति कार्य करते समय → <strong>राष्ट्रपति का वेतन</strong></li>
+        </ul>
+      </div>
+      <div>
+        <h3>वर्तमान — जगदीप धनखड़</h3>
+        <ul class="info-list">
+          <li>16वें उपराष्ट्रपति → <strong>जगदीप धनखड़</strong></li>
+          <li>वर्तमान उपराष्ट्रपति (2022-)</li>
+          <li>राजस्थान से</li>
+          <li>उपराष्ट्रपति बनने से पहले → <strong>4 बंगाल के राज्यपाल</strong></li>
+          <li>व्यक्तिगत रूप से 15वें</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title st-orange">📜 भारत के उपराष्ट्रपतियों की सूची</div>
+  <div style="overflow-x:auto;">
+    <table class="vp-table">
+      <tr><th>#</th><th>नाम</th><th>कार्यकाल</th><th>विशेष तथ्य</th></tr>
+      <tr><td>1</td><td>डॉ. सर्वपल्ली राधाकृष्णन</td><td>1952-1962</td><td>प्रथम उपराष्ट्रपति, बाद में 2रे राष्ट्रपति, सर्वाधिक 2 बार उपराष्ट्रपति</td></tr>
+      <tr><td>2</td><td>डॉ. जाकिर हुसैन</td><td>1962-1967</td><td>बाद में 3रे राष्ट्रपति बने, बिहार के राज्यपाल</td></tr>
+      <tr><td>3</td><td>वी.वी. गिरी</td><td>1967-1969</td><td>4थे राष्ट्रपति, त्यागपत्र दिया, UP+Kerala+Mysore के राज्यपाल</td></tr>
+      <tr><td>4</td><td>गोपाल स्वरूप पाठक</td><td>1969-1974</td><td>—</td></tr>
+      <tr><td>5</td><td>बी.डी. जत्ती</td><td>1974-1979</td><td>Mysore के CM, कार्यवाहक राष्ट्रपति भी बने</td></tr>
+      <tr><td>6</td><td>मोहम्मद हिदायतुल्लाह</td><td>1979-1984</td><td>CJI भी रहे, कार्यवाहक राष्ट्रपति, पद पर रहते मृत्यु (राजस्थान)</td></tr>
+      <tr><td>7</td><td>रामास्वामी वेंकटरमण</td><td>1984-1987</td><td>बाद में 8वें राष्ट्रपति</td></tr>
+      <tr><td>8</td><td>डॉ. शंकर दयाल शर्मा</td><td>1987-1992</td><td>बाद में 9वें राष्ट्रपति, MP के CM, पंजाब के राज्यपाल</td></tr>
+      <tr><td>9</td><td>के.आर. नारायणन</td><td>1992-1997</td><td>बाद में 10वें राष्ट्रपति (प्रथम दलित)</td></tr>
+      <tr><td>10</td><td>कृष्णकांत</td><td>1997-2002</td><td>पद पर रहते मृत्यु (2002)</td></tr>
+      <tr><td>11</td><td>भैरों सिंह शेखावत</td><td>2002-2007</td><td>राजस्थान से, 3 बार CM</td></tr>
+      <tr><td>12</td><td>मोहम्मद हामिद अंसारी</td><td>2007-2017</td><td>2 बार उपराष्ट्रपति (लगातार)</td></tr>
+      <tr><td>13</td><td>वेंकैया नायडू</td><td>2017-2022</td><td>—</td></tr>
+      <tr><td>14/15/16*</td><td>जगदीप धनखड़</td><td>2022-वर्तमान</td><td>राजस्थान से, पश्चिम बंगाल के राज्यपाल, व्यक्तिगत 15वें</td></tr>
+    </table>
+  </div>
+  <div class="highlight-box orange" style="margin-top:10px; font-size:0.82rem;">
+    ⭐ <strong>ऐसे उपराष्ट्रपति जो राष्ट्रपति नहीं बने:</strong> गोपाल स्वरूप पाठक, बी.डी. जत्ती, मो. हिदायतुल्लाह, कृष्णकांत, भैरों सिंह शेखावत, मो. हामिद अंसारी, वेंकैया नायडू, जगदीप धनखड़
+  </div>
+
+  <div class="section-title st-red">🔑 विशेष तथ्य — परीक्षा में जरूर आते हैं</div>
+  <div class="grid-2">
+    <div class="card red-top">
+      <h3>🏆 First & Special</h3>
+      <ul class="info-list">
+        <li>प्रथम उपराष्ट्रपति → <strong>डॉ. सर्वपल्ली राधाकृष्णन</strong></li>
+        <li>सर्वाधिक बार उपराष्ट्रपति → <strong>डॉ. राधाकृष्णन (2 बार)</strong></li>
+        <li>लगातार 2 बार → <strong>मोहम्मद हामिद अंसारी</strong></li>
+        <li>पद पर रहते मृत्यु → <strong>कृष्णकांत (2002)</strong></li>
+        <li>राजस्थान से उपराष्ट्रपति → <strong>भैरों सिंह शेखावत, जगदीप धनखड़</strong></li>
+        <li>CJI भी रहे → <strong>मोहम्मद हिदायतुल्लाह</strong></li>
+        <li>त्यागपत्र देने वाले → <strong>वी.वी. गिरी</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🔄 उपराष्ट्रपति जो राष्ट्रपति बने</h3>
+      <table class="rev-table">
+        <tr><th>उपराष्ट्रपति</th><th>राष्ट्रपति बने</th></tr>
+        <tr><td>राधाकृष्णन</td><td>2रे राष्ट्रपति</td></tr>
+        <tr><td>जाकिर हुसैन</td><td>3रे राष्ट्रपति</td></tr>
+        <tr><td>वी.वी. गिरी</td><td>4थे राष्ट्रपति</td></tr>
+        <tr><td>वेंकटरमण</td><td>8वें राष्ट्रपति</td></tr>
+        <tr><td>शंकर दयाल शर्मा</td><td>9वें राष्ट्रपति</td></tr>
+        <tr><td>के.आर. नारायणन</td><td>10वें राष्ट्रपति</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TAB 2: SUMMARY TABLE ========== -->
+<div id="tab-summary" class="tab-content">
+  <div class="section-title st-blue">📊 Master Summary — अनुच्छेद क्रम</div>
+  <table class="rev-table">
+    <tr><th>अनुच्छेद</th><th>विषय</th><th>महत्वपूर्ण तथ्य</th></tr>
+    <tr><td><strong>Art. 63</strong></td><td>एक उपराष्ट्रपति</td><td>भारत का एक उपराष्ट्रपति होगा</td></tr>
+    <tr><td><strong>Art. 64</strong></td><td>पदेन सभापति</td><td>राज्यसभा का पदेन सभापति; राष्ट्रपति कार्य करते समय सभापति नहीं</td></tr>
+    <tr><td><strong>Art. 65</strong></td><td>कार्यकारी राष्ट्रपति</td><td>राष्ट्रपति पद रिक्त → उपराष्ट्रपति कार्यभार; वेतन राष्ट्रपति का</td></tr>
+    <tr><td><strong>Art. 66</strong></td><td>निर्वाचन</td><td>संसद के सभी सदस्य (निर्वाचित+मनोनीत); एकल संक्रमणीय; 35 वर्ष; RS योग्यता; 20+20 प्रस्तावक-अनुमोदक; ₹15,000 जमानत</td></tr>
+    <tr><td><strong>Art. 67</strong></td><td>कार्यकाल</td><td>5 वर्ष; त्यागपत्र → राष्ट्रपति को; हटाना → RS प्रस्ताव + LS सहमति; 14 दिन नोटिस</td></tr>
+    <tr><td><strong>Art. 68</strong></td><td>पद रिक्तता</td><td>कार्यकाल समाप्ति से पहले उत्तराधिकारी चुनाव; रिक्त होने पर यथाशीघ्र चुनाव</td></tr>
+    <tr><td><strong>Art. 69</strong></td><td>शपथ</td><td>राष्ट्रपति द्वारा शपथ दिलाई जाती है</td></tr>
+    <tr><td><strong>Art. 71</strong></td><td>चुनाव विवाद</td><td>राष्ट्रपति व उपराष्ट्रपति दोनों के चुनाव विवाद → SC; SC द्वारा अमान्य → पूर्व में किए कार्य वैध</td></tr>
+  </table>
+
+  <div class="section-title st-orange" style="margin-top:24px;">🔢 Quick Reference Numbers</div>
+  <div class="grid-2">
+    <table class="rev-table">
+      <tr><th>तथ्य</th><th>संख्या/विवरण</th></tr>
+      <tr><td>कार्यकाल</td><td><strong>5 वर्ष</strong></td></tr>
+      <tr><td>न्यूनतम आयु</td><td><strong>35 वर्ष</strong></td></tr>
+      <tr><td>वेतन (सभापति के रूप में)</td><td><strong>₹4 लाख/माह</strong></td></tr>
+      <tr><td>जमानत राशि</td><td><strong>₹15,000</strong></td></tr>
+      <tr><td>प्रस्तावक + अनुमोदक</td><td><strong>20 + 20</strong></td></tr>
+      <tr><td>हटाने का नोटिस</td><td><strong>14 दिन</strong></td></tr>
+      <tr><td>कार्यकाल (राष्ट्रपति रूप)</td><td><strong>6 माह (अधिकतम)</strong></td></tr>
+    </table>
+    <table class="rev-table">
+      <tr><th>तुलना बिंदु</th><th>राष्ट्रपति</th><th>उपराष्ट्रपति</th></tr>
+      <tr><td>अनुच्छेद</td><td>52-78</td><td>63-71</td></tr>
+      <tr><td>न्यूनतम आयु</td><td>35 वर्ष</td><td>35 वर्ष</td></tr>
+      <tr><td>योग्यता (सदन)</td><td>LS</td><td>RS</td></tr>
+      <tr><td>शपथ</td><td>CJI</td><td>राष्ट्रपति</td></tr>
+      <tr><td>त्यागपत्र</td><td>उपराष्ट्रपति को</td><td>राष्ट्रपति को</td></tr>
+      <tr><td>हटाना</td><td>महाभियोग</td><td>RS प्रस्ताव + LS सहमति</td></tr>
+      <tr><td>वेतन</td><td>₹5 लाख/माह</td><td>₹4 लाख/माह</td></tr>
+      <tr><td>निर्वाचक</td><td>LS+RS(निर्वाचित)+विधायक</td><td>LS+RS (सभी)</td></tr>
+      <tr><td>प्रावधान</td><td>USA + Ireland + UK</td><td>USA</td></tr>
+    </table>
+  </div>
+
+  <div class="section-title st-green" style="margin-top:20px;">🏆 Rajasthan Connection</div>
+  <div class="card green-top">
+    <h3>राजस्थान से संबंधित उपराष्ट्रपति</h3>
+    <div class="grid-2">
+      <div>
+        <div class="highlight-box green">
+          <strong>🟠 भैरों सिंह शेखावत (2002-2007)</strong><br>
+          → राजस्थान के 3 बार मुख्यमंत्री<br>
+          → 11वें उपराष्ट्रपति<br>
+          → 2007 में राष्ट्रपति चुनाव में हारे (प्रतिभा पाटिल से)
+        </div>
+      </div>
+      <div>
+        <div class="highlight-box blue">
+          <strong>🔵 जगदीप धनखड़ (2022-वर्तमान)</strong><br>
+          → राजस्थान से<br>
+          → पश्चिम बंगाल के राज्यपाल रहे<br>
+          → 4 बंगाल के राज्यपाल के रूप में<br>
+          → व्यक्तिगत रूप से 15वें, पद के रूप में 16वें
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TAB 3: RJ PYQ ========== -->
+<div id="tab-rjpyq" class="tab-content">
+  <div class="mcq-header">
+    <div>
+      <div class="score-display">🔴 राजस्थान PYQ — 25 प्रश्न (उपराष्ट्रपति)</div>
+      <div class="score-rule">+1 सही | -1/3 गलत | RAS Pre & PSI Style</div>
+    </div>
+    <div id="rj-live" class="live-score">Score: 0</div>
+  </div>
+  <div class="attempt-counter">
+    <span>प्रश्न: <strong id="rj-attempted">0</strong>/25 attempt</span>
+    <span>✅ सही: <strong id="rj-correct">0</strong> | ❌ गलत: <strong id="rj-wrong">0</strong></span>
+  </div>
+  <div id="rj-questions"></div>
+  <button class="submit-btn" onclick="submitRJ()">📊 परिणाम देखें (RJ)</button>
+</div>
+
+<!-- ========== TAB 4: STATES PYQ ========== -->
+<div id="tab-statepyq" class="tab-content">
+  <div class="mcq-header" style="background:linear-gradient(135deg,#1a7a35,#0e7c7b);">
+    <div>
+      <div class="score-display">🟢 अन्य राज्य PYQ — 25 प्रश्न</div>
+      <div class="score-rule">+1 सही | -1/3 गलत | UPSC/State PSC Style</div>
+    </div>
+    <div id="state-live" class="live-score">Score: 0</div>
+  </div>
+  <div class="attempt-counter">
+    <span>प्रश्न: <strong id="state-attempted">0</strong>/25 attempt</span>
+    <span>✅ सही: <strong id="state-correct">0</strong> | ❌ गलत: <strong id="state-wrong">0</strong></span>
+  </div>
+  <div id="state-questions"></div>
+  <button class="submit-btn" style="background:linear-gradient(135deg,#1a7a35,#0e7c7b);" onclick="submitState()">📊 परिणाम देखें (States)</button>
+</div>
+
+<!-- ========== TAB 5: LAST MINUTE ========== -->
+<div id="tab-lastminute" class="tab-content">
+  <div class="section-title st-blue">⚡ Last Minute Revision Cards</div>
+
+  <div class="grid-2">
+    <div class="lm-card">
+      <span class="lm-title">🔢 Key Numbers</span>
+      <div class="lm-point"><span>📌</span><span>कार्यकाल = <strong>5 वर्ष</strong></span></div>
+      <div class="lm-point"><span>📌</span><span>न्यूनतम आयु = <strong>35 वर्ष</strong></span></div>
+      <div class="lm-point"><span>📌</span><span>वेतन = <strong>₹4 लाख/माह</strong></span></div>
+      <div class="lm-point"><span>📌</span><span>जमानत = <strong>₹15,000</strong></span></div>
+      <div class="lm-point"><span>📌</span><span>प्रस्तावक+अनुमोदक = <strong>20+20</strong></span></div>
+      <div class="lm-point"><span>📌</span><span>हटाने का नोटिस = <strong>14 दिन</strong></span></div>
+      <div class="lm-point"><span>📌</span><span>भाग = <strong>भाग-V</strong>, अनुच्छेद = <strong>63-71</strong></span></div>
+      <div class="lm-point"><span>📌</span><span>प्रावधान = <strong>USA</strong> से</span></div>
+    </div>
+    <div class="lm-card">
+      <span class="lm-title">📜 Key Articles</span>
+      <div class="lm-point"><span>🔵</span><span>Art.63 = एक उपराष्ट्रपति होगा</span></div>
+      <div class="lm-point"><span>🔵</span><span>Art.64 = राज्यसभा का पदेन सभापति</span></div>
+      <div class="lm-point"><span>🔵</span><span>Art.65 = राष्ट्रपति रिक्त → उपराष्ट्रपति</span></div>
+      <div class="lm-point"><span>🔵</span><span>Art.66 = निर्वाचन प्रक्रिया + योग्यता</span></div>
+      <div class="lm-point"><span>🔵</span><span>Art.67 = कार्यकाल (5 वर्ष)</span></div>
+      <div class="lm-point"><span>🔵</span><span>Art.68 = पद रिक्तता पर चुनाव</span></div>
+      <div class="lm-point"><span>🔵</span><span>Art.69 = शपथ (राष्ट्रपति दिलाता है)</span></div>
+      <div class="lm-point"><span>🔵</span><span>Art.71 = चुनाव विवाद → SC</span></div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:14px;">
+    <div class="lm-card">
+      <span class="lm-title">⚠️ Tricky Points — जो गलत होता है</span>
+      <div class="lm-point"><span>❗</span><span>उपराष्ट्रपति चुनाव में विधायक <strong>शामिल नहीं</strong></span></div>
+      <div class="lm-point"><span>❗</span><span>उपराष्ट्रपति चुनाव में RS के <strong>मनोनीत भी शामिल</strong> ✅</span></div>
+      <div class="lm-point"><span>❗</span><span>राष्ट्रपति का हटाना = <strong>महाभियोग</strong> | उपराष्ट्रपति = RS प्रस्ताव</span></div>
+      <div class="lm-point"><span>❗</span><span>उपराष्ट्रपति को शपथ = <strong>राष्ट्रपति</strong> दिलाता (CJI नहीं)</span></div>
+      <div class="lm-point"><span>❗</span><span>उपराष्ट्रपति को त्यागपत्र = <strong>राष्ट्रपति</strong> को (उपराष्ट्रपति को नहीं)</span></div>
+      <div class="lm-point"><span>❗</span><span>राष्ट्रपति रिक्तता पर <strong>6 माह</strong> | उपराष्ट्रपति → <strong>यथाशीघ्र</strong></span></div>
+      <div class="lm-point"><span>❗</span><span>राष्ट्रपति कार्य करते समय → <strong>RS सभापति नहीं</strong></span></div>
+      <div class="lm-point"><span>❗</span><span>योग्यता = <strong>RS सदस्य</strong> की (LS नहीं)</span></div>
+      <div class="lm-point"><span>❗</span><span>प्रस्तावक-अनुमोदक = <strong>20+20</strong> (राष्ट्रपति में 50+50 नहीं)</span></div>
+    </div>
+    <div class="lm-card">
+      <span class="lm-title">🏆 First & Special</span>
+      <div class="lm-point"><span>⭐</span><span>प्रथम उपराष्ट्रपति = <strong>डॉ. राधाकृष्णन</strong></span></div>
+      <div class="lm-point"><span>⭐</span><span>सर्वाधिक बार = <strong>डॉ. राधाकृष्णन (2 बार)</strong></span></div>
+      <div class="lm-point"><span>⭐</span><span>लगातार 2 बार = <strong>मो. हामिद अंसारी</strong></span></div>
+      <div class="lm-point"><span>⭐</span><span>त्यागपत्र दिया = <strong>वी.वी. गिरी</strong></span></div>
+      <div class="lm-point"><span>⭐</span><span>पद पर मृत्यु = <strong>कृष्णकांत (2002)</strong></span></div>
+      <div class="lm-point"><span>⭐</span><span>CJI भी रहे = <strong>मो. हिदायतुल्लाह</strong></span></div>
+      <div class="lm-point"><span>⭐</span><span>राजस्थान से = <strong>भैरों सिंह शेखावत, जगदीप धनखड़</strong></span></div>
+      <div class="lm-point"><span>⭐</span><span>वर्तमान (16वें) = <strong>जगदीप धनखड़</strong></span></div>
+      <div class="lm-point"><span>⭐</span><span>4 बंगाल के राज्यपाल = <strong>जगदीप धनखड़</strong></span></div>
+    </div>
+  </div>
+
+  <div class="super-mnemonic" style="margin-top:16px;">
+    <div class="sm-title">🔥 SUPER MNEMONICS — 100% याद</div>
+    <div class="sm-item"><span class="sm-key">🎯 "5-63-USA-2":</span> भाग <strong>5</strong> | Art. <strong>63</strong>-71 | <strong>USA</strong> से प्रावधान | वरीयता <strong>2</strong>रे नंबर</div>
+    <div class="sm-item"><span class="sm-key">🎯 "रा-35-रा-स" (योग्यता):</span> <strong>रा</strong>ष्ट्रीय नागरिक + <strong>35</strong> वर्ष + <strong>रा</strong>ज्यसभा योग्यता + <strong>स</strong>ंसद सदस्य नहीं</div>
+    <div class="sm-item"><span class="sm-key">🎯 "उप→रा→CJI" (शपथ क्रम):</span> <strong>उप</strong>राष्ट्रपति = <strong>रा</strong>ष्ट्रपति दिलाए | <strong>रा</strong>ष्ट्रपति = <strong>CJI</strong> दिलाए</div>
+    <div class="sm-item"><span class="sm-key">🎯 "रा-6, उप-यथाशीघ्र" (रिक्तता):</span> <strong>रा</strong>ष्ट्रपति रिक्त = 6 माह | <strong>उप</strong>राष्ट्रपति रिक्त = यथाशीघ्र</div>
+    <div class="sm-item"><span class="sm-key">🎯 "राष्ट्रपति vs उपराष्ट्रपति हटाना":</span> <strong>राष्ट्रपति</strong> = महाभियोग (दोनों सदन 2/3) | <strong>उपराष्ट्रपति</strong> = RS प्रस्ताव + LS सहमति + 14 दिन नोटिस</div>
+    <div class="sm-item"><span class="sm-key">🎯 "उपराष्ट्रपति चुनाव में विधायक ❌":</span> राष्ट्रपति = विधायक ✅ | उपराष्ट्रपति = विधायक ❌ (केवल संसद सदस्य)</div>
+    <div class="sm-item"><span class="sm-key">🎯 राजस्थान Connection:</span> भैरों सिंह शेखावत (11वें) + जगदीप धनखड़ (16वें) — दोनों राजस्थान से</div>
+    <div class="sm-item"><span class="sm-key">🎯 "रा-जा-वी-वें-शं-के" (VP→President बने):</span> <strong>रा</strong>धाकृष्णन → <strong>जा</strong>किर → <strong>वी.वी.</strong>गिरी → <strong>वें</strong>कटरमण → <strong>शं</strong>कर दयाल → <strong>के</strong>.R.नारायणन</div>
+  </div>
+</div>
+
+<!-- RESULT POPUP -->
+<div class="overlay" id="result-overlay">
+  <div class="result-box">
+    <div class="result-emoji" id="res-emoji">🎉</div>
+    <div class="result-score" id="res-score">0</div>
+    <div class="result-msg" id="res-msg">परिणाम</div>
+    <div class="result-detail" id="res-detail"></div>
+    <div class="result-detail" id="res-grade"></div>
+    <button class="close-btn" onclick="closeResult()">बंद करें</button>
+  </div>
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+const rjQuestions = [
+  {q:"उपराष्ट्रपति के चुनाव में कौन भाग नहीं लेते?",opts:["लोकसभा के निर्वाचित सदस्य","राज्यसभा के मनोनीत सदस्य","लोकसभा के मनोनीत सदस्य","विधानसभा के निर्वाचित सदस्य"],ans:3,exp:"उपराष्ट्रपति के चुनाव में केवल संसद के सदस्य (LS+RS, निर्वाचित व मनोनीत) भाग लेते हैं। विधानसभा सदस्य भाग नहीं लेते।"},
+  {q:"उपराष्ट्रपति को शपथ कौन दिलाता है?",opts:["CJI","लोकसभा अध्यक्ष","राष्ट्रपति","उपराष्ट्रपति स्वयं"],ans:2,exp:"Art.69 के अनुसार उपराष्ट्रपति को शपथ राष्ट्रपति दिलाता है। जबकि राष्ट्रपति को CJI शपथ दिलाता है।"},
+  {q:"उपराष्ट्रपति का त्यागपत्र किसे संबोधित होता है?",opts:["उपराष्ट्रपति को","लोकसभा अध्यक्ष को","CJI को","राष्ट्रपति को"],ans:3,exp:"Art.67 के अनुसार उपराष्ट्रपति राष्ट्रपति को त्यागपत्र देता है। ध्यान दें: राष्ट्रपति उपराष्ट्रपति को देता है।"},
+  {q:"राजस्थान के किस राजनेता ने उपराष्ट्रपति पद धारण किया?",opts:["वसुंधरा राजे","भैरों सिंह शेखावत","अशोक गहलोत","हरिदेव जोशी"],ans:1,exp:"भैरों सिंह शेखावत (2002-2007) और जगदीप धनखड़ (2022-) दोनों राजस्थान से उपराष्ट्रपति बने।"},
+  {q:"उपराष्ट्रपति को हटाने के लिए क्या आवश्यक है?",opts:["महाभियोग प्रस्ताव","राज्यसभा का प्रस्ताव + लोकसभा की सहमति","केवल लोकसभा का प्रस्ताव","संयुक्त बैठक में 2/3 बहुमत"],ans:1,exp:"Art.67 के अनुसार उपराष्ट्रपति को हटाने के लिए राज्यसभा का प्रस्ताव पास होना चाहिए और लोकसभा की सहमति आवश्यक है। 14 दिन का नोटिस भी जरूरी है।"},
+  {q:"उपराष्ट्रपति का पद किस देश से लिया गया है?",opts:["ब्रिटेन","फ्रांस","आयरलैंड","USA"],ans:3,exp:"उपराष्ट्रपति का प्रावधान USA से लिया गया है।"},
+  {q:"उपराष्ट्रपति बनने के लिए न्यूनतम आयु कितनी होनी चाहिए?",opts:["25 वर्ष","30 वर्ष","35 वर्ष","40 वर्ष"],ans:2,exp:"उपराष्ट्रपति बनने के लिए न्यूनतम आयु 35 वर्ष है, जो राष्ट्रपति की योग्यता के समान है।"},
+  {q:"उपराष्ट्रपति किसका पदेन सभापति होता है?",opts:["लोकसभा का","राज्यसभा का","संसद का","विधानसभा का"],ans:1,exp:"Art.64 के अनुसार उपराष्ट्रपति राज्यसभा का पदेन सभापति होता है।"},
+  {q:"जब उपराष्ट्रपति राष्ट्रपति के रूप में कार्य करे तब उसका वेतन कैसा होगा?",opts:["₹4 लाख","₹5 लाख","₹3 लाख","दोनों का संयुक्त"],ans:1,exp:"जब उपराष्ट्रपति राष्ट्रपति के रूप में कार्य करता है तब उसे राष्ट्रपति का वेतन (₹5 लाख/माह) मिलता है, न कि सभापति का।"},
+  {q:"उपराष्ट्रपति के चुनाव में नामांकन के लिए कितने प्रस्तावक आवश्यक हैं?",opts:["10","20","50","100"],ans:1,exp:"उपराष्ट्रपति के चुनाव में 20 प्रस्तावक और 20 अनुमोदक आवश्यक हैं। (राष्ट्रपति में 50+50 होते हैं)"},
+  {q:"उपराष्ट्रपति पद का चुनाव विवाद किसके समक्ष प्रस्तुत होता है?",opts:["उच्च न्यायालय","सर्वोच्च न्यायालय","चुनाव आयोग","लोकसभा अध्यक्ष"],ans:1,exp:"Art.71 के अनुसार राष्ट्रपति और उपराष्ट्रपति दोनों के चुनाव विवाद का निर्णय सर्वोच्च न्यायालय करता है।"},
+  {q:"वर्तमान उपराष्ट्रपति जगदीप धनखड़ किस राज्य के राज्यपाल रह चुके हैं?",opts:["राजस्थान","उत्तर प्रदेश","पश्चिम बंगाल","मध्य प्रदेश"],ans:2,exp:"जगदीप धनखड़ पश्चिम बंगाल के राज्यपाल रह चुके हैं। वे राजस्थान से हैं और 2022 में उपराष्ट्रपति बने।"},
+  {q:"उपराष्ट्रपति की योग्यता में कौन-सी शर्त शामिल नहीं है?",opts:["भारतीय नागरिक होना","35 वर्ष की आयु","राज्यसभा सदस्यता की योग्यता","लोकसभा में चुने जाने की योग्यता"],ans:3,exp:"उपराष्ट्रपति के लिए राज्यसभा सदस्य बनने की योग्यता होनी चाहिए, न कि लोकसभा सदस्य की।"},
+  {q:"उपराष्ट्रपति पद की रिक्तता पर चुनाव कब होगा?",opts:["6 माह के भीतर","3 माह के भीतर","यथाशीघ्र","1 वर्ष के भीतर"],ans:2,exp:"उपराष्ट्रपति पद रिक्त होने पर यथाशीघ्र चुनाव होता है। कोई निश्चित समयसीमा नहीं है। जबकि राष्ट्रपति के लिए 6 माह की सीमा है।"},
+  {q:"निम्न में से कौन से उपराष्ट्रपति बाद में राष्ट्रपति नहीं बने?",opts:["डॉ. राधाकृष्णन","वी.वी. गिरी","भैरों सिंह शेखावत","के.आर. नारायणन"],ans:2,exp:"भैरों सिंह शेखावत उपराष्ट्रपति (2002-07) रहे लेकिन 2007 में राष्ट्रपति चुनाव में प्रतिभा पाटिल से हार गए।"},
+  {q:"उपराष्ट्रपति को राज्यसभा के सभापति के रूप में वेतन कितना मिलता है?",opts:["₹2 लाख","₹3 लाख","₹4 लाख","₹5 लाख"],ans:2,exp:"उपराष्ट्रपति को राज्यसभा के सभापति के रूप में ₹4 लाख प्रति माह वेतन मिलता है।"},
+  {q:"उपराष्ट्रपति के चुनाव में जमानत राशि कितनी होती है?",opts:["₹5,000","₹10,000","₹15,000","₹20,000"],ans:2,exp:"उपराष्ट्रपति चुनाव में ₹15,000 जमानत राशि जमा करनी होती है। 1/6 मत न मिले तो जब्त।"},
+  {q:"पहले उपराष्ट्रपति कौन थे जो CJI भी रहे?",opts:["वी.वी. गिरी","के.आर. नारायणन","मोहम्मद हिदायतुल्लाह","शंकर दयाल शर्मा"],ans:2,exp:"मोहम्मद हिदायतुल्लाह (1979-1984) एकमात्र ऐसे उपराष्ट्रपति हैं जो CJI भी रहे। वे कार्यवाहक राष्ट्रपति भी बने।"},
+  {q:"कौन से उपराष्ट्रपति ने त्यागपत्र दिया?",opts:["डॉ. राधाकृष्णन","वी.वी. गिरी","जाकिर हुसैन","कृष्णकांत"],ans:1,exp:"वी.वी. गिरी (1967-1969) ने उपराष्ट्रपति पद से त्यागपत्र दिया था, फिर 1969 में राष्ट्रपति बने।"},
+  {q:"सर्वाधिक बार उपराष्ट्रपति बनने का रिकॉर्ड किसके नाम है?",opts:["के.आर. नारायणन","डॉ. राधाकृष्णन","मो. हामिद अंसारी","शंकर दयाल शर्मा"],ans:1,exp:"डॉ. सर्वपल्ली राधाकृष्णन 2 बार (1952-1962) उपराष्ट्रपति रहे। मो. हामिद अंसारी भी 2 बार (लगातार 2007-2017) रहे।"},
+  {q:"उपराष्ट्रपति को हटाने की प्रक्रिया में 14 दिन पूर्व सूचना किसे दी जाती है?",opts:["राष्ट्रपति को","उपराष्ट्रपति को","CJI को","PM को"],ans:1,exp:"Art.67 के अनुसार, उपराष्ट्रपति को हटाने का प्रस्ताव लाने से 14 दिन पहले उपराष्ट्रपति को सूचना दी जाती है।"},
+  {q:"उपराष्ट्रपति का पदेन सभापति रूप किस सदन में होता है?",opts:["लोकसभा","राज्यसभा","दोनों में","विधान परिषद"],ans:1,exp:"उपराष्ट्रपति राज्यसभा का पदेन सभापति होता है (Art.64)।"},
+  {q:"जब उपराष्ट्रपति, राष्ट्रपति का कार्य करे तो वह कौन-सा कार्य नहीं करेगा?",opts:["तीनों सेनाओं का कमांडर","राज्यसभा का सभापति","क्षमादान की शक्ति","राज्यपाल की नियुक्ति"],ans:1,exp:"Art.64 के अनुसार जब उपराष्ट्रपति राष्ट्रपति के रूप में कार्य करता है तब वह राज्यसभा के सभापति के रूप में कार्य नहीं करेगा।"},
+  {q:"कौन-सा उपराष्ट्रपति पद पर रहते हुए निधन हो गया?",opts:["वी.वी. गिरी","मो. हिदायतुल्लाह","कृष्णकांत","गोपाल स्वरूप पाठक"],ans:2,exp:"कृष्णकांत (1997-2002) पद पर रहते हुए 2002 में निधन हो गए।"},
+  {q:"उपराष्ट्रपति के चुनाव की प्रक्रिया किस विधि से होती है?",opts:["प्रत्यक्ष मतदान","सूची प्रणाली","एकल संक्रमणीय मत प्रणाली","फर्स्ट पास्ट द पोस्ट"],ans:2,exp:"उपराष्ट्रपति का चुनाव आनुपातिक प्रतिनिधित्व वाली एकल संक्रमणीय मत प्रणाली से होता है, ठीक राष्ट्रपति की तरह।"},
+];
+
+const stateQuestions = [
+  {q:"भारत के उपराष्ट्रपति का पद किस अनुच्छेद में वर्णित है?",opts:["Art. 52","Art. 63","Art. 74","Art. 79"],ans:1,exp:"Art.63 में प्रावधान है कि भारत का एक उपराष्ट्रपति होगा। उपराष्ट्रपति से संबंधित अनुच्छेद 63-71 हैं।"},
+  {q:"उपराष्ट्रपति के चुनाव में कौन मतदाता नहीं होते?",opts:["लोकसभा के निर्वाचित सदस्य","राज्यसभा के मनोनीत सदस्य","विधानसभा के निर्वाचित सदस्य","लोकसभा के मनोनीत सदस्य"],ans:2,exp:"उपराष्ट्रपति के चुनाव में विधानसभा के सदस्य भाग नहीं लेते। केवल संसद के सदस्य (निर्वाचित व मनोनीत दोनों) भाग लेते हैं।"},
+  {q:"उपराष्ट्रपति के चुनाव विवाद का निर्णय कौन करता है?",opts:["चुनाव आयोग","उच्च न्यायालय","सर्वोच्च न्यायालय","संसद"],ans:2,exp:"Art.71 के अनुसार राष्ट्रपति और उपराष्ट्रपति के चुनाव विवाद का निर्णय सर्वोच्च न्यायालय करता है।"},
+  {q:"SC द्वारा यदि उपराष्ट्रपति का चुनाव शून्य घोषित हो जाए तो उनके पूर्व में किए गए कार्य?",opts:["शून्य हो जाएंगे","वैध रहेंगे","पुनर्विचार होगा","SC तय करेगा"],ans:1,exp:"Art.71 के अनुसार यदि SC द्वारा चुनाव शून्य घोषित किया जाए, तो पूर्व में किए गए कार्य वैध माने जाएंगे।"},
+  {q:"उपराष्ट्रपति का कार्यकाल कब से शुरू होता है?",opts:["चुनाव की तारीख से","निर्वाचन घोषणा से","पद ग्रहण से","शपथ की तारीख से"],ans:3,exp:"उपराष्ट्रपति का कार्यकाल पद ग्रहण की तारीख से 5 वर्ष होता है।"},
+  {q:"भारत के किस उपराष्ट्रपति ने सर्वाधिक बार यह पद धारण किया?",opts:["वी.वी. गिरी","मो. हामिद अंसारी","डॉ. सर्वपल्ली राधाकृष्णन","के.आर. नारायणन"],ans:2,exp:"डॉ. सर्वपल्ली राधाकृष्णन 2 बार उपराष्ट्रपति रहे (1952-62)। मो. हामिद अंसारी भी 2 बार (2007-17) रहे।"},
+  {q:"उपराष्ट्रपति को हटाने का प्रस्ताव किस सदन में पेश किया जाता है?",opts:["लोकसभा में","राज्यसभा में","किसी भी सदन में","दोनों की संयुक्त बैठक में"],ans:1,exp:"उपराष्ट्रपति को हटाने का प्रस्ताव राज्यसभा में पेश होता है क्योंकि वे राज्यसभा के सभापति होते हैं। फिर लोकसभा की सहमति आवश्यक है।"},
+  {q:"उपराष्ट्रपति को किस अनुच्छेद के तहत राज्यसभा का सभापति बनाया गया है?",opts:["Art. 63","Art. 64","Art. 65","Art. 66"],ans:1,exp:"Art.64 के अनुसार उपराष्ट्रपति राज्यसभा का पदेन सभापति होता है।"},
+  {q:"भारत के प्रथम उपराष्ट्रपति कौन थे?",opts:["डॉ. राजेंद्र प्रसाद","वी.वी. गिरी","डॉ. सर्वपल्ली राधाकृष्णन","जाकिर हुसैन"],ans:2,exp:"डॉ. सर्वपल्ली राधाकृष्णन भारत के प्रथम उपराष्ट्रपति (1952-1962) थे। वे बाद में 2रे राष्ट्रपति भी बने।"},
+  {q:"उपराष्ट्रपति के लिए किस सदन की सदस्यता की योग्यता चाहिए?",opts:["लोकसभा","राज्यसभा","किसी भी सदन की","विधानसभा"],ans:1,exp:"उपराष्ट्रपति के लिए राज्यसभा सदस्य बनने की योग्यता होनी चाहिए। जबकि राष्ट्रपति के लिए लोकसभा सदस्यता की योग्यता चाहिए।"},
+  {q:"Art.65 के अनुसार उपराष्ट्रपति राष्ट्रपति का कार्य कब करेगा?",opts:["जब राष्ट्रपति विदेश जाए","जब राष्ट्रपति का पद रिक्त, त्यागपत्र या निधन हो","जब राष्ट्रपति चाहे","PM की सलाह पर"],ans:1,exp:"Art.65 के अनुसार जब राष्ट्रपति का पद रिक्त हो, त्यागपत्र दें, निधन हो या हटाए जाएं तब उपराष्ट्रपति राष्ट्रपति का कार्यभार संभालेगा।"},
+  {q:"उपराष्ट्रपति के निर्वाचन मंडल में क्या अंतर है राष्ट्रपति के निर्वाचन मंडल से?",opts:["दोनों एक समान हैं","उपराष्ट्रपति में विधायक नहीं","उपराष्ट्रपति में RS के मनोनीत नहीं","उपराष्ट्रपति में LS के मनोनीत नहीं"],ans:1,exp:"मुख्य अंतर: राष्ट्रपति के निर्वाचन मंडल में विधायक शामिल हैं लेकिन उपराष्ट्रपति में नहीं। उपराष्ट्रपति में RS+LS के सभी सदस्य (निर्वाचित+मनोनीत) शामिल।"},
+  {q:"वी.वी. गिरी ने उपराष्ट्रपति पद से त्यागपत्र क्यों दिया?",opts:["स्वास्थ्य कारण","राष्ट्रपति पद के लिए चुनाव लड़ने हेतु","विवाद के कारण","PM से असहमति के कारण"],ans:1,exp:"वी.वी. गिरी ने 1969 में उपराष्ट्रपति पद से इसलिए त्यागपत्र दिया क्योंकि वे राष्ट्रपति पद का चुनाव लड़ना चाहते थे। और वे जीत भी गए।"},
+  {q:"निम्न में से कौन-सा कथन उपराष्ट्रपति के बारे में सही नहीं है?",opts:["वे राज्यसभा के पदेन सभापति हैं","उनका कार्यकाल 5 वर्ष है","उन्हें CJI शपथ दिलाता है","उनकी न्यूनतम आयु 35 वर्ष है"],ans:2,exp:"उपराष्ट्रपति को CJI नहीं, बल्कि राष्ट्रपति शपथ दिलाता है। CJI तो राष्ट्रपति को शपथ दिलाता है।"},
+  {q:"उपराष्ट्रपति को हटाने के लिए RS में कितना बहुमत चाहिए?",opts:["साधारण बहुमत","2/3 बहुमत","3/4 बहुमत","विशेष बहुमत"],ans:0,exp:"उपराष्ट्रपति को हटाने के लिए राज्यसभा में प्रभावी बहुमत (Effective Majority - साधारण बहुमत) से प्रस्ताव पास होना चाहिए, फिर लोकसभा की सहमति।"},
+  {q:"निम्न में से किस उपराष्ट्रपति ने कार्यवाहक राष्ट्रपति का कार्यभार संभाला?",opts:["भैरों सिंह शेखावत","वेंकैया नायडू","बी.डी. जत्ती","कृष्णकांत"],ans:2,exp:"बी.डी. जत्ती (1974-79) और मोहम्मद हिदायतुल्लाह (CJI) कार्यवाहक राष्ट्रपति रहे।"},
+  {q:"उपराष्ट्रपति का पद किस संविधान में भी है?",opts:["भारत और ब्रिटेन","भारत और USA","भारत और फ्रांस","भारत और ऑस्ट्रेलिया"],ans:1,exp:"उपराष्ट्रपति का पद USA से लिया गया है। अमेरिका में Vice President, Senate का अध्यक्ष होता है।"},
+  {q:"उपराष्ट्रपति के बारे में Art.66 क्या कहता है?",opts:["कार्यकाल","शपथ","निर्वाचन प्रक्रिया व योग्यता","चुनाव विवाद"],ans:2,exp:"Art.66 उपराष्ट्रपति के निर्वाचन की प्रक्रिया और योग्यता से संबंधित है।"},
+  {q:"मोहम्मद हामिद अंसारी विशेष क्यों हैं?",opts:["प्रथम उपराष्ट्रपति","लगातार 2 बार उपराष्ट्रपति रहे","राष्ट्रपति भी बने","CJI भी थे"],ans:1,exp:"मोहम्मद हामिद अंसारी लगातार 2 बार (2007-2017) उपराष्ट्रपति रहे।"},
+  {q:"उपराष्ट्रपति राज्यसभा में किस परिस्थिति में मत दे सकता है?",opts:["कभी नहीं","सदैव","बराबर मत की स्थिति में (निर्णायक मत)","PM की सलाह पर"],ans:2,exp:"राज्यसभा के सभापति के रूप में उपराष्ट्रपति सामान्यतः मत नहीं देता, लेकिन बराबर (tie) की स्थिति में निर्णायक मत (Casting Vote) दे सकता है।"},
+  {q:"उपराष्ट्रपति के संदर्भ में Art.68 क्या कहता है?",opts:["शपथ","कार्यकाल","पद रिक्त होने पर चुनाव","योग्यता"],ans:2,exp:"Art.68 के अनुसार उपराष्ट्रपति का कार्यकाल समाप्त होने से पहले उत्तराधिकारी का चुनाव करना होगा। रिक्त होने पर यथाशीघ्र चुनाव।"},
+  {q:"डॉ. राधाकृष्णन किस क्रम में भारत के राष्ट्रपति बने?",opts:["पहले","दूसरे","तीसरे","चौथे"],ans:1,exp:"डॉ. सर्वपल्ली राधाकृष्णन 1962-67 में भारत के दूसरे राष्ट्रपति बने।"},
+  {q:"उपराष्ट्रपति का पद कितने नंबर पर है वरीयता क्रम में?",opts:["पहले","दूसरे","तीसरे","चौथे"],ans:1,exp:"उपराष्ट्रपति वरीयता क्रम में दूसरे नंबर पर है।"},
+  {q:"किस अनुच्छेद के तहत जब राष्ट्रपति पद रिक्त हो, उपराष्ट्रपति कार्य करेगा?",opts:["Art.63","Art.64","Art.65","Art.66"],ans:2,exp:"Art.65 के अनुसार राष्ट्रपति का पद रिक्त होने पर उपराष्ट्रपति राष्ट्रपति का कार्यभार संभालेगा।"},
+  {q:"उपराष्ट्रपति के चुनाव से संबंधित कानून/नियम कौन बनाता है?",opts:["राष्ट्रपति","संसद","सर्वोच्च न्यायालय","चुनाव आयोग"],ans:1,exp:"Art.71 के अनुसार राष्ट्रपति और उपराष्ट्रपति के चुनावों से संबंधित कानून संसद बनाती है।"},
+];
+
+const state = {rj:{answers:{},correct:0,wrong:0,attempted:0},state:{answers:{},correct:0,wrong:0,attempted:0}};
+
+function renderMCQs(questions, containerId, prefix) {
+  const container = document.getElementById(containerId);
+  questions.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'mcq-card ' + prefix;
+    div.innerHTML = `<div class="mcq-num ${prefix}">प्रश्न ${i+1} ${prefix==='rj'?'🔴':'🟢'}</div>
+      <div class="mcq-q">${q.q}</div>
+      <div class="mcq-options">
+        ${q.opts.map((opt,j)=>`<button class="mcq-opt" onclick="selectOpt(this,${i},${j},'${prefix}')">(${String.fromCharCode(65+j)}) ${opt}</button>`).join('')}
+      </div>
+      <div class="mcq-explanation" id="${prefix}-exp-${i}">💡 <strong>व्याख्या:</strong> ${q.exp}</div>`;
+    container.appendChild(div);
+  });
+}
+
+renderMCQs(rjQuestions,'rj-questions','rj');
+renderMCQs(stateQuestions,'state-questions','state');
+
+function selectOpt(btn, qIdx, optIdx, prefix) {
+  const questions = prefix==='rj' ? rjQuestions : stateQuestions;
+  const q = questions[qIdx];
+  if(state[prefix].answers[qIdx] !== undefined) return;
+  const opts = btn.parentElement.querySelectorAll('.mcq-opt');
+  opts.forEach(o => o.disabled = true);
+  state[prefix].answers[qIdx] = optIdx;
+  state[prefix].attempted++;
+  if(optIdx === q.ans){btn.classList.add('correct');state[prefix].correct++;}
+  else{btn.classList.add('wrong');opts[q.ans].classList.add('reveal');state[prefix].wrong++;}
+  document.getElementById(`${prefix}-exp-${qIdx}`).classList.add('show');
+  updateLive(prefix);
+}
+
+function updateLive(prefix){
+  const s=state[prefix];
+  const score=s.correct-(s.wrong*(1/3));
+  document.getElementById(`${prefix}-live`).textContent=`Score: ${score.toFixed(2)}`;
+  document.getElementById(`${prefix}-attempted`).textContent=s.attempted;
+  document.getElementById(`${prefix}-correct`).textContent=s.correct;
+  document.getElementById(`${prefix}-wrong`).textContent=s.wrong;
+}
+
+function showResult(prefix){
+  const s=state[prefix];
+  const score=s.correct-(s.wrong*(1/3));
+  const pct=(score/25)*100;
+  let emoji,msg,grade;
+  if(pct>=80){emoji='🏆';msg='शानदार!';grade='Grade: A+'}
+  else if(pct>=60){emoji='🎯';msg='बहुत अच्छा!';grade='Grade: A'}
+  else if(pct>=40){emoji='📚';msg='और मेहनत करो!';grade='Grade: B'}
+  else{emoji='💪';msg='Revision करो!';grade='Grade: C'}
+  document.getElementById('res-emoji').textContent=emoji;
+  document.getElementById('res-score').textContent=`${score.toFixed(2)} / 25`;
+  document.getElementById('res-msg').textContent=msg;
+  document.getElementById('res-detail').textContent=`✅ सही: ${s.correct} | ❌ गलत: ${s.wrong} | 📝 Attempt: ${s.attempted}/25`;
+  document.getElementById('res-grade').textContent=grade;
+  document.getElementById('result-overlay').classList.add('show');
+}
+
+function submitRJ(){if(state.rj.attempted<25&&!confirm(`केवल ${state.rj.attempted}/25 attempt. परिणाम देखें?`))return;showResult('rj');}
+function submitState(){if(state.state.attempted<25&&!confirm(`केवल ${state.state.attempted}/25 attempt. परिणाम देखें?`))return;showResult('state');}
+function closeResult(){document.getElementById('result-overlay').classList.remove('show');}
+</script>
+</body>
+</html>
